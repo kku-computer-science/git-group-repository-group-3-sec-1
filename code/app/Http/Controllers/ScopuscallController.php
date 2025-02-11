@@ -20,6 +20,7 @@ class ScopuscallController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create($id)
     {
         set_time_limit(120);  // เพิ่มเวลาในการประมวลผลเป็น 120 วินาที (2 นาที)
@@ -29,7 +30,7 @@ class ScopuscallController extends Controller
         $fname = substr($data['fname_en'], 0, 1);
         $lname = $data['lname_en'];
         $id    = $data['id'];
-        $apiKey = env('SCOPUS_API_KEY'); // ดึง API Key จาก .env
+        $apiKey = config('app.SCOPUS_API_KEY');
         if ($apiKey == null) {
             return response()->json(['error' => 'API Key not found'], 404);
         }

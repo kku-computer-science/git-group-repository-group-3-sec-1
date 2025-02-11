@@ -15,7 +15,7 @@ class WOSCallController extends Controller
 
     public function __construct()
     {
-        $this->apiKey = env('WOS_API_KEY');
+        $this->apiKey = config('app.WOS_API_KEY');
     }
 
     public function createWOS($id)
@@ -54,6 +54,9 @@ class WOSCallController extends Controller
 
     private function fetchWOSData($authorQuery)
     {
+        if ($this->apiKey == null) {
+            return response()->json(['error' => 'API Key not found'], 404);
+        }
         return Http::withHeaders(['X-ApiKey' => $this->apiKey])
             ->get('https://api.clarivate.com/apis/wos-starter/v1/documents', [
                 'db' => 'WOS',

@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class GoogleScolarCallController extends Controller
-{
+{   
     private $apiKey;
-
+    
     public function __construct()
     {
-        $this->apiKey = env('GOOGLE_SCHOLAR_API_KEY');
+        $this->apiKey = config('app.GOOGLE_SCHOLAR_API_KEY');
     }
 
     public function createScholar($id)
@@ -54,7 +54,11 @@ class GoogleScolarCallController extends Controller
 
     private function fetchAuthorData(User $user)
     {
-        $searchName = $user->fname_en . ' ' . $user->lname_en;
+        $searchName = $user->fname_en . ' ' . $user->lname_en;        
+        if ($this->apiKey == null) {
+            return response()->json(['error' => 'API Key not found'], 404);
+        }
+        
         $response = Http::get('https://serpapi.com/search', [
             'mauthors' => $searchName,
             'engine' => 'google_scholar_profiles',
@@ -66,6 +70,9 @@ class GoogleScolarCallController extends Controller
 
     private function fetchArticles($authorId)
     {
+        if ($this->apiKey == null) {
+            return response()->json(['error' => 'API Key not found'], 404);
+        }
         $response = Http::get('https://serpapi.com/search', [
             'author_id' => $authorId,
             'engine' => 'google_scholar_author',
