@@ -22,7 +22,13 @@
             <a class="btn btn-primary btn-icon-text btn-sm mb-3"
             href="{{ route('callgooglescholar', Crypt::encrypt(Auth::user()->id)) }}">
             <i class="mdi mdi-refresh btn-icon-prepend icon-sm"></i> Call Paper (Google Scholar)</a>
-            
+
+            <!-- เพิ่มการเรียก API ของ Web of Science หลังจากเรียก Google Scholar -->
+            <a class="btn btn-primary btn-icon-text btn-sm mb-3"
+            href="{{ route('callwos', Crypt::encrypt(Auth::user()->id)) }}">
+            <i class="mdi mdi-refresh btn-icon-prepend icon-sm"></i> Call Paper (Web of Science)
+            </a>
+
             @endif
             <!-- <div class="table-responsive"> -->
                 <table id="example1" class="table table-striped">
