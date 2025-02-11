@@ -16,7 +16,15 @@
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('papers.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD </a>
             @if(Auth::user()->hasRole('teacher'))
             <!-- <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('callscopus',Auth::user()->id) }}"><i class="mdi mdi-refresh btn-icon-prepend"></i> Call Paper</a> -->
-            <a class="btn btn-primary btn-icon-text btn-sm mb-3" href="{{ route('callscopus',Crypt::encrypt(Auth::user()->id)) }}"><i class="mdi mdi-refresh btn-icon-prepend icon-sm"></i> Call Paper (Scopus)</a>
+
+            <!-- เพิ่มการเรียก API ของทั้งหมดของทุกตัว -->
+            <a class="btn btn-primary btn-icon-text btn-sm mb-3"
+            href="{{ route('callallpapers', Crypt::encrypt(Auth::user()->id)) }}"><i
+                class="mdi mdi-refresh btn-icon-prepend icon-sm"></i> Call Paper (ทุกฐานข้อมูล)</a>
+
+            <a class="btn btn-primary btn-icon-text btn-sm mb-3" 
+            href="{{ route('callscopus',Crypt::encrypt(Auth::user()->id)) }}">
+            <i class="mdi mdi-refresh btn-icon-prepend icon-sm"></i> Call Paper (Scopus)</a>
 
             <!-- เพิ่มการเรียก API ของ Google Scholar -->
             <a class="btn btn-primary btn-icon-text btn-sm mb-3"
