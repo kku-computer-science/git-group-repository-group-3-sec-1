@@ -22,7 +22,7 @@ class ScopuscallController extends Controller
      */
     public function create($id)
     {
-
+        set_time_limit(120);  // เพิ่มเวลาในการประมวลผลเป็น 120 วินาที (2 นาที)
         $id = Crypt::decrypt($id);
         $data = User::find($id); # ดึงข้อมูลของ user จาก id ที่ได้รับมา
 

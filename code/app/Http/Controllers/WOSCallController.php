@@ -20,6 +20,7 @@ class WOSCallController extends Controller
 
     public function createWOS($id)
     {
+        set_time_limit(120);  // เพิ่มเวลาในการประมวลผลเป็น 120 วินาที (2 นาที)
         $id = Crypt::decrypt($id);
         $user = User::findOrFail($id);
 

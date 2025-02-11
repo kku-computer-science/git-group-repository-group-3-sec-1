@@ -48,6 +48,7 @@
                             <th>ปีที่ตีพิมพ์</th>
                             <!-- <th>ผู้เขียน</th>   -->
                             <!-- <th>Source Title</th> -->
+                            <th>วันที่ดึงข้อมูล</th>
                             <th width="280px">Action</th>
                         </tr>
                         <thead>
@@ -66,9 +67,12 @@
                                     @if (!$loop->last),@endif
 
                                     @endforeach
+                                
 
                                 </td> -->
                                 <!-- <td>{{ Str::limit($paper->paper_sourcetitle,50) }}</td> -->
+
+                                <td>{{ $paper->created_at }}</td>
 
                                 <td>
                                     <form action="{{ route('papers.destroy',$paper->id) }}" method="POST">
