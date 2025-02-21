@@ -10,5 +10,4 @@ return [
         'display' => 'ไทย',
         'flag-icon' => 'th'
     ],
-    
 ];
