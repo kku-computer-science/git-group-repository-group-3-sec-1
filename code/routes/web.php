@@ -95,6 +95,11 @@ Route::get('bib/{id}', [BibtexController::class, 'getbib'])->name('bibtex');
 //Route::get('change/lang', [LocalizationController::class,'lang_change'])->name('LangChange');
 
 Route::get('/callscopus/{id}', [App\Http\Controllers\ScopuscallController::class, 'create'])->name('callscopus');
+Route::get('/callgooglescholar/{id}', [App\Http\Controllers\GoogleScolarCallController::class, 'createScholar'])->name('callgooglescholar');
+Route::get('/callwos/{id}', [App\Http\Controllers\WOSCallController::class, 'createWOS'])->name('callwos');
+Route::get('/callallpapers/{id}', [App\Http\Controllers\CallAllPapersController::class, 'callAllPapers'])->name('callallpapers');
+
+
 //Route::get('/showscopus', [App\Http\Controllers\ScopuscallController::class, 'index'])->name('showscopus');
 
 Route::group(['middleware' => ['isAdmin', 'auth', 'PreventBackHistory']], function () {
