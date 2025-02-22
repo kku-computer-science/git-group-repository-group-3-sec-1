@@ -24,5 +24,46 @@ return [
 'required' => [
         'username' => 'ต้องระบุชื่อผู้ใช้',
         'password' => 'ต้องระบุรหัสผ่าน'
-    ]
+],
+// ส่วนของ Admin (ผู้วิจัย)
+
+// ส่วน Navbar
+'Project_title' => 'ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์',
+'Search_here' => 'ค้นหาที่นี่',
+'Logout' => 'ออกจากระบบ',
+
+// ส่วนของหน้า Dashboard
+'Welcome' => 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์',
+'Welcome_hello' => 'สวัสดี',
+'Dashboard_navbar_title' => 'แดชบอร์ด',
+
+// ส่วนของ Profile
+'Profile_navbar_title' => 'โปรไฟล์',
+
+// ส่วนของ User Profile
+'User_Profile_navbar_title' => 'โปรไฟล์ของผู้ใช้',
+
+// ส่วนของ Option
+'Option_navbar_title' => 'ตัวเลือก',
+
+// ส่วนของ Manage Fund
+'Manage_Fund_navbar_title' => 'จัดการแหล่งทุนวิจัย',
+
+// ส่วนของ Research Project
+'Research_Project_navbar_title' => 'โครงการวิจัย',
+
+// ส่วนของ Research Group
+'Research_Group_navbar_title' => 'กลุ่มวิจัย',
+
+// ส่วนของ Manage Publication
+'Manage_Publication_navbar_title' => 'จัดการผลงานตีพิมพ์',
+
+// ส่วนของ Published research
+'Published_research_navbar_title' => 'ผลงานวิจัยที่ตีพิมพ์',
+
+// ส่วนของ Book
+'Book_navbar_title' => 'หนังสือ',
+
+// ส่วนของ ผลงานวิชาการอื่นๆ
+'Other_academic_works_navbar_title' => 'ผลงานวิชาการอื่นๆ',
 ];

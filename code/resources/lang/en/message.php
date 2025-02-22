@@ -24,5 +24,49 @@ return [
 'required' => [
         'username' => 'Username is required',
         'password' => 'Password is required'
-    ]
+],
+
+// ส่วนของ Admin (ผู้วิจัย)
+
+// ส่วน Navbar
+'Project_title' => 'Research Information Management System',
+'Search_here' => 'Search Here',
+'Logout' => 'Logout',
+
+// ส่วนของหน้า Dashboard
+'Welcome' => 'Welcome to the Research Information Management System',
+'Welcome_hello' => 'Hello',
+'Dashboard_navbar_title' => 'Dashboard',
+
+// ส่วนของ Profile
+'Profile_navbar_title' => 'Profile',
+
+// ส่วนของ User Profile
+'User_Profile_navbar_title' => 'User Profile',
+
+// ส่วนของ Option
+'Option_navbar_title' => 'Option',
+
+// ส่วนของ Manage Fund
+'Manage_Fund_navbar_title' => 'Manage Fund',
+
+// ส่วนของ Research Project
+'Research_Project_navbar_title' => 'Research Project',
+
+// ส่วนของ Research Group
+'Research_Group_navbar_title' => 'Research Group',
+
+// ส่วนของ Manage Publication
+'Manage_Publication_navbar_title' => 'Manage Publications',
+
+// ส่วนของ Published research
+'Published_research_navbar_title' => 'Published research',
+
+// ส่วนของ Book
+'Book_navbar_title' => 'Book',
+
+// ส่วนของ ผลงานวิชาการอื่นๆ
+'Other_academic_works_navbar_title' => 'Other academic works',
 ];
+
+
