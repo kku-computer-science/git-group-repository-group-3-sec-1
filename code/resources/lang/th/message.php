@@ -53,7 +53,12 @@ return [
 'Profile_Account_AcademicRank' => 'ยศศักดิ์ทางวิชาการ',
 'Profile_Account_AcademicPosition' => 'ตำแหน่งทางวิชาการ',
 'Profile_Account_TogglePHD' => 'สำหรับอ.ผู้ที่ไม่มีคุณวุฒิปริญญาเอก โปรดระบุ',
+'Profile_Account_Professor' => 'ศาสตราจารย์',
+'Profile_Account_AssociateProfessor' => 'รองศาสตราจารย์',
+'Profile_Account_AssistantProfessor' => 'ผู้ช่วยศาสตราจารย์',
+'Profile_Account_Lecturer' => 'อาจารย์',
 
+'Profile_All_Update' => 'อัพเดท',
 
 // ส่วนของ User Profile
 'User_Profile_navbar_title' => 'โปรไฟล์ของผู้ใช้',

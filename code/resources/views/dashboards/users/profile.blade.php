@@ -64,16 +64,16 @@
                             @if(app()->getLocale() == 'th')
                             <div class="form-group col-sm-4">
                                 <label>{{ trans('message.Profile_Account_pronouns') }}</label>
-                                <select class="custom-select my-select " name="title_name_th">
-                                    <option value="นาย" {{ Auth::user()->title_name_th == 'นาย' ? 'selected' : '' }}>นาย</option>
-                                    <option value="นาง" {{ Auth::user()->title_name_th == 'นาง' ? 'selected' : '' }}>นาง</option>
-                                    <option value="นางสาว." {{ Auth::user()->title_name_th == 'นางสาว' ? 'selected' : '' }}>นางสาว</option>
+                                <select class="custom-select my-select " name="title_name_en">
+                                    <option value="Mr." {{ Auth::user()->title_name_th == 'Mr.' ? 'selected' : '' }}>นาย</option>
+                                    <option value="Miss" {{ Auth::user()->title_name_th == 'Miss' ? 'selected' : '' }}>นาง</option>
+                                    <option value="Mrs." {{ Auth::user()->title_name_th == 'Mrs.' ? 'selected' : '' }}>นางสาว</option>
                                 </select>
                             </div>
                             @elseif(app()->getLocale() == 'en')
                             <div class="form-group col-sm-4">
                                 <label>{{ trans('message.Profile_Account_pronouns') }}</label>
-                                <select class="custom-select my-select " name="title_name_th">
+                                <select class="custom-select my-select " name="title_name_en">
                                     <option value="Mr." {{ Auth::user()->title_name_en == 'Mr.' ? 'selected' : '' }}>Mr.</option>
                                     <option value="Miss" {{ Auth::user()->title_name_en == 'Miss' ? 'selected' : '' }}>Miss</option>
                                     <option value="Mrs." {{ Auth::user()->title_name_en == 'Mrs.' ? 'selected' : '' }}>Mrs.</option>
@@ -82,10 +82,10 @@
                             @elseif(app()->getLocale() == 'cn')
                             <div class="form-group col-sm-4">
                                 <label>{{ trans('message.Profile_Account_pronouns') }}</label>
-                                <select class="custom-select my-select" name="title_name_cn">
-                                    <option value="先生" {{ Auth::user()->title_name_cn == '先生' ? 'selected' : '' }}>先生</option>
-                                    <option value="女士" {{ Auth::user()->title_name_cn == '女士' ? 'selected' : '' }}>女士</option>
-                                    <option value="小姐" {{ Auth::user()->title_name_cn == '小姐' ? 'selected' : '' }}>小姐</option>
+                                <select class="custom-select my-select" name="title_name_en">
+                                    <option value="Mr." {{ Auth::user()->title_name_cn == 'Mr.' ? 'selected' : '' }}>先生</option>
+                                    <option value="Miss" {{ Auth::user()->title_name_cn == 'Miss' ? 'selected' : '' }}>女士</option>
+                                    <option value="Mrs." {{ Auth::user()->title_name_cn == 'Mrs.' ? 'selected' : '' }}>小姐</option>
                                 </select>
                             </div>
                             @endif
@@ -146,10 +146,10 @@
                             <div class="form-group">
                                 <label>{{ trans('message.Profile_Account_AcademicRank') }}</label>
                                 <select id="category" class="custom-select my-select" name="academic_ranks_en">
-                                    <option value="Professor" {{ Auth::user()->academic_ranks_en == 'Professor' ? 'selected' : '' }}>Professor</option>
-                                    <option value="Associate Professor" {{ Auth::user()->academic_ranks_en == 'Associate Professor' ? 'selected' : '' }}>Associate Professor</option>
-                                    <option value="Assistant Professor" {{ Auth::user()->academic_ranks_en == 'Assistant Professor' ? 'selected' : '' }}>Assistant Professor</option>
-                                    <option value="Lecturer" {{ Auth::user()->academic_ranks_en == 'Lecturer' ? 'selected' : '' }}>Lecturer</option>
+                                    <option value="Professor" {{ Auth::user()->academic_ranks_en == 'Professor' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Professor') }}</option>
+                                    <option value="Associate Professor" {{ Auth::user()->academic_ranks_en == 'Associate Professor' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssociateProfessor') }}</option>
+                                    <option value="Assistant Professor" {{ Auth::user()->academic_ranks_en == 'Assistant Professor' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssistantProfessor') }}</option>
+                                    <option value="Lecturer" {{ Auth::user()->academic_ranks_en == 'Lecturer' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Lecturer') }}</option>
                                 </select>
                             </div>
                         </div>
@@ -158,16 +158,16 @@
                                 <label>{{ trans('message.Profile_Account_AcademicPosition') }}</label>
                                 <select name="academic_ranks_th" id="subcategory" class="custom-select my-select">
                                     <optgroup id="Professor" label="Professor">
-                                        <option value="ศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'ศาสตราจารย์' ? 'selected' : '' }}>ศาสตราจารย์</option>
+                                        <option value="ศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'ศาสตราจารย์' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Professor') }}</option>
                                     </optgroup>
                                     <optgroup id="Associate Professor" label="Associate Professor">
-                                        <option value="รองศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'รองศาสตราจารย์' ? 'selected' : '' }}>รองศาสตราจารย์</option>
+                                        <option value="รองศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'รองศาสตราจารย์' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssociateProfessor') }}</option>
                                     </optgroup>
                                     <optgroup id="Assistant Professor" label="Assistant Professor">
-                                        <option value="ผู้ช่วยศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'ผู้ช่วยศาสตราจารย์' ? 'selected' : '' }}>ผู้ช่วยศาสตราจารย์</option>
+                                        <option value="ผู้ช่วยศาสตราจารย์" {{ Auth::user()->academic_ranks_th == 'ผู้ช่วยศาสตราจารย์' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssistantProfessor') }}</option>
                                     </optgroup>
                                     <optgroup id="Lecturer" label="Lecturer">
-                                        <option value="อาจารย์" {{ Auth::user()->academic_ranks_th == 'อาจารย์' ? 'selected' : '' }}>อาจารย์</option>
+                                        <option value="อาจารย์" {{ Auth::user()->academic_ranks_th == 'อาจารย์' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Lecturer') }}</option>
                                     </optgroup>
                                 </select>
                             </div>
@@ -183,7 +183,7 @@
                         @endif
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">{{ trans('message.Profile_All_Update') }}</button>
                     </div>
                 </form>
             </div>

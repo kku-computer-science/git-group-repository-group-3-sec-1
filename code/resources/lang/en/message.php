@@ -54,6 +54,12 @@ return [
 'Profile_Account_AcademicRank' => 'Academic Rank',
 'Profile_Account_AcademicPosition' => 'Academic Position',
 'Profile_Account_TogglePHD' => 'For instructors without a doctoral degree, please specify',
+'Profile_Account_Professor' => 'Professor',
+'Profile_Account_AssociateProfessor' => 'Associate Professor',
+'Profile_Account_AssistantProfessor' => 'Assistant Professor',
+'Profile_Account_Lecturer' => 'Lecturer',
+
+'Profile_All_Update' => 'Update',
 
 
 

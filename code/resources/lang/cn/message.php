@@ -53,7 +53,12 @@ return [
 'Profile_Account_AcademicRank' => '学术等级',
 'Profile_Account_AcademicPosition' => '学术职位',
 'Profile_Account_TogglePHD' => '对于没有博士学位的教师，请注明',
+'Profile_Account_Professor' => '教授',
+'Profile_Account_AssociateProfessor' => '副教授',
+'Profile_Account_AssistantProfessor' => '助理教授',
+'Profile_Account_Lecturer' => '讲师',
 
+'Profile_All_Update' => '更新',
 
 // ส่วนของ User Profile
 'User_Profile_navbar_title' => '用户资料',
