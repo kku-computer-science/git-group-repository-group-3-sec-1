@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 <div class="container card-2">
-    <p class="title"> Researchers </p>
+    <p class="title"> {{ trans('message.Researchers') }} </p>
     @foreach($request as $res)
     <span>
         <ion-icon name="caret-forward-outline" size="small"></ion-icon> {{$res->program_name_en}}
@@ -24,7 +24,7 @@
                         </select>
                     </div> -->
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                    <button type="submit" class="btn btn-outline-primary">{{ trans('message.Search') }}</button>
                 </div>
             </form>
         </div>
