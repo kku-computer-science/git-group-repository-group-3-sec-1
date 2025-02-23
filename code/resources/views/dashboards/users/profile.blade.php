@@ -145,6 +145,53 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>{{ trans('message.Profile_Account_AcademicRank') }}</label>
+                                <select id="category" class="custom-select my-select" name="academic_ranks_en" onchange="syncAcademicRanks(this)">
+                                    <option value="Professor" {{ Auth::user()->academic_ranks_en == 'Professor' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Professor') }}</option>
+                                    <option value="Associate Professor" {{ Auth::user()->academic_ranks_en == 'Associate Professor' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssociateProfessor') }}</option>
+                                    <option value="Assistant Professor" {{ Auth::user()->academic_ranks_en == 'Assistant Professor' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssistantProfessor') }}</option>
+                                    <option value="Lecturer" {{ Auth::user()->academic_ranks_en == 'Lecturer' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Lecturer') }}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group" style="display: none;">
+                                <label>{{ trans('message.Profile_Account_AcademicPosition') }}</label>
+                                <select name="academic_ranks_th" id="subcategory_th" class="custom-select my-select">
+                                    <option value="ศาสตราจารย์" data-mapping="Professor" {{ Auth::user()->academic_ranks_th == 'ศาสตราจารย์' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Professor') }}</option>
+                                    <option value="รองศาสตราจารย์" data-mapping="Associate Professor" {{ Auth::user()->academic_ranks_th == 'รองศาสตราจารย์' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssociateProfessor') }}</option>
+                                    <option value="ผู้ช่วยศาสตราจารย์" data-mapping="Assistant Professor" {{ Auth::user()->academic_ranks_th == 'ผู้ช่วยศาสตราจารย์' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssistantProfessor') }}</option>
+                                    <option value="อาจารย์" data-mapping="Lecturer" {{ Auth::user()->academic_ranks_th == 'อาจารย์' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Lecturer') }}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group" style="display: none;">
+                                <label>{{ trans('message.Profile_Account_AcademicPosition') }}</label>
+                                <select name="academic_ranks_cn" id="subcategory_cn" class="custom-select my-select">
+                                    <option value="教授" data-mapping="Professor" {{ Auth::user()->academic_ranks_cn == '教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Professor') }}</option>
+                                    <option value="副教授" data-mapping="Associate Professor" {{ Auth::user()->academic_ranks_cn == '副教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssociateProfessor') }}</option>
+                                    <option value="助理教授" data-mapping="Assistant Professor" {{ Auth::user()->academic_ranks_cn == '助理教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssistantProfessor') }}</option>
+                                    <option value="讲师" data-mapping="Lecturer" {{ Auth::user()->academic_ranks_cn == '讲师' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Lecturer') }}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <script>
+                            function syncAcademicRanks(select) {
+                                var selectedValue = select.value;
+                                document.querySelectorAll('[data-mapping]').forEach(option => {
+                                    if (option.getAttribute('data-mapping') === selectedValue) {
+                                        option.parentElement.value = option.value;
+                                    }
+                                });
+                            }
+                        </script>
+                        
+                        <!-- <div class="col-md-6">
+                            <div class="form-group">
+                                <label>{{ trans('message.Profile_Account_AcademicRank') }}</label>
                                 <select id="category" class="custom-select my-select" name="academic_ranks_en">
                                     <option value="Professor" {{ Auth::user()->academic_ranks_en == 'Professor' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Professor') }}</option>
                                     <option value="Associate Professor" {{ Auth::user()->academic_ranks_en == 'Associate Professor' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssociateProfessor') }}</option>
@@ -172,6 +219,25 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>{{ trans('message.Profile_Account_AcademicPosition') }}</label>
+                                <select name="academic_ranks_cn" id="subcategory" class="custom-select my-select">
+                                    <optgroup id="Professor" label="Professor">
+                                        <option value="教授" {{ Auth::user()->academic_ranks_cn == '教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Professor') }}</option>
+                                    </optgroup>
+                                    <optgroup id="Associate Professor" label="Associate Professor">
+                                        <option value="副教授" {{ Auth::user()->academic_ranks_cn == '副教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssociateProfessor') }}</option>
+                                    </optgroup>
+                                    <optgroup id="Assistant Professor" label="Assistant Professor">
+                                        <option value="助理教授" {{ Auth::user()->academic_ranks_cn == '助理教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssistantProfessor') }}</option>
+                                    </optgroup>
+                                    <optgroup id="Lecturer" label="Lecturer">
+                                        <option value="讲师" {{ Auth::user()->academic_ranks_cn == '讲师' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Lecturer') }}</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div> -->
                         <div class="col-md-4">
                             <div class="form-group">
                                 <div class="checkbox">

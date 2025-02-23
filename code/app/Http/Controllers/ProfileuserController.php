@@ -86,21 +86,25 @@ class ProfileuserController extends Controller
                     $pos_en = 'Prof.';
                     $pos_th = 'ศ.';
                     $pos_cn = '教授';
+                    $academic_ranks_cn = '教授';
                 }
                 if ($request->academic_ranks_en == "Associate Professor") {
                     $pos_en = 'Assoc. Prof.';
                     $pos_th = 'รศ.';
                     $pos_cn = '副教授';
+                    $academic_ranks_cn = '副教授';
                 }
                 if ($request->academic_ranks_en == "Assistant Professor") {
                     $pos_en = 'Asst. Prof.';
                     $pos_th = 'ผศ.';
                     $pos_cn = '助理教授';
+                    $academic_ranks_cn = '助理教授';
                 }
                 if ($request->academic_ranks_en == "Lecturer") {
                     $pos_en = 'Lecturer';
                     $pos_th = 'อ.';
                     $pos_cn = '讲师';
+                    $academic_ranks_cn = '讲师';
                 }
                 if ($request->has('pos')) {
                     $pos_eng = $pos_en;
