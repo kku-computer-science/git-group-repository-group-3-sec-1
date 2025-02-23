@@ -8,7 +8,7 @@
             <div class="col-md-4">
                 <div class="card-body">
                     <img src="{{asset('img/'.$rg->group_image)}}" alt="...">
-                    <h2 class="card-text-1"> Laboratory Supervisor </h2>
+                    <h2 class="card-text-1"> {{ trans('message.Laboratory Supervisor') }} </h2>
                     
                     <h2 class="card-text-2">
                         @foreach ($rg->user as $r)
