@@ -27,6 +27,9 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
+    'SCOPUS_API_KEY' => env('SCOPUS_API_KEY', null),
+    'GOOGLE_SCHOLAR_API_KEY' => env('GOOGLE_SCHOLAR_API_KEY', null),
+    'WOS_API_KEY' => env('WOS_API_KEY', null),
 
     /*
     |--------------------------------------------------------------------------

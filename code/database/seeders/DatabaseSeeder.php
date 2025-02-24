@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             SourceDataSeeder::class,
             UserTableSeeder::class,
             //PermissionDataSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            ProgramSeeder::class
         ]);
         /*User::create([
             'name' => 'Admin',

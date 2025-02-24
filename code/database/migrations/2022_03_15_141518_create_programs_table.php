@@ -17,6 +17,7 @@ class CreateProgramsTable extends Migration
             $table->id();
             $table->string('program_name_th');
             $table->string('program_name_en');
+            #$table->string('program_name_zh');
 
             $table->unsignedBigInteger('degree_id');
             $table->foreign('degree_id')->references('id')->on('degrees')->onDelete('cascade');
