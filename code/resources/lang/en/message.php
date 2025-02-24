@@ -90,6 +90,15 @@ return [
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
 'Other_academic_works_navbar_title' => 'Other academic works',
+
+'No_data_avalible' => 'No data available in table',
+'info' => '',
+'infoEmpty' => 'Showing 0 to 0 of 0 entries',
+'infoFiltered' => '(filtered from MAX total entries)',
+'lengthMenu' => '',
+'search' => 'Search:',
+'Previous' => 'Previous',
+'Next' => 'Next'
 ];
 
 

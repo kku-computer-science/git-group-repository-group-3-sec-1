@@ -81,7 +81,7 @@
                             @elseif(App::getLocale() == 'th')
                                 {{$department->program_name_th}}
                             @elseif(App::getLocale() == 'cn')
-                                {{$department->program_name_zh}}
+                                {{$department->program_name_cn}}
                             @endif</a>
                             </li>
                             @endforeach
