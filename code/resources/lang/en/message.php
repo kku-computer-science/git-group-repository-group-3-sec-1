@@ -10,6 +10,7 @@ return [
 'publications' => 'Publications (In the Last 5 Years)',
 'education'=>'Education',
 'publications2' => 'Publications',
+'laboratorysupervisor' => 'Laboratory Supervisor',
 
 // ส่วนของ Login
 'Account_Login' => 'Account Login',

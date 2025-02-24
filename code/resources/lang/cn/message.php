@@ -10,6 +10,7 @@ return [
 'publications' => '出版物（过去5年）',
 'education'=>'教育',
 'publications2' => '出版物',
+'laboratorysupervisor' => '实验室主管',
 
 // ส่วนของ Login
 'Account_Login' => '帐户登录',

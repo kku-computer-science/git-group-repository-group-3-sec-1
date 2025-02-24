@@ -10,6 +10,8 @@ return [
 'publications' => 'ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)',
 'education'=>'การศึกษา',
 'publications2' => 'ผลงานตีพิมพ์',
+'laboratorysupervisor' => 'ผู้ดูแลแล็ป',
+
 
 // ส่วนของ Login
 'Account_Login' => 'เข้าสู่ระบบ',
