@@ -2,6 +2,7 @@
 @section('content')
 <div class="container card-3 ">
     <p>{{ trans('message.ResearchGroup') }}</p>
+    <p>Research Group</p>
     @foreach ($resg as $rg)
     <div class="card mb-4">
         <div class="row g-0">
