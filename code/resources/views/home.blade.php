@@ -42,17 +42,44 @@
                 <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                 aria-label="Slide 3"></button> -->
             </div>
+            @if(app()->getLocale() == 'th')
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('img/Banner1.png')}}" class="d-block w-100" alt="...">
+                    <img src="{{asset('img/Banner1_th.png')}}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{asset('img/Banner2.png')}}" class="d-block w-100" alt="...">
+                    <img src="{{asset('img/Banner2_th.png')}}" class="d-block w-100" alt="...">
                 </div>
                 <!-- <div class="carousel-item">
                 <img src="..." class="d-block w-100" alt="...">
             </div> -->
             </div>
+            @elseif(app()->getLocale() == 'en')
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{asset('img/Banner1_eng.png')}}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('img/Banner2_eng.png')}}" class="d-block w-100" alt="...">
+                </div>
+                <!-- <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div> -->
+            </div>
+            @elseif(app()->getLocale() == 'cn')
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{asset('img/Banner1_cn.png')}}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{asset('img/Banner2_cn.png')}}" class="d-block w-100" alt="...">
+                </div>
+                <!-- <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div> -->
+            </div>
+            @endif
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -161,7 +188,7 @@
                                     <!-- <a href="{{ route('bibtex',['id'=>$p['id']])}}">
                                         [อ้างอิง]
                                     </a> -->
-                                    <button style="padding: 0;"class="btn btn-link open_modal" value="{{$p['id']}}">[{{ trans('message.Reference') }}]</button>
+                                    <button style="padding: 0;"class="btn btn-link open_modal" value="{{$p['id']}}">{{ trans('message.ref') }}</button>
                                 </p>
                             </div>
                         </div>
@@ -192,6 +219,7 @@
         });
     });
 </script>
+@if(app()->getLocale() == 'th')
 <script>
     var year = <?php echo $year; ?>;
     var paper_tci = <?php echo $paper_tci; ?>;
@@ -249,6 +277,108 @@
     barChartData.datasets[0] = temp1
     barChartData.datasets[1] = temp0
 
+    
+    var barChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        datasetFill: false,
+        scales: {
+            yAxes: [{
+                formatter: function() {
+                    return Math.abs(this.value);
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'เลข',
+
+                },
+                ticks: {
+                    reverse: false,
+                    stepSize: 10
+                },
+            }],
+            xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'ปี'
+                }
+            }]
+        },
+
+        title: {
+            display: true,
+            text: 'จำนวนบทความของรายงานทั้งหมด (5 ปี: สะสม)',
+            fontSize: 20
+        }
+
+
+    }
+
+    new Chart(barChartCanvas, {
+        type: 'bar',
+        data: barChartData,
+        options: barChartOptions
+    })
+</script>
+@elseif(app()->getLocale() == 'en')
+<script>
+    var year = <?php echo $year; ?>;
+    var paper_tci = <?php echo $paper_tci; ?>;
+    var paper_scopus = <?php echo $paper_scopus; ?>;
+    var paper_wos = <?php echo $paper_wos; ?>;
+    var areaChartData = {
+
+        labels: year,
+
+        datasets: [{
+                label: 'SCOPUS',
+                backgroundColor: '#3994D6',
+                borderColor: 'rgba(210, 214, 222, 1)',
+                pointRadius: false,
+                pointColor: '#3994D6',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: '#3994D6',
+                data: paper_scopus
+            },
+            {
+                label: 'TCI',
+                backgroundColor: '#83E4B5',
+                borderColor: 'rgba(255, 255, 255, 0.5)',
+                pointRadius: false,
+                pointColor: '#83E4B5',
+                pointStrokeColor: '#3b8bba',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: '#83E4B5',
+                data: paper_tci
+            },
+            {
+                label: 'WOS',
+                backgroundColor: '#FCC29A',
+                borderColor: 'rgba(0, 0, 255, 1)',
+                pointRadius: false,
+                pointColor: '#FCC29A',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: '#FCC29A',
+                data: paper_wos
+            },
+        ]
+    }
+
+
+
+    //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#barChart1').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    var temp1 = areaChartData.datasets[1]
+    barChartData.datasets[0] = temp1
+    barChartData.datasets[1] = temp0
+
+    
     var barChartOptions = {
         responsive: true,
         maintainAspectRatio: false,
@@ -291,6 +421,110 @@
         options: barChartOptions
     })
 </script>
+@elseif(app()->getLocale() == 'cn')
+<script>
+    var year = <?php echo $year; ?>;
+    var paper_tci = <?php echo $paper_tci; ?>;
+    var paper_scopus = <?php echo $paper_scopus; ?>;
+    var paper_wos = <?php echo $paper_wos; ?>;
+    var areaChartData = {
+
+        labels: year,
+
+        datasets: [{
+                label: 'SCOPUS',
+                backgroundColor: '#3994D6',
+                borderColor: 'rgba(210, 214, 222, 1)',
+                pointRadius: false,
+                pointColor: '#3994D6',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: '#3994D6',
+                data: paper_scopus
+            },
+            {
+                label: 'TCI',
+                backgroundColor: '#83E4B5',
+                borderColor: 'rgba(255, 255, 255, 0.5)',
+                pointRadius: false,
+                pointColor: '#83E4B5',
+                pointStrokeColor: '#3b8bba',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: '#83E4B5',
+                data: paper_tci
+            },
+            {
+                label: 'WOS',
+                backgroundColor: '#FCC29A',
+                borderColor: 'rgba(0, 0, 255, 1)',
+                pointRadius: false,
+                pointColor: '#FCC29A',
+                pointStrokeColor: '#c1c7d1',
+                pointHighlightFill: '#fff',
+                pointHighlightStroke: '#FCC29A',
+                data: paper_wos
+            },
+        ]
+    }
+
+
+
+    //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#barChart1').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    var temp1 = areaChartData.datasets[1]
+    barChartData.datasets[0] = temp1
+    barChartData.datasets[1] = temp0
+
+    
+    var barChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        datasetFill: false,
+        scales: {
+            yAxes: [{
+                formatter: function() {
+                    return Math.abs(this.value);
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: '数字',
+
+                },
+                ticks: {
+                    reverse: false,
+                    stepSize: 10
+                },
+            }],
+            xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: '年'
+                }
+            }]
+        },
+
+        title: {
+            display: true,
+            text: '报告文章总数（5年：累计）',
+            fontSize: 20
+        }
+
+
+    }
+
+    new Chart(barChartCanvas, {
+        type: 'bar',
+        data: barChartData,
+        options: barChartOptions
+    })
+</script>
+@endif
+
+
 <script>
     var paper_tci = <?php echo $paper_tci_numall; ?>;
     var paper_scopus = <?php echo $paper_scopus_numall; ?>;
@@ -307,7 +541,7 @@
         document.getElementById("all").innerHTML += `
                 <i class="count-icon fa fa-book fa-2x"></i>
                 <h2 class="timer count-title count-number" data-to="${sum}" data-speed="1500"></h2>
-                <p class="count-text ">SUMMARY</p>`
+                <p class="count-text ">{{ trans('message.source') }}</p>`
         document.getElementById("scopus").innerHTML += `
                 <i class="count-icon fa fa-book fa-2x"></i>
                 <h2 class="timer count-title count-number" data-to="${sumsco}" data-speed="1500"></h2>
