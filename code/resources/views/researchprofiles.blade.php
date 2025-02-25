@@ -76,18 +76,20 @@
                         @foreach( $res->education as $edu)
                         @if(app()->getLocale() == 'th')
                         <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name}} {{$edu->uname}}</h6>
-                        @elseif(app()->getLocale() == 'en')
+                        @else
                             @if($edu->year == '-')
-                            <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name}} {{$edu->uname}}</h6>
-                            @else
-                            <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
-                            @endif
-                        @elseif(app()->getLocale() == 'cn')
-                        @if($edu->year == '-')
-                            <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name}} {{$edu->uname}}</h6>
-                            @else
-                            <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
-                            @endif
+                                @if(app()->getLocale() == 'en')
+                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
+                                    @elseif(app()->getLocale() == 'cn')
+                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
+                                    @endif
+                                @else
+                                    @if(app()->getLocale() == 'en')
+                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
+                                    @elseif(app()->getLocale() == 'cn')
+                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
+                                    @endif
+                                @endif
                         @endif
                         @endforeach
                         <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
@@ -1084,5 +1086,4 @@
     
 });
 </script> -->
-
 @endsection

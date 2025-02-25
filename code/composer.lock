@@ -4316,6 +4316,7 @@
         },
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "serpapi/google-search-results-php",
             "version": "1.2.0",
             "source": {
@@ -4378,6 +4379,8 @@
             "time": "2019-03-31T04:12:00+00:00"
         },
         {
+=======
+>>>>>>> origin/Chonlaphat_1260
             "name": "spatie/laravel-permission",
             "version": "5.11.1",
             "source": {
@@ -4399,6 +4402,7 @@
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
+<<<<<<< HEAD
 =======
             "name": "spatie/laravel-permission",
             "version": "5.11.1",
@@ -4422,6 +4426,8 @@
             },
             "require-dev": {
 >>>>>>> 166358dd9416f09b9f3361a43724d9446a25872f
+=======
+>>>>>>> origin/Chonlaphat_1260
                 "orchestra/testbench": "^5.0|^6.0|^7.0|^8.0",
                 "phpunit/phpunit": "^9.4",
                 "predis/predis": "^1.1"
