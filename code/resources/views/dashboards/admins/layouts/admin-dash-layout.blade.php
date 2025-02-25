@@ -51,11 +51,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <span class="icon-menu"></span>
                     </button>
                 </div>
-                <!-- <div>
+                <!--<div>
                     <a class="navbar-brand brand-logo" href="index.html">
-                        <img src="{{asset('img/logo.png')}}" alt="logo" />
+                        @if(App::getLocale() == 'th')
+                    <img src="{{ asset('img/logo_th.png') }}" alt="logo" />
+                        @elseif(App::getLocale() == 'cn')
+                    <img src="{{ asset('img/logo_cn.png') }}" alt="logo" />
+                        @else
+                    <img src="{{ asset('img/logo.png') }}" alt="logo" />
+                        @endif
                     </a>
-                </div> -->
+
+                </div>-->
             </div>
 
                 <!-- Left navbar links -->
