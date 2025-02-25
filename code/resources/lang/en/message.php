@@ -134,6 +134,8 @@ return [
 
 'Profile_All_Update' => 'Update',
 
+'Organization_support_en' => 'Supporting Organization/Research Project (EN)',
+'Organization_support_cn' => 'Supporting Organization/Research Project (CN)',
 
 
 // ส่วนของ User Profile
@@ -276,6 +278,9 @@ return [
 
 // ส่วนของ Research Group
 'Research_Group_navbar_title' => 'Research Group',
+'Research_group_name_cn' => 'Research Group Name (CN)',
+'Research_group_description_cn' => 'Research Group Descriptions (CN)',
+'Research_group_detail_cn' => 'Research Group Detail (CN)',
 
 // ส่วนของ Research Group (index.blade.php)
 'Add_research_group' => 'Add',
