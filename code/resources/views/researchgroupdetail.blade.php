@@ -14,7 +14,7 @@
             <div class="col-md-4">
                 <div class="card-body">
                     <img src="{{asset('img/'.$rg->group_image)}}" alt="...">
-                    <h1 class="card-text-1"> {{ trans('message.Laboratory Supervisor') }} </h1>
+                    <h1 class="card-text-1">{{ trans('message.laboratorysupervisor') }}</h1>
                     <h2 class="card-text-2">
                         @foreach ($rg->user as $r)
                         @if($r->hasRole('teacher'))

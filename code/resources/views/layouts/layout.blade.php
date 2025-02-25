@@ -81,7 +81,7 @@
                             @elseif(App::getLocale() == 'th')
                                 {{$department->program_name_th}}
                             @elseif(App::getLocale() == 'cn')
-                                {{$department->program_name_zh}}
+                                {{$department->program_name_cn}}
                             @endif</a>
                             </li>
                             @endforeach
@@ -125,7 +125,8 @@
                 </span>
                 @else
                 <span class="nav-item">
-                    <a class="btn-solid-sm" href="/login" target="_blank">Login</a>
+                    <a class="btn-solid-sm" href="/login" target="_blank">{{ trans('message.Login_button') }}</a>
+                    
                 </span>
                 @endauth
                 @endif

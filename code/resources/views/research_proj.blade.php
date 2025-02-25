@@ -2,6 +2,8 @@
 @section('content')
 
 <div class="container refund">
+    @if(app()->getLocale() == 'th')
+    <p>โครงการบริการวิชาการ/ โครงการวิจัย</p>
     <p>{{ trans('message.Academic service projects/research projects') }}</p>
 
     <div class="table-refund table-responsive">
@@ -139,11 +141,30 @@
 <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-<script>
+<!-- <script>
     $(document).ready(function() {
 
         var table1 = $('#example1').DataTable({
             responsive: true,
+        });
+    });
+</script> -->
+<script>
+    $(document).ready(function() {
+        var table1 = $('#example1').DataTable({
+            responsive: true,
+            language: {
+                "emptyTable": "{{ trans('message.No_data_avalible') }}",
+                "info": "{{ trans('message.info') }}",
+                "infoEmpty": "{{ trans('message.infoEmpty') }}",
+                "infoFiltered": "{{ trans('message.infoFiltered') }}",    
+                "lengthMenu": "{{ trans('message.lengthMenu') }}",            
+                "search": "{{ trans('message.search') }}",
+                "paginate": {                    
+                    "next": "{{ trans('message.Next') }}",
+                    "previous": "{{ trans('message.Previous') }}"
+                }
+            }
         });
     });
 </script>

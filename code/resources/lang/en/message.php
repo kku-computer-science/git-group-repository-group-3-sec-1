@@ -28,6 +28,56 @@ return [
 'Laboratory Supervisor' => 'Laboratory Supervisor',
 'Student' => 'Student',
 'Reference' => 'Reference',
+'laboratorysupervisor' => 'Laboratory Supervisor',
+'statistic2page1' => 'Statistics on the number of articles cited',
+'statistic1page1' => 'Total number of articles statistics for 5 years',
+'source' => 'source',
+'summary' => 'SUMMARY',
+'ref' => '[Reference]',
+'researchinterest' => 'Research Interest',
+'book' => 'Book',
+'otheracademicwork' => 'Other academic work',
+'exporttoexcel' => 'Export To Excel',
+'name' => 'Name',
+'licensenumber' => 'License number',
+'registerdate' => 'Register date',
+'type' => 'Type',
+
+//researchprofiles page
+'no' => 'No.',
+'year' => 'Year',
+'papername' => 'Paper Name',
+'author' => 'Author',
+'documenttype' => 'Document Type',
+'page' => 'Page',
+'journals' => 'Journals/Transactions',
+'citations' => 'Citations',
+'doi' => 'Doi',
+'placeofpublication' => 'Place of publication',
+'book' => 'Book',
+'bookseries' => 'Book Series',
+'conferenceproceeding' => 'Conference Proceeding',
+'journal' => 'Journal',
+
+//work type
+'patent' => 'Patent',
+'patentinvention' => 'Patent (Invention)',
+'patentdesign' => 'Patent (Design)',
+'pettypatent' => 'Petty Patent',
+'copyright' => 'Copyright',
+'copyrightliterature' => 'Copyright (Literature)',
+'copyrightmusic' => 'Copyright (Music)',
+'copyrightfilm' => 'Copyright (Film)',
+'copyrightart' => 'Copyright (Art)',
+'copyrightbroadcast' => 'Copyright (Broadcast)',
+'copyrightaudiovisual' => 'Copyright (Audiovisual)',
+'copyrightother' => 'Copyright (Other in Literature/Science/Art)',
+'copyrightsoundrecording' => 'Copyright (Sound Recording)',
+'tradesecret' => 'Trade Secret',
+'trademark' => 'Trademark',
+
+
+
 
 
 // ส่วนของ Login
@@ -73,6 +123,12 @@ return [
 'Profile_Account_AcademicRank' => 'Academic Rank',
 'Profile_Account_AcademicPosition' => 'Academic Position',
 'Profile_Account_TogglePHD' => 'For instructors without a doctoral degree, please specify',
+'Profile_Account_Professor' => 'Professor',
+'Profile_Account_AssociateProfessor' => 'Associate Professor',
+'Profile_Account_AssistantProfessor' => 'Assistant Professor',
+'Profile_Account_Lecturer' => 'Lecturer',
+
+'Profile_All_Update' => 'Update',
 
 
 
@@ -102,6 +158,15 @@ return [
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
 'Other_academic_works_navbar_title' => 'Other academic works',
+
+'No_data_avalible' => 'No data available in table',
+'info' => '',
+'infoEmpty' => 'Showing 0 to 0 of 0 entries',
+'infoFiltered' => '(filtered from MAX total entries)',
+'lengthMenu' => '',
+'search' => 'Search:',
+'Previous' => 'Previous',
+'Next' => 'Next'
 ];
 
 
