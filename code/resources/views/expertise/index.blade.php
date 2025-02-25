@@ -106,7 +106,7 @@
                                 <input type="text" name="expert_name_th" id="expert_name_th" class="form-control" placeholder="Expert_name" onchange="validate()">
                                 <strong>Name in Chinese :</strong>
                                 <input type="text" name="expert_name_cn" id="expert_name_cn" class="form-control" placeholder="Expert_name" onchange="validate()">
-                            </div>33
+                            </div>
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
