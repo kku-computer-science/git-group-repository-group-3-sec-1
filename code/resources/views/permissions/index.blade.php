@@ -11,10 +11,10 @@
         </div>
         @endif
         <div class="card">
-            <div class="card-header">Permissions
+            <div class="card-header">{{ trans('message.Permission_navbar_title') }}
                 @can('permission-create')
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('permissions.create') }}">New Permission</a>
+                    <a class="btn btn-primary" href="{{ route('permissions.create') }}">{{ trans('message.Add_permission') }}</a>
                 </span>
                 @endcan
             </div>
@@ -23,8 +23,8 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th width="280px">Action</th>
+                            <th>{{ trans('message.Permission_name') }}</th>
+                            <th width="280px">{{ trans('message.Permission_action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,6 +79,18 @@
     $(document).ready(function() {
         var table1 = $('#example1').DataTable({
             responsive: true,
+            language: {
+                    "emptyTable": "{{ trans('message.No_data_avalible') }}",
+                    "info": "{{ trans('message.info') }}",
+                    "infoEmpty": "{{ trans('message.infoEmpty') }}",
+                    "infoFiltered": "{{ trans('message.infoFiltered') }}",
+                    "lengthMenu": "{{ trans('message.lengthMenu') }}",
+                    "search": "{{ trans('message.search') }}",
+                    "paginate": {
+                        "next": "{{ trans('message.Next') }}",
+                        "previous": "{{ trans('message.Previous') }}"
+                    }
+                }
         });
     });
 </script>
@@ -88,15 +100,15 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: `{{ trans('message.Fund_warning_delete.warning_title') }}`,
+                text: "{{ trans('message.Fund_warning_delete.warning_text') }}",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("{{ trans('message.Delete_successfully') }}", {
                         icon: "success",
                     }).then(function() {
                         location.reload();

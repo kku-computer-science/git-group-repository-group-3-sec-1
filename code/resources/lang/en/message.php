@@ -364,5 +364,143 @@ return [
 // ส่วนของ ผลงานวิชาการอื่นๆ (edit.blade.php)
 'Edit_other_academic_works' => 'Edit Other Academic Works',
 'Edit_other_academic_works_detail' => 'Edit Other Academic Works Detail',
+
+
+// ========================================== ส่วนของ Admin (Administrator) ==========================================
+// Export navbar
+'Export_navbar_title' => 'Export',
+
+// Admin navbar
+'Admin_navbar_title' => 'Admin',
+
+// ส่วนของ User
+'User_navbar_title' => 'Users',
+
+// ส่วนของ User (index.blade.php)
+'Add_user' => 'New User',
+'Import_new_user' => 'Import New User',
+'User_name' => 'Name',
+'User_department' => 'Department',
+'User_email' => 'Email',
+'User_role' => 'Role',
+'User_action' => 'Action',
+
+// ส่วนของ User (import.blade.php)
+'Import_Excel_CSV_File' => 'Import Excel, CSV File',
+'Choose_file' => 'Choose file',
+
+// ส่วนของ User (create.blade.php)
+'Create_user' => 'Create User',
+'Input_user_detail' => 'Input User Detail',
+'User_fname_th' => 'First Name (TH)',
+'User_lname_th' => 'Last Name (TH)',
+'User_fname_en' => 'First Name (EN)',
+'User_lname_en' => 'Last Name (EN)',
+'User_fname_cn' => 'First Name (CN)',
+'User_lname_cn' => 'Last Name (CN)',
+'User_email' => 'Email',
+'User_passwrord' => 'Password',
+'User_confirm_password' => 'Confirm Password',
+'User_role' => 'Role',
+'User_department' => 'Department',
+'User_program' => 'Program',
+'User_select_category' => 'Select Category',
+'User_select_sub_category' => 'Select Sub-Category',
+
+// ส่วนของ User (show.blade.php)
+'User_detail' => 'User Detail',
+'User_description' => 'Description of the user',
+'User_academic_rank' => 'Academic Rank',
+'User_edu_background' => 'Education Background',
+'User_full_name_th' => 'Full Name (TH)',
+'User_full_name_en' => 'Full Name (EN)',
+'User_full_name_cn' => 'Full Name (CN)',
+
+// ส่วนของ User (edit.blade.php)
+'Edit_user' => 'Edit User',
+'Edit_user_detail' => 'Edit User Detail',
+'User_status' => 'Status',
+'User_status_studying' => 'Studying',
+'User_status_graduated' => 'Graduated',
+
+// ส่วนของ Roles
+'Role_navbar_title' => 'Roles',
+
+// ส่วนของ Role (index.blade.php)
+'Add_role' => 'Add',
+'Role_name' => 'Role Name',
+'Role_action' => 'Action',
+
+// ส่วนของ Role (show.blade.php)
+'Role_detail' => 'Role Detail',
+'Role_permission' => 'Permission',
+
+// ส่วนของ Role (create.blade.php)
+'Create_role' => 'Create Role',
+
+// ส่วนของ Role (edit.blade.php)
+'Edit_role' => 'Edit Role',
+
+// ส่วนของ Permission
+'Permission_navbar_title' => 'Permissions',
+
+// ส่วนของ Permission (index.blade.php)
+'Add_permission' => 'New Permission',
+'Permission_name' => 'Permission Name',
+'Permission_action' => 'Action',
+
+// ส่วนของ Permission (create.blade.php)
+'Create_permission' => 'Create Permission',
+
+// ส่วนของ Permission (edit.blade.php)
+'Edit_permission' => 'Edit Permission',
+
+// ส่วนของ Department
+'Department_navbar_title' => 'Departments',
+
+// ส่วนของ Department (index.blade.php)
+'Add_department' => 'New Department',
+'Department_name' => 'Department Name',
+'Department_action' => 'Action',
+
+// ส่วนของ Department (show.blade.php)
+'Deapartment_Name_TH' => 'Department Name (TH)',
+'Deapartment_Name_EN' => 'Department Name (EN)',
+'Deapartment_Name_CN' => 'Department Name (CN)',
+
+// ส่วนของ Department (create.blade.php)
+'Create_department' => 'Create Department',
+
+// ส่วนของ Department (edit.blade.php)
+'Edit_department' => 'Edit Department',
+
+// ส่วนของ Manage Program
+'Manage_Program_navbar_title' => 'Manage Programs',
+
+// ส่วนของ Manage Program (index.blade.php)
+'Add_program' => 'Add',
+'Program_no' => 'No.',
+'Program_name' => 'Program Name',
+'Program_degree' => 'Degree',
+'Program_action' => 'Action',
+'Program_name_th' => 'Program Name (TH)',
+'Program_name_en' => 'Program Name (EN)',
+'Program_name_cn' => 'Program Name (CN)',
+'Add_new_program' => 'Add New Program',
+'Edit_program' => 'Edit Program',
+'Program_entry_deleted' => 'Program entry deleted successfully',
+
+// ส่วนของ Manage Expertise
+'Manage_Expertise_navbar_title' => 'Manage Expertise',
+
+// ส่วนของ Manage Expertise (index.blade.php)
+'Expertise_no' => 'No.',
+'Expertise_teacher_name' => 'Teacher Name',
+'Expertise_name' => 'Expertise Name',
+'Expertise_action' => 'Action',
+'Add_new_expertise' => 'Add New Expertise',
+'Edit_expertise' => 'Edit Expertise',
 ];
+
+
 

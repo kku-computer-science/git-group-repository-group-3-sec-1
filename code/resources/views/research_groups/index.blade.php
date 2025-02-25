@@ -129,7 +129,7 @@
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("{{ trans('message.Delete_successfully') }}", {
                         icon: "success",
                     }).then(function() {
                         location.reload();

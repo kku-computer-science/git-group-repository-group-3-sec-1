@@ -366,4 +366,139 @@ return [
 'Edit_other_academic_works' => 'แก้ไขผลงานวิชาการอื่นๆ',
 'Edit_other_academic_works_detail' => 'แก้ไขรายละเอียดผลงานวิชาการอื่นๆ',
 
+// ========================================== ส่วนของ Admin (Administrator) ==========================================
+// Export navbar
+'Export_navbar_title' => 'ส่งออก',
+
+// Admin navbar
+'Admin_navbar_title' => 'ผู้ดูแลระบบ',
+
+// ส่วนของ User
+'User_navbar_title' => 'ผู้ใช้',
+
+// ส่วนของ User (index.blade.php)
+'Add_user' => 'เพิ่มผู้ใช้',
+'Import_new_user' => 'นำเข้าผู้ใช้ใหม่',
+'User_name' => 'ชื่อผู้ใช้',
+'User_department' => 'สาขาวิชา',
+'User_email' => 'อีเมล',
+'User_role' => 'บทบาท',
+'User_action' => 'ดำเนินการ',
+
+// ส่วนของ User (import.blade.php)
+'Import_Excel_CSV_File' => 'นำเข้าไฟล์ Excel หรือ CSV',
+'Choose_file' => 'เลือกไฟล์',
+
+// ส่วนของ User (create.blade.php)
+'Create_user' => 'สร้างผู้ใช้',
+'Input_user_detail' => 'กรอกรายละเอียดผู้ใช้',
+'User_fname_th' => 'ชื่อ (ไทย)',
+'User_lname_th' => 'นามสกุล (ไทย)',
+'User_fname_en' => 'ชื่อ (อังกฤษ)',
+'User_lname_en' => 'นามสกุล (อังกฤษ)',
+'User_fname_cn' => 'ชื่อ (จีน)',
+'User_lname_cn' => 'นามสกุล (จีน)',
+'User_email' => 'อีเมล',
+'User_passwrord' => 'รหัสผ่าน',
+'User_confirm_password' => 'ยืนยันรหัสผ่าน',
+'User_role' => 'บทบาท',
+'User_department' => 'สาขาวิชา',
+'User_program' => 'หลักสูตร',
+'User_select_category' => 'เลือกสาขาวิชา',
+'User_select_sub_category' => 'เลือกหลักสูตร',
+
+// ส่วนของ User (show.blade.php)
+'User_detail' => 'รายละเอียดผู้ใช้',
+'User_description' => 'รายละเอียดของผู้ใช้',
+'User_academic_rank' => 'ตำแหน่งทางวิชาการ',
+'User_edu_background' => 'วุฒิการศึกษา',
+'User_full_name_th' => 'ชื่อเต็ม (ไทย)',
+'User_full_name_en' => 'ชื่อเต็ม (อังกฤษ)',
+'User_full_name_cn' => 'ชื่อเต็ม (จีน)',
+
+// ส่วนของ User (edit.blade.php)
+'Edit_user' => 'แก้ไขผู้ใช้',
+'Edit_user_detail' => 'แก้ไขรายละเอียดผู้ใช้',
+'User_status' => 'สถานะ',
+'User_status_studying' => 'กำลังศึกษา',
+'User_status_graduated' => 'จบการศึกษา',
+
+// ส่วนของ Roles
+'Role_navbar_title' => 'บทบาท',
+
+// ส่วนของ Role (index.blade.php)
+'Add_role' => 'เพิ่ม',
+'Role_name' => 'ชื่อบทบาท',
+'Role_action' => 'ดำเนินการ',
+
+// ส่วนของ Role (show.blade.php)
+'Role_detail' => 'รายละเอียดบทบาท',
+'Role_permission' => 'สิทธิ์การใช้งาน',
+
+// ส่วนของ Role (create.blade.php)
+'Create_role' => 'สร้างบทบาท',
+
+// ส่วนของ Role (edit.blade.php)
+'Edit_role' => 'แก้ไขบทบาท',
+
+// ส่วนของ Permission
+'Permission_navbar_title' => 'สิทธิ์การใช้งาน',
+
+// ส่วนของ Permission (index.blade.php)
+'Add_permission' => 'เพิ่ม',
+'Permission_name' => 'ชื่อสิทธิ์การใช้งาน',
+'Permission_action' => 'ดำเนินการ',
+
+// ส่วนของ Permission (create.blade.php)
+'Create_permission' => 'สร้างสิทธิ์การใช้งาน',
+
+// ส่วนของ Permission (edit.blade.php)
+'Edit_permission' => 'แก้ไขสิทธิ์การใช้งาน',
+
+// ส่วนของ Department
+'Department_navbar_title' => 'สาขาวิชา',
+
+// ส่วนของ Department (index.blade.php)
+'Add_department' => 'เพิ่มสาขาวิชา',
+'Department_name' => 'ชื่อสาขาวิชา',
+'Department_action' => 'ดำเนินการ',
+
+// ส่วนของ Department (show.blade.php)
+'Deapartment_Name_TH' => 'ชื่อสาขาวิชา (ไทย)',
+'Deapartment_Name_EN' => 'ชื่อสาขาวิชา (อังกฤษ)',
+'Deapartment_Name_CN' => 'ชื่อสาขาวิชา (จีน)',
+
+// ส่วนของ Department (create.blade.php)
+'Create_department' => 'สร้างสาขาวิชา',
+
+// ส่วนของ Department (edit.blade.php)
+'Edit_department' => 'แก้ไขสาขาวิชา',
+
+// ส่วนของ Manage Program
+'Manage_Program_navbar_title' => 'จัดการหลักสูตร',
+
+// ส่วนของ Manage Program (index.blade.php)
+'Add_program' => 'เพิ่ม',
+'Program_no' => 'ลำดับที่',
+'Program_name' => 'ชื่อหลักสูตร',
+'Program_degree' => 'ระดับการศึกษา',
+'Program_action' => 'ดำเนินการ',
+'Program_name_th' => 'ชื่อหลักสูตร (ไทย)',
+'Program_name_en' => 'ชื่อหลักสูตร (อังกฤษ)',
+'Program_name_cn' => 'ชื่อหลักสูตร (จีน)',
+'Add_new_program' => 'เพิ่มหลักสูตรใหม่',
+'Edit_program' => 'แก้ไขหลักสูตร',
+'Program_entry_deleted' => 'ลบข้อมูลเรียบร้อยแล้ว',
+
+// ส่วนของ Manage Expertise
+'Manage_Expertise_navbar_title' => 'จัดการความเชี่ยวชาญ',
+
+// ส่วนของ Manage Expertise (index.blade.php)
+'Expertise_no' => 'ลำดับที่',
+'Expertise_teacher_name' => 'ชื่ออาจารย์',
+'Expertise_name' => 'ความเชี่ยวชาญ',
+'Expertise_action' => 'ดำเนินการ',
+'Add_new_expertise' => 'เพิ่มความเชี่ยวชาญใหม่',
+'Edit_expertise' => 'แก้ไขความเชี่ยวชาญ',
+
 ];

@@ -363,4 +363,139 @@ return [
 // ส่วนของ ผลงานวิชาการอื่นๆ (edit.blade.php)
 'Edit_other_academic_works' => '编辑其他学术作品',
 'Edit_other_academic_works_detail' => '编辑其他学术作品详情',
+
+// ========================================== ส่วนของ Admin (Administrator) ==========================================
+// Export navbar
+'Export_navbar_title' => '导出',
+
+// Admin navbar
+'Admin_navbar_title' => '管理员',
+
+// ส่วนของ User
+'User_navbar_title' => '用户',
+
+// ส่วนของ User (index.blade.php)
+'Add_user' => '添加',
+'Import_new_user' => '导入新用户',
+'User_name' => '用户名',
+'User_department' => '部门',
+'User_email' => '电子邮件',
+'User_role' => '角色',
+'User_action' => '操作',
+
+// ส่วนของ User (import.blade.php)
+'Import_Excel_CSV_File' => '导入Excel或CSV文件',
+'Choose_file' => '选择文件',
+
+// ส่วนของ User (create.blade.php)
+'Create_user' => '创建用户',
+'Input_user_detail' => '输入用户详情',
+'User_fname_th' => '名字 (泰文)',
+'User_lname_th' => '姓氏 (泰文)',
+'User_fname_en' => '名字 (英文)',
+'User_lname_en' => '姓氏 (英文)',
+'User_fname_cn' => '名字 (中文)',
+'User_lname_cn' => '姓氏 (中文)',
+'User_email' => '电子邮件',
+'User_passwrord' => '密码',
+'User_confirm_password' => '确认密码',
+'User_role' => '角色',
+'User_department' => '部门',
+'User_program' => '项目',
+'User_select_category' => '选择类别',
+'User_select_sub_category' => '选择子类别',
+
+// ส่วนของ User (show.blade.php)
+'User_detail' => '用户详情',
+'User_description' => '用户描述',
+'User_academic_rank' => '学术级别',
+'User_edu_background' => '教育背景',
+'User_full_name_th' => '名字 (泰文)',
+'User_full_name_en' => '名字 (英文)',
+'User_full_name_cn' => '名字 (中文)',
+
+// ส่วนของ User (edit.blade.php)
+'Edit_user' => '编辑用户',
+'Edit_user_detail' => '编辑用户详情',
+'User_status' => '状态',
+'User_status_studying' => '在读',
+'User_status_graduated' => '毕业',
+
+// ส่วนของ Roles
+'Role_navbar_title' => '角色',
+
+// ส่วนของ Role (index.blade.php)
+'Add_role' => '添加',
+'Role_name' => '角色名称',
+'Role_action' => '操作',
+
+// ส่วนของ Role (show.blade.php)
+'Role_detail' => '角色详情',
+'Role_permission' => '权限',
+
+// ส่วนของ Role (create.blade.php)
+'Create_role' => '创建角色',
+
+// ส่วนของ Role (edit.blade.php)
+'Edit_role' => '编辑角色',
+
+// ส่วนของ Permission
+'Permission_navbar_title' => '权限',
+
+// ส่วนของ Permission (index.blade.php)
+'Add_permission' => '添加',
+'Permission_name' => '权限名称',
+'Permission_action' => '操作',
+
+// ส่วนของ Permission (create.blade.php)
+'Create_permission' => '创建权限',
+
+// ส่วนของ Permission (edit.blade.php)
+'Edit_permission' => '编辑权限',
+
+// ส่วนของ Department
+'Department_navbar_title' => '部门',
+
+// ส่วนของ Department (index.blade.php)
+'Add_department' => '添加',
+'Department_name' => '部门名称',
+'Department_action' => '操作',
+
+// ส่วนของ Department (show.blade.php)
+'Deapartment_Name_TH' => '部门名称 (泰文)',
+'Deapartment_Name_EN' => '部门名称 (英文)',
+'Deapartment_Name_CN' => '部门名称 (中文)',
+
+// ส่วนของ Department (create.blade.php)
+'Create_department' => '创建部门',
+
+// ส่วนของ Department (edit.blade.php)
+'Edit_department' => '编辑部门',
+
+// ส่วนของ Manage Program
+'Manage_Program_navbar_title' => '管理项目',
+
+// ส่วนของ Manage Program (index.blade.php)
+'Add_program' => '添加',
+'Program_no' => '编号',
+'Program_name' => '项目名称',
+'Program_degree' => '学位',
+'Program_action' => '操作',
+'Program_name_th' => '项目名称 (泰文)',
+'Program_name_en' => '项目名称 (英文)',
+'Program_name_cn' => '项目名称 (中文)',
+'Add_new_program' => '添加新项目',
+'Edit_program' => '编辑项目',
+'Program_entry_deleted' => '项目条目已删除',
+
+// ส่วนของ Manage Expertise
+'Manage_Expertise_navbar_title' => '管理专长',
+
+// ส่วนของ Manage Expertise (index.blade.php)
+'Expertise_no' => '编号',
+'Expertise_teacher_name' => '教师名称',
+'Expertise_name' => '专长名称',
+'Expertise_action' => '操作',
+'Add_new_expertise' => '添加新专长',
+'Edit_expertise' => '编辑专长',
 ];
