@@ -52,7 +52,13 @@
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Add_detail_fund_by') }}</b></p>
+                    @if (App::getLocale() == 'th')
                     <p class="card-text col-sm-9">{{ $fund->user->fname_th }} {{ $fund->user->lname_th }}</p>
+                    @elseif (App::getLocale() == 'en')
+                    <p class="card-text col-sm-9">{{ $fund->user->fname_en }} {{ $fund->user->lname_en }}</p>
+                    @elseif (App::getLocale() == 'cn')
+                    <p class="card-text col-sm-9">{{ $fund->user->fname_cn }} {{ $fund->user->lname_cn }}</p>
+                    @endif
                 </div>
                 <div class="pull-right mt-5">
                     <a class="btn btn-primary btn-sm" href="{{ route('funds.index') }}">

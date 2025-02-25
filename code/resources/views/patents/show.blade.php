@@ -123,6 +123,7 @@
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Other_academic_works_author') }}</b></p>
+                    @if (App::getLocale() == 'th')
                     <p class="card-text col-sm-9">
                         @foreach ($patent->user as $a)
                             {{ $a->fname_th }} {{ $a->lname_th }}
@@ -131,6 +132,26 @@
                             @endif
                         @endforeach
                     </p>
+                    @elseif (App::getLocale() == 'en')
+                    <p class="card-text col-sm-9">
+                        @foreach ($patent->user as $a)
+                            {{ $a->fname_en }} {{ $a->lname_en }}
+                            @if (!$loop->last)
+                                ,
+                            @endif
+                        @endforeach
+                    </p>
+                    @elseif (App::getLocale() == 'cn')
+                    <p class="card-text col-sm-9">
+                        @foreach ($patent->user as $a)
+                            {{ $a->fname_cn }} {{ $a->lname_cn }}
+                            @if (!$loop->last)
+                                ,
+                            @endif
+                        @endforeach
+                    </p>
+                    @endif
+
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Other_academic_works_co-author') }}</b></p>

@@ -217,7 +217,7 @@ return [
 'Input_research_fund_detail' => '输入研究基金详情',
 'Please_choose_fund_type' => '请选择基金类型',
 'Please_choose_fund_level' => '请选择基金级别',
-'Organization_support' => '支持组织/研究项目',
+'Organization_support' => '支持组织/研究项目 (中国人)',
 'Fund_level_not_define' => '未定义',
 'Fund_level_low' => '低',
 'Fund_level_medium' => '中',
@@ -297,6 +297,7 @@ return [
 'Research_group_description' => '小组描述',
 'Research_group_name_th' => '小组名称（泰文）',
 'Research_group_name_en' => '小组名称（英文）',
+'Research_group_name_cn' => '小组名称（中国人）',
 'Research_group_description_th' => '小组描述（泰文）',
 'Research_group_description_en' => '小组描述（英文）',
 'Research_group_detail_th' => '小组详情（泰文）',
@@ -323,6 +324,7 @@ return [
 
 // ส่วนของ Book
 'Book_navbar_title' => '书籍',
+
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
 'Other_academic_works_navbar_title' => '其他学术作品',
@@ -413,7 +415,9 @@ return [
 'Book_no' => '编号',
 'Book_title' => '标题',
 'Book_year' => '出版年份',
-'Book_source' => '来源',
+'Book_source' => '来源(泰国)',
+'Book_source_en' => '来源(中国人)',
+'Book_source_cn' => '来源(英语)',
 'Book_page' => '页数',
 'Book_action' => '操作',
 

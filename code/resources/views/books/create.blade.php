@@ -49,6 +49,14 @@
                         <div class="col-sm-9">
                             <input type="text" name="ac_sourcetitle" class="form-control" placeholder="{{ trans('message.Book_source') }}">
                         </div>
+                        <label for="exampleInputac_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Book_source_en') }}</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="ac_sourcetitle" class="form-control" placeholder="{{ trans('message.Book_source_en') }}">
+                        </div>
+                        <label for="exampleInputac_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Book_source_cn') }}</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="ac_sourcetitle" class="form-control" placeholder="{{ trans('message.Book_source_cn') }}">
+                        </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleInputac_year" class="col-sm-3 col-form-label">{{ trans('message.Book_year') }}</label>

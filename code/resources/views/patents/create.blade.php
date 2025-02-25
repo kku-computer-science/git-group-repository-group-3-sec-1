@@ -99,8 +99,16 @@
                                 <table class="table table-hover small-text" id="dynamicAddRemove">
                                     <tr>
                                         <td><select id='selUser0' style='width: 200px;' name="moreFields[0][userid]">
+                                        @if (App::getLocale() == 'th')
                                                 <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}
                                                 </option>@endforeach
+                                                @elseif(App::getLocale() == 'en')
+                                                <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}
+                                                </option>@endforeach
+                                                @elseif(App::getLocale() == 'cn')
+                                                <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}
+                                                </option>@endforeach
+                                                @endif
                                             </select>
                                         </td>
                                         <td><button type="button" name="add" id="add-btn2" class="btn btn-success btn-sm"><i class="fas fa-plus"></i></button>
@@ -123,7 +131,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <!-- <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
+                                <input type="button" name="submit" id="submit" class="btn btn-info" value="Submit" />
                             </div>
                         </div>
                     </div> -->
@@ -159,6 +167,7 @@
     </div>
 </div>
 
+@if (App::getLocale() == 'th')
 <script>
     $(document).ready(function() {
         $("#selUser0").select2()
@@ -180,6 +189,51 @@
 
     });
 </script>
+@elseif(App::getLocale() == 'en')
+<script>
+    $(document).ready(function() {
+        $("#selUser0").select2()
+        $("#head0").select2()
+
+        var i = 0;
+
+        $("#add-btn2").click(function() {
+
+            ++i;
+            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
+                '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr">X</i></button></td></tr>'
+            );
+            $("#selUser" + i).select2()
+        });
+        $(document).on('click', '.remove-tr', function() {
+            $(this).parents('tr').remove();
+        });
+
+    });
+</script>
+@elseif(App::getLocale() == 'cn')
+<script>
+    $(document).ready(function() {
+        $("#selUser0").select2()
+        $("#head0").select2()
+
+        var i = 0;
+
+        $("#add-btn2").click(function() {
+
+            ++i;
+            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
+                '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr">X</i></button></td></tr>'
+            );
+            $("#selUser" + i).select2()
+        });
+        $(document).on('click', '.remove-tr', function() {
+            $(this).parents('tr').remove();
+        });
+
+    });
+</script>
+@endif
 <script>
         $(document).ready(function() {
             $('#addMore2').on('click', function() {
