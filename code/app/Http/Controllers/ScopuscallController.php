@@ -20,6 +20,7 @@ class ScopuscallController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function create($id)
     {
         set_time_limit(120);  // เพิ่มเวลาในการประมวลผลเป็น 120 วินาที (2 นาที)

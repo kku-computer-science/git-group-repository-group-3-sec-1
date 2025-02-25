@@ -9,7 +9,7 @@ class Program extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'program_name_th','program_name_en'
+        'program_name_th','program_name_en','program_name_zh','degree_id','department_id'
     ];
     public function users()
     {
