@@ -53,7 +53,11 @@
                         @if(Auth::user()->hasRole('admin'))
                         <td>{{ $expert->user->fname_en }} {{ $expert->user->lname_en }}</td>
                         @endif
-                        <td>{{ $expert->expert_name }}</td>
+                        <td><p>{{ $expert->expert_name }}</p>
+                        <p>{{ $expert->expert_name_th}}</p>
+                        <p>{{ $expert->expert_name_cn}}</p>
+                        </td>
+
 
                         <td>
                             <form action="{{ route('experts.destroy',$expert->id) }}" method="POST">
@@ -96,9 +100,13 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
+                                <strong>Name in English :</strong>
                                 <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="Expert_name" onchange="validate()">
-                            </div>
+                                <strong>Name in Thai :</strong>
+                                <input type="text" name="expert_name_th" id="expert_name_th" class="form-control" placeholder="Expert_name" onchange="validate()">
+                                <strong>Name in Chinese :</strong>
+                                <input type="text" name="expert_name_cn" id="expert_name_cn" class="form-control" placeholder="Expert_name" onchange="validate()">
+                            </div>33
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -154,6 +162,8 @@
                 $('#crud-modal').modal('show');
                 $('#exp_id').val(data.id);
                 $('#expert_name').val(data.expert_name);
+                $('#expert_name_th').val(data.expert_name_th);
+                $('#expert_name_cn').val(data.expert_name_cn);
 
             })
         });
