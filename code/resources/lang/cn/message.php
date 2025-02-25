@@ -37,6 +37,56 @@ return [
 'publications' => '出版物（过去5年）',
 'education'=>'教育',
 'publications2' => '出版物',
+'laboratorysupervisor' => '实验室主管',
+'statistic2page1' => '文章被引次数统计',
+'statistic1page1' => '5年总文章数统计',
+'source' => '来源',
+'summary' => '全面的',
+'ref' => '[参考]',
+'researchinterest' => '研究兴趣',
+'book' => '书籍',
+'otheracademicwork' => '其他学术作品',
+'exporttoexcel' => '导出到文件 Excel',
+'name' => '姓名',
+'licensenumber' => '注册编号',
+'registerdate' => '注册日期',
+'type' => '类型',
+
+//researchprofiles page
+'no' => '编号',
+'year' => '年份',
+'papername' => '论文名称',
+'author' => '作者',
+'documenttype' => '文档类型',
+'page' => '页数',
+'journals' => '期刊/交易',
+'citations' => '引用',
+'doi' => 'DOI',
+'placeofpublication' => '出版地',
+'book' => '书籍',
+'bookseries' => '丛书',
+'conferenceproceeding' => '会议论文集',
+'journal' => '期刊',
+
+//work type
+'patent' => '专利',
+'patentinvention' => '专利 (发明)',
+'patentdesign' => '专利 (产品设计)',
+'pettypatent' => '小型专利',
+'copyright' => '版权',
+'copyrightliterature' => '版权 (文学作品)',
+'copyrightmusic' => '版权 (音乐作品)',
+'copyrightfilm' => '版权 (电影作品)',
+'copyrightart' => '版权 (艺术作品)',
+'copyrightbroadcast' => '版权 (广播作品)',
+'copyrightaudiovisual' => '版权 (视听作品)',
+'copyrightother' => '版权 (文学/科学/艺术类其他作品)',
+'copyrightsoundrecording' => '版权 (录音作品)',
+'tradesecret' => '商业机密',
+'trademark' => '商标',
+
+
+
 
 // ส่วนของ Login
 'Account_Login' => '帐户登录',
@@ -80,7 +130,12 @@ return [
 'Profile_Account_AcademicRank' => '学术等级',
 'Profile_Account_AcademicPosition' => '学术职位',
 'Profile_Account_TogglePHD' => '对于没有博士学位的教师，请注明',
+'Profile_Account_Professor' => '教授',
+'Profile_Account_AssociateProfessor' => '副教授',
+'Profile_Account_AssistantProfessor' => '助理教授',
+'Profile_Account_Lecturer' => '讲师',
 
+'Profile_All_Update' => '更新',
 
 // ส่วนของ User Profile
 'User_Profile_navbar_title' => '用户资料',
@@ -108,4 +163,13 @@ return [
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
 'Other_academic_works_navbar_title' => '其他学术作品',
+
+'No_data_avalible' => '表格中没有可用的数据',  // (Biao ge zhong mei you ke yong de shu ju)
+  'info' => '',
+  'infoEmpty' => '显示0到0条，总共0条记录',  // (Xian shi 0 dao 0 tiao, zong gong 0 tiao ji lu)
+  'infoFiltered' => '(从MAX条总记录中筛选)',  // (Cong MAX tiao zong ji lu zhong shai xuan)
+  'lengthMenu' => '',
+  'search' => '搜索:',  // (Sou suo:)
+  'Previous' => '上一页',  // (Shang yi ye)
+  'Next' => '下一页'  // (Xia yi ye)
 ];
