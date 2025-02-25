@@ -137,6 +137,9 @@ return [
 
 'Profile_All_Update' => '更新',
 
+'Organization_support_en' => '支持机构 / 研究项目 (英语)',
+'Organization_support_cn' => '支持机构 / 研究项目 (中国)',
+
 // ส่วนของ User Profile
 'User_Profile_navbar_title' => '用户资料',
 
@@ -151,6 +154,9 @@ return [
 
 // ส่วนของ Research Group
 'Research_Group_navbar_title' => '研究小组',
+'Research_group_name_cn' => '研究小组名称',
+'Research_group_description_cn' => '研究小组简介',
+'Research_group_detail_cn' => '研究小组详情',
 
 // ส่วนของ Manage Publication
 'Manage_Publication_navbar_title' => '管理出版物',

@@ -128,6 +128,9 @@ return [
 
 'Profile_All_Update' => 'อัพเดท',
 
+'Organization_support_en' => 'องค์กรสนับสนุน/โครงการวิจัย (ภาษาอังกฤษ)',
+'Organization_support_cn' => 'องค์กรสนับสนุน/โครงการวิจัย (ภาษาจีน)',
+
 // ส่วนของ User Profile
 'User_Profile_navbar_title' => 'โปรไฟล์ของผู้ใช้',
 
@@ -142,6 +145,9 @@ return [
 
 // ส่วนของ Research Group
 'Research_Group_navbar_title' => 'กลุ่มวิจัย',
+'Research_group_name_cn' => 'ชื่อกลุ่มวิจัย (ภาษาจีน)',
+'Research_group_description_cn' => 'คำอธิบายกลุ่มวิจัย (ภาษาจีน)',
+'Research_group_detail_cn' => 'รายละเอียดกลุ่มวิจัย (ภาษาจีน)',
 
 // ส่วนของ Manage Publication
 'Manage_Publication_navbar_title' => 'จัดการผลงานตีพิมพ์',
