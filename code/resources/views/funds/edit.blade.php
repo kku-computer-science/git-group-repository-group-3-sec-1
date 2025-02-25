@@ -64,6 +64,14 @@
                         <div class="col-sm-8">
                             <input type="text" name="support_resource" value="{{ $fund->support_resource }}" class="form-control" placeholder="{{ trans('message.Organization_support') }}">
                         </div>
+                        <p class="col-sm-3 "><b>{{ trans('message.Organization_support_en') }}</b></p>
+                        <div class="col-sm-8">
+                            <input type="text" name="support_resource" value="{{ $fund->support_resource_en }}" class="form-control" placeholder="{{ trans('message.Organization_support_en') }}">
+                        </div>
+                        <p class="col-sm-3 "><b>{{ trans('message.Organization_support_cn') }}</b></p>
+                        <div class="col-sm-8">
+                            <input type="text" name="support_resource" value="{{ $fund->support_resource_cn }}" class="form-control" placeholder="{{ trans('message.Organization_support_cn') }}">
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary mt-5">{{ trans('message.Submit_button') }}</button>
                     <a class="btn btn-light mt-5" href="{{ route('funds.index')}}">{{ trans('message.Cancle_button') }}</a>

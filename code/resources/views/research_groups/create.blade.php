@@ -33,6 +33,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <p class="col-sm-3 "><b>{{ trans('message.Research_group_name_cn') }}</b></p>
+                    <div class="col-sm-8">
+                        <input name="group_name_en" value="{{ old('group_name_cn') }}" class="form-control"
+                            placeholder="{{ trans('message.Research_group_name_cn') }}">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <p class="col-sm-3"><b>{{ trans('message.Research_group_description_th') }}</b></p>
                     <div class="col-sm-8">
                         <textarea name="group_desc_th" value="{{ old('group_desc_th') }}" class="form-control"
@@ -43,6 +50,13 @@
                     <p class="col-sm-3"><b>{{ trans('message.Research_group_description_en') }}</b></p>
                     <div class="col-sm-8">
                         <textarea name="group_desc_en" value="{{ old('group_desc_en') }}" class="form-control"
+                            style="height:90px"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p class="col-sm-3"><b>{{ trans('message.Research_group_description_cn') }}</b></p>
+                    <div class="col-sm-8">
+                        <textarea name="group_desc_cn" value="{{ old('group_desc_cn') }}" class="form-control"
                             style="height:90px"></textarea>
                     </div>
                 </div>
@@ -61,6 +75,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <p class="col-sm-3"><b>{{ trans('message.Research_group_detail_cn') }}</b></p>
+                    <div class="col-sm-8">
+                        <textarea name="group_detail_cn" value="{{ old('group_detail_cn') }}" class="form-control"
+                            style="height:90px"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <p class="col-sm-3"><b>{{ trans('message.Research_group_image') }}</b></p>
                     <div class="col-sm-8">                        
                         <input type="file" name="group_image" class="form-control" value="{{ old('group_image') }}">                        
@@ -72,7 +93,13 @@
                         <select id='head0' name="head">
                             @foreach($users as $user)
                             <option value="{{ $user->id }}">
-                                {{ $user->fname_th }} {{ $user->lname_th }}
+                                    @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}} {{ $user->lname_en}}
+                                    @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}} {{ $user->lname_th}}
+                                    @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}} {{ $user->lname_cn}}
+                                    @endif
                             </option>
                             @endforeach
                         </select>
@@ -125,6 +152,7 @@ $("body").on("click",".upload",function(e){
     });
   }
 </script> -->
+@if(App::getLocale() == 'th')
 <script>
 $(document).ready(function() {
     $("#selUser0").select2()
@@ -146,4 +174,49 @@ $(document).ready(function() {
 
 });
 </script>
+@elseif(App::getLocale() == 'en')
+<script>
+$(document).ready(function() {
+    $("#selUser0").select2()
+    $("#head0").select2()
+
+    var i = 0;
+
+    $("#add-btn2").click(function() {
+
+        ++i;
+        $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
+            '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="fas fa-minus"></i></button></td></tr>'
+            );
+        $("#selUser" + i).select2()
+    });
+    $(document).on('click', '.remove-tr', function() {
+        $(this).parents('tr').remove();
+    });
+
+});
+</script>
+@elseif(App::getLocale() == 'cn')
+<script>
+$(document).ready(function() {
+    $("#selUser0").select2()
+    $("#head0").select2()
+
+    var i = 0;
+
+    $("#add-btn2").click(function() {
+
+        ++i;
+        $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
+            '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="fas fa-minus"></i></button></td></tr>'
+            );
+        $("#selUser" + i).select2()
+    });
+    $(document).on('click', '.remove-tr', function() {
+        $(this).parents('tr').remove();
+    });
+
+});
+</script>
+@endif
 @stop

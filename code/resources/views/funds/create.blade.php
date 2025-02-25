@@ -68,6 +68,18 @@
                             <input type="text" name="support_resource" class="form-control" placeholder="{{ trans('message.Organization_support') }}">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="exampleInputsupport_resource" class="col-sm-2 ">{{ trans('message.Organization_support_en') }} </label>
+                        <div class="col-sm-8">
+                            <input type="text" name="support_resource_en" class="form-control" placeholder="{{ trans('message.Organization_support_en') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputsupport_resource" class="col-sm-2 ">{{ trans('message.Organization_support_cn') }} </label>
+                        <div class="col-sm-8">
+                            <input type="text" name="support_resource_cn" class="form-control" placeholder="{{ trans('message.Organization_support_cn') }}">
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-primary me-2">{{ trans('message.Submit_button') }}</button>
                     <a class="btn btn-light" href="{{ route('funds.index')}}">{{ trans('message.Cancle_button') }}</a>
                 </form>
