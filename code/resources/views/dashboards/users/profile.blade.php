@@ -53,8 +53,9 @@
                 @endif
             </div>
         </div>
-
         <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+            <!-- <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab"> -->
+            <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
             <!-- <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab"> -->
             <div class="tab-pane " id="account" role="tabpanel" aria-labelledby="account-tab">
                 <h3 class="mb-4">{{ trans('message.Profile_Account_ProfileSetting') }}</h3>
@@ -219,10 +220,29 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>{{ trans('message.Profile_Account_AcademicPosition') }}</label>
+                                <select name="academic_ranks_cn" id="subcategory" class="custom-select my-select">
+                                    <optgroup id="Professor" label="Professor">
+                                        <option value="教授" {{ Auth::user()->academic_ranks_cn == '教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Professor') }}</option>
+                                    </optgroup>
+                                    <optgroup id="Associate Professor" label="Associate Professor">
+                                        <option value="副教授" {{ Auth::user()->academic_ranks_cn == '副教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssociateProfessor') }}</option>
+                                    </optgroup>
+                                    <optgroup id="Assistant Professor" label="Assistant Professor">
+                                        <option value="助理教授" {{ Auth::user()->academic_ranks_cn == '助理教授' ? 'selected' : '' }}>{{ trans('message.Profile_Account_AssistantProfessor') }}</option>
+                                    </optgroup>
+                                    <optgroup id="Lecturer" label="Lecturer">
+                                        <option value="讲师" {{ Auth::user()->academic_ranks_cn == '讲师' ? 'selected' : '' }}>{{ trans('message.Profile_Account_Lecturer') }}</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div> -->
                         <div class="col-md-4">
                             <div class="form-group">
                                 <div class="checkbox">
-                                    <label><input name="pos" type="checkbox" value="check2" />{{ trans('message.Not_hold_doctoral_degree') }}</label>
+                                    <label><input name="pos" type="checkbox" value="check2" />{{ trans('message.Profile_Account_TogglePHD') }}</label>
                                 </div>
 
                             </div>
@@ -230,10 +250,10 @@
                         @endif
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-primary">{{ trans('message.Update_button') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ trans('message.Profile_All_Update') }}</button>
                     </div>
                 </form>
-            </div> -->
+            </div>
 
 
             <div class="tab-pane fade " id="password" role="tabpanel" aria-labelledby="password-tab">
