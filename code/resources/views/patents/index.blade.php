@@ -138,17 +138,17 @@
                                     <td>{{ $paper->ac_refnumber, 50 }}</td>
                                     <td>
                                         @foreach ($paper->user as $a)
-        @if(App::getLocale() == 'th')
-            {{ $a->fname_th }} {{ $a->lname_th }}
-        @elseif(App::getLocale() == 'en')
-            {{ $a->fname_en }} {{ $a->lname_en }}
-        @elseif(App::getLocale() == 'cn')
-            {{ $a->fname_cn }} {{ $a->lname_cn }}
-        @endif
-        @if (!$loop->last)
-            ,
-        @endif
-    @endforeach
+                                            @if (App::getLocale() == 'th')
+                                                {{ $a->fname_th }} {{ $a->lname_th }}
+                                            @elseif(App::getLocale() == 'en')
+                                                {{ $a->fname_en }} {{ $a->lname_en }}
+                                            @elseif(App::getLocale() == 'cn')
+                                                {{ $a->fname_cn }} {{ $a->lname_cn }}
+                                            @endif
+                                            @if (!$loop->last)
+                                                ,
+                                            @endif
+                                        @endforeach
                                     </td>
                                     <td>
                                         <form action="{{ route('patents.destroy', $paper->id) }}" method="POST">
