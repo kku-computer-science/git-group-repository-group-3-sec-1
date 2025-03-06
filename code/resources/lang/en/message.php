@@ -10,6 +10,74 @@ return [
 'publications' => 'Publications (In the Last 5 Years)',
 'education'=>'Education',
 'publications2' => 'Publications',
+'Number' => 'Number',
+'Project name' => 'Project name',
+'Year' => 'Year',
+'Details' => 'Details',
+'Academic service projects/research projects' => 'Academic service projects/research projects',
+'Project responsible person' => 'Project responsible person',
+'Project Duration' => 'Project Duration',
+'Type of Research Funding' => 'Type of Research Funding',
+'Funding Agency' => 'Funding Agency',
+'Responsible Agency' => 'Responsible Agency',
+'Allocated Budget' => 'Allocated Budget',
+'Submit a Request' => 'Submit a Request',
+'Proceed' => 'Proceed',
+'Project Closed' => 'Project Closed',
+'Search' => 'Search',
+'Laboratory Supervisor' => 'Laboratory Supervisor',
+'Student' => 'Student',
+'Reference' => 'Reference',
+'laboratorysupervisor' => 'Laboratory Supervisor',
+'statistic2page1' => 'Statistics on the number of articles cited',
+'statistic1page1' => 'Total number of articles statistics for 5 years',
+'source' => 'source',
+'summary' => 'SUMMARY',
+'ref' => '[Reference]',
+'researchinterest' => 'Research Interest',
+'book' => 'Book',
+'otheracademicwork' => 'Other academic work',
+'exporttoexcel' => 'Export To Excel',
+'name' => 'Name',
+'licensenumber' => 'License number',
+'registerdate' => 'Register date',
+'type' => 'Type',
+
+//researchprofiles page
+'no' => 'No.',
+'year' => 'Year',
+'papername' => 'Paper Name',
+'author' => 'Author',
+'documenttype' => 'Document Type',
+'page' => 'Page',
+'journals' => 'Journals/Transactions',
+'citations' => 'Citations',
+'doi' => 'Doi',
+'placeofpublication' => 'Place of publication',
+'book' => 'Book',
+'bookseries' => 'Book Series',
+'conferenceproceeding' => 'Conference Proceeding',
+'journal' => 'Journal',
+
+//work type
+'patent' => 'Patent',
+'patentinvention' => 'Patent (Invention)',
+'patentdesign' => 'Patent (Design)',
+'pettypatent' => 'Petty Patent',
+'copyright' => 'Copyright',
+'copyrightliterature' => 'Copyright (Literature)',
+'copyrightmusic' => 'Copyright (Music)',
+'copyrightfilm' => 'Copyright (Film)',
+'copyrightart' => 'Copyright (Art)',
+'copyrightbroadcast' => 'Copyright (Broadcast)',
+'copyrightaudiovisual' => 'Copyright (Audiovisual)',
+'copyrightother' => 'Copyright (Other in Literature/Science/Art)',
+'copyrightsoundrecording' => 'Copyright (Sound Recording)',
+'tradesecret' => 'Trade Secret',
+'trademark' => 'Trademark',
+
+
+
 
 // ส่วนของ Login
 'Account_Login' => 'Account Login',
@@ -26,6 +94,7 @@ return [
         'password' => 'Password is required'
 ],
 
+// ส่วนของ Admin (ผู้วิจัย)
 // ส่วนของ Pagination
 'Previous' => 'Previous',
 'Next' => 'Next',
@@ -45,6 +114,32 @@ return [
 // ส่วนของ Profile
 'Profile_navbar_title' => 'Profile',
 
+// Account Section
+'Profile_Account_ProfileSetting' => 'Profile Setting',
+'Profile_Account_pronouns' => 'Pronouns',
+'Profile_Account_firstnameEng' => 'First Name (English)',
+'Profile_Account_lastnameEng' => 'Last Name (English)',
+'Profile_Account_firstnameTH' => 'First Name (Thai)',
+'Profile_Account_lastnameTH' => 'Last Name (Thai)',
+'Profile_Account_firstnameCN' => 'First Name (Chinese)',
+'Profile_Account_lastnameCN' => 'Last Name (Chinese)',
+'Profile_Account_email' => 'Email',
+'Profile_Account_AcademicRank' => 'Academic Rank',
+'Profile_Account_AcademicPosition' => 'Academic Position',
+'Profile_Account_TogglePHD' => 'For instructors without a doctoral degree, please specify',
+'Profile_Account_Professor' => 'Professor',
+'Profile_Account_AssociateProfessor' => 'Associate Professor',
+'Profile_Account_AssistantProfessor' => 'Assistant Professor',
+'Profile_Account_Lecturer' => 'Lecturer',
+
+'Profile_All_Update' => 'Update',
+
+'Organization_support_en' => 'Supporting Organization/Research Project (EN)',
+'Organization_support_cn' => 'Supporting Organization/Research Project (CN)',
+
+
+// ส่วนของ User Profile
+'User_Profile_navbar_title' => 'User Profile',
 // ส่วนของ User Profile
 'User_Profile_navbar_title' => 'User Profile',
 'Change_picture' => 'Change Picture',
@@ -80,6 +175,8 @@ return [
 // ส่วนของ Manage Fund
 'Manage_Fund_navbar_title' => 'Manage Fund',
 
+// ส่วนของ Research Project
+'Research_Project_navbar_title' => 'Research Project',
 // ส่วน Manage Fund (index.blade.php)
 'Research_grant' => 'Research Grant',
 'Add_research_grant' => 'Add',
@@ -114,7 +211,7 @@ return [
 'Input_research_fund_detail' => 'Input Research Fund Detail',
 'Please_choose_fund_type' => 'Please choose the fund type',
 'Please_choose_fund_level' => 'Please choose the fund level',
-'Organization_support' => 'Organization support / Research Project',
+'Organization_support' => 'Organization support / Research Project (Thai language)',
 'Fund_level_not_define' => 'Not Define',
 'Fund_level_low' => 'Low',
 'Fund_level_medium' => 'Medium',
@@ -181,6 +278,9 @@ return [
 
 // ส่วนของ Research Group
 'Research_Group_navbar_title' => 'Research Group',
+'Research_group_name_cn' => 'Research Group Name (CN)',
+'Research_group_description_cn' => 'Research Group Descriptions (CN)',
+'Research_group_detail_cn' => 'Research Group Detail (CN)',
 
 // ส่วนของ Research Group (index.blade.php)
 'Add_research_group' => 'Add',
@@ -217,6 +317,23 @@ return [
 
 // ส่วนของ Published research
 'Published_research_navbar_title' => 'Published research',
+
+// ส่วนของ Book
+'Book_navbar_title' => 'Book',
+
+// ส่วนของ ผลงานวิชาการอื่นๆ
+'Other_academic_works_navbar_title' => 'Other academic works',
+
+'No_data_avalible' => 'No data available in table',
+'info' => '',
+'infoEmpty' => 'Showing 0 to 0 of 0 entries',
+'infoFiltered' => '(filtered from MAX total entries)',
+'lengthMenu' => '',
+'search' => 'Search:',
+'Previous' => 'Previous',
+'Next' => 'Next',
+
+
 
 // ส่วนของ Published research (index.blade.php)
 'Add_published_research' => 'Add',
@@ -296,7 +413,9 @@ return [
 'Book_no' => 'No.',
 'Book_title' => 'Title',
 'Book_year' => 'Year (B.E.)',
-'Book_source' => 'Source',
+'Book_source' => 'Source(Thai)',
+'Book_source_en' => 'Source(English)',
+'Book_source_cn' => 'Source(Chinese)',
 'Book_page' => 'Page',
 'Book_action' => 'Action',
 

@@ -36,15 +36,21 @@
                             @if(App::getLocale() == 'en')
                             {{ Str::limit($researchGroup->group_name_en,50) }}
                             @elseif(App::getLocale() == 'th')
-                            {{ Str::limit($researchGroup->group_name_th,50) }}                           
+                            {{ Str::limit($researchGroup->group_name_th,50) }}
+                            @elseif(App::getLocale() == 'cn')
+                            {{ Str::limit($researchGroup->group_name_cn,50) }}                                       
                             @endif
                             </td>
                             <td>
                                 @foreach($researchGroup->user as $user)
                                 @if ( $user->pivot->role == 1)
-
-                                {{ $user->fname_th}}
-
+                                    @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}}
+                                    @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}}
+                                    @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}}
+                                    @endif
                                 @endif
 
                                 @endforeach
@@ -52,7 +58,13 @@
                             <td>
                                 @foreach($researchGroup->user as $user)
                                 @if ( $user->pivot->role == 2)
-                                {{ $user->fname_th}}
+                                    @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}}
+                                    @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}}
+                                    @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}}
+                                    @endif
                                 @if (!$loop->last),@endif
                                 @endif
 

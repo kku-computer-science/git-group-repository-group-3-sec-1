@@ -108,10 +108,22 @@
                     <div class="form-group row mt-2">
                         <label for="exampleInputfund_details" class="col-sm-2 ">{{ trans('message.Research_project_responsible') }}</label>
                         <div class="col-sm-9">
+                        @if(App::getLocale() == 'th')
                             <select id='head0' style='width: 200px;' name="head">
                                 <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
                                 @endforeach
                             </select>
+                            @elseif(App::getLocale() == 'en')
+                            <select id='head0' style='width: 200px;' name="head">
+                                <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}</option>
+                                @endforeach
+                            </select>
+                            @elseif(App::getLocale() == 'cn')
+                            <select id='head0' style='width: 200px;' name="head">
+                                <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}</option>
+                                @endforeach
+                            </select>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group row mt-2">
@@ -124,8 +136,16 @@
                                 <tr>
                                     <!-- <td><input type="text" name="moreFields[0][Budget]" placeholder="Enter title" class="form-control" /></td> -->
                                     <td><select id='selUser0' style='width: 200px;' name="moreFields[0][userid]">
+                                            @if(App::getLocale() == 'th')
                                             <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>
                                             @endforeach
+                                            @elseif(App::getLocale() == 'en')
+                                            <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}</option>
+                                            @endforeach
+                                            @elseif(App::getLocale() == 'cn')
+                                            <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}</option>
+                                            @endforeach
+                                            @endif
                                         </select></td>
 
                                 </tr>
@@ -186,6 +206,7 @@
 
     @stop
     @section('javascript')
+    @if(App::getLocale() == 'th')
     <script>
         $(document).ready(function() {
             $("#selUser0").select2()
@@ -209,6 +230,55 @@
 
         });
     </script>
+    @elseif(App::getLocale() == 'en')
+    <script>
+        $(document).ready(function() {
+            $("#selUser0").select2()
+            $("#head0").select2()
+            //$("#fund").select2()
+            //$("#dep").select2()
+            var i = 0;
+
+            $("#add-btn2").click(function() {
+
+                ++i;
+                $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i +
+                    '" name="moreFields[' + i +
+                    '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
+                );
+                $("#selUser" + i).select2()
+            });
+            $(document).on('click', '.remove-tr', function() {
+                $(this).parents('tr').remove();
+            });
+
+        });
+    </script>
+    @elseif(App::getLocale() == 'cn')
+    <script>
+        $(document).ready(function() {
+            $("#selUser0").select2()
+            $("#head0").select2()
+            //$("#fund").select2()
+            //$("#dep").select2()
+            var i = 0;
+
+            $("#add-btn2").click(function() {
+
+                ++i;
+                $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i +
+                    '" name="moreFields[' + i +
+                    '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
+                );
+                $("#selUser" + i).select2()
+            });
+            $(document).on('click', '.remove-tr', function() {
+                $(this).parents('tr').remove();
+            });
+
+        });
+    </script>
+    @endif
     <script type="text/javascript">
         $(document).ready(function() {
             var postURL = "<?php echo url('addmore'); ?>";

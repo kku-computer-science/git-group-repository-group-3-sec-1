@@ -42,7 +42,7 @@
                     @elseif(App::getLocale() == 'en')
                         {{ $user->academic_ranks_en }}
                     @elseif(App::getLocale() == 'cn')
-                        {{ $user->academic_ranks_zh }}
+                        {{ $user->academic_ranks_ch }}
                     @endif</h6>
                 </div>
                 <div class="row mt-2">

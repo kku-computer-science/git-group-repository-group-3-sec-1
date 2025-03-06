@@ -14,6 +14,10 @@
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_name_en') }}</b></p>
                 <p class="card-text col-sm-9">{{ $researchGroup->group_name_en }}</p>
             </div>
+            <div class="row mt-1">
+                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_name_cn') }}</b></p>
+                <p class="card-text col-sm-9">{{ $researchGroup->group_name_cn }}</p>
+            </div>
             <div class="row mt-2">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_description_th') }}</b></p>
                 <p class="card-text col-sm-9">{{ $researchGroup->group_desc_th }}</p>
@@ -23,6 +27,10 @@
                 <p class="card-text col-sm-9">{{ $researchGroup->group_desc_en }}</p>
             </div>
             <div class="row mt-2">
+                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_description_cn') }}</b></p>
+                <p class="card-text col-sm-9">{{ $researchGroup->group_desc_cn }}</p>
+            </div>
+            <div class="row mt-2">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_detail_th') }}</b></p>
                 <p class="card-text col-sm-9">{{ $researchGroup->group_detail_th }}</p>
             </div>
@@ -30,21 +38,37 @@
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_detail_en') }}</b></p>
                 <p class="card-text col-sm-9">{{ $researchGroup->group_detail_en }}</p>
             </div>
+            <div class="row mt-2">
+                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_detail_cn') }}</b></p>
+                <p class="card-text col-sm-9">{{ $researchGroup->group_detail_cn }}</p>
+            </div>
             <div class="row mt-3">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_head') }}</b></p>
                 <p class="card-text col-sm-9">
                     @foreach($researchGroup->user as $user)
                     @if ( $user->pivot->role == 1)
-                    {{$user->position_th}}{{ $user->fname_th}} {{ $user->lname_th}}
+                                    @if(App::getLocale() == 'en')
+                                        {{$user->position_en}} {{ $user->fname_en}} {{ $user->lname_en}}
+                                    @elseif(App::getLocale() == 'th')
+                                        {{$user->position_th}} {{ $user->fname_th}} {{ $user->lname_th}}
+                                    @elseif(App::getLocale() == 'cn')
+                                        {{$user->position_cn}} {{ $user->fname_cn}} {{ $user->lname_cn}}
+                                    @endif
                     @endif
-                    @endforeach</p>
+                    @endforeach   </p>
             </div>
             <div class="row mt-1">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_member') }}</b></p>
                 <p class="card-text col-sm-9">
                     @foreach($researchGroup->user as $user)
                     @if ( $user->pivot->role == 2)
-                    {{$user->position_th}}{{ $user->fname_th}} {{ $user->lname_th}},
+                                    @if(App::getLocale() == 'en')
+                                        {{$user->position_en}} {{ $user->fname_en}} {{ $user->lname_en}}
+                                    @elseif(App::getLocale() == 'th')
+                                        {{$user->position_th}} {{ $user->fname_th}} {{ $user->lname_th}}
+                                    @elseif(App::getLocale() == 'cn')
+                                        {{$user->position_cn}} {{ $user->fname_cn}} {{ $user->lname_cn}}
+                                    @endif
                     @endif
                     @endforeach</p>
             </div>

@@ -12,11 +12,21 @@
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Book_year') }}</b></p>
+                @if(app()->getLocale() == 'th')
                 <p class="card-text col-sm-9">{{  date('Y', strtotime($paper->ac_year))+543 }}</p>
+                @else
+                <p class="card-text col-sm-9">{{  date('Y', strtotime($paper->ac_year))}}</p>
+                @endif
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Book_source') }}</b></p>
+                @if(app()->getLocale() == 'en')
+                <p class="card-text col-sm-9">{{ $paper->ac_sourcetitle_en}}</p>
+                @elseif(app()->getLocale() == 'th')
                 <p class="card-text col-sm-9">{{ $paper->ac_sourcetitle }}</p>
+                @elseif(app()->getLocale() == 'cn')
+                <p class="card-text col-sm-9">{{ $paper->ac_sourcetitle_cn}}</p>
+                @endif
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Book_page') }}</b></p>

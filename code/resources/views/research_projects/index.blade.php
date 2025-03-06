@@ -33,13 +33,23 @@
                             @foreach ($researchProjects as $i=>$researchProject)
                             <tr>
                                 <td>{{ $i+1 }}</td>
-                                <td>{{ $researchProject->project_year }}</td>
+                                @if(App::getLocale() == 'th')
+                                <td>{{ ($researchProject->project_year)+543}}</td>
+                                @else
+                                <td>{{ ($researchProject->project_year)}}</td>
+                                @endif
                                 {{-- <td>{{ $researchProject->project_name }}</td> --}}
                                 <td>{{ Str::limit($researchProject->project_name,70) }}</td>
                                 <td>
                                     @foreach($researchProject->user as $user)
                                     @if ( $user->pivot->role == 1)
-                                    {{ $user->fname_en}}
+                                        @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}}
+                                        @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}}
+                                        @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}}
+                                        @endif
                                     @endif
 
                                     @endforeach
@@ -47,7 +57,13 @@
                                 <td>
                                     @foreach($researchProject->user as $user)
                                     @if ( $user->pivot->role == 2)
-                                    {{ $user->fname_en}}
+                                        @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}}
+                                        @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}}
+                                        @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}}
+                                        @endif
                                     @endif
 
                                     @endforeach

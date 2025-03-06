@@ -30,7 +30,7 @@ class ScopuscallController extends Controller
         $fname = substr($data['fname_en'], 0, 1);
         $lname = $data['lname_en'];
         $id    = $data['id'];
-        $apiKey = config('app.SCOPUS_API_KEY');
+        $apiKey = env('SCOPUS_API_KEY'); // ดึง API Key จาก .env
         if ($apiKey == null) {
             return response()->json(['error' => 'API Key not found'], 404);
         }

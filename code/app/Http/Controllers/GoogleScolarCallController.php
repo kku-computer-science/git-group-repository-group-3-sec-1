@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class GoogleScolarCallController extends Controller
-{   
+{
     private $apiKey;
-    
+
     public function __construct()
     {
-        $this->apiKey = config('app.GOOGLE_SCHOLAR_API_KEY');
+        $this->apiKey = env('GOOGLE_SCHOLAR_API_KEY');
     }
 
     public function createScholar($id)

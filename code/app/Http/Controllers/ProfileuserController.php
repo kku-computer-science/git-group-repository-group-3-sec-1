@@ -44,6 +44,8 @@ class ProfileuserController extends Controller
             'lname_en' => 'required',
             'fname_th' => 'required',
             'lname_th' => 'required',
+            'fname_cn' => 'required',
+            'lname_cn' => 'required',
             'email' => 'required|email|unique:users,email,' . Auth::user()->id,
 
         ]);
@@ -55,53 +57,70 @@ class ProfileuserController extends Controller
 
             if ($request->title_name_en == "Mr.") {
                 $title_name_th = 'นาย';
+                $title_name_cn = '先生';
             }
             if ($request->title_name_en == "Miss") {
                 $title_name_th = 'นางสาว';
+                $title_name_cn = '女士';
             }
             if ($request->title_name_en == "Mrs.") {
                 $title_name_th = 'นาง';
+                $title_name_cn = '小姐';
             }
             // $pos_en='';
             // $pos_th='';
             // $doctoral = '';
             $pos_eng = '';
             $pos_thai = '';
+            $pos_cn = '';
             if (Auth::user()->hasRole('admin') or Auth::user()->hasRole('student') ) {
                 $request->academic_ranks_en = null;
                 $request->academic_ranks_th = null;
+                $request->academic_ranks_cn = null;
                 $pos_eng = null;
                 $pos_thai = null;
+                $pos_cn = null;
                 $doctoral = null;
             } else {
                 if ($request->academic_ranks_en == "Professor") {
                     $pos_en = 'Prof.';
                     $pos_th = 'ศ.';
+                    $pos_cn = '教授';
+                    $academic_ranks_cn = '教授';
                 }
-                if ($request->academic_ranks_en == "Associate Professo") {
+                if ($request->academic_ranks_en == "Associate Professor") {
                     $pos_en = 'Assoc. Prof.';
                     $pos_th = 'รศ.';
+                    $pos_cn = '副教授';
+                    $academic_ranks_cn = '副教授';
                 }
                 if ($request->academic_ranks_en == "Assistant Professor") {
                     $pos_en = 'Asst. Prof.';
                     $pos_th = 'ผศ.';
+                    $pos_cn = '助理教授';
+                    $academic_ranks_cn = '助理教授';
                 }
                 if ($request->academic_ranks_en == "Lecturer") {
                     $pos_en = 'Lecturer';
                     $pos_th = 'อ.';
+                    $pos_cn = '讲师';
+                    $academic_ranks_cn = '讲师';
                 }
                 if ($request->has('pos')) {
                     $pos_eng = $pos_en;
                     $pos_thai = $pos_th;
+                    $pos_cn = $pos_cn;
                     //$doctoral = null ;
                 } else {
                     if ($pos_en == "Lecturer") {
                         $pos_eng = $pos_en;
                         $pos_thai = $pos_th . 'ดร.';
+                        $pos_cn = $pos_cn . '博士';
                         $doctoral = 'Ph.D.';
                     } else {
                         $pos_eng = $pos_en . ' Dr.';
                         $pos_thai = $pos_th . 'ดร.';
+                        $pos_cn = $pos_cn . '博士';
                         $doctoral = 'Ph.D.';
                     }
                 }
@@ -111,13 +130,18 @@ class ProfileuserController extends Controller
                 'lname_en' => $request->lname_en,
                 'fname_th' => $request->fname_th,
                 'lname_th' => $request->lname_th,
+                'fname_cn' => $request->fname_cn,
+                'lname_cn' => $request->lname_cn,
                 'email' => $request->email,
                 'academic_ranks_en' => $request->academic_ranks_en,
                 'academic_ranks_th' => $request->academic_ranks_th,
+                'academic_ranks_cn' => $request->academic_ranks_cn,
                 'position_en' => $pos_eng,
                 'position_th' => $pos_thai,
+                'position_cn' => $pos_cn,
                 'title_name_en' => $request->title_name_en,
                 'title_name_th' => $title_name_th,
+                'title_name_cn' => $title_name_cn,
                 'doctoral_degree' => $doctoral,
 
             ]);

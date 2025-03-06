@@ -15,7 +15,7 @@ class WOSCallController extends Controller
 
     public function __construct()
     {
-        $this->apiKey = config('app.WOS_API_KEY');
+        $this->apiKey = env('WOS_API_KEY');
     }
 
     public function createWOS($id)

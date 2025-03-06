@@ -10,6 +10,74 @@ return [
 'publications' => 'ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)',
 'education'=>'การศึกษา',
 'publications2' => 'ผลงานตีพิมพ์',
+'Number' => 'ลำดับ',
+'Project name' => 'Project name',
+'Year' => 'ปี',
+'Details' => 'รายละเอียด',
+'Academic service projects/research projects' => 'โครงการบริการวิชาการ/ โครงการวิจัย',
+'Project responsible person' => 'ผู้รับผิดชอบโครงการ ',
+'Status' => 'สถานะ',
+'Project Duration' => 'ระยะเวลาโครงการ',
+'Type of Research Funding' => 'ประเภททุนวิจัย',
+'Funding Agency' => 'หน่วยงานที่สนับสนุนทุน',
+'Responsible Agency' => 'หน่วยงานที่รับผิดชอบ',
+'Allocated Budget' => 'งบประมาณที่ได้รับจัดสรร',
+'Submit a Request' => 'ยื่นขอ',
+'Proceed' => 'ดำเนินการ',
+'Project Closed' => 'ปิดโครงการ',
+'Search' => 'ค้นหา',
+'Laboratory Supervisor' => 'ผู้ควบคุมห้องปฏิบัติการ',
+'Student' => 'นักเรียน',
+'Reference' => 'อ้างอิง',
+'laboratorysupervisor' => 'ผู้ดูแลแล็ป',
+'statistic2page1' => 'สถิติจำนวนบทความที่ได้รับการอ้างอิง',
+'statistic1page1' => 'สถิติจำนวนบทความทั้งหมด 5 ปี',
+'source' => 'ที่มา',
+'summary' => 'โดยรวม',
+'ref' => '[อ้างอิง]',
+'researchinterest' => 'ความสนใจใจการวิจัย',
+'book' => 'หนังสือ',
+'otheracademicwork' => 'ผลงานวิชาการด้านอื่นๆ',
+'exporttoexcel' => 'ส่งออกเป็นไฟล์ Excel',
+'name' => 'ชื่อ',
+'licensenumber' => 'หมายเลขทะเบียน',
+'registerdate' => 'วันที่จดทะเบียน',
+'type' => 'ประเภท',
+
+//researchprofiles page
+'no' => 'ลำดับที่',
+'year' => 'ปี',
+'papername' => 'ชื่อเอกสาร',
+'author' => 'ผู้เขียน',
+'documenttype' => 'ประเภทเอกสาร',
+'page' => 'หน้า',
+'journals' => 'วารสาร/ธุรกรรม',
+'citations' => 'การอ้างอิง',
+'doi' => 'doi',
+'placeofpublication' => 'สถานที่ตีพิมพ์',
+'book' => 'หนังสือ',
+'bookseries' => 'ชุดหนังสือ',
+'conferenceproceeding' => 'เอกสารประชุมวิชาการ',
+'journal' => 'วารสาร',
+
+//work type
+'patent' => 'สิทธิบัตร',
+'patentinvention' => 'สิทธิบัตร (การประดิษฐ์)',
+'patentdesign' => 'สิทธิบัตร (การออกแบบผลิตภัณฑ์)',
+'pettypatent' => 'อนุสิทธิบัตร',
+'copyright' => 'ลิขสิทธิ์',
+'copyrightliterature' => 'ลิขสิทธิ์ (วรรณกรรม)',
+'copyrightmusic' => 'ลิขสิทธิ์ (ตนตรีกรรม)',
+'copyrightfilm' => 'ลิขสิทธิ์ (ภาพยนตร์)',
+'copyrightart' => 'ลิขสิทธิ์ (ศิลปกรรม)',
+'copyrightbroadcast' => 'ลิขสิทธิ์ (งานแพร่เสี่ยงแพร่ภาพ)',
+'copyrightaudiovisual' => 'ลิขสิทธิ์ (โสตทัศนวัสดุ)',
+'copyrightother' => 'ลิขสิทธิ์ (งานอื่นใดในแผนกวรรณคดี/วิทยาศาสตร์/ศิลปะ)',
+'copyrightsoundrecording' => 'ลิขสิทธิ์ (สิ่งบันทึกเสียง)',
+'tradesecret' => 'ความลับทางการค้า',
+'trademark' => 'เครื่องหมายการค้า',
+
+//
 
 // ส่วนของ Login
 'Account_Login' => 'เข้าสู่ระบบ',
@@ -25,6 +93,7 @@ return [
         'username' => 'ต้องระบุชื่อผู้ใช้',
         'password' => 'ต้องระบุรหัสผ่าน'
 ],
+// ส่วนของ Admin (ผู้วิจัย)
 
 // ส่วนของ Pagination
 'Previous' => 'ก่อนหน้า',
@@ -46,6 +115,31 @@ return [
 // ส่วนของ Profile
 'Profile_navbar_title' => 'โปรไฟล์',
 
+// ส่วนของ Account
+'Profile_Account_ProfileSetting' => 'การตั้งค่าโปรไฟล์',
+'Profile_Account_pronouns' => 'คำนำหน้า',
+'Profile_Account_firstnameEng' => 'ชื่อ (ภาษาอังกฤษ)',
+'Profile_Account_lastnameEng' => 'นามสกุล (ภาษาอังกฤษ)',
+'Profile_Account_firstnameTH' => 'ชื่อ (ภาษาไทย)',
+'Profile_Account_lastnameTH' => 'นามสกุล (ภาษาไทย)',
+'Profile_Account_firstnameCN' => 'ชื่อ (ภาษาจีน)',
+'Profile_Account_lastnameCN' => 'นามสกุล (ภาษาจีน)',
+'Profile_Account_email' => 'อีเมล์',
+'Profile_Account_AcademicRank' => 'ยศศักดิ์ทางวิชาการ',
+'Profile_Account_AcademicPosition' => 'ตำแหน่งทางวิชาการ',
+'Profile_Account_TogglePHD' => 'สำหรับอ.ผู้ที่ไม่มีคุณวุฒิปริญญาเอก โปรดระบุ',
+'Profile_Account_Professor' => 'ศาสตราจารย์',
+'Profile_Account_AssociateProfessor' => 'รองศาสตราจารย์',
+'Profile_Account_AssistantProfessor' => 'ผู้ช่วยศาสตราจารย์',
+'Profile_Account_Lecturer' => 'อาจารย์',
+
+'Profile_All_Update' => 'อัพเดท',
+
+'Organization_support_en' => 'องค์กรสนับสนุน/โครงการวิจัย (ภาษาอังกฤษ)',
+'Organization_support_cn' => 'องค์กรสนับสนุน/โครงการวิจัย (ภาษาจีน)',
+
+// ส่วนของ User Profile
+'User_Profile_navbar_title' => 'โปรไฟล์ของผู้ใช้',
 // ส่วนของ User Profile
 'User_Profile_navbar_title' => 'โปรไฟล์ของผู้ใช้',
 'Change_picture' => 'เปลี่ยนรูปภาพ',
@@ -81,6 +175,8 @@ return [
 // ส่วนของ Manage Fund
 'Manage_Fund_navbar_title' => 'จัดการแหล่งทุนวิจัย',
 
+// ส่วนของ Research Project
+'Research_Project_navbar_title' => 'โครงการวิจัย',
 // ส่วน Manage Fund (index.blade.php)
 'Research_grant' => 'ทุนวิจัย',
 'Add_research_grant' => 'เพิ่ม',
@@ -115,7 +211,7 @@ return [
 'Input_research_fund_detail' => 'กรอกรายละเอียดทุนวิจัย',
 'Please_choose_fund_type' => 'กรุณาเลือกประเภททุน',
 'Please_choose_fund_level' => 'กรุณาเลือกระดับทุน',
-'Organization_support' => 'องค์กรที่สนับสนุน / โครงการวิจัย',
+'Organization_support' => 'องค์กรที่สนับสนุน / โครงการวิจัย (ภาษาไทย)',
 'Fund_level_not_define' => 'ไม่ระบุ',
 'Fund_level_low' => 'ล่าง',
 'Fund_level_medium' => 'กลาง',
@@ -183,6 +279,9 @@ return [
 
 // ส่วนของ Research Group
 'Research_Group_navbar_title' => 'กลุ่มวิจัย',
+'Research_group_name_cn' => 'ชื่อกลุ่มวิจัย (ภาษาจีน)',
+'Research_group_description_cn' => 'คำอธิบายกลุ่มวิจัย (ภาษาจีน)',
+'Research_group_detail_cn' => 'รายละเอียดกลุ่มวิจัย (ภาษาจีน)',
 
 // ส่วนของ Research Group (index.blade.php)
 'Add_research_group' => 'เพิ่ม',
@@ -219,6 +318,21 @@ return [
 
 // ส่วนของ Published research
 'Published_research_navbar_title' => 'ผลงานวิจัยที่ตีพิมพ์',
+
+// ส่วนของ Book
+'Book_navbar_title' => 'หนังสือ',
+
+// ส่วนของ ผลงานวิชาการอื่นๆ
+'Other_academic_works_navbar_title' => 'ผลงานวิชาการอื่นๆ',
+
+'No_data_avalible' => 'ไม่มีข้อมูลในตารางนี้',
+'info' => '',
+'infoEmpty' => 'กำลังโชว์ข้อมูลว่างเปล่า',
+'infoFiltered' => '(กรองจากจำนวนทั้งหมด)',
+'lengthMenu' => '',
+'search' => 'ค้นหา:',
+'Previous' => 'ย้อนหลัง',
+'Next' => 'ถัดไป',
 
 // ส่วนของ Published research (index.blade.php)
 'Add_published_research' => 'เพิ่ม',
@@ -298,7 +412,9 @@ return [
 'Book_no' => 'ลำดับที่',
 'Book_title' => 'ชื่อหนังสือ',
 'Book_year' => 'ปีที่ตีพิมพ์ (พ.ศ.)',
-'Book_source' => 'แหล่งเผยแพร่หนังสือ',
+'Book_source' => 'แหล่งเผยแพร่หนังสือ(ภาษาไทย)',
+'Book_source_en' => 'แหล่งเผยแพร่หนังสือ(อังกฤษ)',
+'Book_source_cn' => 'แหล่งเผยแพร่หนังสือ(จีน)',
 'Book_page' => 'หน้า',
 'Book_action' => 'ดำเนินการ',
 
