@@ -220,30 +220,45 @@
                         <td style="width:90%;">{!! html_entity_decode(preg_replace('<inf>', 'sub', $paper->paper_name)) !!}</td>
                         <td>
                             @foreach ($paper->author as $author)
-                            <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
-                            </span>
+                                <span>
+                                    <a>
+                                        @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($author->author_fname ?? $author->author_fname_th ?? $author->author_fname_cn)
+                                                    : ($locale == 'th' ? ($author->author_fname_th ?? $author->author_fname ?? $author->author_fname_cn)
+                                                    : ($author->author_fname_cn ?? $author->author_fname ?? $author->author_fname_th));
+
+                                            $lname = $locale == 'en' ? ($author->author_lname ?? $author->author_lname_th ?? $author->author_lname_cn)
+                                                    : ($locale == 'th' ? ($author->author_lname_th ?? $author->author_lname ?? $author->author_lname_cn)
+                                                    : ($author->author_lname_cn ?? $author->author_lname ?? $author->author_lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
+                                    </a>
+                                </span>
                             @endforeach
+
                             @foreach ($paper->teacher as $author)
-                            <span >
-                                <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    @if(app()->getLocale() == 'en')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'th')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_th}} {{$author -> lname_th}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_cn}} {{$author -> lname_cn}}</teacher>
-                                    <h1></h1>
-                                    @endif
-                                </a>
-                            </span>
+                                <span>
+                                    <a href="{{ route('detail', Crypt::encrypt($author->id)) }}">
+                                        <h1></h1>
+                                        <teacher>
+                                            @php
+                                                $fname = $locale == 'en' ? ($author->fname_en ?? $author->fname_th ?? $author->fname_cn)
+                                                        : ($locale == 'th' ? ($author->fname_th ?? $author->fname_en ?? $author->fname_cn)
+                                                        : ($author->fname_cn ?? $author->fname_en ?? $author->fname_th));
+
+                                                $lname = $locale == 'en' ? ($author->lname_en ?? $author->lname_th ?? $author->lname_cn)
+                                                        : ($locale == 'th' ? ($author->lname_th ?? $author->lname_en ?? $author->lname_cn)
+                                                        : ($author->lname_cn ?? $author->lname_en ?? $author->lname_th));
+                                            @endphp
+                                            {{ $fname }} {{ $lname }}
+                                        </teacher>
+                                        <h1></h1>
+                                    </a>
+                                </span>
                             @endforeach
                         </td>
+
                         @if(app()->getLocale() == 'en')
                             <td>{{$paper->paper_type}}</td>
                         @else
@@ -307,28 +322,42 @@
                         <td style="width:90%;">{!! html_entity_decode(preg_replace('<inf>', 'sub', $paper->paper_name)) !!}</td>
                         <td>
                             @foreach ($paper->author as $author)
-                            <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
-                            </span>
+                                <span>
+                                    <a>
+                                        @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($author->author_fname ?? $author->author_fname_th ?? $author->author_fname_cn)
+                                                    : ($locale == 'th' ? ($author->author_fname_th ?? $author->author_fname ?? $author->author_fname_cn)
+                                                    : ($author->author_fname_cn ?? $author->author_fname ?? $author->author_fname_th));
+
+                                            $lname = $locale == 'en' ? ($author->author_lname ?? $author->author_lname_th ?? $author->author_lname_cn)
+                                                    : ($locale == 'th' ? ($author->author_lname_th ?? $author->author_lname ?? $author->author_lname_cn)
+                                                    : ($author->author_lname_cn ?? $author->author_lname ?? $author->author_lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
+                                    </a>
+                                </span>
                             @endforeach
+
                             @foreach ($paper->teacher as $author)
-                            <span>
-                                <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    @if(app()->getLocale() == 'en')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'th')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_th}} {{$author -> lname_th}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_cn}} {{$author -> lname_cn}}</teacher>
-                                    <h1></h1>
-                                    @endif
-                                </a>
-                            </span>
+                                <span>
+                                    <a href="{{ route('detail', Crypt::encrypt($author->id)) }}">
+                                        <h1></h1>
+                                        <teacher>
+                                            @php
+                                                $fname = $locale == 'en' ? ($author->fname_en ?? $author->fname_th ?? $author->fname_cn)
+                                                        : ($locale == 'th' ? ($author->fname_th ?? $author->fname_en ?? $author->fname_cn)
+                                                        : ($author->fname_cn ?? $author->fname_en ?? $author->fname_th));
+
+                                                $lname = $locale == 'en' ? ($author->lname_en ?? $author->lname_th ?? $author->lname_cn)
+                                                        : ($locale == 'th' ? ($author->lname_th ?? $author->lname_en ?? $author->lname_cn)
+                                                        : ($author->lname_cn ?? $author->lname_en ?? $author->lname_th));
+                                            @endphp
+                                            {{ $fname }} {{ $lname }}
+                                        </teacher>
+                                        <h1></h1>
+                                    </a>
+                                </span>
                             @endforeach
                         </td>
                         @if(app()->getLocale() == 'en')
@@ -390,28 +419,42 @@
                         <td style="width:90%;">{!! html_entity_decode(preg_replace('<inf>', 'sub', $paper->paper_name)) !!}</td>
                         <td>
                             @foreach ($paper->author as $author)
-                            <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
-                            </span>
+                                <span>
+                                    <a>
+                                        @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($author->author_fname ?? $author->author_fname_th ?? $author->author_fname_cn)
+                                                    : ($locale == 'th' ? ($author->author_fname_th ?? $author->author_fname ?? $author->author_fname_cn)
+                                                    : ($author->author_fname_cn ?? $author->author_fname ?? $author->author_fname_th));
+
+                                            $lname = $locale == 'en' ? ($author->author_lname ?? $author->author_lname_th ?? $author->author_lname_cn)
+                                                    : ($locale == 'th' ? ($author->author_lname_th ?? $author->author_lname ?? $author->author_lname_cn)
+                                                    : ($author->author_lname_cn ?? $author->author_lname ?? $author->author_lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
+                                    </a>
+                                </span>
                             @endforeach
+
                             @foreach ($paper->teacher as $author)
-                            <span>
-                                <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    @if(app()->getLocale() == 'en')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'th')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_th}} {{$author -> lname_th}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_cn}} {{$author -> lname_cn}}</teacher>
-                                    <h1></h1>
-                                    @endif
-                                </a>
-                            </span>
+                                <span>
+                                    <a href="{{ route('detail', Crypt::encrypt($author->id)) }}">
+                                        <h1></h1>
+                                        <teacher>
+                                            @php
+                                                $fname = $locale == 'en' ? ($author->fname_en ?? $author->fname_th ?? $author->fname_cn)
+                                                        : ($locale == 'th' ? ($author->fname_th ?? $author->fname_en ?? $author->fname_cn)
+                                                        : ($author->fname_cn ?? $author->fname_en ?? $author->fname_th));
+
+                                                $lname = $locale == 'en' ? ($author->lname_en ?? $author->lname_th ?? $author->lname_cn)
+                                                        : ($locale == 'th' ? ($author->lname_th ?? $author->lname_en ?? $author->lname_cn)
+                                                        : ($author->lname_cn ?? $author->lname_en ?? $author->lname_th));
+                                            @endphp
+                                            {{ $fname }} {{ $lname }}
+                                        </teacher>
+                                        <h1></h1>
+                                    </a>
+                                </span>
                             @endforeach
                         </td>
                         @if(app()->getLocale() == 'en')
@@ -473,28 +516,42 @@
                         <td style="width:90%;">{!! html_entity_decode(preg_replace('<inf>', 'sub', $paper->paper_name)) !!}</td>
                         <td>
                             @foreach ($paper->author as $author)
-                            <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
-                            </span>
+                                <span>
+                                    <a>
+                                        @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($author->author_fname ?? $author->author_fname_th ?? $author->author_fname_cn)
+                                                    : ($locale == 'th' ? ($author->author_fname_th ?? $author->author_fname ?? $author->author_fname_cn)
+                                                    : ($author->author_fname_cn ?? $author->author_fname ?? $author->author_fname_th));
+
+                                            $lname = $locale == 'en' ? ($author->author_lname ?? $author->author_lname_th ?? $author->author_lname_cn)
+                                                    : ($locale == 'th' ? ($author->author_lname_th ?? $author->author_lname ?? $author->author_lname_cn)
+                                                    : ($author->author_lname_cn ?? $author->author_lname ?? $author->author_lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
+                                    </a>
+                                </span>
                             @endforeach
+
                             @foreach ($paper->teacher as $author)
-                            <span>
-                                <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    @if(app()->getLocale() == 'en')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'th')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_th}} {{$author -> lname_th}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_cn}} {{$author -> lname_cn}}</teacher>
-                                    <h1></h1>
-                                    @endif
-                                </a>
-                            </span>
+                                <span>
+                                    <a href="{{ route('detail', Crypt::encrypt($author->id)) }}">
+                                        <h1></h1>
+                                        <teacher>
+                                            @php
+                                                $fname = $locale == 'en' ? ($author->fname_en ?? $author->fname_th ?? $author->fname_cn)
+                                                        : ($locale == 'th' ? ($author->fname_th ?? $author->fname_en ?? $author->fname_cn)
+                                                        : ($author->fname_cn ?? $author->fname_en ?? $author->fname_th));
+
+                                                $lname = $locale == 'en' ? ($author->lname_en ?? $author->lname_th ?? $author->lname_cn)
+                                                        : ($locale == 'th' ? ($author->lname_th ?? $author->lname_en ?? $author->lname_cn)
+                                                        : ($author->lname_cn ?? $author->lname_en ?? $author->lname_th));
+                                            @endphp
+                                            {{ $fname }} {{ $lname }}
+                                        </teacher>
+                                        <h1></h1>
+                                    </a>
+                                </span>
                             @endforeach
                         </td>
                         @if(app()->getLocale() == 'en')
@@ -552,25 +609,40 @@
                         <td>
                             @foreach ($paper->author as $author)
                             <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
+                                <a>
+                                    @php
+                                        $locale = app()->getLocale();
+                                        $fname = $locale == 'en' ? ($author->author_fname ?? $author->author_fname_th ?? $author->author_fname_cn)
+                                                : ($locale == 'th' ? ($author->author_fname_th ?? $author->author_fname_en ?? $author->author_fname_cn)
+                                                : ($author->author_fname_cn ?? $author->author_fname_en ?? $author->author_fname_th));
+
+                                        $lname = $locale == 'en' ? ($author->author_lname ?? $author->author_lname_th ?? $author->author_lname_cn)
+                                                : ($locale == 'th' ? ($author->author_lname_th ?? $author->author_lname_en ?? $author->author_lname_cn)
+                                                : ($author->author_lname_cn ?? $author->author_lname_en ?? $author->author_lname_th));
+                                    @endphp
+                                    {{ $fname }} {{ $lname }}
+                                </a>
 
                             </span>
                             @endforeach
                             @foreach ($paper->user as $author)
                             <span>
-                                @if(app()->getLocale() == 'en')
+                                <a href="{{ route('detail', Crypt::encrypt($author->id)) }}">
                                     <h1></h1>
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                    <teacher>
+                                        @php
+                                            $fname = $locale == 'en' ? ($author->fname_en ?? $author->fname_th ?? $author->fname_cn)
+                                                    : ($locale == 'th' ? ($author->fname_th ?? $author->fname_en ?? $author->fname_cn)
+                                                    : ($author->fname_cn ?? $author->fname_en ?? $author->fname_th));
+
+                                            $lname = $locale == 'en' ? ($author->lname_en ?? $author->lname_th ?? $author->lname_cn)
+                                                    : ($locale == 'th' ? ($author->lname_th ?? $author->lname_en ?? $author->lname_cn)
+                                                    : ($author->lname_cn ?? $author->lname_en ?? $author->lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
+                                    </teacher>
                                     <h1></h1>
-                                    @elseif(app()->getLocale() == 'th')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_th}} {{$author -> lname_th}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_cn}} {{$author -> lname_cn}}</teacher>
-                                    <h1></h1>
-                                    @endif
+                                </a>
                             </span>
                             @endforeach
                         </td>
@@ -611,26 +683,40 @@
                         <td>
                             @foreach ($paper->author as $author)
                             <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
+                                <a>
+                                    @php
+                                        $locale = app()->getLocale();
+                                        $fname = $locale == 'en' ? ($author->author_fname ?? $author->author_fname_th ?? $author->author_fname_cn)
+                                                : ($locale == 'th' ? ($author->author_fname_th ?? $author->author_fname ?? $author->author_fname_cn)
+                                                : ($author->author_fname_cn ?? $author->author_fname ?? $author->author_fname_th));
+
+                                        $lname = $locale == 'en' ? ($author->author_lname ?? $author->author_lname_th ?? $author->author_lname_cn)
+                                                : ($locale == 'th' ? ($author->author_lname_th ?? $author->author_lname ?? $author->author_lname_cn)
+                                                : ($author->author_lname_cn ?? $author->author_lname ?? $author->author_lname_th));
+                                    @endphp
+                                    {{ $fname }} {{ $lname }}
+                                </a>
 
                             </span>
                             @endforeach
                             @foreach ($paper->user as $author)
                             <span>
-                                <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    @if(app()->getLocale() == 'en')
+                                <a href="{{ route('detail', Crypt::encrypt($author->id)) }}">
                                     <h1></h1>
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher>
+                                    <teacher>
+                                        @php
+                                            $fname = $locale == 'en' ? ($author->fname_en ?? $author->fname_th ?? $author->fname_cn)
+                                                    : ($locale == 'th' ? ($author->fname_th ?? $author->fname_en ?? $author->fname_cn)
+                                                    : ($author->fname_cn ?? $author->fname_en ?? $author->fname_th));
+
+                                            $lname = $locale == 'en' ? ($author->lname_en ?? $author->lname_th ?? $author->lname_cn)
+                                                    : ($locale == 'th' ? ($author->lname_th ?? $author->lname_en ?? $author->lname_cn)
+                                                    : ($author->lname_cn ?? $author->lname_en ?? $author->lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
+                                    </teacher>
                                     <h1></h1>
-                                    @elseif(app()->getLocale() == 'th')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_th}} {{$author -> lname_th}}</teacher>
-                                    <h1></h1>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h1></h1>
-                                    <teacher>{{$author -> fname_cn}} {{$author -> lname_cn}}</teacher>
-                                    <h1></h1>
-                                    @endif
+                                </a>
 
                             </span>
                             @endforeach
