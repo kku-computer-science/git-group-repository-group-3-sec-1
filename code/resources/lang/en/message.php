@@ -317,6 +317,9 @@ return [
 
 // ส่วนของ Published research
 'Published_research_navbar_title' => 'Published research',
+'First_Author' => 'First Author',
+'Co-Author' => 'Co-Author',
+'Corresponding_Author' => 'Corresponding_Author',
 
 // ส่วนของ Book
 'Book_navbar_title' => 'Book',

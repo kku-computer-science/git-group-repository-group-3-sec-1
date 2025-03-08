@@ -327,6 +327,9 @@ return [
 
 // ส่วนของ Published research
 'Published_research_navbar_title' => '已发表的研究',
+'First_Author' => '第一作者',
+'Co-Author' => '合著者',
+'Corresponding_Author' => '通讯作者',
 
 // ส่วนของ Book
 'Book_navbar_title' => '书籍',

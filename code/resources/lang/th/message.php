@@ -318,6 +318,9 @@ return [
 
 // ส่วนของ Published research
 'Published_research_navbar_title' => 'ผลงานวิจัยที่ตีพิมพ์',
+'First_Author' => 'ผู้เขียนหลัก',
+'Co-Author' => 'ผู้เขียนร่วม',
+'Corresponding_Author' => 'ผู้เขียนที่ติดต่อได้',
 
 // ส่วนของ Book
 'Book_navbar_title' => 'หนังสือ',
