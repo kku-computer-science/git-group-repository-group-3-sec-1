@@ -15,31 +15,41 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">โครงการวิจัย</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('researchProjects.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD</a>
+            <h4 class="card-title">{{ trans('message.Research_Project_navbar_title') }}</h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('researchProjects.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> {{ trans('message.Add_research_project') }}</a>
             <!-- <div class="table-responsive"> -->
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Year</th>
-                            <th>Project name</th>
-                            <th>Head</th>
-                            <th>Member</th>
-                            <th width="auto">Action</th>
+                            <th>{{ trans('message.Research_project_no') }}</th>
+                            <th>{{ trans('message.Research_project_year') }}</th>
+                            <th>{{ trans('message.Research_project_name') }}</th>
+                            <th>{{ trans('message.Research_project_head') }}</th>
+                            <th>{{ trans('message.Research_project_member') }}</th>
+                            <th width="auto">{{ trans('message.Research_project_action') }}</th>
                         </tr>
                         <thead>
                         <tbody>
                             @foreach ($researchProjects as $i=>$researchProject)
                             <tr>
                                 <td>{{ $i+1 }}</td>
-                                <td>{{ $researchProject->project_year }}</td>
+                                @if(App::getLocale() == 'th')
+                                <td>{{ ($researchProject->project_year)+543}}</td>
+                                @else
+                                <td>{{ ($researchProject->project_year)}}</td>
+                                @endif
                                 {{-- <td>{{ $researchProject->project_name }}</td> --}}
                                 <td>{{ Str::limit($researchProject->project_name,70) }}</td>
                                 <td>
                                     @foreach($researchProject->user as $user)
                                     @if ( $user->pivot->role == 1)
-                                    {{ $user->fname_en}}
+                                        @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}}
+                                        @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}}
+                                        @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}}
+                                        @endif
                                     @endif
 
                                     @endforeach
@@ -47,7 +57,13 @@
                                 <td>
                                     @foreach($researchProject->user as $user)
                                     @if ( $user->pivot->role == 2)
-                                    {{ $user->fname_en}}
+                                        @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}}
+                                        @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}}
+                                        @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}}
+                                        @endif
                                     @endif
 
                                     @endforeach
@@ -107,6 +123,18 @@
     $(document).ready(function() {
         var table1 = $('#example1').DataTable({
             responsive: true,
+            language: {
+                "emptyTable": "{{ trans('message.No_data_avalible') }}",
+                "info": "{{ trans('message.info') }}",
+                "infoEmpty": "{{ trans('message.infoEmpty') }}",
+                "infoFiltered": "{{ trans('message.infoFiltered') }}",    
+                "lengthMenu": "{{ trans('message.lengthMenu') }}",            
+                "search": "{{ trans('message.search') }}",
+                "paginate": {                    
+                    "next": "{{ trans('message.Next') }}",
+                    "previous": "{{ trans('message.Previous') }}"
+                }
+            }
         });
     });
 </script>
@@ -116,15 +144,15 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: `{{ trans('message.Fund_warning_delete.warning_title') }}`,
+                text: "{{ trans('message.Fund_warning_delete.warning_text') }}",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("{{ trans('message.Delete_successfully') }}", {
                         icon: "success",
                     }).then(function() {
                         location.reload();

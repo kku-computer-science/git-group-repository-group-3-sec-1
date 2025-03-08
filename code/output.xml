@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.8 on win32)" generated="2025-03-07T14:39:41.612762" rpa="false" schemaversion="5">
+<suite id="s1" name="Visitor Lang Switch" source="D:\SE_2567_126-0\group_project\git-group-repository-group-3-sec-1\code\tests\robot\visitor_language_switch_tests\visitor_lang_switch.robot">
+<test id="s1-t1" name="Verify Language Switcher Presence" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:39:44.233868" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-07T14:39:44.231728" elapsed="9.683196"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-07T14:39:53.919592" elapsed="0.157972"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:39:54.077564" elapsed="0.330363"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:39:54.449004" level="INFO">Element 'id=navbarDropdownMenuLink' is displayed.</msg>
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:39:54.407927" elapsed="0.041077"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-07T14:39:54.449004" elapsed="3.266724"/>
+</kw>
+<status status="PASS" start="2025-03-07T14:39:44.216815" elapsed="13.502480"/>
+</test>
+<test id="s1-t2" name="Verify Language Options Display" line="22">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:39:57.724129" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-07T14:39:57.724129" elapsed="5.662004"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-07T14:40:03.389835" elapsed="1.268674"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:40:04.659716" elapsed="0.192090"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:04.851806" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-07T14:40:04.851806" elapsed="0.396845"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:40:05.254196" elapsed="0.154318"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:05.473618" level="INFO">Element 'xpath=//a[contains(@href, '/lang/th')]' is displayed.</msg>
+<arg>${THAI_LANG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:40:05.408514" elapsed="0.065104"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-07T14:40:05.473618" elapsed="3.872961"/>
+</kw>
+<status status="PASS" start="2025-03-07T14:39:57.724129" elapsed="11.622450"/>
+</test>
+<test id="s1-t3" name="Verify Default Language IsEnglish" line="31">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:09.348603" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-07T14:40:09.348603" elapsed="6.087778"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-07T14:40:15.436381" elapsed="1.469206"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-07T14:40:16.905587" elapsed="0.107598"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-07T14:40:17.013185" elapsed="4.244046"/>
+</kw>
+<status status="PASS" start="2025-03-07T14:40:09.348603" elapsed="11.908628"/>
+</test>
+<test id="s1-t4" name="Verify Language Switch to Thai" line="37">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:21.257231" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-07T14:40:21.257231" elapsed="6.939162"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-07T14:40:28.197921" elapsed="0.266270"/>
+</kw>
+<kw name="Switch Language">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:40:28.479661" elapsed="0.263368"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:28.743029" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-07T14:40:28.743029" elapsed="0.568945"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:29.311974" level="INFO">Clicking element 'xpath=//a[contains(@href, '/lang/th')]'.</msg>
+<arg>${THAI_LANG}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-07T14:40:29.311974" elapsed="3.661676"/>
+</kw>
+<arg>'${lang}' == 'th'</arg>
+<arg>Click Element</arg>
+<arg>${THAI_LANG}</arg>
+<arg>ELSE IF</arg>
+<arg>'${lang}' == 'en'</arg>
+<arg>Click Element</arg>
+<arg>${ENG_LANG}</arg>
+<arg>ELSE IF</arg>
+<arg>'${lang}' == 'cn'</arg>
+<arg>Click Element</arg>
+<arg>${CN_LANG}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-07T14:40:29.311974" elapsed="3.661676"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-07T14:40:32.973650" level="INFO">${flag} = th</msg>
+<var>${flag}</var>
+<arg>'${lang}' == 'th'</arg>
+<arg>th</arg>
+<arg>${lang}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-07T14:40:32.973650" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#navbarDropdownMenuLink span.flag-icon-${flag}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:40:32.981328" elapsed="0.059203"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Switched to language: ${lang}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-07T14:40:33.040531" elapsed="0.000000"/>
+</kw>
+<arg>th</arg>
+<status status="PASS" start="2025-03-07T14:40:28.479661" elapsed="4.560870"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน้าแรก</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-07T14:40:33.048392" elapsed="0.096841"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-07T14:40:33.149491" elapsed="4.455684"/>
+</kw>
+<status status="PASS" start="2025-03-07T14:40:21.257231" elapsed="16.349172"/>
+</test>
+<test id="s1-t5" name="Verify Language Switch to Chinese" line="44">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:37.609379" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-07T14:40:37.609379" elapsed="5.611707"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-07T14:40:43.232416" elapsed="1.470614"/>
+</kw>
+<kw name="Switch Language">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:40:44.715066" elapsed="0.241630"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:44.956696" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-07T14:40:44.956696" elapsed="0.400243"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-07T14:40:45.356939" level="INFO">Clicking element 'xpath=//a[contains(@href, '/lang/cn')]'.</msg>
+<arg>${CN_LANG}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-07T14:40:45.356939" elapsed="3.514831"/>
+</kw>
+<arg>'${lang}' == 'th'</arg>
+<arg>Click Element</arg>
+<arg>${THAI_LANG}</arg>
+<arg>ELSE IF</arg>
+<arg>'${lang}' == 'en'</arg>
+<arg>Click Element</arg>
+<arg>${ENG_LANG}</arg>
+<arg>ELSE IF</arg>
+<arg>'${lang}' == 'cn'</arg>
+<arg>Click Element</arg>
+<arg>${CN_LANG}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-07T14:40:45.356939" elapsed="3.514831"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-07T14:40:48.871770" level="INFO">${flag} = cn</msg>
+<var>${flag}</var>
+<arg>'${lang}' == 'th'</arg>
+<arg>th</arg>
+<arg>${lang}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-07T14:40:48.871770" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#navbarDropdownMenuLink span.flag-icon-${flag}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T14:40:48.871770" elapsed="0.090710"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Switched to language: ${lang}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-07T14:40:48.962480" elapsed="0.000000"/>
+</kw>
+<arg>cn</arg>
+<status status="PASS" start="2025-03-07T14:40:44.703030" elapsed="4.259450"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>主页</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-07T14:40:48.962480" elapsed="0.094913"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-07T14:40:49.058584" elapsed="3.419307"/>
+</kw>
+<status status="PASS" start="2025-03-07T14:40:37.608294" elapsed="14.870625"/>
+</test>
+<status status="PASS" start="2025-03-07T14:39:41.612762" elapsed="70.866157"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Visitor Lang Switch" id="s1" pass="5" fail="0" skip="0">Visitor Lang Switch</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

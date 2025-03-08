@@ -57,7 +57,15 @@
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand logo-image" href="#"><img src="{{asset('img/logo2.png')}}" alt="alternative"></a>
+            <a class="navbar-brand logo-image" href="#">
+                @if(App::getLocale() == 'th')
+            <img src="{{ asset('img/logo2_th.png') }}" alt="alternative">
+                @elseif(App::getLocale() == 'cn')
+            <img src="{{ asset('img/logo2_cn.png') }}" alt="alternative">
+                @else
+            <img src="{{ asset('img/logo2.png') }}" alt="alternative">
+                @endif
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -70,9 +78,7 @@
                     <li
                         class="nav-item dropdown {{ Request::routeIs('researchers') ? 'active' : '' }} {{ request()->is('detail*') ? 'active' : ''}} ">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            {{ trans('message.Researchers') }}
-                        </a>
+                            aria-expanded="false">{{ trans('message.Researchers') }}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach($dn as $department)
                             <li><a class="dropdown-item" href="{{ route('researchers',['id'=>$department->id])}}">
@@ -99,7 +105,7 @@
 
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <span
                                 class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span>

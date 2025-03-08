@@ -237,16 +237,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('exportfile')}}" >
                             <i class="menu-icon mdi mdi-file-export"></i>
-                            <span class="menu-title">Export</span>
+                            <span class="menu-title">{{ trans('message.Export_navbar_title')}}</span>
                         </a>
                     </li>
                     @endcan
                     @can('user-list')
-                    <li class="nav-item nav-category">Admin</li>
+                    <li class="nav-item nav-category">{{ trans('message.Admin_navbar_title')}}</li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('users.index')}}">
                             <i class="menu-icon mdi mdi-account-multiple-outline"></i>
-                            <span class="menu-title">Users</span>
+                            <span class="menu-title">{{ trans('message.User_navbar_title')}}</span>
 
                         </a>
                     </li>
@@ -255,7 +255,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('roles.index')}}">
                             <i class="menu-icon mdi mdi-chart-gantt"></i>
-                            <span class="menu-title">Roles</span>
+                            <span class="menu-title">{{ trans('message.Role_navbar_title')}}</span>
 
                         </a>
                     </li>
@@ -264,7 +264,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('permissions.index')}}">
                             <i class="menu-icon mdi mdi-checkbox-marked-circle-outline"></i>
-                            <span class="menu-title">Permission</span>
+                            <span class="menu-title">{{ trans('message.Permission_navbar_title')}}</span>
 
                         </a>
                     </li>
@@ -273,7 +273,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('departments.index')}}">
                             <i class="menu-icon mdi mdi-animation-outline"></i>
-                            <span class="menu-title">Departments</span>
+                            <span class="menu-title">{{ trans('message.Department_navbar_title')}}</span>
 
                         </a>
                     </li>
@@ -283,7 +283,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('programs.index')}}">
                             <i class="menu-icon mdi mdi-format-list-bulleted"></i>
-                            <span class="menu-title">Manage Programs</span>
+                            <span class="menu-title">{{ trans('message.Manage_Program_navbar_title')}}</span>
 
                         </a>
                     </li>
@@ -292,7 +292,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('experts.index')}}">
                             <i class="menu-icon mdi mdi-buffer"></i>
-                            <span class="menu-title">Manage Expertise</span>
+                            <span class="menu-title">{{ trans('message.Manage_Expertise_navbar_title')}}</span>
 
                         </a>
                     </li>
