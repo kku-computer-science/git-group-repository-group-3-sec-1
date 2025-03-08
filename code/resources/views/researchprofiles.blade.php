@@ -19,7 +19,7 @@
     }
 
     .count-text {
-        font-size: 13px;
+        font-size: 16px;
         font-weight: normal;
         margin-top: 5px;
         margin-bottom: 0;
@@ -47,50 +47,84 @@
             </div>
             <div class="col-md-6">
                 <div class="card-body">
-                    @if(app()->getLocale() == 'th')
-                    <h6 class="card-text"><b>{{$res->position_th}} {{$res->fname_th}} {{$res->lname_th}}</b></h6>
-                    @elseif(app()->getLocale() == 'en')
-                    <h6 class="card-text"><b>{{$res->position_en}} {{$res->fname_en}} {{$res->lname_en}}</b></h6>
-                    @elseif(app()->getLocale() == 'cn')
-                    <h6 class="card-text"><b>{{$res->position_cn}} {{$res->fname_cn}} {{$res->lname_cn}}</b></h6>
-                    @endif
+                    <h6 class="card-text"><b>
+                                        @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($res->fname_en ?? $res->fname_th ?? $res->fname_cn)
+                                                    : ($locale == 'th' ? ($res->fname_th ?? $res->fname_en ?? $res->fname_cn)
+                                                    : ($res->fname_cn ?? $res->fname_en ?? $res->fname_th));
+
+                                            $lname = $locale == 'en' ? ($res->lname_en ?? $res->lname_th ?? $res->lname_cn)
+                                                    : ($locale == 'th' ? ($res->lname_th ?? $res->lname_en ?? $res->lname_cn)
+                                                    : ($res->lname_cn ?? $res->lname_en ?? $res->lname_cn));
+                                            $position = $locale == 'en' ? ($res->position_en ?? $res->position_th ?? $res->position_cn)
+                                                    : ($locale == 'th' ? ($res->position_th ?? $res->position_en ?? $res->position_cn)
+                                                    : ($res->position_cn ?? $res->position_en ?? $res->position_th));
+                                        @endphp
+                                        {{ $position }} {{ $fname }} {{ $lname }}
+                                        </b>
+                    </h6>
                     
                     @if($res->doctoral_degree == 'Ph.D.')
                     <h6 class="card-text"><b>{{$res->fname_en}} {{$res->lname_en}}, {{$res->doctoral_degree}} </b>
                         @else
                         <h6 class="card-text"><b>{{$res->fname_en}} {{$res->lname_en}}</b>
-                            @endif</h6>
-                        
-                        @if(app()->getLocale() == 'th')
-                        <h6 class="card-text1"><b>{{$res->academic_ranks_th}}</b></h6>
-                        @elseif(app()->getLocale() == 'en')
-                        <h6 class="card-text1"><b>{{$res->academic_ranks_en}}</b></h6>
-                        @elseif(app()->getLocale() == 'cn')
-                        <h6 class="card-text1"><b>{{$res->academic_ranks_cn}}</b></h6>
+                        </h6>
                         @endif
+                        
+                        <h6 class="card-text1"><b>
+                            @php
+                                            $locale = app()->getLocale();
+                                            $academicRanks = $locale == 'en' ? ($res->academic_ranks_en ?? $res->academic_ranks_th ?? $res->academic_ranks_cn)
+                                                    : ($locale == 'th' ? ($res->academic_ranks_th ?? $res->academic_ranks_en ?? $res->academic_ranks_cn)
+                                                    : ($res->academic_ranks_cn ?? $res->academic_ranks_en ?? $res->academic_ranks_th));
+                                        @endphp
+                                        {{ $academicRanks }}
+                        </b></h6>
+
+
+
                         <!-- <h6 class="card-text1">Department of {{$res->program->program_name_en}}</h6> -->
                         <!-- <h6 class="card-text1">College of Computing</h6>
                     <h6 class="card-text1">Khon Kaen University</h6> -->
                         <h6 class="card-text1">{{ trans('message.Profile_Account_email') }}: {{$res->email}}</h6>
                         <h6 class="card-title">{{ trans('message.education') }}</h6>
                         @foreach( $res->education as $edu)
-                        @if(app()->getLocale() == 'th')
+                        <!-- @if(app()->getLocale() == 'th')
                         <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name}} {{$edu->uname}}</h6>
                         @else
                             @if($edu->year == '-')
                                 @if(app()->getLocale() == 'en')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
+                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
                                     @elseif(app()->getLocale() == 'cn')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
+                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
                                     @endif
                                 @else
                                     @if(app()->getLocale() == 'en')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
+                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
                                     @elseif(app()->getLocale() == 'cn')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->qua_name_en}} {{$edu->uname_en}}</h6>
+                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
                                     @endif
                                 @endif
-                        @endif
+                        @endif -->
+                        <h6 class="card-text2 col-sm-10">
+                        @php
+                                            $locale = app()->getLocale();
+                                            $year = ($edu->year == '-') ? $edu->year
+                                                    : (($edu->year == '') ? $edu->year
+                                                    : (($locale == 'en') ? ($edu->year - 543 ?? "Year's unknown.")
+                                                    : (($locale == 'th') ? ($edu->year ?? "ไม่มีข้อมูลปีการศึกษา")
+                                                    : ($edu->year - 543 ?? "没有学年信息"))));
+
+                                            $quaname = $locale == 'en' ? ($edu->quaname_en ?? $edu->qua_name ?? $edu->quaname_cn)
+                                                    : ($locale == 'th' ? ($edu->qua_name ?? $edu->quaname_en ?? $edu->quaname_cn)
+                                                    : ($edu->quaname_cn ?? $edu->quaname_en ?? $edu->qua_name));
+                                            $uname = $locale == 'en' ? ($edu->uname_en ?? $edu->uname ?? $edu->uname_cn)
+                                                    : ($locale == 'th' ? ($edu->uname ?? $edu->uname_en ?? $edu->uname_cn)
+                                                    : ($edu->uname_cn ?? $edu->uname_en ?? $edu->uname));
+                                        @endphp
+                                        {{ $year }} {{ $quaname }} {{ $uname }}
+                        </h6>
                         @endforeach
                         <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
@@ -513,7 +547,17 @@
                         <td>{{ $paper->paper_yearpub }}</td>
                         @endif
                         <!-- <td style="width:90%;">{{$paper->paper_name}}</td> -->
-                        <td style="width:90%;">{!! html_entity_decode(preg_replace('<inf>', 'sub', $paper->paper_name)) !!}</td>
+                        <td style="width:90%;">
+                            @php
+                                            $locale = app()->getLocale();
+                                            $papername = $locale == 'en' ? ($paper->paper_name ?? $paper->paper_name_th ?? $paper->paper_name_cn)
+                                                    : ($locale == 'th' ? ($paper->paper_name_th ?? $paper->paper_name ?? $paper->paper_name_cn)
+                                                    : ($paper->paper_name_cn ?? $paper->paper_name_en ?? $paper->paper_name_th));
+                            @endphp
+                        {!! html_entity_decode(preg_replace('<inf>', 'sub', $papername)) !!}
+
+                        </td>
+                        
                         <td>
                             @foreach ($paper->author as $author)
                                 <span>
@@ -570,7 +614,16 @@
 
 
                         <td style="width:100%;">{{$paper->paper_page}}</td>
-                        <td>{{$paper->paper_sourcetitle}}</td>
+                        <td>
+                             @php
+                                            $locale = app()->getLocale();
+                                            $sourcetitle = $locale == 'en' ? ($paper->paper_sourcetitle ?? $paper->paper_sourcetitle_th ?? $paper->paper_sourcetitle_cn)
+                                                    : ($locale == 'th' ? ($paper->paper_sourcetitle_th ?? $paper->paper_sourcetitle ?? $paper->paper_sourcetitle_cn)
+                                                    : ($paper->paper_sourcetitle_cn ?? $paper->paper_sourcetitle ?? $paper->paper_sourcetitle_th));
+                            @endphp
+
+                            {{$sourcetitle}}
+                        </td>
                         <td>{{$paper->paper_citation}}</td>
                         <td>{{$paper->paper_doi}}</td>
 
@@ -605,7 +658,15 @@
                         @elseif(app()->getLocale() == 'cn')
                         <td style="width:80px">{{ date('Y', strtotime($paper->ac_year))}}</td>
                         @endif
-                        <td>{{$paper->ac_name}}</td>
+                        <td>
+                            @php
+                                            $locale = app()->getLocale();
+                                            $acname = $locale == 'en' ? ($paper->ac_name_en ?? $paper->ac_name ?? $paper->ac_name_cn)
+                                                    : ($locale == 'th' ? ($paper->ac_name ?? $paper->ac_name_en ?? $paper->ac_name_cn)
+                                                    : ($paper->ac_name_cn ?? $paper->ac_name_en ?? $paper->ac_name));
+                            @endphp    
+                            {{ $acname }}
+                        </td>
                         <td>
                             @foreach ($paper->author as $author)
                             <span>
@@ -646,13 +707,16 @@
                             </span>
                             @endforeach
                         </td>
-                        @if(app()->getLocale() == 'en')
-                        <td>{{$paper->ac_sourcetitle_en}}</td>
-                        @elseif(app()->getLocale() == 'th')
-                        <td>{{$paper->ac_sourcetitle}}</td>
-                        @elseif(app()->getLocale() == 'cn')
-                        <td>{{$paper->ac_sourcetitle_cn}}</td>
-                        @endif
+                        <td>
+                             @php
+                                            $locale = app()->getLocale();
+                                            $sourcetitle = $locale == 'en' ? ($paper->ac_sourcetitle_en ?? $paper->ac_sourcetitle ?? $paper->ac_sourcetitle_cn)
+                                                    : ($locale == 'th' ? ($paper->ac_sourcetitle ?? $paper->ac_sourcetitle_en ?? $paper->ac_sourcetitle_cn)
+                                                    : ($paper->ac_sourcetitle_cn ?? $paper->ac_sourcetitle_en ?? $paper->ac_sourcetitle));
+                            @endphp
+
+                            {{$sourcetitle}}
+                        </td>
                         <td>{{ $paper->ac_page }}</td>
 
                     </tr>
@@ -679,7 +743,15 @@
                     @foreach ($patent as $n => $paper)
                     <tr>
                         <td>{{$n+1}}</td>
-                        <td>{{$paper->ac_name}}</td>
+                        <td>
+                            @php
+                                            $locale = app()->getLocale();
+                                            $acname = $locale == 'en' ? ($paper->ac_name ?? $paper->ac_name ?? $paper->ac_name_cn)
+                                                    : ($locale == 'th' ? ($paper->ac_name ?? $paper->ac_name ?? $paper->ac_name_cn)
+                                                    : ($paper->ac_name_cn ?? $paper->ac_name ?? $paper->ac_name));
+                            @endphp    
+                            {{ $acname }}
+                        </td>
                         <td>
                             @foreach ($paper->author as $author)
                             <span>
@@ -1014,7 +1086,197 @@
     );
 </script>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    var paper_tci_s = <?php echo $paper_tci_s; ?>;
+    var paper_scopus_s = <?php echo $paper_scopus_s; ?>;
+    var paper_wos_s = <?php echo $paper_wos_s; ?>;
+    var paper_book_s = <?php echo $paper_book_s; ?>;
+    var paper_patent_s = <?php echo $paper_patent_s; ?>;
+    var labelSummary = '<?php echo trans('message.summary'); ?>';
+    var labelPublication = '<?php echo trans('message.publications2'); ?>';
+
+    let sumtci = 0;
+    let sumsco = 0;
+    let sumwos = 0;
+    let sumbook = 0;
+    let sumpatent = 0;
+
+    (function($) {
+        for (let i = 0; i < paper_scopus_s.length; i++) {
+            sumsco += paper_scopus_s[i];
+        }
+        for (let i = 0; i < paper_tci_s.length; i++) {
+            sumtci += paper_tci_s[i];
+        }
+        for (let i = 0; i < paper_wos_s.length; i++) {
+            sumwos += paper_wos_s[i];
+        }
+        for (let i = 0; i < paper_book_s.length; i++) {
+            sumbook += paper_book_s[i];
+        }
+        for (let i = 0; i < paper_patent_s.length; i++) {
+            sumpatent += paper_patent_s[i];
+        }
+        let sum = sumsco + sumtci + sumwos + sumbook + sumpatent;
+
+        // Update HTML elements with the counts
+        document.getElementById("all").innerHTML += `   
+                <h2 class="timer count-title count-number" data-to="${sum}" data-speed="1500"></h2>
+                <p class="count-text ">{{ trans('message.summary') }}</p>`
+
+        document.getElementById("scopus_sum").innerHTML += `   
+                <h2 class="timer count-title count-number" data-to="${sumsco}" data-speed="1500"></h2>
+                <p class="count-text">SCOPUS</p>`
+
+        document.getElementById("wos_sum").innerHTML += `    
+                <h2 class="timer count-title count-number" data-to="${sumwos}" data-speed="1500"></h2>
+                <p class="count-text ">WOS</p>`
+
+        document.getElementById("tci_sum").innerHTML += `  
+                <h2 class="timer count-title count-number" data-to="${sumtci}" data-speed="1500"></h2>
+                <p class="count-text ">TCI</p>`
+
+        // Create the Bar Chart with the values
+        let dataValues = [sum,sumsco, sumtci, sumwos];
+
+        let ctx = document.getElementById('barChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [labelSummary,'Scopus', 'TCI', 'WoS'],
+                datasets: [{
+                    label: labelPublication,
+                    data: dataValues,
+                    backgroundColor: ['blue', 'green', 'red', 'purple', 'orange'],
+                    borderColor: ['blue', 'green', 'red', 'purple', 'orange'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            font: {
+                                size: 16 // Adjust the Y-axis text size here
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 16 // Adjust the X-axis text size here
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 20 // Adjust the legend text size here
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Timer functionality for counting
+        $.fn.countTo = function(options) {
+            options = options || {};
+            return $(this).each(function() {
+                var settings = $.extend({}, $.fn.countTo.defaults, {
+                    from: $(this).data('from'),
+                    to: $(this).data('to'),
+                    speed: $(this).data('speed'),
+                    refreshInterval: $(this).data('refresh-interval'),
+                    decimals: $(this).data('decimals')
+                }, options);
+
+                var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                    increment = (settings.to - settings.from) / loops;
+
+                var self = this,
+                    $self = $(this),
+                    loopCount = 0,
+                    value = settings.from,
+                    data = $self.data('countTo') || {};
+
+                $self.data('countTo', data);
+
+                if (data.interval) {
+                    clearInterval(data.interval);
+                }
+                data.interval = setInterval(updateTimer, settings.refreshInterval);
+                render(value);
+
+                function updateTimer() {
+                    value += increment;
+                    loopCount++;
+                    render(value);
+
+                    if (typeof(settings.onUpdate) == 'function') {
+                        settings.onUpdate.call(self, value);
+                    }
+
+                    if (loopCount >= loops) {
+                        $self.removeData('countTo');
+                        clearInterval(data.interval);
+                        value = settings.to;
+
+                        if (typeof(settings.onComplete) == 'function') {
+                            settings.onComplete.call(self, value);
+                        }
+                    }
+                }
+
+                function render(value) {
+                    var formattedValue = settings.formatter.call(self, value, settings);
+                    $self.html(formattedValue);
+                }
+            });
+        };
+
+        $.fn.countTo.defaults = {
+            from: 0,
+            to: 0,
+            speed: 1000,
+            refreshInterval: 100,
+            decimals: 0,
+            formatter: formatter,
+            onUpdate: null,
+            onComplete: null
+        };
+
+        function formatter(value, settings) {
+            return value.toFixed(settings.decimals);
+        }
+    }(jQuery));
+
+    jQuery(function($) {
+        $('.count-number').data('countToOptions', {
+            formatter: function(value, options) {
+                return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+            }
+        });
+
+        $('.timer').each(count);
+
+        function count(options) {
+            var $this = $(this);
+            options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+            $this.countTo(options);
+        }
+    });
+</script>
+
+
+
+
+<!-- <script>
     var paper_tci_s = <?php echo $paper_tci_s; ?>;
     var paper_scopus_s = <?php echo $paper_scopus_s; ?>;
     var paper_wos_s = <?php echo $paper_wos_s; ?>;
@@ -1160,7 +1422,7 @@
             $this.countTo(options);
         }
     });
-</script>
+</script> -->
 <!-- <script>
     // get the p element
     $(document).ready(function() {
