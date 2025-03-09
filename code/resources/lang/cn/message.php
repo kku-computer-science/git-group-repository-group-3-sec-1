@@ -355,7 +355,7 @@ return [
 'Published_research_no' => '编号',
 'Published_research_title' => '标题',
 'Published_research_type' => '类型',
-'Published_research_year' => '发表年份',
+'Published_research_year' => '发表年份 (广告)',
 'Published_research_API_fetch_date' => 'API提取日期',
 'Published_research_action' => '操作',
 'Published_research_journal' => '期刊',
@@ -395,6 +395,8 @@ return [
 'Published_research_internal_author' => '作者（内部）',
 'Published_research_external_author' => '作者（外部）',
 'Enter_your_name' => '输入您的名字',
+'your_name' => '名字',
+'your_surname' => '姓氏',
 
 'Published_research_document_type_article' => '文章',
 'Published_research_document_type_conference' => '会议论文',

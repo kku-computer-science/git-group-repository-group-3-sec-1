@@ -304,8 +304,18 @@
                     </p>
                 </div>
                 <div class="row mt-2">
+                    @if (App::getLocale() == 'th')
+                    <p class="card-text col-sm-3"><b>ปีที่ตีพิมพ์ (พ.ศ.)</b></p>
+                    @else
                     <p class="card-text col-sm-3"><b>{{ trans('message.Published_research_year') }}</b></p>
+                    @endif
+
+                    @if (App::getLocale() == 'th')
+                    <p class="card-text col-sm-9">{{ $paper->paper_yearpub +543 ?? $paper->paper_yearpub }}</p>
+                    @else
                     <p class="card-text col-sm-9">{{ $paper->paper_yearpub }}</p>
+                    @endif
+                    
                 </div>
                 <div class="row mt-2">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Published_research_volume') }}</b></p>

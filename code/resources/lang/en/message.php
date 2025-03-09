@@ -347,7 +347,7 @@ return [
 'Published_research_no' => 'No.',
 'Published_research_title' => 'Title',
 'Published_research_type' => 'Type',
-'Published_research_year' => 'Year',
+'Published_research_year' => 'Year (In A.D.)',
 'Published_research_API_fetch_date' => 'API Fetch Date',
 'Published_research_action' => 'Action',
 'Published_research_journal' => 'Journal',
@@ -387,6 +387,8 @@ return [
 'Published_research_internal_author' => 'Author Name (Internal Author)',
 'Published_research_external_author' => 'Author Name (External Author)',
 'Enter_your_name' => 'Enter your name',
+'your_name' => 'Name',
+'your_surname' => 'Surname',
 
 'Published_research_document_type_article' => 'Article',
 'Published_research_document_type_conference' => 'Conference Paper',

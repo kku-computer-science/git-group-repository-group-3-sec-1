@@ -346,7 +346,7 @@ return [
 'Published_research_no' => 'ลำดับที่',
 'Published_research_title' => 'ชื่อผลงาน',
 'Published_research_type' => 'ประเภท',
-'Published_research_year' => 'ปีที่ตีพิมพ์',
+'Published_research_year' => 'ปีที่ตีพิมพ์ (ค.ศ.)',
 'Published_research_API_fetch_date' => 'วันที่ดึงข้อมูลจาก API',
 'Published_research_action' => 'ดำเนินการ',
 'Published_research_journal' => 'วารสาร',
@@ -386,6 +386,8 @@ return [
 'Published_research_internal_author' => 'ชื่อผู้แต่ง (ในสาขา)',
 'Published_research_external_author' => 'ชื่อผู้แต่ง (นอกสาขา)',
 'Enter_your_name' => 'กรอกชื่อของคุณ',
+'your_name' => 'ชื่อ',
+'your_surname' => 'นามสกุล',
 
 'Published_research_document_type_article' => 'บทความ',
 'Published_research_document_type_conference' => 'การประชุมวิชาการ',
