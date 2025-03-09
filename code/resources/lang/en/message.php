@@ -181,6 +181,7 @@ return [
 'Research_grant' => 'Research Grant',
 'Add_research_grant' => 'Add',
 'Fund_no' => 'No.',
+'Fund_name' => 'Fund Name',
 'Fund_name_th' => 'Fund Name(Thai)',
 'Fund_name_en' => 'Fund Name(English)',
 'Fund_name_cn' => 'Fund Name(Chinese)',

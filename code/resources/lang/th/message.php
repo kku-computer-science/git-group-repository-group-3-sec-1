@@ -181,6 +181,7 @@ return [
 'Research_grant' => 'ทุนวิจัย',
 'Add_research_grant' => 'เพิ่ม',
 'Fund_no' => 'ลำดับที่',
+'Fund_name' => 'ชื่อทุน',
 'Fund_name_th' => 'ชื่อทุน(ภาษาไทย)',
 'Fund_name_en' => 'ชื่อทุน(ภาษาอังกฤษ)',
 'Fund_name_cn' => 'ชื่อทุน(ภาษาจีน)',

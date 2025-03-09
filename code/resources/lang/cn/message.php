@@ -190,6 +190,7 @@ return [
 'Research_grant' => '研究基金',
 'Add_research_grant' => '添加',
 'Fund_no' => '编号',
+'Fund_name' => '基金名称',
 'Fund_name_th' => '基金名称（泰文）',
 'Fund_name_en' => '基金名称（英文）',
 'Fund_name_cn' => '基金名称（中国人）',
