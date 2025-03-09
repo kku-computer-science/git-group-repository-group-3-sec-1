@@ -7,53 +7,60 @@
             <h4 class="card-title">{{ trans('message.Research_group_detail') }}</h4>
             <p class="card-description">{{ trans('message.Research_group_description') }}</p>
             <div class="row mt-2">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_name_th') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_name_th }}</p>
-            </div>
-            <div class="row mt-1">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_name_en') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_name_en }}</p>
-            </div>
-            <div class="row mt-1">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_name_cn') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_name_cn }}</p>
-            </div>
-            <div class="row mt-2">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_description_th') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_desc_th }}</p>
+                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_name') }}</b></p>
+                <p class="card-text col-sm-9">
+                    @php
+                                        $locale = app()->getLocale();
+                                        $groupname = $locale == 'en' ? ($researchGroup->group_name_en ?? $researchGroup->group_name_th ?? $researchGroup->group_name_cn)
+                                                : ($locale == 'th' ? ($researchGroup->group_name_th ?? $researchGroup->group_name_en ?? $researchGroup->group_name_cn)
+                                                : ($researchGroup->group_name_cn ?? $researchGroup->group_name_en ?? $researchGroup->group_name_th));
+                                    @endphp
+                                    {{ $groupname }}
+                </p>
             </div>
             <div class="row mt-2">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_description_en') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_desc_en }}</p>
+                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_description') }}</b></p>
+                <p class="card-text col-sm-9">
+                    @php
+                                        $locale = app()->getLocale();
+                                        $groupdesc = $locale == 'en' ? ($researchGroup->group_desc_en ?? $researchGroup->group_desc_th ?? $researchGroup->group_desc_cn)
+                                                : ($locale == 'th' ? ($researchGroup->group_desc_th ?? $researchGroup->group_desc_en ?? $researchGroup->group_desc_cn)
+                                                : ($researchGroup->group_desc_cn ?? $researchGroup->group_desc_en ?? $researchGroup->group_desc_th));
+                                    @endphp
+                                    {{ $groupdesc }}
+                </p>
             </div>
             <div class="row mt-2">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_description_cn') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_desc_cn }}</p>
-            </div>
-            <div class="row mt-2">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_detail_th') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_detail_th }}</p>
-            </div>
-            <div class="row mt-2">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_detail_en') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_detail_en }}</p>
-            </div>
-            <div class="row mt-2">
-                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_detail_cn') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchGroup->group_detail_cn }}</p>
+                <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_detail') }}</b></p>
+                <p class="card-text col-sm-9">
+                    @php
+                                        $locale = app()->getLocale();
+                                        $groupdetail = $locale == 'en' ? ($researchGroup->group_detail_en ?? $researchGroup->group_detail_th ?? $researchGroup->group_detail_cn)
+                                                : ($locale == 'th' ? ($researchGroup->group_detail_th ?? $researchGroup->group_detail_en ?? $researchGroup->group_detail_cn)
+                                                : ($researchGroup->group_detail_cn ?? $researchGroup->group_detail_en ?? $researchGroup->group_detail_th));
+                                    @endphp
+                                    {{ $groupdetail }}
+                </p>
             </div>
             <div class="row mt-3">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_group_head') }}</b></p>
                 <p class="card-text col-sm-9">
                     @foreach($researchGroup->user as $user)
                     @if ( $user->pivot->role == 1)
-                                    @if(App::getLocale() == 'en')
-                                        {{$user->position_en}} {{ $user->fname_en}} {{ $user->lname_en}}
-                                    @elseif(App::getLocale() == 'th')
-                                        {{$user->position_th}} {{ $user->fname_th}} {{ $user->lname_th}}
-                                    @elseif(App::getLocale() == 'cn')
-                                        {{$user->position_cn}} {{ $user->fname_cn}} {{ $user->lname_cn}}
-                                    @endif
+                                    @php
+                                        $locale = app()->getLocale();
+                                        $fname = $locale == 'en' ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn)
+                                                : ($locale == 'th' ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn)
+                                                : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th));
+
+                                        $lname = $locale == 'en' ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn)
+                                                : ($locale == 'th' ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn)
+                                                : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th));
+                                        $position = $locale == 'en' ? ($user->position_en ?? $user->position_th ?? $user->position_cn)
+                                                : ($locale == 'th' ? ($user->position_th ?? $user->position_en ?? $user->position_cn)
+                                                : ($user->position_cn ?? $user->position_en ?? $user->position_th));
+                                    @endphp
+                                    {{ $position }} {{ $fname }} {{ $lname }}
                     @endif
                     @endforeach   </p>
             </div>
@@ -62,13 +69,20 @@
                 <p class="card-text col-sm-9">
                     @foreach($researchGroup->user as $user)
                     @if ( $user->pivot->role == 2)
-                                    @if(App::getLocale() == 'en')
-                                        {{$user->position_en}} {{ $user->fname_en}} {{ $user->lname_en}}
-                                    @elseif(App::getLocale() == 'th')
-                                        {{$user->position_th}} {{ $user->fname_th}} {{ $user->lname_th}}
-                                    @elseif(App::getLocale() == 'cn')
-                                        {{$user->position_cn}} {{ $user->fname_cn}} {{ $user->lname_cn}}
-                                    @endif
+                                    @php
+                                        $locale = app()->getLocale();
+                                        $fname = $locale == 'en' ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn)
+                                                : ($locale == 'th' ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn)
+                                                : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th));
+
+                                        $lname = $locale == 'en' ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn)
+                                                : ($locale == 'th' ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn)
+                                                : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th));
+                                        $position = $locale == 'en' ? ($user->position_en ?? $user->position_th ?? $user->position_cn)
+                                                : ($locale == 'th' ? ($user->position_th ?? $user->position_en ?? $user->position_cn)
+                                                : ($user->position_cn ?? $user->position_en ?? $user->position_th));
+                                    @endphp
+                                    {{ $position }} {{ $fname }} {{ $lname }} //
                     @endif
                     @endforeach</p>
             </div>

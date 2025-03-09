@@ -279,9 +279,9 @@ return [
 
 // ส่วนของ Research Group
 'Research_Group_navbar_title' => 'Research Group',
-'Research_group_name_cn' => 'Research Group Name (CN)',
-'Research_group_description_cn' => 'Research Group Descriptions (CN)',
-'Research_group_detail_cn' => 'Research Group Detail (CN)',
+'Research_group_name_cn' => 'Group Name (CN)',
+'Research_group_description_cn' => 'Descriptions (CN)',
+'Research_group_detail_cn' => 'Detail (CN)',
 
 // ส่วนของ Research Group (index.blade.php)
 'Add_research_group' => 'Add',
