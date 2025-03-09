@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.8 on win32)" generated="2025-02-26T04:13:19.810090" rpa="false" schemaversion="5">
+<suite id="s1" name="Researcher Fund" source="D:\SE_2567_126-0\group_project\git-group-repository-group-3-sec-1\code\tests\robot\researcher_fund_language_switch_tests\researcher_fund.robot">
+<kw name="Open Browser To Login Page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:20.256060" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-26T04:13:20.256060" elapsed="2.092364"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-26T04:13:22.348424" elapsed="0.049197"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-02-26T04:13:22.398624" elapsed="0.000000"/>
+</kw>
+<kw name="Login To System">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T04:13:22.399626" elapsed="1.016933"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Found username field</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T04:13:23.416718" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:23.417720" level="INFO">Typing text 'chitsutha@kku.ac.th' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T04:13:23.416718" elapsed="3.106265"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:26.522983" level="INFO">Typing text '123456789' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T04:13:26.522983" elapsed="3.110063"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:29.633046" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T04:13:29.633046" elapsed="7.054389"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>${DASHBOARD_URL}</arg>
+<arg>5s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-02-26T04:13:36.687435" elapsed="1.007579"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Login successful, redirected to: ${DASHBOARD_URL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T04:13:37.695014" elapsed="0.001847"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T04:13:37.696861" elapsed="1.017197"/>
+</kw>
+<status status="PASS" start="2025-02-26T04:13:22.398624" elapsed="16.315434"/>
+</kw>
+<status status="PASS" start="2025-02-26T04:13:20.255063" elapsed="18.458995"/>
+</kw>
+<test id="s1-t1" name="Test Language Switching On Researcher Dashboard" line="16">
+<kw name="Reset Language To English" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:38.716408" level="INFO">Opening url 'http://127.0.0.1:8000/dashboard'</msg>
+<arg>${DASHBOARD_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-02-26T04:13:38.716408" elapsed="1.417553"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T04:13:40.133961" elapsed="1.009886"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:41.144081" level="INFO">Clicking element 'xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]'.</msg>
+<arg>xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T04:13:41.144081" elapsed="2.076771"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:46.363828" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-26T04:13:46.363828" level="FAIL">Page should have contained element 'xpath=//a[@class='dropdown-item' and contains(., 'English')]' but did not.</msg>
+<arg>xpath=//a[@class='dropdown-item' and contains(., 'English')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-02-26T04:13:43.221360" elapsed="3.146470">Page should have contained element 'xpath=//a[@class='dropdown-item' and contains(., 'English')]' but did not.</status>
+</kw>
+<msg time="2025-02-26T04:13:46.368823" level="INFO">${english_present} = False</msg>
+<var>${english_present}</var>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//a[@class='dropdown-item' and contains(., 'English')]</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-02-26T04:13:43.220852" elapsed="3.147971"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${english_present}</arg>
+<arg>Click Element</arg>
+<arg>xpath=//a[@class='dropdown-item' and contains(., 'English')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-26T04:13:46.368823" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(@class, 'flag-icon-us')]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T04:13:46.368823" elapsed="1.013148"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Reset language to English</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T04:13:47.381971" elapsed="0.000000"/>
+</kw>
+<kw name="Get Source" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:48.388057" level="INFO">${page_source} = &lt;html lang="en" class="hydrated" style="height: auto;"&gt;&lt;head&gt;&lt;style type="text/css"&gt;.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-i...</msg>
+<var>${page_source}</var>
+<doc>Returns the entire HTML source of the current page or frame.</doc>
+<status status="PASS" start="2025-02-26T04:13:47.383012" elapsed="1.005045"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Page source after reset: ${page_source}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T04:13:48.388057" elapsed="0.025610"/>
+</kw>
+<status status="PASS" start="2025-02-26T04:13:38.716408" elapsed="9.698268"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:48.414676" level="INFO">Opening url 'http://127.0.0.1:8000/funds'</msg>
+<arg>${MANAGE_FUND_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-02-26T04:13:48.414676" elapsed="1.526927"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:51.963282" level="INFO">Current page contains text 'Research Grant'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T04:13:49.943397" elapsed="2.019885"/>
+</kw>
+<arg>Research Grant</arg>
+<status status="PASS" start="2025-02-26T04:13:49.942352" elapsed="2.020930"/>
+</kw>
+<kw name="Switch Language">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:51.964294" level="INFO">Clicking element 'xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]'.</msg>
+<arg>xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T04:13:51.964294" elapsed="2.058783"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:54.023077" level="INFO">Clicking element 'xpath=//a[contains(@href, 'http://127.0.0.1:8000/lang/th')]'.</msg>
+<msg time="2025-02-26T04:13:56.178204" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-26T04:13:56.179208" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.128)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BA8C6A5+28789]
+	(No symbol) [0x00007FF76B9F5B20]
+	(No symbol) [0x00007FF76B888DCC]
+	(No symbol) [0x00007FF76B8E0774]
+	(No symbol) [0x00007FF76B8D2314]
+	(No symbol) [0x00007FF76B90732A]
+	(No symbol) [0x00007FF76B8D1BC6]
+	(No symbol) [0x00007FF76B907540]
+	(No symbol) [0x00007FF76B92F7E3]
+	(No symbol) [0x00007FF76B907103]
+	(No symbol) [0x00007FF76B8CFFC0]
+	(No symbol) [0x00007FF76B8D1273]
+	GetHandleVerifier [0x00007FF76BDD1AED+3458237]
+	GetHandleVerifier [0x00007FF76BDE829C+3550316]
+	GetHandleVerifier [0x00007FF76BDDDB9D+3507565]
+	GetHandleVerifier [0x00007FF76BB52C6A+841274]
+	(No symbol) [0x00007FF76BA009EF]
+	(No symbol) [0x00007FF76B9FCB34]
+	(No symbol) [0x00007FF76B9FCCD6]
+	(No symbol) [0x00007FF76B9EC119]
+	BaseThreadInitThunk [0x00007FFFDF0F259D+29]
+	RtlUserThreadStart [0x00007FFFE11CAF38+40]
+</msg>
+<arg>xpath=//a[contains(@href, 'http://127.0.0.1:8000/lang/${lang}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-02-26T04:13:54.023077" elapsed="2.160126">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.128)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BA8C6A5+28789]
+	(No symbol) [0x00007FF76B9F5B20]
+	(No symbol) [0x00007FF76B888DCC]
+	(No symbol) [0x00007FF76B8E0774]
+	(No symbol) [0x00007FF76B8D2314]
+	(No symbol) [0x00007FF76B90732A]
+	(No symbol) [0x00007FF76B8D1BC6]
+	(No symbol) [0x00007FF76B907540]
+	(No symbol) [0x00007FF76B92F7E3]
+	(No symbol) [0x00007FF76B907103]
+	(No symbol) [0x00007FF76B8CFFC0]
+	(No symbol) [0x00007FF76B8D1273]
+	GetHandleVerifier [0x00007FF76BDD1AED+3458237]
+	GetHandleVerifier [0x00007FF76BDE829C+3550316]
+	GetHandleVerifier [0x00007FF76BDDDB9D+3507565]
+	GetHandleVerifier [0x00007FF76BB52C6A+841274]
+	(No symbol) [0x00007FF76BA009EF]
+	(No symbol) [0x00007FF76B9FCB34]
+	(No symbol) [0x00007FF76B9FCCD6]
+	(No symbol) [0x00007FF76B9EC119]
+	BaseThreadInitThunk [0x00007FFFDF0F259D+29]
+	RtlUserThreadStart [0x00007FFFE11CAF38+40]
+</status>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<var>${flag}</var>
+<arg>'${lang}' == 'cn'</arg>
+<arg>Set Variable</arg>
+<arg>cn</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${lang}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-02-26T04:13:56.184577" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(@class, 'flag-icon-${flag}')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-02-26T04:13:56.184577" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Switched to language: ${lang}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-02-26T04:13:56.185583" elapsed="0.000000"/>
+</kw>
+<arg>th</arg>
+<status status="FAIL" start="2025-02-26T04:13:51.963282" elapsed="4.222301">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.128)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BA8C6A5+28789]
+	(No symbol) [0x00007FF76B9F5B20]
+	(No symbol) [0x00007FF76B888DCC]
+	(No symbol) [0x00007FF76B8E0774]
+	(No symbol) [0x00007FF76B8D2314]
+	(No symbol) [0x00007FF76B90732A]
+	(No symbol) [0x00007FF76B8D1BC6]
+	(No symbol) [0x00007FF76B907540]
+	(No symbol) [0x00007FF76B92F7E3]
+	(No symbol) [0x00007FF76B907103]
+	(No symbol) [0x00007FF76B8CFFC0]
+	(No symbol) [0x00007FF76B8D1273]
+	GetHandleVerifier [0x00007FF76BDD1AED+3458237]
+	GetHandleVerifier [0x00007FF76BDE829C+3550316]
+	GetHandleVerifier [0x00007FF76BDDDB9D+3507565]
+	GetHandleVerifier [0x00007FF76BB52C6A+841274]
+	(No symbol) [0x00007FF76BA009EF]
+	(No symbol) [0x00007FF76B9FCB34]
+	(No symbol) [0x00007FF76B9FCCD6]
+	(No symbol) [0x00007FF76B9EC119]
+	BaseThreadInitThunk [0x00007FFFDF0F259D+29]
+	RtlUserThreadStart [0x00007FFFE11CAF38+40]
+</status>
+</kw>
+<kw name="Verify Language">
+<arg>ทุนวิจัย</arg>
+<status status="NOT RUN" start="2025-02-26T04:13:56.186581" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Language">
+<arg>cn</arg>
+<status status="NOT RUN" start="2025-02-26T04:13:56.186581" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Language">
+<arg>研究基金</arg>
+<status status="NOT RUN" start="2025-02-26T04:13:56.187583" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบการเปลี่ยนภาษาบนหน้าจัดการทุนในส่วนของผู้วิจัย</doc>
+<status status="FAIL" start="2025-02-26T04:13:38.714058" elapsed="17.473525">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=133.0.6943.128)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BA8C6A5+28789]
+	(No symbol) [0x00007FF76B9F5B20]
+	(No symbol) [0x00007FF76B888DCC]
+	(No symbol) [0x00007FF76B8E0774]
+	(No symbol) [0x00007FF76B8D2314]
+	(No symbol) [0x00007FF76B90732A]
+	(No symbol) [0x00007FF76B8D1BC6]
+	(No symbol) [0x00007FF76B907540]
+	(No symbol) [0x00007FF76B92F7E3]
+	(No symbol) [0x00007FF76B907103]
+	(No symbol) [0x00007FF76B8CFFC0]
+	(No symbol) [0x00007FF76B8D1273]
+	GetHandleVerifier [0x00007FF76BDD1AED+3458237]
+	GetHandleVerifier [0x00007FF76BDE829C+3550316]
+	GetHandleVerifier [0x00007FF76BDDDB9D+3507565]
+	GetHandleVerifier [0x00007FF76BB52C6A+841274]
+	(No symbol) [0x00007FF76BA009EF]
+	(No symbol) [0x00007FF76B9FCB34]
+	(No symbol) [0x00007FF76B9FCCD6]
+	(No symbol) [0x00007FF76B9EC119]
+	BaseThreadInitThunk [0x00007FFFDF0F259D+29]
+	RtlUserThreadStart [0x00007FFFE11CAF38+40]
+</status>
+</test>
+<kw name="Logout And Close Browser" type="TEARDOWN">
+<kw name="Logout">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T04:13:56.194829" level="INFO">Clicking element 'xpath=//a[contains(@href, '/logout')]'.</msg>
+<arg>xpath=//a[contains(@href, '/logout')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T04:13:56.194829" elapsed="2.577023"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Login</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T04:13:58.771852" elapsed="1.014799"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Logged out successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T04:13:59.787192" elapsed="0.001028"/>
+</kw>
+<status status="PASS" start="2025-02-26T04:13:56.194669" elapsed="3.593551"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-26T04:13:59.789309" elapsed="3.208140"/>
+</kw>
+<status status="PASS" start="2025-02-26T04:13:56.193583" elapsed="6.803866"/>
+</kw>
+<status status="FAIL" start="2025-02-26T04:13:19.813093" elapsed="43.184356"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Researcher Fund" id="s1" pass="0" fail="1" skip="0">Researcher Fund</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

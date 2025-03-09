@@ -1,0 +1,2387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.8 on win32)" generated="2025-03-09T05:00:41.085525" rpa="false" schemaversion="5">
+<suite id="s1" name="Visitor Lang Switch" source="D:\SE_2567_126-0\group_project\git-group-repository-group-3-sec-1\code\tests\robot\visitor_language_switch_tests\visitor_lang_switch.robot">
+<test id="s1-t1" name="Verify Language Switcher Presence" line="25">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:41.559088" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-09T05:00:41.558092" elapsed="2.936470"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-09T05:00:44.494562" elapsed="0.085215"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:44.579777" elapsed="0.040641"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:44.646744" level="INFO">Element 'id=navbarDropdownMenuLink' is displayed.</msg>
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:44.620967" elapsed="0.026791"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-09T05:00:44.648751" elapsed="3.251652"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:00:41.557092" elapsed="6.343311"/>
+</test>
+<test id="s1-t2" name="Verify Language Options Display" line="32">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:47.902947" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-09T05:00:47.902947" elapsed="2.683020"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-09T05:00:50.586967" elapsed="0.089562"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:50.677532" elapsed="0.039594"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:50.718288" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:00:50.717769" elapsed="0.136662"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:50.855435" elapsed="0.031222"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:50.917264" level="INFO">Element 'xpath=//a[contains(@href, '/lang/th')]' is displayed.</msg>
+<arg>${THAI_LANG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:50.887653" elapsed="0.029611"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:50.940337" level="INFO">Element 'xpath=//a[contains(@href, '/lang/cn')]' is displayed.</msg>
+<arg>${CN_LANG}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:50.918279" elapsed="0.022058"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-09T05:00:50.941855" elapsed="2.212929"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:00:47.901933" elapsed="5.252851"/>
+</test>
+<test id="s1-t3" name="Verify Default Language IsEnglish" line="42">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:53.157788" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-09T05:00:53.156795" elapsed="2.658563"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-09T05:00:55.816357" elapsed="0.076325"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Home</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:00:55.892682" elapsed="0.040922"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=#all .count-text</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:55.934615" elapsed="0.041736"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:56.005735" level="INFO">${text} = source</msg>
+<var>${text}</var>
+<arg>css=#all .count-text</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:00:55.977343" elapsed="0.028392"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>source</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.005735" elapsed="0.001002"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Publications (In the Last 5 Years)</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.006737" elapsed="0.027296"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Researchers</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.035032" elapsed="0.030243"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.066292" elapsed="0.027516"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:56.094809" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.093808" elapsed="0.076330"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.171650" elapsed="0.018068"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:56.211758" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.190719" elapsed="0.021039"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:56.229795" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.212266" elapsed="0.017529"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:56.249145" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.230798" elapsed="0.018347"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:00:56.066292" elapsed="0.182853"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:56.249652" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/1')]'.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:00:56.249652" elapsed="2.457430"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Researchers</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.707082" elapsed="0.009103"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Computer Science</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.716185" elapsed="0.014531"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.731712" elapsed="0.015209"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:58.746921" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.746921" elapsed="0.058010"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.805933" elapsed="0.014230"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:58.832945" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.820163" elapsed="0.012782"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:58.845060" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.832945" elapsed="0.012115"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:58.858130" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.846063" elapsed="0.012067"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:00:58.730716" elapsed="0.127414"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:00:58.859133" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/2')]'.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:00:58.859133" elapsed="2.379506"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Researchers</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.239658" elapsed="0.007521"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Infomation Technology</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.248186" elapsed="0.013581"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.262776" elapsed="0.015111"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:01.277887" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.277887" elapsed="0.057576"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.335463" elapsed="0.013649"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:01.361862" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.349112" elapsed="0.012750"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:01.374922" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.361862" elapsed="0.013060"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:01.388952" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.375927" elapsed="0.013025"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:01.262776" elapsed="0.126176"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:01.388952" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/3')]'.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:01.388952" elapsed="1.833107"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Researchers</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.223272" elapsed="0.008512"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Geo-Informatics</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.231784" elapsed="0.011361"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.244142" elapsed="0.015365"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:03.260508" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.259507" elapsed="0.059295"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.319806" elapsed="0.013463"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:03.346043" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.333269" elapsed="0.012774"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:03.358736" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.346043" elapsed="0.013696"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:03.371778" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.359739" elapsed="0.012039"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:03.243145" elapsed="0.128633"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:03.372788" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/1')]'.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:03.372788" elapsed="2.356375"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:05.729163" level="INFO">Clicking element 'xpath=//div[@class='row row-cols-1 row-cols-md-2 g-0']/a[2]'.</msg>
+<arg>${CS_RESEARCHER_DEMO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:05.729163" elapsed="1.009510"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Assoc. Prof. Dr. Punyaphol Horata</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.738673" elapsed="0.081308"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Associate Professor</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.819981" elapsed="0.013497"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Email</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.834467" elapsed="0.013519"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Education</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.847986" elapsed="0.014488"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Publications</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.862474" elapsed="0.012523"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>SUMMARY</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.875994" elapsed="0.016031"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Export To Excel</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.893040" elapsed="0.014527"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>No.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.907567" elapsed="0.017079"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Year</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.925643" elapsed="0.015538"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Paper</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.942179" elapsed="0.020308"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Author</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.963505" elapsed="0.018539"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Document Type</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:06.982561" elapsed="0.018564"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.002123" elapsed="0.068067"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Journals/Transactions</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.071190" elapsed="0.015802"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Citations</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.087987" elapsed="0.014579"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Doi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.102566" elapsed="0.016892"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>source</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.120452" elapsed="0.013756"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:07.135207" level="INFO">Clicking element 'id=scopus-tab'.</msg>
+<arg>id=scopus-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.134208" elapsed="0.089039"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>SCOPUS</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.224240" elapsed="0.026947"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>No.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.251187" elapsed="0.013721"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Year</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.264908" elapsed="0.013515"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Paper</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.279428" elapsed="0.010509"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Author</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.289937" elapsed="0.012750"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Document Type</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.302687" elapsed="0.011577"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.315261" elapsed="0.011519"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Journals/Transactions</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.326780" elapsed="0.011517"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Citations</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.338297" elapsed="0.014694"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Doi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.352991" elapsed="0.105735"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:07.459752" level="INFO">Clicking element 'id=wos-tab'.</msg>
+<arg>id=wos-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.459752" elapsed="0.081137"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Web of Science</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.540889" elapsed="0.013929"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>No.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.555814" elapsed="0.010658"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Year</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.567467" elapsed="0.012543"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Paper</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.580010" elapsed="0.010507"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Author</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.590517" elapsed="0.013188"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Document Type</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.604701" elapsed="0.014525"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.619226" elapsed="0.011526"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Journals/Transactions</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.630752" elapsed="0.010525"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Citations</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.642279" elapsed="0.012823"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Doi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.655102" elapsed="0.012722"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:07.667824" level="INFO">Clicking element 'id=tci-tab'.</msg>
+<arg>id=tci-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.667824" elapsed="0.081438"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>TCI</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.750267" elapsed="0.015314"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>No.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.765581" elapsed="0.012519"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Year</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.778100" elapsed="0.011479"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Paper</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.789579" elapsed="0.012688"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Author</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.802267" elapsed="0.010954"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Document Type</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.814235" elapsed="0.010303"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.824538" elapsed="0.011529"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Journals/Transactions</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.837065" elapsed="0.010536"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Citations</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.848593" elapsed="0.009516"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Doi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.859118" elapsed="0.012053"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:07.871171" level="INFO">Clicking element 'id=book-tab'.</msg>
+<arg>id=book-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.871171" elapsed="0.097556"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Book</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.969723" elapsed="0.011519"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>No.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.982243" elapsed="0.011854"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Year</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:07.994097" elapsed="0.010503"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Name</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.004600" elapsed="0.014527"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Author</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.019127" elapsed="0.013623"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Place of publication</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.032750" elapsed="0.014528"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Page</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.047278" elapsed="0.011658"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:08.059958" level="INFO">Clicking element 'id=patent-tab'.</msg>
+<arg>id=patent-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.059958" elapsed="0.078923"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Other academic work</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.138881" elapsed="0.016242"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>No.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.155123" elapsed="0.012649"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Name</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.167772" elapsed="0.012531"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Author</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.180303" elapsed="0.010206"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Type</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.192021" elapsed="0.015719"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Place of publication</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.208745" elapsed="0.010520"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Register date</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.219265" elapsed="0.014191"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:08.234449" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchproject')]'.</msg>
+<arg>${RESEARCH_PROJECT_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.233456" elapsed="0.702173"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Research Project</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.937637" elapsed="0.036375"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Academic service projects/ research projects</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.974012" elapsed="0.013081"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>No.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.987093" elapsed="0.009061"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>year</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:08.997152" elapsed="0.011526"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Project Name</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.009683" elapsed="0.013904"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Details</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.024592" elapsed="0.012514"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Project Manager</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.037106" elapsed="0.012539"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Status</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.050645" elapsed="0.012576"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Project Duration</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.063221" elapsed="0.015543"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Research Fund Type</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.078764" elapsed="0.015563"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Funding Agency</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.094327" elapsed="0.014539"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Responsible Department</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.109875" elapsed="0.013778"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Budget Allocated</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.124654" elapsed="0.013516"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:09.139166" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchgroup')]'.</msg>
+<arg>${RESEARCH_GROUP_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:09.138170" elapsed="1.473867"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Research Group</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:10.613051" elapsed="0.012535"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Research Group</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:10.626584" elapsed="0.007520"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Laboratory Supervisor</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:10.635100" elapsed="0.011535"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:10.647647" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchgroupdetail/3')]'.</msg>
+<arg>${RESEARCH_GROUP_DEMO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:10.647647" elapsed="0.749806"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Laboratory Supervisor</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:11.398454" elapsed="0.010228"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Student</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:11.408682" elapsed="0.014595"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:11.424290" level="INFO">Clicking element 'xpath=//a[contains(@href, '/reports')]'.</msg>
+<arg>${REPORT_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:11.423277" elapsed="0.561948"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Reports</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:11.986225" elapsed="0.015050"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Total number of articles statistics for 5 years</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:12.002281" elapsed="0.014057"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Statistics on the number of articles cited</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:12.016338" elapsed="0.014657"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>source</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:12.031990" elapsed="0.013642"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-09T05:01:12.045632" elapsed="2.299049"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:00:53.156795" elapsed="21.187886"/>
+</test>
+<test id="s1-t4" name="Verify Language Switch to Thai" line="197">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:14.346972" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-09T05:01:14.346972" elapsed="3.093043"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-09T05:01:17.440571" elapsed="0.068682"/>
+</kw>
+<kw name="Switch Language">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:17.510252" elapsed="0.022156"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:17.532916" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:17.532408" elapsed="0.110782"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:17.644189" level="INFO">Clicking element 'xpath=//a[contains(@href, '/lang/th')]'.</msg>
+<arg>${THAI_LANG}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:17.644189" elapsed="1.115800"/>
+</kw>
+<arg>'${lang}' == 'th'</arg>
+<arg>Click Element</arg>
+<arg>${THAI_LANG}</arg>
+<arg>ELSE IF</arg>
+<arg>'${lang}' == 'en'</arg>
+<arg>Click Element</arg>
+<arg>${ENG_LANG}</arg>
+<arg>ELSE IF</arg>
+<arg>'${lang}' == 'cn'</arg>
+<arg>Click Element</arg>
+<arg>${CN_LANG}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-09T05:01:17.643190" elapsed="1.116799"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-09T05:01:18.760986" level="INFO">${flag} = th</msg>
+<var>${flag}</var>
+<arg>'${lang}' == 'th'</arg>
+<arg>th</arg>
+<arg>${lang}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.760986" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#navbarDropdownMenuLink span.flag-icon-${flag}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.760986" elapsed="0.027127"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Switched to language: ${lang}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.788113" elapsed="0.000997"/>
+</kw>
+<arg>th</arg>
+<status status="PASS" start="2025-03-09T05:01:17.510252" elapsed="1.278858"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน้าแรก</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.789110" elapsed="0.026798"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=#all .count-text</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.816910" elapsed="0.019055"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:18.858293" level="INFO">${text} = ที่มา</msg>
+<var>${text}</var>
+<arg>css=#all .count-text</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.835965" elapsed="0.022328"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>ที่มา</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.858293" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.858293" elapsed="0.024914"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้วิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.883207" elapsed="0.025275"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.909478" elapsed="0.018051"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:18.927529" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.927529" elapsed="0.069783"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:18.998320" elapsed="0.020034"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:19.039488" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:19.018354" elapsed="0.021134"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:19.059674" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:19.039488" elapsed="0.020186"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:19.079238" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:19.059674" elapsed="0.019564"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:18.909478" elapsed="0.169760"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:19.079238" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/1')]'.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:19.079238" elapsed="2.453108"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้วิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.532853" elapsed="0.008016"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สาขาวิชาวิทยาการคอมพิวเตอร์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.542379" elapsed="0.012532"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.555911" elapsed="0.015047"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:21.572475" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.570958" elapsed="0.065572"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.637514" elapsed="0.023072"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:21.674622" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.660586" elapsed="0.014036"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:21.687680" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.674622" elapsed="0.014052"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:21.702502" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.688674" elapsed="0.014338"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:21.555911" elapsed="0.147101"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:21.703012" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/2')]'.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:21.703012" elapsed="2.344589"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้วิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.048602" elapsed="0.011276"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สาขาวิชาเทคโนโลยีสารสนเทศ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.059878" elapsed="0.013712"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.074661" elapsed="0.016846"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:24.092057" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.091507" elapsed="0.057283"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.148790" elapsed="0.013810"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:24.177789" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.162600" elapsed="0.015189"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:24.190306" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.178795" elapsed="0.011511"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:24.202397" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.190306" elapsed="0.012091"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:24.074118" elapsed="0.129554"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:24.203672" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/3')]'.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:24.203672" elapsed="1.820708"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้วิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.025377" elapsed="0.009531"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สาขาวิชาภูมิสารสนเทศศาสตร์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.034908" elapsed="0.011697"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.047609" elapsed="0.013520"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:26.062640" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.061129" elapsed="0.063497"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.124626" elapsed="0.019464"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:26.157485" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.144090" elapsed="0.013395"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:26.171148" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.158492" elapsed="0.012656"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:26.184197" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.171148" elapsed="0.013049"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:26.047609" elapsed="0.136588"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:26.185196" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/1')]'.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:26.185196" elapsed="2.341888"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:28.527084" level="INFO">Clicking element 'xpath=//div[@class='row row-cols-1 row-cols-md-2 g-0']/a[2]'.</msg>
+<arg>${CS_RESEARCHER_DEMO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:28.527084" elapsed="1.041368"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>รศ.ดร. ปัญญาพล หอระตะ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.568452" elapsed="0.072697"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>รองศาสตราจารย์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.642659" elapsed="0.012672"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>อีเมล์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.655331" elapsed="0.013515"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>การศึกษา</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.669848" elapsed="0.015408"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผลงานตีพิมพ์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.685256" elapsed="0.012535"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>โดยรวม</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.698787" elapsed="0.012517"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ส่งออกเป็นไฟล์ Excel</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.712815" elapsed="0.012543"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ลำดับที่</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.726351" elapsed="0.017026"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ปี</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.744387" elapsed="0.016659"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ชื่อเอกสาร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.761046" elapsed="0.015906"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้เขียน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.776952" elapsed="0.017047"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ประเภทเอกสาร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.793999" elapsed="0.014685"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน้า</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.809682" elapsed="0.016457"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>วารสาร/ธุรกรรม</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.826139" elapsed="0.054755"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>การอ้างอิง</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.880894" elapsed="0.030760"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>doi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.911654" elapsed="0.015041"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ที่มา</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.926695" elapsed="0.014293"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:29.942497" level="INFO">Clicking element 'id=scopus-tab'.</msg>
+<arg>id=scopus-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:29.942497" elapsed="0.070511"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>SCOPUS</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.013008" elapsed="0.031632"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ลำดับที่</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.045695" elapsed="0.017156"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ปี</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.063861" elapsed="0.013103"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ชื่อเอกสาร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.077953" elapsed="0.010191"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้เขียน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.089156" elapsed="0.013507"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ประเภทเอกสาร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.102663" elapsed="0.012719"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน้า</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.115382" elapsed="0.013527"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>วารสาร/ธุรกรรม</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.128909" elapsed="0.012104"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>การอ้างอิง</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.141013" elapsed="0.012652"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>doi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.153665" elapsed="0.055384"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:30.210044" level="INFO">Clicking element 'id=wos-tab'.</msg>
+<arg>id=wos-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.210044" elapsed="0.077455"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Web of Science</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.287499" elapsed="0.012142"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ลำดับที่</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.300641" elapsed="0.011861"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ปี</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.312502" elapsed="0.012135"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ชื่อเอกสาร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.324637" elapsed="0.011515"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้เขียน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.336152" elapsed="0.012672"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ประเภทเอกสาร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.348824" elapsed="0.012530"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน้า</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.362869" elapsed="0.012099"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>วารสาร/ธุรกรรม</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.374968" elapsed="0.011510"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>การอ้างอิง</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.386478" elapsed="0.012131"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>doi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.399609" elapsed="0.010520"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:30.411134" level="INFO">Clicking element 'id=tci-tab'.</msg>
+<arg>id=tci-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.411134" elapsed="0.079937"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>TCI</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.491071" elapsed="0.014046"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ลำดับที่</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.506109" elapsed="0.010514"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ปี</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.517627" elapsed="0.011358"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ชื่อเอกสาร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.528985" elapsed="0.012526"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้เขียน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.542508" elapsed="0.010394"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ประเภทเอกสาร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.553411" elapsed="0.013546"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน้า</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.566957" elapsed="0.031714"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>วารสาร/ธุรกรรม</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.598671" elapsed="0.011412"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>การอ้างอิง</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.610083" elapsed="0.010513"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>doi</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.621601" elapsed="0.010918"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:30.632519" level="INFO">Clicking element 'id=book-tab'.</msg>
+<arg>id=book-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.632519" elapsed="0.105574"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หนังสือ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.738093" elapsed="0.012760"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ลำดับที่</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.751857" elapsed="0.015061"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ปี</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.766918" elapsed="0.013099"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ชื่อ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.780017" elapsed="0.016176"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้เขียน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.797194" elapsed="0.012176"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สถานที่ตีพิมพ์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.809370" elapsed="0.014590"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน้า</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.823960" elapsed="0.012512"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:30.836472" level="INFO">Clicking element 'id=patent-tab'.</msg>
+<arg>id=patent-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.836472" elapsed="0.083159"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผลงานวิชาการด้านอื่นๆ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.919631" elapsed="0.013295"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ลำดับที่</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.932926" elapsed="0.012761"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ชื่อ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.945687" elapsed="0.011512"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้เขียน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.957199" elapsed="0.011523"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ประเภท</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.969725" elapsed="0.016005"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สถานที่ตีพิมพ์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.985730" elapsed="0.012524"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>วันที่จดทะเบียน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:30.999252" elapsed="0.015010"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:31.015260" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchproject')]'.</msg>
+<arg>${RESEARCH_PROJECT_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.015260" elapsed="0.682004"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>โครงการวิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.698264" elapsed="0.037015"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>โครงการบริการวิชาการ/ โครงการวิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.736280" elapsed="0.012519"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ลำดับ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.749801" elapsed="0.012951"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ปี</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.762752" elapsed="0.010007"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ชื่อโครงการ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.772759" elapsed="0.011037"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>รายละเอียด</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.783796" elapsed="0.013168"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้รับผิดชอบโครงการ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.796964" elapsed="0.012981"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สถานะ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.809945" elapsed="0.012616"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ระยะเวลาโครงการ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.822561" elapsed="0.014178"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ประเภททุนวิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.837739" elapsed="0.015190"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน่วยงานที่สนันสนุนทุน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.852929" elapsed="0.014967"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>หน่วยงานที่รับผิดชอบ</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.867896" elapsed="0.015032"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>งบประมาณที่ได้รับจัดสรร</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.882928" elapsed="0.015135"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:31.899062" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchgroup')]'.</msg>
+<arg>${RESEARCH_GROUP_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:31.898063" elapsed="1.410141"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>กลุ่มวิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:33.309202" elapsed="0.012526"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>กลุ่มวิจัย</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:33.321728" elapsed="0.008517"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้ดูแลแล็ป</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:33.330245" elapsed="0.012526"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:33.343287" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchgroupdetail/3')]'.</msg>
+<arg>${RESEARCH_GROUP_DEMO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:33.343287" elapsed="0.757209"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ผู้ดูแลแล็ป</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:34.100496" elapsed="0.011550"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>นักเรียน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:34.113034" elapsed="0.011649"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:34.125669" level="INFO">Clicking element 'xpath=//a[contains(@href, '/reports')]'.</msg>
+<arg>${REPORT_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:34.125669" elapsed="0.533331"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>รายงาน</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:34.659000" elapsed="0.030162"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สถิติจำนวนบทความทั้งหมด 5 ปี</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:34.689162" elapsed="0.012527"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>สถิติจำนวนบทความที่ได้รับการอ้างอิง</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:34.702686" elapsed="0.011060"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>ที่มา</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:34.713746" elapsed="0.011223"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-09T05:01:34.725975" elapsed="2.269893"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:14.345952" elapsed="22.650919"/>
+</test>
+<test id="s1-t5" name="Verify Language Switch to Chinese" line="352">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:36.999865" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-09T05:01:36.998866" elapsed="2.708892"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-09T05:01:39.707758" elapsed="0.098757"/>
+</kw>
+<kw name="Switch Language">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:39.807515" elapsed="0.030255"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:39.838766" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<arg>${LANG_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:39.837770" elapsed="0.147578"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:39.986351" level="INFO">Clicking element 'xpath=//a[contains(@href, '/lang/cn')]'.</msg>
+<arg>${CN_LANG}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:39.986351" elapsed="1.053742"/>
+</kw>
+<arg>'${lang}' == 'th'</arg>
+<arg>Click Element</arg>
+<arg>${THAI_LANG}</arg>
+<arg>ELSE IF</arg>
+<arg>'${lang}' == 'en'</arg>
+<arg>Click Element</arg>
+<arg>${ENG_LANG}</arg>
+<arg>ELSE IF</arg>
+<arg>'${lang}' == 'cn'</arg>
+<arg>Click Element</arg>
+<arg>${CN_LANG}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-09T05:01:39.986351" elapsed="1.053742"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2025-03-09T05:01:41.041091" level="INFO">${flag} = cn</msg>
+<var>${flag}</var>
+<arg>'${lang}' == 'th'</arg>
+<arg>th</arg>
+<arg>${lang}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.040093" elapsed="0.000998"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:#navbarDropdownMenuLink span.flag-icon-${flag}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.041091" elapsed="0.027671"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Switched to language: ${lang}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.068762" elapsed="0.000000"/>
+</kw>
+<arg>cn</arg>
+<status status="PASS" start="2025-03-09T05:01:39.807515" elapsed="1.262247"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>主页</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.069762" elapsed="0.028111"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=#all .count-text</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.098872" elapsed="0.022052"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:41.151635" level="INFO">${text} = 来源</msg>
+<var>${text}</var>
+<arg>css=#all .count-text</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.120924" elapsed="0.030711"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>来源</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.151635" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>出版物（过去5年）</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.151635" elapsed="0.031602"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>研究人员</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.183237" elapsed="0.025632"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.209457" elapsed="0.018901"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:41.229356" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.229356" elapsed="0.074860"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.304216" elapsed="0.018919"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:41.342183" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.323642" elapsed="0.019542"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:41.365146" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.343184" elapsed="0.021962"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:41.385327" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.366144" elapsed="0.019183"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:41.209457" elapsed="0.175870"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:41.386328" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/1')]'.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:41.386328" elapsed="2.380056"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>研究人员</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.766384" elapsed="0.012529"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>计算机科学与技术</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.778913" elapsed="0.013151"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.793068" elapsed="0.015436"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:43.809506" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.809506" elapsed="0.054842"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.865349" elapsed="0.013517"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:43.892893" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.878866" elapsed="0.014027"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:43.905362" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.892893" elapsed="0.012469"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:43.917882" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.905362" elapsed="0.012520"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:43.793068" elapsed="0.124814"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:43.918883" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/2')]'.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:43.918883" elapsed="2.244276"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>研究人员</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.164172" elapsed="0.008998"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>信息科学与技术</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.173170" elapsed="0.012366"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.186536" elapsed="0.013673"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:46.200209" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.200209" elapsed="0.066446"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.266655" elapsed="0.025557"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:46.307394" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.292212" elapsed="0.016186"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:46.322916" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.308398" elapsed="0.014518"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:46.337758" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.322916" elapsed="0.015384"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:46.186536" elapsed="0.151764"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:46.338835" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/3')]'.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:46.338300" elapsed="1.628007"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>研究人员</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:47.966307" elapsed="0.009218"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>地理信息系统</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:47.976535" elapsed="0.011039"/>
+</kw>
+<kw name="Verify Major Options Display">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:47.988568" elapsed="0.015050"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:48.003618" level="INFO">Clicking element 'id=navbarDropdown'.</msg>
+<arg>${MAJOR_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:48.003618" elapsed="0.057794"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MAJOR_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:48.061412" elapsed="0.014043"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:48.089429" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/1')]' is displayed.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:48.075455" elapsed="0.013974"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:48.101940" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/2')]' is displayed.</msg>
+<arg>${IT_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:48.089429" elapsed="0.012511"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:48.114983" level="INFO">Element 'xpath=//a[contains(@href, '/researchers/3')]' is displayed.</msg>
+<arg>${GIS_MAJOR}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-09T05:01:48.101940" elapsed="0.013043"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:47.988568" elapsed="0.126415"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:48.115984" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchers/1')]'.</msg>
+<arg>${CS_MAJOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:48.115984" elapsed="2.219828"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:50.336803" level="INFO">Clicking element 'xpath=//div[@class='row row-cols-1 row-cols-md-2 g-0']/a[2]'.</msg>
+<arg>${CS_RESEARCHER_DEMO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:50.336803" elapsed="0.965696"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>副教授 蓬亚蓬 霍拉塔</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.302499" elapsed="0.078360"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>副教授</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.381202" elapsed="0.014119"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>电子邮件</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.395321" elapsed="0.014525"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>教育</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.409846" elapsed="0.013534"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>出版物</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.423380" elapsed="0.013713"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>全面的</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.438092" elapsed="0.013269"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>导出到文件 Excel</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.451361" elapsed="0.015396"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>编号</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.466757" elapsed="0.018071"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>年份</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.484828" elapsed="0.016073"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>论文名称</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.500901" elapsed="0.016673"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>作者</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.517574" elapsed="0.016603"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>文档类型</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.535180" elapsed="0.015172"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>页数</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.550352" elapsed="0.018054"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>期刊/交易</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.568406" elapsed="0.078731"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>引用</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.647137" elapsed="0.014038"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>DOI</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.662172" elapsed="0.013551"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>来源</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.675723" elapsed="0.014059"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:51.690779" level="INFO">Clicking element 'id=scopus-tab'.</msg>
+<arg>id=scopus-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.689782" elapsed="0.084698"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>SCOPUS</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.774480" elapsed="0.027223"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>编号</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.801703" elapsed="0.013041"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>年份</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.815746" elapsed="0.012528"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>论文名称</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.828274" elapsed="0.012517"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>作者</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.840791" elapsed="0.013924"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>文档类型</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.855718" elapsed="0.010511"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>页数</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.866229" elapsed="0.014126"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>期刊/交易</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.880355" elapsed="0.013050"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>引用</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.893405" elapsed="0.014194"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>DOI</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.907599" elapsed="0.011517"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:51.920118" level="INFO">Clicking element 'id=wos-tab'.</msg>
+<arg>id=wos-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:51.919116" elapsed="0.115738"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Web of Science</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.034854" elapsed="0.012722"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>编号</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.047576" elapsed="0.011524"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>年份</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.060101" elapsed="0.012304"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>论文名称</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.072405" elapsed="0.010958"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>作者</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.083363" elapsed="0.012806"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>文档类型</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.097171" elapsed="0.011530"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>页数</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.108701" elapsed="0.012520"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>期刊/交易</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.121221" elapsed="0.011046"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>引用</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.132267" elapsed="0.013874"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>DOI</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.146141" elapsed="0.011415"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:52.158556" level="INFO">Clicking element 'id=tci-tab'.</msg>
+<arg>id=tci-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.158556" elapsed="0.082092"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>TCI</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.240648" elapsed="0.014724"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>编号</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.255372" elapsed="0.011513"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>年份</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.267888" elapsed="0.011514"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>论文名称</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.279402" elapsed="0.012582"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>作者</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.291984" elapsed="0.011164"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>文档类型</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.304164" elapsed="0.011027"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>页数</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.315191" elapsed="0.012528"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>期刊/交易</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.327719" elapsed="0.011520"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>引用</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.339239" elapsed="0.010189"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>DOI</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.350430" elapsed="0.011544"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:52.361974" level="INFO">Clicking element 'id=book-tab'.</msg>
+<arg>id=book-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.361974" elapsed="0.096036"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>书籍</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.458010" elapsed="0.012520"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>编号</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.471526" elapsed="0.010091"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>年份</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.483127" elapsed="0.012053"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>姓名</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.495180" elapsed="0.015188"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>作者</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.510368" elapsed="0.012087"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>出版地</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.523454" elapsed="0.014720"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>页数</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.538174" elapsed="0.012251"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:52.551426" level="INFO">Clicking element 'id=patent-tab'.</msg>
+<arg>id=patent-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.550425" elapsed="0.079948"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>其他学术作品</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.631374" elapsed="0.012753"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>编号</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.645128" elapsed="0.012185"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>姓名</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.658311" elapsed="0.010517"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>作者</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.669829" elapsed="0.011521"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>类型</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.681350" elapsed="0.016334"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>出版地</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.697684" elapsed="0.011527"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>注册日期</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.710213" elapsed="0.013157"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:52.724781" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchproject')]'.</msg>
+<arg>${RESEARCH_PROJECT_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:52.723370" elapsed="0.643269"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>研究项目</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.367638" elapsed="0.037913"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>学术服务项目/研究项目</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.406547" elapsed="0.011519"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>序号</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.419057" elapsed="0.011518"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>年份</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.430575" elapsed="0.009513"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>项目名称</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.441089" elapsed="0.012556"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>详细信息</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.453645" elapsed="0.011522"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>项目负责人</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.466165" elapsed="0.013108"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>状态</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.480275" elapsed="0.012040"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>项目期限</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.492315" elapsed="0.018037"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>研究基金类型</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.510352" elapsed="0.014606"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>资助机构</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.525958" elapsed="0.013549"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>负责部门</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.540510" elapsed="0.017033"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>已分配预算</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.557543" elapsed="0.014095"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:53.571638" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchgroup')]'.</msg>
+<arg>${RESEARCH_GROUP_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:53.571638" elapsed="1.348228"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>研究小组</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:54.919866" elapsed="0.012522"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>研究小组</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:54.932388" elapsed="0.009119"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>实验室主管</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:54.941507" elapsed="0.012754"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:54.955265" level="INFO">Clicking element 'xpath=//a[contains(@href, '/researchgroupdetail/3')]'.</msg>
+<arg>${RESEARCH_GROUP_DEMO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:54.954261" elapsed="0.786925"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>实验室主管</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:55.741186" elapsed="0.010524"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>S学生</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:55.751710" elapsed="0.014079"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-09T05:01:55.766788" level="INFO">Clicking element 'xpath=//a[contains(@href, '/reports')]'.</msg>
+<arg>${REPORT_URL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-09T05:01:55.766788" elapsed="0.521840"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>报告</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:56.290142" elapsed="0.015064"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>5年总文章数统计</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:56.305206" elapsed="0.011531"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>文章被引次数统计</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:56.316737" elapsed="0.015537"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>来源</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-03-09T05:01:56.333273" elapsed="0.010972"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-09T05:01:56.345244" elapsed="2.234401"/>
+</kw>
+<status status="PASS" start="2025-03-09T05:01:36.997868" elapsed="21.581777"/>
+</test>
+<status status="PASS" start="2025-03-09T05:00:41.087528" elapsed="77.494118"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Visitor Lang Switch" id="s1" pass="5" fail="0" skip="0">Visitor Lang Switch</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

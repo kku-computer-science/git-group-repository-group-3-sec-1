@@ -9,17 +9,17 @@
         @endif
         <div class="card" style="padding: 16px;">
             <div class="card-body">
-                <h4 class="card-title">Roles</h4>
+                <h4 class="card-title">{{ trans('message.Role_navbar_title') }}</h4>
                 @can('role-create')
-                <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('roles.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i>Add</a>
+                <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('roles.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i>{{ trans('message.Add_role') }}</a>
                 @endcan
 
                 <table class="table table-striped">
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th width="280px">Action</th>
+                            <th>{{ trans('message.Role_name') }}</th>
+                            <th width="280px">{{ trans('message.Role_action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,15 +64,15 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: `{{ trans('message.Fund_warning_delete.warning_title') }}`,
+                text: "{{ trans('message.Fund_warning_delete.warning_text') }}",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("{{ trans('message.Delete_successfully') }}", {
                         icon: "success",
                     }).then(function() {
                         location.reload();

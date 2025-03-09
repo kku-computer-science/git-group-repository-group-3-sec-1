@@ -402,14 +402,6 @@
 <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
-<!-- <script>
-    $(document).ready(function() {
-
-        var table1 = $('#example1').DataTable({
-            responsive: true,
-        });
-    });
-</script> -->
 <script>
     $(document).ready(function() {
         var table1 = $('#example1').DataTable({
