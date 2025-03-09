@@ -93,25 +93,21 @@
                         <select id='head0' name="head">
                             @foreach($researchGroup->user as $u)
                             @if($u->pivot->role == 1)
-                                @if(App::getLocale() == 'th')
                                     @foreach($users as $user)
                                     <option value="{{ $user->id }}" @if($u->id == $user->id) selected @endif>
-                                        {{ $user->fname_th }} {{ $user->lname_th }}
+                                        @php
+                                        $locale = app()->getLocale();
+                                        $fname = $locale == 'en' ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn)
+                                                : ($locale == 'th' ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn)
+                                                : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th));
+
+                                        $lname = $locale == 'en' ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn)
+                                                : ($locale == 'th' ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn)
+                                                : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th));
+                                    @endphp
+                                    {{ $fname }} {{ $lname }}
                                     </option>
                                     @endforeach
-                                @elseif(App::getLocale() == 'en')
-                                    @foreach($users as $user)
-                                    <option value="{{ $user->id }}" @if($u->id == $user->id) selected @endif>
-                                        {{ $user->fname_en }} {{ $user->lname_en }}
-                                    </option>
-                                    @endforeach
-                                @elseif(App::getLocale() == 'cn')
-                                    @foreach($users as $user)
-                                    <option value="{{ $user->id }}" @if($u->id == $user->id) selected @endif>
-                                        {{ $user->fname_cn }} {{ $user->lname_cn }}
-                                    </option>
-                                    @endforeach
-                                @endif
                             @endif
                             @endforeach
                         </select>
@@ -138,7 +134,6 @@
 @stop
 @section('javascript')
 
-@if(App::getLocale() == 'th')
 <script>
 $(document).ready(function() {
     $("#head0").select2()
@@ -152,9 +147,34 @@ $(document).ready(function() {
         var obj = researchGroup[i];
 
         if (obj.pivot.role === 2) {
-            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;">@foreach($users as $user)<option value="{{ $user->id }}" >{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-            );
+            $("#dynamicAddRemove").append(`
+                <tr>
+                    <td>
+                    <select id="selUser${i}" name="moreFields[${i}][userid]" style="width: 200px;">
+                        @foreach($users as $user)
+                        <option value="{{ $user->id }}">
+                            @php
+                                        $locale = app()->getLocale();
+                                        $fname = $locale == 'en' ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn)
+                                                : ($locale == 'th' ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn)
+                                                : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th));
+
+                                        $lname = $locale == 'en' ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn)
+                                                : ($locale == 'th' ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn)
+                                                : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th));
+                                    @endphp
+                            {{ $fname }} {{ $lname }}
+                        </option>
+                        @endforeach
+                    </select>
+                    </td>
+                    <td>
+                    <button type="button" class="btn btn-danger btn-sm remove-tr">
+                        <i class="mdi mdi-minus"></i>
+                    </button>
+                    </td>
+                </tr>
+                `);
             document.getElementById("selUser" + i).value = obj.id;
             $("#selUser" + i).select2()
 
@@ -163,9 +183,34 @@ $(document).ready(function() {
     }
     $("#add-btn2").click(function() {
         ++i;
-        $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-            '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-        );
+        $("#dynamicAddRemove").append(`
+                <tr>
+                    <td>
+                    <select id="selUser${i}" name="moreFields[${i}][userid]" style="width: 200px;">
+                        @foreach($users as $user)
+                        <option value="{{ $user->id }}">
+                            @php
+                                        $locale = app()->getLocale();
+                                        $fname = $locale == 'en' ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn)
+                                                : ($locale == 'th' ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn)
+                                                : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th));
+
+                                        $lname = $locale == 'en' ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn)
+                                                : ($locale == 'th' ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn)
+                                                : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th));
+                                    @endphp
+                            {{ $fname }} {{ $lname }}
+                        </option>
+                        @endforeach
+                    </select>
+                    </td>
+                    <td>
+                    <button type="button" class="btn btn-danger btn-sm remove-tr">
+                        <i class="mdi mdi-minus"></i>
+                    </button>
+                    </td>
+                </tr>
+                `);
         $("#selUser" + i).select2()
 
     });
@@ -175,79 +220,4 @@ $(document).ready(function() {
 
 });
 </script>
-@elseif(App::getLocale() == 'en')
-<script>
-$(document).ready(function() {
-    $("#head0").select2()
-    $("#fund").select2()
-
-
-    var researchGroup = <?php echo $researchGroup['user']; ?>;
-    var i = 0;
-
-    for (i = 0; i < researchGroup.length; i++) {
-        var obj = researchGroup[i];
-
-        if (obj.pivot.role === 2) {
-            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;">@foreach($users as $user)<option value="{{ $user->id }}" >{{ $user->fname_en }} {{ $user->lname_en }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-            );
-            document.getElementById("selUser" + i).value = obj.id;
-            $("#selUser" + i).select2()
-
-        }
-        //document.getElementById("#dynamicAddRemove").value = "10";
-    }
-    $("#add-btn2").click(function() {
-        ++i;
-        $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-            '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-        );
-        $("#selUser" + i).select2()
-
-    });
-    $(document).on('click', '.remove-tr', function() {
-        $(this).parents('tr').remove();
-    });
-
-});
-</script>
-@elseif(App::getLocale() == 'cn')
-<script>
-$(document).ready(function() {
-    $("#head0").select2()
-    $("#fund").select2()
-
-
-    var researchGroup = <?php echo $researchGroup['user']; ?>;
-    var i = 0;
-
-    for (i = 0; i < researchGroup.length; i++) {
-        var obj = researchGroup[i];
-
-        if (obj.pivot.role === 2) {
-            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;">@foreach($users as $user)<option value="{{ $user->id }}" >{{ $user->fname_cn }} {{ $user->lname_cn }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-            );
-            document.getElementById("selUser" + i).value = obj.id;
-            $("#selUser" + i).select2()
-
-        }
-        //document.getElementById("#dynamicAddRemove").value = "10";
-    }
-    $("#add-btn2").click(function() {
-        ++i;
-        $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-            '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-        );
-        $("#selUser" + i).select2()
-
-    });
-    $(document).on('click', '.remove-tr', function() {
-        $(this).parents('tr').remove();
-    });
-
-});
-</script>
-@endif
 @stop
