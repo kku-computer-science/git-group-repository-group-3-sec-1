@@ -36,39 +36,85 @@
                 <form class="forms-sample" action="{{ route('books.store') }}" method="POST">
                     @csrf
                     
-
+                    
                     <div class="form-group row">
-                        <label for="exampleInputac_name" class="col-sm-3 col-form-label">{{ trans('message.Book_title') }}</label>
+                        <label class="col-sm-3 col-form-label">เลือกภาษา</label>
                         <div class="col-sm-9">
-                            <input type="text" name="ac_name" class="form-control" placeholder="{{ trans('message.Book_title') }}">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="thaiCheck" checked>
+                                <label class="form-check-label" for="thaiCheck">ภาษาไทย</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="englishCheck">
+                                <label class="form-check-label" for="englishCheck">ภาษาอังกฤษ</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="chineseCheck">
+                                <label class="form-check-label" for="chineseCheck">ภาษาจีน</label>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="form-group row" id="thaiInput" style="display: block;">
+                        <label for="exampleInputac_name_th" class="col-sm-3 col-form-label">{{ trans('message.Book_title_th') }}</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="ac_name_th" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row" id="englishInput" style="display: none;">
+                        <label for="exampleInputac_name_en" class="col-sm-3 col-form-label">{{ trans('message.Book_title_en') }}</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="ac_name_en" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row" id="chineseInput" style="display: none;">
+                        <label for="exampleInputac_name_cn" class="col-sm-3 col-form-label">{{ trans('message.Book_title_cn') }}</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="ac_name_cn" class="form-control">
+                        </div>
+                    </div>
+
+                    <script>
+                        document.getElementById('thaiCheck').addEventListener('change', function() {
+                            document.getElementById('thaiInput').style.display = this.checked ? 'block' : 'none';
+                        });
+
+                        document.getElementById('englishCheck').addEventListener('change', function() {
+                            document.getElementById('englishInput').style.display = this.checked ? 'block' : 'none';
+                        });
+
+                        document.getElementById('chineseCheck').addEventListener('change', function() {
+                            document.getElementById('chineseInput').style.display = this.checked ? 'block' : 'none';
+                        });
+                    </script>
                     
                     <div class="form-group row">
                         <label for="exampleInputac_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Book_source') }}</label>
                         <div class="col-sm-9">
-                            <input type="text" name="ac_sourcetitle" class="form-control" placeholder="{{ trans('message.Book_source') }}">
+                            <input type="text" name="ac_sourcetitle" class="form-control">
                         </div>
                         <label for="exampleInputac_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Book_source_en') }}</label>
                         <div class="col-sm-9">
-                            <input type="text" name="ac_sourcetitle" class="form-control" placeholder="{{ trans('message.Book_source_en') }}">
+                            <input type="text" name="ac_sourcetitle" class="form-control">
                         </div>
                         <label for="exampleInputac_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Book_source_cn') }}</label>
                         <div class="col-sm-9">
-                            <input type="text" name="ac_sourcetitle" class="form-control" placeholder="{{ trans('message.Book_source_cn') }}">
+                            <input type="text" name="ac_sourcetitle" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleInputac_year" class="col-sm-3 col-form-label">{{ trans('message.Book_year') }}</label>
                         <div class="col-sm-9">
-                            <input type="date" name="ac_year" class="form-control" placeholder="{{ trans('message.Book_year') }}">
+                            <input type="date" name="ac_year" class="form-control">
                         </div>
                     </div>
                     
                     <div class="form-group row">
                         <label for="exampleInputac_page" class="col-sm-3 col-form-label">{{ trans('message.Book_page') }}</label>
                         <div class="col-sm-9">
-                            <input type="text" name="ac_page" class="form-control" placeholder="{{ trans('message.Book_page') }}">
+                            <input type="text" name="ac_page" class="form-control">
                         </div>
                     </div>
                     
