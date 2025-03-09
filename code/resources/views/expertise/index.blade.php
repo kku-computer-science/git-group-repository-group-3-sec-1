@@ -33,17 +33,17 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title" style="text-align: center;">ความเชี่ยวชาญของอาจารย์</h4>
+            <h4 class="card-title" style="text-align: center;">{{ trans('message.Manage_Expertise_navbar_title')}} </h4>
             <table id="example1" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>{{ trans('message.Expertise_no')}} </th>
                         @if(Auth::user()->hasRole('admin'))
-                        <th>Teacher Name</th>
+                        <th>{{ trans('message.Expertise_teacher_name')}}</th>
                         @endif
-                        <th>Name</th>
+                        <th>{{ trans('message.Expertise_name')}}</th>
 
-                        <th>Action</th>
+                        <th>{{ trans('message.Expertise_action')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,7 +53,11 @@
                         @if(Auth::user()->hasRole('admin'))
                         <td>{{ $expert->user->fname_en }} {{ $expert->user->lname_en }}</td>
                         @endif
-                        <td>{{ $expert->expert_name }}</td>
+                        <td><p>{{ $expert->expert_name }}</p>
+                        <p>{{ $expert->expert_name_th}}</p>
+                        <p>{{ $expert->expert_name_cn}}</p>
+                        </td>
+
 
                         <td>
                             <form action="{{ route('experts.destroy',$expert->id) }}" method="POST">
@@ -96,14 +100,18 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
+                                <strong>Name in English :</strong>
                                 <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="Expert_name" onchange="validate()">
+                                <strong>Name in Thai :</strong>
+                                <input type="text" name="expert_name_th" id="expert_name_th" class="form-control" placeholder="Expert_name" onchange="validate()">
+                                <strong>Name in Chinese :</strong>
+                                <input type="text" name="expert_name_cn" id="expert_name_cn" class="form-control" placeholder="Expert_name" onchange="validate()">
                             </div>
                         </div>
 
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" id="btn-save" name="btnsave" class="btn btn-primary " disabled>Submit</button>
-                            <a href="{{ route('experts.index') }}" class="btn btn-danger">Cancel</a>
+                            <button type="submit" id="btn-save" name="btnsave" class="btn btn-primary " disabled>{{ trans('message.Submit_button')}}</button>
+                            <a href="{{ route('experts.index') }}" class="btn btn-danger">{{ trans('message.Cancle_button')}}</a>
                         </div>
                     </div>
                 </form>
@@ -125,6 +133,18 @@
             ],
             rowGroup: {
                 dataSrc: 1
+            },
+            language: {
+                "emptyTable": "{{ trans('message.No_data_avalible') }}",
+                "info": "{{ trans('message.info') }}",
+                "infoEmpty": "{{ trans('message.infoEmpty') }}",
+                "infoFiltered": "{{ trans('message.infoFiltered') }}",
+                "lengthMenu": "{{ trans('message.lengthMenu') }}",
+                "search": "{{ trans('message.search') }}",
+                "paginate": {
+                    "next": "{{ trans('message.Next') }}",
+                    "previous": "{{ trans('message.Previous') }}"
+                }
             }
         });
     });
@@ -140,7 +160,7 @@
         $('#new-expertise').click(function() {
             $('#btn-save').val("create-expertise");
             $('#expertise').trigger("reset");
-            $('#expertiseCrudModal').html("Add New Expertise");
+            $('#expertiseCrudModal').html("{{ trans('message.Add_new_expertise') }}");
             $('#crud-modal').modal('show');
         });
 
@@ -148,12 +168,14 @@
         $('body').on('click', '#edit-expertise', function() {
             var expert_id = $(this).data('id');
             $.get('experts/' + expert_id + '/edit', function(data) {
-                $('#expertiseCrudModal').html("Edit Expertise");
+                $('#expertiseCrudModal').html("{{ trans('message.Edit_expertise') }}");
                 $('#btn-update').val("Update");
                 $('#btn-save').prop('disabled', false);
                 $('#crud-modal').modal('show');
                 $('#exp_id').val(data.id);
                 $('#expert_name').val(data.expert_name);
+                $('#expert_name_th').val(data.expert_name_th);
+                $('#expert_name_cn').val(data.expert_name_cn);
 
             })
         });
@@ -167,14 +189,14 @@
             e.preventDefault();
             //confirm("Are You sure want to delete !");
             swal({
-                title: "Are you sure?",
-                text: "You will not be able to recover this imaginary file!",
+                title: `{{ trans('message.Fund_warning_delete.warning_title') }}`,
+                text: "{{ trans('message.Fund_warning_delete.warning_text') }}",
                 type: "warning",
                 buttons: true,
                 dangerMode: true,
             }).then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("{{ trans('message.Delete_successfully') }}", {
                         icon: "success",
                     }).then(function() {
                         location.reload();
@@ -186,7 +208,7 @@
                                 "_token": token,
                             },
                             success: function(data) {
-                                $('#msg').html('program entry deleted successfully');
+                                $('#msg').html('{{ trans('message.Program_entry_deleted') }}');
                                 $("#expert_id_" + expert_id).remove();
                             },
                             error: function(data) {
