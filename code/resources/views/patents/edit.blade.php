@@ -38,9 +38,21 @@
                         @method('PUT')
                         <div class="form-group row">
                             <label for="exampleInputac_name"
-                                class="col-sm-3 col-form-label">{{ trans('message.Other_academic_works_title') }}</label>
+                                class="col-sm-3 col-form-label">{{ trans('message.Other_academic_works_title') }} (TH)</label>
                             <div class="col-sm-9">
                                 <input type="text" name="ac_name" value="{{ $patent->ac_name }}" class="form-control"
+                                    placeholder="{{ trans('message.Other_academic_works_title') }}">
+                            </div>
+                            <label for="exampleInputac_name"
+                                class="col-sm-3 col-form-label">{{ trans('message.Other_academic_works_title') }} (EN)</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="ac_name_en" value="{{ $patent->ac_name_en }}" class="form-control"
+                                    placeholder="{{ trans('message.Other_academic_works_title') }}">
+                            </div>
+                            <label for="exampleInputac_name"
+                                class="col-sm-3 col-form-label">{{ trans('message.Other_academic_works_title') }} (CN)</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="ac_name_cn" value="{{ $patent->ac_name_cn }}" class="form-control"
                                     placeholder="{{ trans('message.Other_academic_works_title') }}">
                             </div>
                         </div>
@@ -202,8 +214,8 @@
                 console.log(patent);
                 var obj = patent[i];
                 $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                    '][userid]"  style="width: 200px;">@foreach ($users as $user)<option value="{{ $user->id }}" >{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-                );
+    '][userid]" style="width: 200px;"><option value="">{{ trans("message.Select_user_option") }}</option>@foreach($users as $user)@php $locale = app()->getLocale(); $fname = $locale == "en" ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn) : ($locale == "th" ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn) : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th)); $lname = $locale == "en" ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn) : ($locale == "th" ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn) : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th)); @endphp<option value="{{ $user->id }}">{{ $fname }} {{ $lname }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>');
+
                 document.getElementById("selUser" + i).value = obj.id;
                 $("#selUser" + i).select2()
 
@@ -212,10 +224,9 @@
             }
             $("#add-btn2").click(function() {
                 ++i;
-                $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' +
-                    i +
-                    '][userid]"  style="width: 200px;"><option value="">Select User</option>@foreach ($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
-                );
+                $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
+    '][userid]" style="width: 200px;"><option value="">{{ trans("message.Select_user_option") }}</option>@foreach($users as $user)@php $locale = app()->getLocale(); $fname = $locale == "en" ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn) : ($locale == "th" ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn) : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th)); $lname = $locale == "en" ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn) : ($locale == "th" ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn) : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th)); @endphp<option value="{{ $user->id }}">{{ $fname }} {{ $lname }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>');
+
                 $("#selUser" + i).select2()
 
             });
@@ -236,12 +247,35 @@
             for (i = 0; i < patent.length; i++) {
                 //console.log(patent);
                 var obj = patent[i];
-                $("#dynamic_field").append('<tr id="row' + i +
-                    '" class="dynamic-added"><td><input type="text" name="fname[]" value="' + obj.author_fname +
-                    '" placeholder="{{ trans('message.Enter_your_name') }}" class="form-control name_list" /></td><td><input type="text" name="lname[]" value="' +
-                    obj.author_lname +
-                    '" placeholder="{{ trans('message.Enter_your_name') }}" class="form-control name_list" /></td><td><button type="button" name="remove" id="' +
-                    i + '" class="btn btn-danger btn-sm btn_remove">X</button></td></tr>');
+                $("#dynamic_field").append(`
+                    <tr id="row${i}" class="dynamic-added">
+                        <td>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                            <input type="text" name="fname" value="${obj.author_fname || ''}" placeholder="{{ trans('message.your_name') }} (EN)" class="form-control name_list" />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                            <input type="text" name="lname" value="${obj.author_lname || ''}" placeholder="{{ trans('message.your_surname') }} (EN)" class="form-control name_list" />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                            <input type="text" name="fname_th" value="${obj.author_fname_th || ''}" placeholder="{{ trans('message.your_name') }} (TH)" class="form-control name_list" />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                            <input type="text" name="lname_th" value="${obj.author_lname_th || ''}" placeholder="{{ trans('message.your_surname') }} (TH)" class="form-control name_list" />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                            <input type="text" name="fname_cn" value="${obj.author_fname_cn || ''}" placeholder="{{ trans('message.your_name') }} (CN)" class="form-control name_list" />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                            <input type="text" name="lname_cn" value="${obj.author_lname_cn || ''}" placeholder="{{ trans('message.your_surname') }} (CN)" class="form-control name_list" />
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                        <button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-sm btn_remove">X</button>
+                        </td>
+                    </tr>
+                    `);
                 //document.getElementById("selUser" + i).value = obj.id;
                 //console.log(obj.author_fname)
                 // let doc=document.getElementById("row" + i)
@@ -257,9 +291,39 @@
 
             $('#add').click(function() {
                 i++;
-                $('#dynamic_field').append('<tr id="row' + i +
-                    '" class="dynamic-added"><td><input type="text" name="fname[]" placeholder="{{ trans('message.Enter_your_name') }}" class="form-control name_list" /></td><td><input type="text" name="lname[]" placeholder="{{ trans('message.Enter_your_name') }}" class="form-control name_list" /></td><td><button type="button" name="remove" id="' +
-                    i + '" class="btn btn-danger btn-sm btn_remove">X</button></td></tr>');
+                $('#dynamic_field').append(`
+                <tr id="row${i}" class="dynamic-added">
+                    <td>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                        <input type="text" name="fname[]" placeholder="{{ trans('message.your_name') }} (TH)" class="form-control name_list" />
+                        </div>
+                        <div class="col-md-6 mb-2">
+                        <input type="text" name="lname[]" placeholder="{{ trans('message.your_surname') }} (TH)" class="form-control name_list" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                        <input type="text" name="fname_en[]" placeholder="{{ trans('message.your_name') }} (EN)" class="form-control name_list" />
+                        </div>
+                        <div class="col-md-6 mb-2">
+                        <input type="text" name="lname_en[]" placeholder="{{ trans('message.your_surname') }} (EN)" class="form-control name_list" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-2">
+                        <input type="text" name="fname_cn[]" placeholder="{{ trans('message.your_name') }} (CN)" class="form-control name_list" />
+                        </div>
+                        <div class="col-md-6 mb-2">
+                        <input type="text" name="lname_cn[]" placeholder="{{ trans('message.your_surname') }} (CN)" class="form-control name_list" />
+                        </div>
+                    </div>
+                    </td>
+                    <td>
+                    <button type="button" name="remove" id="${i}" class="btn btn-danger btn-sm btn_remove">X</button>
+                    </td>
+                </tr>
+                `);
             });
 
             $(document).on('click', '.btn_remove', function() {
