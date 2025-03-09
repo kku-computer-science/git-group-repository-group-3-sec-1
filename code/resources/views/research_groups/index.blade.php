@@ -12,18 +12,18 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">กลุ่มวิจัย</h4>
+            <h4 class="card-title">{{ trans('message.Research_Group_navbar_title') }}</h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('researchGroups.create') }}"><i
-                    class="mdi mdi-plus btn-icon-prepend"></i> ADD</a>
+                    class="mdi mdi-plus btn-icon-prepend"></i> {{ trans('message.Add_research_group') }}</a>
             <!-- <div class="table-responsive"> -->
                 <table id ="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Group name (ไทย)</th>
-                            <th>Head</th>
-                            <th>Member</th>
-                            <th width="280px">Action</th>
+                            <th>{{ trans('message.Research_group_no') }}</th>
+                            <th>{{ trans('message.Research_group_name') }}</th>
+                            <th>{{ trans('message.Research_group_head') }}</th>
+                            <th>{{ trans('message.Research_group_member') }}</th>
+                            <th width="280px">{{ trans('message.Research_group_action') }}</th>
                         </tr>
                     </thead>
                     
@@ -31,13 +31,26 @@
                         @foreach ($researchGroups as $i=>$researchGroup)
                         <tr>
                             <td>{{ $i+1 }}</td>
-                            <td>{{ Str::limit($researchGroup->group_name_th,50) }}</td>
+                            <!--<td>{{ Str::limit($researchGroup->group_name_th,50) }}</td> -->
+                            <td>
+                            @if(App::getLocale() == 'en')
+                            {{ Str::limit($researchGroup->group_name_en,50) }}
+                            @elseif(App::getLocale() == 'th')
+                            {{ Str::limit($researchGroup->group_name_th,50) }}
+                            @elseif(App::getLocale() == 'cn')
+                            {{ Str::limit($researchGroup->group_name_cn,50) }}                                       
+                            @endif
+                            </td>
                             <td>
                                 @foreach($researchGroup->user as $user)
                                 @if ( $user->pivot->role == 1)
-
-                                {{ $user->fname_th}}
-
+                                    @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}}
+                                    @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}}
+                                    @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}}
+                                    @endif
                                 @endif
 
                                 @endforeach
@@ -45,7 +58,13 @@
                             <td>
                                 @foreach($researchGroup->user as $user)
                                 @if ( $user->pivot->role == 2)
-                                {{ $user->fname_th}}
+                                    @if(App::getLocale() == 'en')
+                                        {{ $user->fname_en}}
+                                    @elseif(App::getLocale() == 'th')
+                                        {{ $user->fname_th}}
+                                    @elseif(App::getLocale() == 'cn')
+                                        {{ $user->fname_cn}}
+                                    @endif
                                 @if (!$loop->last),@endif
                                 @endif
 
@@ -93,6 +112,18 @@
     $(document).ready(function() {
         var table1 = $('#example1').DataTable({
             responsive: true,
+            language: {
+                "emptyTable": "{{ trans('message.No_data_avalible') }}",
+                "info": "{{ trans('message.info') }}",
+                "infoEmpty": "{{ trans('message.infoEmpty') }}",
+                "infoFiltered": "{{ trans('message.infoFiltered') }}",    
+                "lengthMenu": "{{ trans('message.lengthMenu') }}",            
+                "search": "{{ trans('message.search') }}",
+                "paginate": {                    
+                    "next": "{{ trans('message.Next') }}",
+                    "previous": "{{ trans('message.Previous') }}"
+                }
+            }
         });
     });
 </script>
@@ -102,15 +133,15 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: `{{ trans('message.Fund_warning_delete.warning_title') }}`,
+                text: "{{ trans('message.Fund_warning_delete.warning_text') }}",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("{{ trans('message.Delete_successfully') }}", {
                         icon: "success",
                     }).then(function() {
                         location.reload();

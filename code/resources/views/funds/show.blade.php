@@ -1,46 +1,73 @@
 @extends('dashboards.users.layouts.user-dash-layout')
 
 @section('content')
-<div class="container">
-    <div class="card col-md-8" style="padding: 16px;">
-        <div class="card-body">
-            <h4 class="card-title">Fund Detail</h4>
-            <p class="card-description">ข้อมูลรายละเอียดทุน</p>
-            <div class="row">
-                <p class="card-text col-sm-3"><b>ชื่อทุน</b></p>
-                <p class="card-text col-sm-9">{{ $fund->fund_name }}</p>
+    <div class="container">
+        <div class="card col-md-8" style="padding: 16px;">
+            <div class="card-body">
+                <h4 class="card-title">{{ trans('message.Fund_detail') }}</h4>
+                <p class="card-description">{{ trans('message.Fund_detail_description') }}</p>
+                <div class="row">
+                    <p class="card-text col-sm-3"><b>{{ trans('message.Fund_name') }}</b></p>
+                    <p class="card-text col-sm-9">{{ $fund->fund_name }}</p>
+                </div>
+                <div class="row">
+                    <p class="card-text col-sm-3"><b>{{ trans('message.Fund_year') }}</b></p>
+                    <p class="card-text col-sm-9">{{ $fund->fund_year }}</p>
+                </div>
+                <div class="row">
+                    <p class="card-text col-sm-3"><b>{{ trans('message.Fund_detail') }}</b></p>
+                    <p class="card-text col-sm-9">{{ $fund->fund_details }}</p>
+                </div>
+                <div class="row">
+                    <p class="card-text col-sm-3"><b>{{ trans('message.Fund_type') }}</b></p>
+                    <p class="card-text col-sm-9">
+                        @if (App::getLocale() == 'th')
+                            @if ($fund->fund_type == 'ทุนภายใน')
+                                {{ trans('message.internal_fund') }}
+                            @elseif($fund->fund_type == 'ทุนภายนอก')
+                                {{ trans('message.external_fund') }}
+                            @endif
+                        @elseif(App::getLocale() == 'en')
+                            @if ($fund->fund_type == 'ทุนภายใน')
+                                {{ trans('message.internal_fund') }}
+                            @elseif($fund->fund_type == 'ทุนภายนอก')
+                                {{ trans('message.external_fund') }}
+                            @endif
+                        @elseif(App::getLocale() == 'cn')
+                            @if ($fund->fund_type == 'ทุนภายใน')
+                                {{ trans('message.internal_fund') }}
+                            @elseif($fund->fund_type == 'ทุนภายนอก')
+                                {{ trans('message.external_fund') }}
+                            @endif
+                        @endif
+                    </p>
+                </div>
+                <div class="row">
+                    <p class="card-text col-sm-3"><b>{{ trans('message.Fund_level') }}</b></p>
+                    <p class="card-text col-sm-9">{{ $fund->fund_level }}</p>
+                </div>
+                <div class="row">
+                    <p class="card-text col-sm-3"><b>{{ trans('message.Fund_organization') }}</b></p>
+                    <p class="card-text col-sm-9">{{ $fund->fund_name }}</p>
+                </div>
+                <div class="row">
+                    <p class="card-text col-sm-3"><b>{{ trans('message.Add_detail_fund_by') }}</b></p>
+                    @if (App::getLocale() == 'th')
+                    <p class="card-text col-sm-9">{{ $fund->user->fname_th }} {{ $fund->user->lname_th }}</p>
+                    @elseif (App::getLocale() == 'en')
+                    <p class="card-text col-sm-9">{{ $fund->user->fname_en }} {{ $fund->user->lname_en }}</p>
+                    @elseif (App::getLocale() == 'cn')
+                    <p class="card-text col-sm-9">{{ $fund->user->fname_cn }} {{ $fund->user->lname_cn }}</p>
+                    @endif
+                </div>
+                <div class="pull-right mt-5">
+                    <a class="btn btn-primary btn-sm" href="{{ route('funds.index') }}">
+                        {{ trans('message.Back_button') }}</a>
+                </div>
             </div>
-            <div class="row">
-                <p class="card-text col-sm-3"><b>ปี</b></p>
-                <p class="card-text col-sm-9">{{ $fund->fund_year }}</p>
-            </div>
-            <div class="row">
-                <p class="card-text col-sm-3"><b>รายละเอียดทุน</b></p>
-                <p class="card-text col-sm-9">{{ $fund->fund_details }}</p>
-            </div>
-            <div class="row">
-                <p class="card-text col-sm-3"><b>ประเภททุน</b></p>
-                <p class="card-text col-sm-9">{{ $fund->fund_type }}</p>
-            </div>
-            <div class="row">
-                <p class="card-text col-sm-3"><b>ระดับทุน</b></p>
-                <p class="card-text col-sm-9">{{ $fund->fund_level }}</p>
-            </div>
-            <div class="row">
-                <p class="card-text col-sm-3"><b>หน่วยงาน</b></p>
-                <p class="card-text col-sm-9">{{ $fund->fund_name }}</p>
-            </div>
-            <div class="row">
-                <p class="card-text col-sm-3"><b>เพิ่มรายละเอียดโดย</b></p>
-                <p class="card-text col-sm-9">{{ $fund->user->fname_th }} {{ $fund->user->lname_th}}</p>
-            </div>
-            <div class="pull-right mt-5">
-                <a class="btn btn-primary btn-sm" href="{{ route('funds.index') }}"> Back</a>
-            </div>
+
         </div>
 
+
     </div>
-
-
-</div>
 @endsection

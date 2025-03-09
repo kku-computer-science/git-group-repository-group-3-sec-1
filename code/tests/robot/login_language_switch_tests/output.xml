@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.8 on win32)" generated="2025-02-26T01:50:50.927016" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="D:\SE_2567_126-0\group_project\git-group-repository-group-3-sec-1\code\tests\robot\login_language_switch_tests\login.robot">
+<test id="s1-t1" name="Test Language Switching" line="11">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:50:51.402956" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-26T01:50:51.402054" elapsed="2.067404"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-26T01:50:53.469458" elapsed="0.032708"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-02-26T01:50:53.502166" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-02-26T01:50:51.387042" elapsed="2.115124"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:50:55.543302" level="INFO">Current page contains text 'Account Login'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:50:53.502166" elapsed="2.041136"/>
+</kw>
+<arg>Account Login</arg>
+<status status="PASS" start="2025-02-26T01:50:53.502166" elapsed="2.041136"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:50:57.560454" level="INFO">Current page contains text 'Username'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:50:55.543302" elapsed="2.017152"/>
+</kw>
+<arg>Username</arg>
+<status status="PASS" start="2025-02-26T01:50:55.543302" elapsed="2.017152"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:50:59.578802" level="INFO">Current page contains text 'Password'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:50:57.560454" elapsed="2.018348"/>
+</kw>
+<arg>Password</arg>
+<status status="PASS" start="2025-02-26T01:50:57.560454" elapsed="2.018348"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:01.604858" level="INFO">Current page contains text 'Login'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:50:59.578802" elapsed="2.026056"/>
+</kw>
+<arg>Login</arg>
+<status status="PASS" start="2025-02-26T01:50:59.578802" elapsed="2.026056"/>
+</kw>
+<kw name="Switch Language">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T01:51:01.604858" elapsed="1.014376"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:02.619234" level="INFO">Clicking element 'xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]'.</msg>
+<arg>xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T01:51:02.619234" elapsed="2.113753"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:04.732987" level="INFO">Clicking element 'xpath=//a[contains(@href, 'http://127.0.0.1:8000/lang/th')]'.</msg>
+<arg>xpath=//a[contains(@href, 'http://127.0.0.1:8000/lang/${lang}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T01:51:04.732987" elapsed="2.578956"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${lang}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-26T01:51:07.311943" elapsed="0.000000"/>
+</kw>
+<msg time="2025-02-26T01:51:07.311943" level="INFO">${flag} = th</msg>
+<var>${flag}</var>
+<arg>'${lang}' == 'cn'</arg>
+<arg>Set Variable</arg>
+<arg>cn</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${lang}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-26T01:51:07.311943" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(@class, 'flag-icon-${flag}')]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T01:51:07.311943" elapsed="1.022005"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Switched to language: ${lang}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T01:51:08.333948" elapsed="0.000000"/>
+</kw>
+<arg>th</arg>
+<status status="PASS" start="2025-02-26T01:51:01.604858" elapsed="6.729090"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:10.358541" level="INFO">Current page contains text 'เข้าสู่ระบบ'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:51:08.333948" elapsed="2.024593"/>
+</kw>
+<arg>เข้าสู่ระบบ</arg>
+<status status="PASS" start="2025-02-26T01:51:08.333948" elapsed="2.024593"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:12.379311" level="INFO">Current page contains text 'ชื่อผู้ใช้'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:51:10.358541" elapsed="2.020770"/>
+</kw>
+<arg>ชื่อผู้ใช้</arg>
+<status status="PASS" start="2025-02-26T01:51:10.358541" elapsed="2.020770"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:14.403604" level="INFO">Current page contains text 'รหัสผ่าน'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:51:12.379311" elapsed="2.024293"/>
+</kw>
+<arg>รหัสผ่าน</arg>
+<status status="PASS" start="2025-02-26T01:51:12.379311" elapsed="2.024293"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:16.418785" level="INFO">Current page contains text 'เข้าสู่ระบบ'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:51:14.403604" elapsed="2.015181"/>
+</kw>
+<arg>เข้าสู่ระบบ</arg>
+<status status="PASS" start="2025-02-26T01:51:14.403604" elapsed="2.015181"/>
+</kw>
+<kw name="Switch Language">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T01:51:16.418785" elapsed="1.010587"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:17.430399" level="INFO">Clicking element 'xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]'.</msg>
+<arg>xpath=//a[@class='nav-link dropdown-toggle' and .//span[contains(@class, 'flag-icon')]]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T01:51:17.429372" elapsed="2.085812"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:19.515701" level="INFO">Clicking element 'xpath=//a[contains(@href, 'http://127.0.0.1:8000/lang/cn')]'.</msg>
+<arg>xpath=//a[contains(@href, 'http://127.0.0.1:8000/lang/${lang}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-26T01:51:19.515184" elapsed="2.550075"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>cn</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-26T01:51:22.065259" elapsed="0.000000"/>
+</kw>
+<msg time="2025-02-26T01:51:22.065259" level="INFO">${flag} = cn</msg>
+<var>${flag}</var>
+<arg>'${lang}' == 'cn'</arg>
+<arg>Set Variable</arg>
+<arg>cn</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${lang}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-26T01:51:22.065259" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(@class, 'flag-icon-${flag}')]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-26T01:51:22.065259" elapsed="1.014229"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Switched to language: ${lang}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-26T01:51:23.079488" elapsed="0.000000"/>
+</kw>
+<arg>cn</arg>
+<status status="PASS" start="2025-02-26T01:51:16.418785" elapsed="6.660703"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:25.098463" level="INFO">Current page contains text '帐户登录'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:51:23.079488" elapsed="2.018975"/>
+</kw>
+<arg>帐户登录</arg>
+<status status="PASS" start="2025-02-26T01:51:23.079488" elapsed="2.018975"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:27.118563" level="INFO">Current page contains text '用户名'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:51:25.098463" elapsed="2.020100"/>
+</kw>
+<arg>用户名</arg>
+<status status="PASS" start="2025-02-26T01:51:25.098463" elapsed="2.020100"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:29.147271" level="INFO">Current page contains text '密码'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:51:27.118563" elapsed="2.028708"/>
+</kw>
+<arg>密码</arg>
+<status status="PASS" start="2025-02-26T01:51:27.118563" elapsed="2.028708"/>
+</kw>
+<kw name="Verify Language">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-26T01:51:31.171016" level="INFO">Current page contains text '登录'.</msg>
+<arg>${welcome_text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-26T01:51:29.147271" elapsed="2.023745"/>
+</kw>
+<arg>登录</arg>
+<status status="PASS" start="2025-02-26T01:51:29.147271" elapsed="2.023745"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-26T01:51:31.171016" elapsed="3.187167"/>
+</kw>
+<status status="PASS" start="2025-02-26T01:50:51.387042" elapsed="42.971141"/>
+</test>
+<status status="PASS" start="2025-02-26T01:50:50.929013" elapsed="43.429170"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -49,17 +49,29 @@ class ExpertiseController extends Controller
     {
         $r = $request->validate([
             'expert_name' => 'required',
-
         ]);
         $exp = Expertise::find($request->exp_id);
         //return $exp;
         $exp_id = $request->exp_id;
         //dd($custId);
         if (auth()->user()->hasRole('admin')) {
-            $exp->update($request->all());
+            $exp->update([
+                'expert_name' => $request->expert_name,
+            ]);
+            $exp->update([
+                'expert_name_th' => $request->expert_name_cn,
+            ]);
+            $exp->update([
+                'expert_name_cn' => $request->expert_name_th,
+            ]);
         } else {
             $user = User::find(Auth::user()->id);
-            $user->expertise()->updateOrCreate(['id' => $exp_id], ['expert_name' => $request->expert_name]);
+            $user->expertise()->updateOrCreate(['id' => $exp_id], 
+            ['expert_name' => $request->expert_name, 
+            'expert_name_th' => $request->expert_name_th, 
+            'expert_name_cn' => $request->expert_name_cn]);
+            // $user->expertise()->updateOrCreate(['id' => $exp_id], ['expert_name_th' => $request->expert_name_th]);
+            // $user->expertise()->updateOrCreate(['id' => $exp_id], ['expert_name_cn' => $request->expert_name_cn]);
         }
 
         if (empty($request->exp_id))
