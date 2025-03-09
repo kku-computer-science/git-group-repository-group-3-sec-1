@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 <div class="container card-2">
-    <p class="title"> {{ trans('message.Researchers') }} </p>
+    <p class="title">{{ trans('message.Researchers') }}</p>
     @foreach($request as $res)
     <span>
         @if(app()->getLocale() == 'th')
@@ -39,7 +39,7 @@
 
     <div class="row row-cols-1 row-cols-md-2 g-0">
         @foreach($users as $r)
-        <a href=" {{ route('detail',Crypt::encrypt($r->id))}}">
+        <a href="{{ route('detail',Crypt::encrypt($r->id))}}">
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-sm-4">
