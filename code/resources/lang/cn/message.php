@@ -336,6 +336,7 @@ return [
 
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
+'Please_choose_type' => '请选择类型',
 'Other_academic_works_navbar_title' => '其他学术作品',
 
 'No_data_avalible' => '表格中没有可用的数据',  // (Biao ge zhong mei you ke yong de shu ju)

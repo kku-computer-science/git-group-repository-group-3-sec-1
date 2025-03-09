@@ -327,6 +327,7 @@ return [
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
 'Other_academic_works_navbar_title' => 'Other academic works',
+'Please_choose_type' => 'Please Select Type',
 
 'No_data_avalible' => 'No data available in table',
 'info' => '',

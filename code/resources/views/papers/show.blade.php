@@ -242,6 +242,7 @@
                             @if ($teacher->pivot->author_type == 2)
                                 <b>{{ trans('message.Published_research_co_author') }}:</b> {{ trans('message.Published_research_first_author') }}:</b> 
                                             @php
+                                                $locale = app()->getLocale();
                                                 $fname = $locale == 'en' ? ($teacher->fname_en ?? $teacher->fname_th ?? $teacher->fname_cn)
                                                         : ($locale == 'th' ? ($teacher->fname_th ?? $teacher->fname_en ?? $teacher->fname_cn)
                                                         : ($teacher->fname_cn ?? $teacher->fname_en ?? $teacher->fname_th));

@@ -8,7 +8,15 @@
                 <p class="card-description">{{ trans('message.Other_academic_works_description') }}</p>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Other_academic_works_title') }}</b></p>
-                    <p class="card-text col-sm-9">{{ $patent->ac_name }}</p>
+                    <p class="card-text col-sm-9">
+                        @php
+                                                        $locale = app()->getLocale();
+                                                        $acname = $locale == 'en' ? ($patent->ac_name_en ?? $patent->ac_name ?? $patent->ac_name_cn)
+                                                                : ($locale == 'th' ? ($patent->ac_name ?? $patent->ac_name_en ?? $patent->ac_name_cn)
+                                                                : ($patent->ac_name_cn ?? $patent->ac_name_en ?? $patent->ac_name));
+                                                    @endphp
+                                                    {{ $acname }}
+                    </p>
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Other_academic_works_type') }}</b></p>
@@ -114,7 +122,11 @@
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Other_academic_registration_date') }}</b></p>
-                    <p class="card-text col-sm-9">{{ $patent->ac_year }}</p>
+                    @if (App::getLocale() == 'th')
+                                        <p class="card-text col-sm-9">{{ $patent->ac_year }}</p>
+                                    @else
+                                        <p class="card-text col-sm-9">{{ \Carbon\Carbon::parse($patent->ac_year)->subYears(543)->format('Y-m-d') }}</p>
+                                    @endif
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Other_academic_registration_no') }}</b></p>
@@ -123,41 +135,41 @@
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Other_academic_works_author') }}</b></p>
-                    @if (App::getLocale() == 'th')
                     <p class="card-text col-sm-9">
                         @foreach ($patent->user as $a)
-                            {{ $a->fname_th }} {{ $a->lname_th }}
+                            @php
+                            $locale = app()->getLocale();
+                            $fname = $locale == 'en' ? ($a->fname_en ?? $a->fname_th ?? $a->fname_cn)
+                                    : ($locale == 'th' ? ($a->fname_th ?? $a->fname_en ?? $a->fname_cn)
+                                    : ($a->fname_cn ?? $a->fname_en ?? $a->fname_th));
+
+                            $lname = $locale == 'en' ? ($a->lname_en ?? $a->lname_th ?? $a->lname_cn)
+                                    : ($locale == 'th' ? ($a->lname_th ?? $a->lname_en ?? $a->lname_cn)
+                                    : ($a->lname_cn ?? $a->lname_en ?? $a->lname_th));
+                            @endphp
+                            {{ $fname }} {{ $lname }}
                             @if (!$loop->last)
                                 ,
                             @endif
                         @endforeach
                     </p>
-                    @elseif (App::getLocale() == 'en')
-                    <p class="card-text col-sm-9">
-                        @foreach ($patent->user as $a)
-                            {{ $a->fname_en }} {{ $a->lname_en }}
-                            @if (!$loop->last)
-                                ,
-                            @endif
-                        @endforeach
-                    </p>
-                    @elseif (App::getLocale() == 'cn')
-                    <p class="card-text col-sm-9">
-                        @foreach ($patent->user as $a)
-                            {{ $a->fname_cn }} {{ $a->lname_cn }}
-                            @if (!$loop->last)
-                                ,
-                            @endif
-                        @endforeach
-                    </p>
-                    @endif
 
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Other_academic_works_co-author') }}</b></p>
                     <p class="card-text col-sm-9">
                         @foreach ($patent->author as $a)
-                            {{ $a->author_fname }} {{ $a->author_lname }}
+                            @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($a->author_fname ?? $a->author_fname_th ?? $a->author_fname_cn)
+                                                    : ($locale == 'th' ? ($a->author_fname_th ?? $a->author_fname ?? $a->author_fname_cn)
+                                                    : ($a->author_fname_cn ?? $a->author_fname ?? $a->author_fname_th));
+
+                                            $lname = $locale == 'en' ? ($a->author_lname ?? $a->author_lname_th ?? $a->author_lname_cn)
+                                                    : ($locale == 'th' ? ($a->author_lname_th ?? $a->author_lname ?? $a->author_lname_cn)
+                                                    : ($a->author_lname_cn ?? $a->author_lname ?? $a->author_lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
                             @if (!$loop->last)
                                 ,
                             @endif

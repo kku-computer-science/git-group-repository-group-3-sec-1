@@ -326,6 +326,7 @@ return [
 'Book_navbar_title' => 'หนังสือ',
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
+'Please_choose_type' => 'โปรดเลือกประเภท',
 'Other_academic_works_navbar_title' => 'ผลงานวิชาการอื่นๆ',
 
 'No_data_avalible' => 'ไม่มีข้อมูลในตารางนี้',
