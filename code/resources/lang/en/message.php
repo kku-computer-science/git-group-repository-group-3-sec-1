@@ -1,5 +1,6 @@
 <?php
 return [
+'Null' => '!! No information for this section. !!',
 'Home' => 'Home',
 'Researchers' => 'Researchers',
 'ResearchProj' => 'Research Project',

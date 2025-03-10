@@ -1,5 +1,6 @@
 <?php
 return [
+'Null' => '!! 没有该字段的信息。!!',
 'Home' => 'หน้าแรก',
 'Researchers' => 'ผู้วิจัย',
 'ResearchProj' => 'โครงการวิจัย',
