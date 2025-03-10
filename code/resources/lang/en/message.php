@@ -160,7 +160,7 @@ return [
 'Expertise_title_form' => 'Expertise',
 'Expertise_placeholder_form' => 'Enter Expertise',
 'Submit_button' => 'Submit',
-'Cancle_button' => 'Cancle',
+'Cancle_button' => 'Cancel',
 'Education_title' => 'Education',
 'Bachelor_degree_title' => 'Bachelor\'s degree',
 'Master_degree_title' => 'Master\'s degree',
