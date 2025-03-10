@@ -9,8 +9,14 @@ class Academicwork extends Model
 {
     protected $fillable = [
         'ac_name',
+        'ac_name_en',
+        'ac_name_cn',
         'ac_type',
+        'ac_type_en',
+        'ac_type_cn',
         'ac_sourcetitle',
+        'ac_sourcetitle_en',
+        'ac_sourcetitle_cn',
         'ac_year',
         'ac_refnumber',
         'ac_page',
