@@ -1,5 +1,9 @@
 <?php
 return [
+'noexpertise' => 'This researcher has not defined their expertise yet.',
+',Ph.d' => ', Ph.d',
+'nostudentwithinRG' => 'There are no students within this research group.',
+'null' => 'No information for this section.',
 'Home' => 'Home',
 'Researchers' => 'Researchers',
 'ResearchProj' => 'Research Project',
@@ -13,9 +17,10 @@ return [
 'Number' => 'Number',
 'Project name' => 'Project name',
 'Year' => 'Year',
+'Status' => 'Status',
 'Details' => 'Details',
 'Academic service projects/research projects' => 'Academic service projects/research projects',
-'Project responsible person' => 'Project responsible person',
+'Project responsible person' => 'Person(s) responsible for the project',
 'Project Duration' => 'Project Duration',
 'Type of Research Funding' => 'Type of Research Funding',
 'Funding Agency' => 'Funding Agency',

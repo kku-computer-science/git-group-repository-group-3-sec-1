@@ -14,9 +14,13 @@ class Paper extends Model
     ];
     protected $fillable = [
         'paper_name',
+        'paper_name_th',
+        'paper_name_cn',
         'paper_type',
         'paper_subtype',
         'paper_sourcetitle',
+        'paper_sourcetitle_th',
+        'paper_sourcetitle_cn',
         'paper_url',
         'paper_yearpub',
         'paper_volume',
@@ -25,9 +29,13 @@ class Paper extends Model
         'paper_page',
         'paper_doi',
         'paper_funder',
+        'paper_funder_th',
+        'paper_funder_en',
         'reference_number',
         'patent_date',
         'abstract',
+        'abstract_th',
+        'abstract_cn',
         'keyword',
         'publication'
     

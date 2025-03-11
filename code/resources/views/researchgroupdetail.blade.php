@@ -18,39 +18,67 @@
                     <h2 class="card-text-2">
                         @foreach ($rg->user as $r)
                         @if($r->hasRole('teacher'))
-                        @if(app()->getLocale() == 'en' and $r->academic_ranks_en == 'Lecturer' and $r->doctoral_degree == 'Ph.D.')
-                             {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, Ph.D.
+                        @if( $r->academic_ranks_en == 'Lecturer' and $r->doctoral_degree == 'Ph.D.')
+                             {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th ?? $r->fname_cn}} 
+                             {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_en ?? $r->lname_th ?? $r->lname_cn}}
+                             @if(app()->getLocale() == 'th')
+                             @else
+                             {{ trans('message.,Ph.d') }}
+                             @endif
                             <br>
-                            @elseif(app()->getLocale() == 'en' and $r->academic_ranks_en == 'Lecturer')
-                            {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
+                            @elseif( $r->academic_ranks_en == 'Lecturer')
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th ?? $r->fname_cn}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th ?? $r->fname_cn}}
                             <br>
-                            @elseif(app()->getLocale() == 'en' and $r->doctoral_degree == 'Ph.D.')
-                            {{ str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()}) }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, Ph.D.
+                            @elseif( $r->doctoral_degree == 'Ph.D.')
+                            {{ str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()}) ?? $r->position_en ?? $r->position_th ?? $r->position_cn}} 
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th ?? $r->fname_cn}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th ?? $r->fname_cn}}
+                            @if(app()->getLocale() == 'th')
+                             @else
+                             {{ trans('message.,Ph.d') }}
+                             @endif
                             <br>
                             @else                            
-                            {{ $r->{'position_'.app()->getLocale()} }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
-                            <br>
+                            {{ $r->{'position_'.app()->getLocale()} ?? $r->position_en ?? $r->position_th ?? $r->position_cn}}
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_en ?? $r->position_th ?? $r->position_cn}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_en ?? $r->position_th ?? $r->position_cn}}
+                            <br> 
                             @endif
                         
                         @endif
                         @endforeach
                     </h2>
                     <h1 class="card-text-1"> {{ trans('message.Student') }} </h1>
+                    @php
+                        $studentCount = $rg->user->filter(fn($user) => $user->hasRole('student'))->count();
+                    @endphp
+
                     <h2 class="card-text-2">
-                        @foreach ($rg->user as $user)
-                        @if($user->hasRole('student'))
-                        {{$user->{'position_'.app()->getLocale()} }} {{$user->{'fname_'.app()->getLocale()} }} {{$user->{'lname_'.app()->getLocale()} }}
-                        <br>
+                        @if($studentCount > 0)
+                            @foreach ($rg->user as $user)
+                                @if($user->hasRole('student'))
+                                    {{ $user->{'position_'.app()->getLocale()} ?? $user->position_en ?? $user->position_th ?? $user->position_cn }} 
+                                    {{ $user->{'fname_'.app()->getLocale()} ?? $user->fname_en ?? $user->fname_th ?? $user->fname_cn}} 
+                                    {{ $user->{'lname_'.app()->getLocale()} ?? $user->lname_en ?? $user->lname_th ?? $user->lname_cn}} 
+                                    <br>
+                                @endif
+                            @endforeach
+                        @else
+                            {{ trans('message.nostudentwithinRG') }}
                         @endif
-                        @endforeach
                     </h2>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"> {{ $rg->{'group_name_'.app()->getLocale()} }}</>
+                    <h5 class="card-title"> {{ $rg->{'group_name_'.app()->getLocale()} ?? $rg->group_name_en ?? $rg->group_name_th ?? $rg->group_name_cn}}</>
                     </h5>
-                    <h3 class="card-text">{{$rg->{'group_detail_'.app()->getLocale()} }}
+                    <h3 class="card-text">{{ Str::limit($rg->{'group_desc_'.app()->getLocale()}, 350) 
+                        ?? Str::limit($rg->group_desc_en, 350)
+                        ?? Str::limit($rg->group_desc_th, 350)
+                        ?? Str::limit($rg->group_desc_cn, 350)
+                    }}
                     </h3>
                 </div>
                 
