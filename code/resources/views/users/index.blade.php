@@ -163,23 +163,26 @@
                                                     'teacher' => 'อาจารย์',
                                                     'student' => 'นักเรียน',
                                                     'headproject' => 'หัวหน้าโครงการ',
-                                                    default => $val
+                                                    'staff' => 'เจ้าหน้าที่',
+                                                    default => $val,
                                                 },
                                                 'en' => match ($val) {
                                                     'admin' => 'Admin',
                                                     'teacher' => 'Teacher',
                                                     'student' => 'Student',
                                                     'headproject' => 'Head Project',
-                                                    default => $val
+                                                    'staff' => 'Staff',
+                                                    default => $val,
                                                 },
                                                 'cn' => match ($val) {
                                                     'admin' => '管理员',
                                                     'teacher' => '老师',
                                                     'student' => '学生',
                                                     'headproject' => '项目负责人',
-                                                    default => $val
+                                                    'staff'=> '职员',
+                                                    default => $val,
                                                 },
-                                                default => $val
+                                                default => $val,
                                             };
                                         @endphp
                                         <label class="badge badge-dark">{{ $role }}</label>
