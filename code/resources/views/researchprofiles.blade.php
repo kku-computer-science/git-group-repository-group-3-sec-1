@@ -89,43 +89,30 @@
                     <h6 class="card-text1">Khon Kaen University</h6> -->
                         <h6 class="card-text1">{{ trans('message.Profile_Account_email') }}: {{$res->email}}</h6>
                         <h6 class="card-title">{{ trans('message.education') }}</h6>
-                        @foreach( $res->education as $edu)
-                        <!-- @if(app()->getLocale() == 'th')
-                        <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name}} {{$edu->uname}}</h6>
+                        @if($res->education->isEmpty())
+                            <h6 class="card-text2 col-sm-10"> {{ trans('message.null') }}</h6>
                         @else
-                            @if($edu->year == '-')
-                                @if(app()->getLocale() == 'en')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
-                                    @endif
-                                @else
-                                    @if(app()->getLocale() == 'en')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
-                                    @endif
-                                @endif
-                        @endif -->
-                        <h6 class="card-text2 col-sm-10">
-                        @php
-                                            $locale = app()->getLocale();
-                                            $year = ($edu->year == '-') ? $edu->year
-                                                    : (($edu->year == '') ? $edu->year
-                                                    : (($locale == 'en') ? ($edu->year - 543 ?? "Year's unknown.")
-                                                    : (($locale == 'th') ? ($edu->year ?? "ไม่มีข้อมูลปีการศึกษา")
-                                                    : ($edu->year - 543 ?? "没有学年信息"))));
+                            @foreach($res->education as $edu)
+                                <h6 class="card-text2 col-sm-10">
+                                    @php
+                                        $locale = app()->getLocale();
+                                        $year = ($edu->year == '-') ? $edu->year
+                                                : (($edu->year == '') ? $edu->year
+                                                : (($locale == 'en') ? ($edu->year - 543 ?? "Year's unknown.")
+                                                : (($locale == 'th') ? ($edu->year ?? "ไม่มีข้อมูลปีการศึกษา")
+                                                : ($edu->year - 543 ?? "没有学年信息"))));
 
-                                            $quaname = $locale == 'en' ? ($edu->quaname_en ?? $edu->qua_name ?? $edu->quaname_cn)
-                                                    : ($locale == 'th' ? ($edu->qua_name ?? $edu->quaname_en ?? $edu->quaname_cn)
-                                                    : ($edu->quaname_cn ?? $edu->quaname_en ?? $edu->qua_name));
-                                            $uname = $locale == 'en' ? ($edu->uname_en ?? $edu->uname ?? $edu->uname_cn)
-                                                    : ($locale == 'th' ? ($edu->uname ?? $edu->uname_en ?? $edu->uname_cn)
-                                                    : ($edu->uname_cn ?? $edu->uname_en ?? $edu->uname));
-                                        @endphp
-                                        {{ $year }} {{ $quaname }} {{ $uname }}
-                        </h6>
-                        @endforeach
+                                        $quaname = $locale == 'en' ? ($edu->quaname_en ?? $edu->qua_name ?? $edu->quaname_cn)
+                                                : ($locale == 'th' ? ($edu->qua_name ?? $edu->quaname_en ?? $edu->quaname_cn)
+                                                : ($edu->quaname_cn ?? $edu->quaname_en ?? $edu->qua_name));
+                                        $uname = $locale == 'en' ? ($edu->uname_en ?? $edu->uname ?? $edu->uname_cn)
+                                                : ($locale == 'th' ? ($edu->uname ?? $edu->uname_en ?? $edu->uname_cn)
+                                                : ($edu->uname_cn ?? $edu->uname_en ?? $edu->uname));
+                                    @endphp
+                                    {{ $year }} {{ $quaname }} {{ $uname }}
+                                </h6>
+                            @endforeach
+                        @endif
                         <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
                             {{ trans('message.expertise') }}
@@ -234,7 +221,7 @@
                         <th style="width:100%;">{{ trans('message.page') }}</th>
                         <th>{{ trans('message.journals') }}</th>
                         <th>{{ trans('message.citations') }}</th>
-                        <th>{{ trans('message.doi') }}</th>
+                        <th>{{ trans('message.doi') ??  trans('message.null')}}</th>
                         <th>{{ trans('message.source') }}</th>
                     </tr>
                 </thead>
@@ -267,6 +254,8 @@
                                                     : ($author->author_lname_cn ?? $author->author_lname ?? $author->author_lname_th));
                                         @endphp
                                         {{ $fname }} {{ $lname }}
+                                        <br>
+                                        <br>
                                     </a>
                                 </span>
                             @endforeach
@@ -287,6 +276,8 @@
                                             @endphp
                                             {{ $fname }} {{ $lname }}
                                         </teacher>
+                                        <br>
+                                        <br>
                                         <h1></h1>
                                     </a>
                                 </span>
@@ -306,10 +297,10 @@
                             <td>{{ trans('message.journal') }}</td>
                             @endif
                         @endif
-                        <td style="width:100%;">{{$paper->paper_page}}</td>
+                        <td style="width:100%;">{{$paper->paper_page ??  trans('message.null') }}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
-                        <td>{{$paper->paper_doi}}</td>
+                        <td>{{$paper->paper_doi ??  trans('message.null')}}</td>
                         <td>
                             @foreach ($paper->source as $s)
                             <span>
@@ -338,7 +329,7 @@
                         <th style="width:100%;">{{ trans('message.page') }}</th>
                         <th>{{ trans('message.journals') }}</th>
                         <th>{{ trans('message.citations') }}</th>
-                        <th>{{ trans('message.doi') }}</th>
+                        <th>{{ trans('message.doi') ??  trans('message.null')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -407,10 +398,10 @@
                             <td>{{ trans('message.journal') }}</td>
                             @endif
                         @endif
-                        <td style="width:100%;">{{$paper->paper_page}}</td>
+                        <td style="width:100%;">{{$paper->paper_page ??  trans('message.null') }}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
-                        <td>{{$paper->paper_doi}}</td>
+                        <td>{{$paper->paper_doi ??  trans('message.null')}}</td>
 
 
                     </tr>
@@ -434,7 +425,7 @@
                         <th style="width:100%;">{{ trans('message.page') }}</th>
                         <th>{{ trans('message.journals') }}</th>
                         <th>{{ trans('message.citations') }}</th>
-                        <th>{{ trans('message.doi') }}</th>
+                        <th>{{ trans('message.doi') ??  trans('message.null')}}</th>
                     </tr>
                 </thead>
 
@@ -504,10 +495,10 @@
                             <td>{{ trans('message.journal') }}</td>
                             @endif
                         @endif
-                        <td style="width:100%;">{{$paper->paper_page}}</td>
+                        <td style="width:100%;">{{$paper->paper_page ??  trans('message.null') }}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
-                        <td>{{$paper->paper_doi}}</td>
+                        <td>{{$paper->paper_doi ??  trans('message.null')}}</td>
 
 
                     </tr>
@@ -531,7 +522,7 @@
                     <th style="width:100%;">{{ trans('message.page') }}</th>
                     <th>{{ trans('message.journals') }}</th>
                     <th>{{ trans('message.citations') }}</th>
-                    <th>{{ trans('message.doi') }}</th>
+                    <th>{{ trans('message.doi') ??  trans('message.null')}}</th>
                     </tr>
                 </thead>
 
@@ -613,7 +604,7 @@
                         @endif
 
 
-                        <td style="width:100%;">{{$paper->paper_page}}</td>
+                        <td style="width:100%;">{{$paper->paper_page ??  trans('message.null')}}</td>
                         <td>
                              @php
                                             $locale = app()->getLocale();
@@ -625,7 +616,7 @@
                             {{$sourcetitle}}
                         </td>
                         <td>{{$paper->paper_citation}}</td>
-                        <td>{{$paper->paper_doi}}</td>
+                        <td>{{$paper->paper_doi ??  trans('message.null')}}</td>
 
 
                     </tr>
