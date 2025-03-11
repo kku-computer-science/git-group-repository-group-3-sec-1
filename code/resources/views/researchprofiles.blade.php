@@ -683,6 +683,7 @@
                                     <h1></h1>
                                     <teacher>
                                         @php
+                                            $locale = app()->getLocale();
                                             $fname = $locale == 'en' ? ($author->fname_en ?? $author->fname_th ?? $author->fname_cn)
                                                     : ($locale == 'th' ? ($author->fname_th ?? $author->fname_en ?? $author->fname_cn)
                                                     : ($author->fname_cn ?? $author->fname_en ?? $author->fname_th));

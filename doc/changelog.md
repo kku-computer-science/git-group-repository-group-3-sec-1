@@ -31,9 +31,11 @@
 
 #### Notable improvements
 - The Department can now be edited, created and shown in all three languages.
+- The Expertises can now be edited in all three languages, it now also shows the researcher's name accordingly to languages and will substitute if null.
 - The Abstract can now be shown in all three languages.
 - Various language options for multiple data has been implemented.
 - If data has language options then it will display accordingly to the language setting and will substitute to other language if the selected one is null.
+
 
 
 ## [Released] - 2025-02-12

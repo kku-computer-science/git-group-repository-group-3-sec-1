@@ -1,5 +1,8 @@
 <?php
 return [
+'expertiseTH' => '泰语专长',
+'expertiseEN' => '英语专长',
+'expertiseCN' => '中文专长',
 'noexpertise' => '这位研究员尚未定义他们的专业领域。',
 ',Ph.d' => ', 博士',
 'nostudentwithinRG' => '该研究小组内没有学生。',

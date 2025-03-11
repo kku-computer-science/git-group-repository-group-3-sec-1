@@ -51,7 +51,19 @@
                     <tr id="expert_id_{{ $expert->id }}">
                         <td>{{ $i+1 }}</td>
                         @if(Auth::user()->hasRole('admin'))
-                        <td>{{ $expert->user->fname_en }} {{ $expert->user->lname_en }}</td>
+                        <td>
+                                        @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($expert->user->fname_en ?? $expert->user->fname_th ?? $expert->user->fname_cn)
+                                                    : ($locale == 'th' ? ($expert->user->fname_th ?? $expert->user->fname_en ?? $expert->user->fname_cn)
+                                                    : ($expert->user->fname_cn ?? $expert->user->fname_en ?? $expert->user->fname_th));
+
+                                            $lname = $locale == 'en' ? ($expert->user->lname_en ?? $expert->user->lname_th ?? $expert->user->lname_cn)
+                                                    : ($locale == 'th' ? ($expert->user->lname_th ?? $expert->user->lname_en ?? $expert->user->lname_cn)
+                                                    : ($expert->user->lname_cn ?? $expert->user->lname_en ?? $expert->user->lname_th ));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
+                        </td>
                         @endif
                         <td><p>{{ $expert->expert_name }}</p>
                         <p>{{ $expert->expert_name_th}}</p>
@@ -99,13 +111,13 @@
                     @csrf
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <div class="form-group">
-                                <strong>Name in English :</strong>
-                                <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="Expert_name" onchange="validate()">
-                                <strong>Name in Thai :</strong>
-                                <input type="text" name="expert_name_th" id="expert_name_th" class="form-control" placeholder="Expert_name" onchange="validate()">
-                                <strong>Name in Chinese :</strong>
-                                <input type="text" name="expert_name_cn" id="expert_name_cn" class="form-control" placeholder="Expert_name" onchange="validate()">
+                            <div class="form-group"> 
+                                <strong>{{ trans('message.expertiseEN')}}</strong>
+                                <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="{{ trans('message.Expertise_placeholder_form')}}" onchange="validate()">
+                                <strong>{{ trans('message.expertiseTH')}}</strong>
+                                <input type="text" name="expert_name_th" id="expert_name_th" class="form-control" placeholder="{{ trans('message.Expertise_placeholder_form')}}" onchange="validate()">
+                                <strong>{{ trans('message.expertiseCN')}}</strong>
+                                <input type="text" name="expert_name_cn" id="expert_name_cn" class="form-control" placeholder="{{ trans('message.Expertise_placeholder_form')}}" onchange="validate()">
                             </div>
                         </div>
 

@@ -1,5 +1,8 @@
 <?php
 return [
+'expertiseTH' => 'Expertise in Thai',
+'expertiseEN' => 'Expertise in English',
+'expertiseCN' => 'Expertise in Chinese',
 'noexpertise' => 'This researcher has not defined their expertise yet.',
 ',Ph.d' => ', Ph.d',
 'nostudentwithinRG' => 'There are no students within this research group.',
