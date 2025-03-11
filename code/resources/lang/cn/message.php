@@ -251,7 +251,9 @@ return [
 
 // ส่วนของ Research Projects (show.blade.php)
 'Research_project_detail' => '项目详情',
-'Research_project_description' => '项目描述',
+'Research_project_description' => '项目描述 (泰语)',
+'Research_project_description_en' => '项目描述 (英语)',
+'Research_project_description_cn' => '项目描述 (中国人)',
 'Research_project_start' => '开始日期',
 'Research_project_end' => '结束日期',
 'Research_project_budget' => '预算',

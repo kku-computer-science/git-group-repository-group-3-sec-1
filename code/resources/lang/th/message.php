@@ -244,7 +244,9 @@ return [
 
 // ส่วนของ Research Projects (show.blade.php)
 'Research_project_detail' => 'รายละเอียดโครงการ',
-'Research_project_description' => 'รายละเอียดของโครงการ',
+'Research_project_description' => 'รายละเอียดของโครงการ (ภาษาไทย)',
+'Research_project_description_en' => 'รายละเอียดของโครงการ (ภาษาอังกฤษ)',
+'Research_project_description_cn' => 'รายละเอียดของโครงการ (ภาษาจีน)',
 'Research_project_start' => 'วันที่เริ่ม',
 'Research_project_end' => 'วันที่สิ้นสุด',
 'Research_project_budget' => 'งบประมาณ',

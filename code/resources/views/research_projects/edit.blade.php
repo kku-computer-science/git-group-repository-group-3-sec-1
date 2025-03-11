@@ -36,15 +36,15 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <p class="col-sm-3 "><b>{{ trans('message.Research_project_name_cn') }}</b></p>
+                    <p class="col-sm-3 "><b>{{ trans('message.Research_project_name_en') }}</b></p>
                     <div class="col-sm-8">
-                        <textarea name="project_name" value="{{ $researchProject->project_name }}" class="form-control" style="height:90px">{{ $researchProject->project_name }}</textarea>
+                        <textarea name="project_name" value="{{ $researchProject->project_name_en }}" class="form-control" style="height:90px">{{ $researchProject->project_name_en }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <p class="col-sm-3 "><b>{{ trans('message.Research_project_name_en') }}</b></p>
+                    <p class="col-sm-3 "><b>{{ trans('message.Research_project_name_cn') }}</b></p>
                     <div class="col-sm-8">
-                        <textarea name="project_name" value="{{ $researchProject->project_name }}" class="form-control" style="height:90px">{{ $researchProject->project_name }}</textarea>
+                        <textarea name="project_name" value="{{ $researchProject->project_name_cn }}" class="form-control" style="height:90px">{{ $researchProject->project_name_cn }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -93,6 +93,18 @@
                     <p class="col-sm-3 "><b>{{ trans('message.Research_project_description') }}</b></p>
                     <div class="col-sm-8">
                         <textarea name="note" class="form-control" style="height:90px">{{ $researchProject->note }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p class="col-sm-3 "><b>{{ trans('message.Research_project_description_en') }}</b></p>
+                    <div class="col-sm-8">
+                        <textarea name="note" class="form-control" style="height:90px">{{ $researchProject->note_en }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p class="col-sm-3 "><b>{{ trans('message.Research_project_description_cn') }}</b></p>
+                    <div class="col-sm-8">
+                        <textarea name="note" class="form-control" style="height:90px">{{ $researchProject->note_cn }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row">

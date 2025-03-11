@@ -243,7 +243,9 @@ return [
 
 // ส่วนของ Research Projects (show.blade.php)
 'Research_project_detail' => 'Research Projects Detail',
-'Research_project_description' => 'Description of the project',
+'Research_project_description' => 'Description of the project (TH)',
+'Research_project_description_en' => 'Description of the project (EN)',
+'Research_project_description_cn' => 'Description of the project (CN)',
 'Research_project_start' => 'Start Date',
 'Research_project_end' => 'End Date',
 'Research_project_budget' => 'Budget',
