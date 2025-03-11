@@ -68,20 +68,32 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'ac_name' => 'required',
-            //'ac_sourcetitle' => 'required',
+            'ac_name_th' => 'nullable|string|required_without_all:ac_name_en,ac_name_cn',
+            'ac_name_en' => 'nullable|string|required_without_all:ac_name_th,ac_name_cn',
+            'ac_name_cn' => 'nullable|string|required_without_all:ac_name_th,ac_name_en',
             'ac_year' => 'required',
+        ], [
+            'ac_name_th.required_without_all' => 'กรุณากรอกชื่อหนังสืออย่างน้อยหนึ่งภาษา',
+            'ac_name_en.required_without_all' => 'กรุณากรอกชื่อหนังสืออย่างน้อยหนึ่งภาษา',
+            'ac_name_cn.required_without_all' => 'กรุณากรอกชื่อหนังสืออย่างน้อยหนึ่งภาษา',
+            'ac_year.required' => 'กรุณากรอกปีที่เผยแพร่',
         ]);
+
+        $ac_name = $request->ac_name_th ?? $request->ac_name_en ?? $request->ac_name_cn;
 
         $input = $request->except(['_token']);
         $input['ac_type'] = 'book';
+        $input['ac_name'] = $ac_name; 
+
         $acw = Academicwork::create($input);
-        //$acw->source()->attach(4);
+
         $id = auth()->user()->id;
         $user = User::find($id);
         $user->academicworks()->attach($acw);
+
         return redirect()->route('books.index')->with('success', 'book created successfully.');
     }
+
 
     /**
      * Display the specified resource.

@@ -2264,6 +2264,7 @@ CREATE TABLE `expertises` (
   KEY `expertises_user_id_foreign` (`user_id`),
   CONSTRAINT `expertises_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=225 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
