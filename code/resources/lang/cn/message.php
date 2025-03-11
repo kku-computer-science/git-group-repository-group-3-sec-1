@@ -1,6 +1,6 @@
 <?php
 return [
-'Null' => '!! ไม่มีข้อมูลสำหรับช่องนี้ !!',
+'null' => '此部分无信息。',
 'Home' => '主页',
 'Researchers' => '研究人员',
 'ResearchProj' => '研究项目',
