@@ -234,7 +234,7 @@
                         <th style="width:100%;">{{ trans('message.page') }}</th>
                         <th>{{ trans('message.journals') }}</th>
                         <th>{{ trans('message.citations') }}</th>
-                        <th>{{ trans('message.doi') }}</th>
+                        <th>{{ trans('message.doi') ??  trans('message.null')}}</th>
                         <th>{{ trans('message.source') }}</th>
                     </tr>
                 </thead>
@@ -267,6 +267,8 @@
                                                     : ($author->author_lname_cn ?? $author->author_lname ?? $author->author_lname_th));
                                         @endphp
                                         {{ $fname }} {{ $lname }}
+                                        <br>
+                                        <br>
                                     </a>
                                 </span>
                             @endforeach
@@ -287,6 +289,8 @@
                                             @endphp
                                             {{ $fname }} {{ $lname }}
                                         </teacher>
+                                        <br>
+                                        <br>
                                         <h1></h1>
                                     </a>
                                 </span>
@@ -306,10 +310,10 @@
                             <td>{{ trans('message.journal') }}</td>
                             @endif
                         @endif
-                        <td style="width:100%;">{{$paper->paper_page}}</td>
+                        <td style="width:100%;">{{$paper->paper_page ??  trans('message.null') }}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
-                        <td>{{$paper->paper_doi}}</td>
+                        <td>{{$paper->paper_doi ??  trans('message.null')}}</td>
                         <td>
                             @foreach ($paper->source as $s)
                             <span>
@@ -338,7 +342,7 @@
                         <th style="width:100%;">{{ trans('message.page') }}</th>
                         <th>{{ trans('message.journals') }}</th>
                         <th>{{ trans('message.citations') }}</th>
-                        <th>{{ trans('message.doi') }}</th>
+                        <th>{{ trans('message.doi') ??  trans('message.null')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -407,10 +411,10 @@
                             <td>{{ trans('message.journal') }}</td>
                             @endif
                         @endif
-                        <td style="width:100%;">{{$paper->paper_page}}</td>
+                        <td style="width:100%;">{{$paper->paper_page ??  trans('message.null') }}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
-                        <td>{{$paper->paper_doi}}</td>
+                        <td>{{$paper->paper_doi ??  trans('message.null')}}</td>
 
 
                     </tr>
@@ -434,7 +438,7 @@
                         <th style="width:100%;">{{ trans('message.page') }}</th>
                         <th>{{ trans('message.journals') }}</th>
                         <th>{{ trans('message.citations') }}</th>
-                        <th>{{ trans('message.doi') }}</th>
+                        <th>{{ trans('message.doi') ??  trans('message.null')}}</th>
                     </tr>
                 </thead>
 
@@ -504,10 +508,10 @@
                             <td>{{ trans('message.journal') }}</td>
                             @endif
                         @endif
-                        <td style="width:100%;">{{$paper->paper_page}}</td>
+                        <td style="width:100%;">{{$paper->paper_page ??  trans('message.null') }}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
-                        <td>{{$paper->paper_doi}}</td>
+                        <td>{{$paper->paper_doi ??  trans('message.null')}}</td>
 
 
                     </tr>
@@ -531,7 +535,7 @@
                     <th style="width:100%;">{{ trans('message.page') }}</th>
                     <th>{{ trans('message.journals') }}</th>
                     <th>{{ trans('message.citations') }}</th>
-                    <th>{{ trans('message.doi') }}</th>
+                    <th>{{ trans('message.doi') ??  trans('message.null')}}</th>
                     </tr>
                 </thead>
 
@@ -613,7 +617,7 @@
                         @endif
 
 
-                        <td style="width:100%;">{{$paper->paper_page}}</td>
+                        <td style="width:100%;">{{$paper->paper_page ??  trans('message.null')}}</td>
                         <td>
                              @php
                                             $locale = app()->getLocale();
@@ -625,7 +629,7 @@
                             {{$sourcetitle}}
                         </td>
                         <td>{{$paper->paper_citation}}</td>
-                        <td>{{$paper->paper_doi}}</td>
+                        <td>{{$paper->paper_doi ??  trans('message.null')}}</td>
 
 
                     </tr>

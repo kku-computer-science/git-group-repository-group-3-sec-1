@@ -2,7 +2,6 @@
 @section('content')
 <div class="container card-3 ">
     <p>{{ trans('message.ResearchGroup') }}</p>
-    <p>Research Group</p>
     @foreach ($resg as $rg)
     <div class="card mb-4">
         <div class="row g-0">
@@ -16,16 +15,31 @@
                         @foreach ($rg->user as $r)
                         @if($r->hasRole('teacher'))
                         @if(app()->getLocale() == 'cn' and $r->academic_ranks_en == 'Lecturer' and $r->doctoral_degree == 'Ph.D.')
-                             {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, Ph.D.
+                             {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th}} 
+                             {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_en ?? $r->lname_th}}
+                             
+                             @if(app()->getLocale() == 'th')
+                             @else
+                             {{ trans('message.,Ph.d') }}
+                             @endif
                             <br>
                             @elseif(app()->getLocale() == 'cn' and $r->academic_ranks_en == 'Lecturer')
-                            {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_en ?? $r->lname_th}}
                             <br>
                             @elseif(app()->getLocale() == 'cn' and $r->doctoral_degree == 'Ph.D.')
-                            {{ str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()}) }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, Ph.D.
+                            {{ str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()}) ?? $r->position_en ?? $r->position_th}} 
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_en ?? $r->lname_th}}
+                            @if(app()->getLocale() == 'th')
+                             @else
+                             {{ trans('message.,Ph.d') }}
+                             @endif
                             <br>
                             @else                            
-                            {{ $r->{'position_'.app()->getLocale()} }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
+                            {{ $r->{'position_'.app()->getLocale()} ?? $r->position_en ?? $r->position_th}} 
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_en ?? $r->fname_th}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_en ?? $r->lname_th}}
                             <br>
                             @endif
                         @endif
@@ -37,16 +51,22 @@
                         @foreach ($rg->user as $r)
                         @if($r->hasRole('teacher'))
                         @if(app()->getLocale() == 'en' and $r->academic_ranks_en == 'Lecturer' and $r->doctoral_degree == 'Ph.D.')
-                             {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, Ph.D.
+                             {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_th ?? $r->fname_cn}} 
+                             {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_th ?? $r->lname_cn}}, Ph.D.
                             <br>
                             @elseif(app()->getLocale() == 'en' and $r->academic_ranks_en == 'Lecturer')
-                            {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_th ?? $r->fname_cn}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_th ?? $r->lname_cn}}
                             <br>
                             @elseif(app()->getLocale() == 'en' and $r->doctoral_degree == 'Ph.D.')
-                            {{ str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()}) }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, Ph.D.
+                            {{ str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()}) ?? $r->position_th ?? $r->position_cn}} 
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_th ?? $r->fname_cn}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_th ?? $r->lname_cn}}, Ph.D.
                             <br>
                             @else                            
-                            {{ $r->{'position_'.app()->getLocale()} }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
+                            {{ $r->{'position_'.app()->getLocale()} ?? $r->position_th ?? $r->position_cn}} 
+                            {{ $r->{'fname_'.app()->getLocale()} ?? $r->fname_th ?? $r->fname_cn}} 
+                            {{ $r->{'lname_'.app()->getLocale()} ?? $r->lname_th ?? $r->lname_cn}}
                             <br>
                             @endif
                         @endif
@@ -58,9 +78,13 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"> {{ $rg->{'group_name_'.app()->getLocale()} }}</>
+                    <h5 class="card-title"> {{ $rg->{'group_name_'.app()->getLocale()} ?? $rg->group_name_en ?? $rg->group_name_th ?? $rg->group_name_cn}}</>
                     </h5>
-                    <h3 class="card-text">{{ Str::limit($rg->{'group_desc_'.app()->getLocale()}, 350) }}
+                    <h3 class="card-text">{{ Str::limit($rg->{'group_desc_'.app()->getLocale()}, 350) 
+                        ?? Str::limit($rg->group_desc_en, 350)
+                        ?? Str::limit($rg->group_desc_th, 350)
+                        ?? Str::limit($rg->group_desc_cn, 350)
+                    }}
                     </h3>
                 </div>
                 <div>

@@ -1,5 +1,7 @@
 <?php
 return [
+',Ph.d' => ', Ph.d',
+'nostudentwithinRG' => 'There are no students within this research group.',
 'null' => 'No information for this section.',
 'Home' => 'Home',
 'Researchers' => 'Researchers',

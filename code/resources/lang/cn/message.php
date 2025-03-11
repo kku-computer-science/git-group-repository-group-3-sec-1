@@ -1,5 +1,7 @@
 <?php
 return [
+',Ph.d' => ', 博士',
+'nostudentwithinRG' => '该研究小组内没有学生。',
 'null' => '此部分无信息。',
 'Home' => '主页',
 'Researchers' => '研究人员',
@@ -28,7 +30,7 @@ return [
 'Project Closed' => '项目结项',
 'Search' => '搜索',
 'Laboratory Supervisor' => '实验室主管',
-'Student' => 'S学生',
+'Student' => '学生',
 'Reference' => '参考',
 
 'ResearchGroup' => '研究小组',
