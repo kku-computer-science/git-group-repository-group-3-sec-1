@@ -491,34 +491,18 @@
                                 <option value="Missis">{{ trans('message.User_title_name_Missis') }}</option>
                             </select>
                         </div>
-                    <div class="row">
-                        </select>
-                        <div class="col-md-6 mb-2">
-                        <input type="text" name="fname[]" placeholder="{{ trans('message.your_name') }} (TH)" class="form-control name_list" />
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <input type="text" name="fname[]" placeholder="{{ trans('message.User_fname_en') }}" class="form-control name_list" />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="text" name="lname[]" placeholder="{{ trans('message.User_lname_en') }}" class="form-control name_list" />
+                            </div>
                         </div>
-                        <div class="col-md-6 mb-2">
-                        <input type="text" name="lname[]" placeholder="{{ trans('message.your_surname') }} (TH)" class="form-control name_list" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-2">
-                        <input type="text" name="fname_en[]" placeholder="{{ trans('message.your_name') }} (EN)" class="form-control name_list" />
-                        </div>
-                        <div class="col-md-6 mb-2">
-                        <input type="text" name="lname_en[]" placeholder="{{ trans('message.your_surname') }} (EN)" class="form-control name_list" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-2">
-                        <input type="text" name="fname_cn[]" placeholder="{{ trans('message.your_name') }} (CN)" class="form-control name_list" />
-                        </div>
-                        <div class="col-md-6 mb-2">
-                        <input type="text" name="lname_cn[]" placeholder="{{ trans('message.your_surname') }} (CN)" class="form-control name_list" />
-                        </div>
-                    </div>
+
                     </td>
                     <td>
-                    <button type="button" name="remove" id="${i}" class="btn btn-danger btn-sm btn_remove">X</button>
+                        <button type="button" name="remove" id="${i}" class="btn btn-danger btn-sm btn_remove">X</button>
                     </td>
                 </tr>
                 `);

@@ -64,6 +64,9 @@ class ResearchProjectController extends Controller
     {
         $request->validate(
             [
+                //'title_name.*' => 'required|string',
+                //'fname_th.*' => 'required|string',
+                //'lname_th.*' => 'required|string',
                 'project_name' => 'required',
                 'budget' => 'required|numeric',
                 'project_year' => 'required',
@@ -81,6 +84,19 @@ class ResearchProjectController extends Controller
                 'head.required' => 'ต้องใส่ข้อมูล ผู้รับผิดชอบโครงการ',
             ]
         );
+        foreach ($request->title_name as $index => $title) {
+            User::create([
+                'title_name' => $title,
+                'fname_th' => $request->fname_th[$index],
+                'lname_th' => $request->lname_th[$index],
+                'fname_en' => $request->fname_en[$index],
+                'lname_en' => $request->lname_en[$index],
+                'fname_cn' => $request->fname_cn[$index],
+                'lname_cn' => $request->lname_cn[$index],
+            ]);
+        }
+    
+        return redirect()->back()->with('success', 'บันทึกข้อมูลสำเร็จ');
         //return $request->fund; 
         $fund = Fund::find($request->fund);
         $req = $request->all();
@@ -120,17 +136,24 @@ class ResearchProjectController extends Controller
                 $data['lname'] = $input['lname'][$key];
                 $data['title_name'] = $input['title_name'][$key];
 
-                if (Outsider::where('fname', '=', $data['fname'])->orWhere('lname', '=', $data['lname'])->first() == null) {
-                    $author = new Outsider;
-                    $author->fname = $data['fname'];
-                    $author->lname = $data['lname'];
-                    $author->title_name = $data['title_name'];
-                    $author->save();
-                    $researchProject->outsider()->attach($author, ['role' => 2]);
+                $existingAuthor = Outsider::where(function ($query) use ($data) {
+                    $query->where([
+                        ['fname', '=', $data['fname']],
+                        ['lname', '=', $data['lname']]
+                    ]);
+                })->first();
+                
+                if ($existingAuthor === null) {
+                    // ถ้ายังไม่มี ให้เพิ่มใหม่
+                    $author = Outsider::create([
+                        'title_name' => $data['title_name'],
+                        'fname' => $data['fname'],
+                        'lname' => $data['lname'],
+                        'title_name' => $data['title_name'],
+                    ]);
                 } else {
-                    $author = Outsider::where('fname', '=', $data['fname'])->orWhere('lname', '=', $data['lname'])->first();
-                    $authorid = $author->id;
-                    $researchProject->outsider()->attach($authorid, ['role' => 2]);
+                    // ถ้ามีอยู่แล้วให้ใช้ข้อมูลเดิม
+                    $author = $existingAuthor;
                 }
                 //$x++;
             }
@@ -272,4 +295,5 @@ class ResearchProjectController extends Controller
         return redirect()->route('researchProjects.index')
             ->with('success', 'Research Project deleted successfully');
     }
+    
 }
