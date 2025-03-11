@@ -212,6 +212,11 @@ return [
 'error_input' => [
     'Whoops' => 'Whoops!',
     'Error_problem' => 'There were some problems with your input.',
+    'project_name' => 'Project Name',
+    'budget' => 'Budget',
+    'project_year' => 'Project Year',
+    'fund' => 'Research Fund',
+    'head' => 'Project Head',
 ],
 'Add_research_fund' => 'Add Research Fund',
 'Input_research_fund_detail' => 'Input Research Fund Detail',

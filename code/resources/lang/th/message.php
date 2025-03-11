@@ -209,6 +209,11 @@ return [
 'error_input' => [
     'Whoops' => 'อุปส์!',
     'Error_problem' => 'มีปัญหาเกิดขึ้นเกี่ยวกับข้อมูลที่คุณป้อน',
+    'project_name' => 'ชื่อโครงการวิจัย',
+    'budget' => 'งบประมาณ',
+    'project_year' => 'ปีที่ยื่นขอ',
+    'fund' => 'ทุนวิจัย',
+    'head' => 'ผู้รับผิดชอบโครงการ',
 ],
 'Add_research_fund' => 'เพิ่มทุนวิจัย',
 'Input_research_fund_detail' => 'กรอกรายละเอียดทุนวิจัย',

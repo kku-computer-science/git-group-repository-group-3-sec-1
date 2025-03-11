@@ -219,6 +219,11 @@ return [
 'error_input' => [
     'Whoops' => '哎呀！',
     'Error_problem' => '您输入的数据存在问题',
+    'project_name' => '项目名称',
+    'budget' => '预算',
+    'project_year' => '申请年份',
+    'fund' => '研究资金',
+    'head' => '项目负责人',
 ],
 'Add_research_fund' => '添加研究基金',
 'Input_research_fund_detail' => '输入研究基金详情',

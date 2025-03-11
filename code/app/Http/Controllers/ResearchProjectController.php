@@ -73,7 +73,8 @@ class ResearchProjectController extends Controller
             ],
 
             [
-                'project_name.required' => 'ต้องใส่ข้อมูล ชื่อโครงการวิจัย',
+                //'project_name.required' => 'ต้องใส่ข้อมูล ชื่อโครงการวิจัย',
+                'project_name.required' => __('validation.required', ['attribute' => __('validation.attributes.project_name')]),
                 'budget.required' => 'ต้องใส่ข้อมูล งบประมาณ',
                 'project_year.required' => 'ต้องใส่ข้อมูล ปีที่ปีที่ยื่นขอ',
                 'fund.required' => 'ต้องใส่ข้อมูล ทุนวิจัย',
@@ -195,7 +196,8 @@ class ResearchProjectController extends Controller
                 'head' => 'required'
             ],
             [
-                'project_name.required' => 'ต้องใส่ข้อมูล ชื่อโครงการวิจัย',
+                //'project_name.required' => 'ต้องใส่ข้อมูล ชื่อโครงการวิจัย',
+                'project_name.required' => __('validation.required', ['attribute' => __('validation.attributes.project_name')]),
                 'budget.required' => 'ต้องใส่ข้อมูล งบประมาณ',
                 'project_year.required' => 'ต้องใส่ข้อมูล ปีที่ปีที่ยื่นขอ',
                 'fund.required' => 'ต้องใส่ข้อมูล ทุนวิจัย',
