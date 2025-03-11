@@ -706,9 +706,9 @@
                                                     : ($paper->ac_sourcetitle_cn ?? $paper->ac_sourcetitle_en ?? $paper->ac_sourcetitle));
                             @endphp
 
-                            {{$sourcetitle}}
+                            {{$sourcetitle ?? trans('message.null')}}
                         </td>
-                        <td>{{ $paper->ac_page }}</td>
+                        <td>{{ $paper->ac_page ?? trans('message.null') }}</td>
 
                     </tr>
                     @endforeach
