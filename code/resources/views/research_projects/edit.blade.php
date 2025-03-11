@@ -123,27 +123,20 @@
                             <th>{{ trans('message.Research_project_responsible') }}</th>
                         <tr>
                             <td>
-                                <select id='head0' style='width: 200px;' name="head">
-                                    @foreach($researchProject->user as $u)
+                            <select id='head0' style='width: 200px;' name="head">
+                                @foreach($researchProject->user as $u)
                                     @if($u->pivot->role == 1)
-                                    @foreach($users as $user)
-                                        @if(App::getLocale() == 'th')
-                                        <option value="{{ $user->id }}" @if($u->id == $user->id) selected @endif>
-                                            {{ $user->fname_th }} {{ $user->lname_th }}
-                                        </option>
-                                    @elseif(App::getLocale() == 'en')
-                                        <option value="{{ $user->id }}" @if($u->id == $user->id) selected @endif>
-                                            {{ $user->fname_en }} {{ $user->lname_en }}
-                                        </option>
-                                    @elseif(App::getLocale() == 'cn')
-                                        <option value="{{ $user->id }}" @if($u->id == $user->id) selected @endif>
-                                            {{ $user->fname_cn }} {{ $user->lname_cn }}
+                                        @php
+                                            $locale = App::getLocale();
+                                            $fname = $u->{'fname_' . $locale} ?? $u->fname_en ?? $u->fname_th ?? $u->fname_cn;
+                                            $lname = $u->{'lname_' . $locale} ?? $u->lname_en ?? $u->lname_th ?? $u->lname_cn;
+                                        @endphp
+                                        <option value="{{ $u->id }}" selected>
+                                            {{ $fname }} {{ $lname }}
                                         </option>
                                     @endif
-                                    @endforeach
-                                    @endif
-                                    @endforeach
-                                </select>
+                                @endforeach
+                            </select>
                             </td>
                         </tr>
                     </table>
