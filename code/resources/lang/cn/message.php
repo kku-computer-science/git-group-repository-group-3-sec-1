@@ -243,6 +243,8 @@ return [
 'Research_project_no' => '编号',
 'Research_project_year' => '年份',
 'Research_project_name' => '项目名称',
+'Research_project_name_cn' => '项目名称 (中国人)',
+'Research_project_name_en' => '项目名称 (英语)',
 'Research_project_head' => '负责人',
 'Research_project_member' => '成员',
 'Research_project_action' => '操作',

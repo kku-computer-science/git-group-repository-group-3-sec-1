@@ -235,6 +235,8 @@ return [
 'Research_project_no' => 'No.',
 'Research_project_year' => 'Year',
 'Research_project_name' => 'Project Name',
+'Research_project_name_cn' => 'Project Name (CN)',
+'Research_project_name_en' => 'Project Name (EN)',
 'Research_project_head' => 'Head',
 'Research_project_member' => 'Member',
 'Research_project_action' => 'Action',

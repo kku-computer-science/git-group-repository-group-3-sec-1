@@ -36,6 +36,18 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <p class="col-sm-3 "><b>{{ trans('message.Research_project_name_cn') }}</b></p>
+                    <div class="col-sm-8">
+                        <textarea name="project_name" value="{{ $researchProject->project_name }}" class="form-control" style="height:90px">{{ $researchProject->project_name }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <p class="col-sm-3 "><b>{{ trans('message.Research_project_name_en') }}</b></p>
+                    <div class="col-sm-8">
+                        <textarea name="project_name" value="{{ $researchProject->project_name }}" class="form-control" style="height:90px">{{ $researchProject->project_name }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <p class="col-sm-3 "><b>{{ trans('message.Research_project_start') }}</b></p>
                     <div class="col-sm-4">
                         <input type="date" name="project_start" value="{{ $researchProject->project_start }}" class="form-control">

@@ -236,6 +236,8 @@ return [
 'Research_project_no' => 'ลำดับที่',
 'Research_project_year' => 'ปี',
 'Research_project_name' => 'ชื่อโครงการ',
+'Research_project_name_cn' => 'ชื่อโครงการ (ภาษาจีน)',
+'Research_project_name_en' => 'ชื่อโครงการ (ภาษาอังกฤษ)',
 'Research_project_head' => 'หัวหน้าโครงการ',
 'Research_project_member' => 'สมาชิก',
 'Research_project_action' => 'ดำเนินการ',
