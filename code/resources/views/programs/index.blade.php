@@ -114,7 +114,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <strong>{{ trans('message.Program_name') }}:</strong>
+                                    <strong>{{ trans('message.Department_name') }}:</strong>
                                     <div class="col-sm-8">
                                         <select id="department" class="custom-select my-select" name="department">
                                             @foreach ($department as $d)
@@ -219,7 +219,22 @@
                     title: `{{ trans('message.Fund_warning_delete.warning_title') }}`,
                     text: "{{ trans('message.Fund_warning_delete.warning_text') }}",
                     type: "warning",
-                    buttons: true,
+                    buttons: {
+                    cancel: {
+                        text: "{{ trans('message.Cancle_button') }}",
+                        value: null,
+                        visible: true,
+                        className: "swal-button swal-button--cancel",
+                        closeModal: true
+                    },
+                    confirm: {
+                        text: "{{ trans('message.Submit_button') }}",
+                        value: true,
+                        visible: true,
+                        className: "swal-button swal-button--confirm swal-button--danger",
+                        closeModal: true
+                    }
+                },
                     dangerMode: true,
                 }).then((willDelete) => {
                     if (willDelete) {

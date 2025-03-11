@@ -619,6 +619,11 @@ return [
 'Expertise_action' => 'Action',
 'Add_new_expertise' => 'Add New Expertise',
 'Edit_expertise' => 'Edit Expertise',
+
+// ส่วนของ Manage Expertise (edit.blade.php)
+'Expertise_name_en' => 'Expertise Name (EN)',
+'Expertise_name_th' => 'Expertise Name (TH)',
+'Expertise_name_cn' => 'Expertise Name (CN)',
 ];
 
 

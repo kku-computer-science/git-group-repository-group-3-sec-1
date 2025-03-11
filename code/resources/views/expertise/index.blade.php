@@ -100,12 +100,12 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name in English :</strong>
-                                <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="Expert_name" onchange="validate()">
-                                <strong>Name in Thai :</strong>
-                                <input type="text" name="expert_name_th" id="expert_name_th" class="form-control" placeholder="Expert_name" onchange="validate()">
-                                <strong>Name in Chinese :</strong>
-                                <input type="text" name="expert_name_cn" id="expert_name_cn" class="form-control" placeholder="Expert_name" onchange="validate()">
+                                <strong>{{ trans('message.Expertise_name_en')}} :</strong>
+                                <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="{{ trans('message.Expertise_name_en')}}" onchange="validate()">
+                                <strong>{{ trans('message.Expertise_name_th')}} :</strong>
+                                <input type="text" name="expert_name_th" id="expert_name_th" class="form-control" placeholder="{{ trans('message.Expertise_name_th')}}" onchange="validate()">
+                                <strong>{{ trans('message.Expertise_name_cn')}} :</strong>
+                                <input type="text" name="expert_name_cn" id="expert_name_cn" class="form-control" placeholder="{{ trans('message.Expertise_name_cn')}}" onchange="validate()">
                             </div>
                         </div>
 
@@ -192,7 +192,22 @@
                 title: `{{ trans('message.Fund_warning_delete.warning_title') }}`,
                 text: "{{ trans('message.Fund_warning_delete.warning_text') }}",
                 type: "warning",
-                buttons: true,
+                buttons: {
+                    cancel: {
+                        text: "{{ trans('message.Cancle_button') }}",
+                        value: null,
+                        visible: true,
+                        className: "swal-button swal-button--cancel",
+                        closeModal: true
+                    },
+                    confirm: {
+                        text: "{{ trans('message.Submit_button') }}",
+                        value: true,
+                        visible: true,
+                        className: "swal-button swal-button--confirm swal-button--danger",
+                        closeModal: true
+                    }
+                },
                 dangerMode: true,
             }).then((willDelete) => {
                 if (willDelete) {

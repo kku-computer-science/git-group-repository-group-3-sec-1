@@ -617,4 +617,8 @@ return [
 'Add_new_expertise' => 'เพิ่มความเชี่ยวชาญใหม่',
 'Edit_expertise' => 'แก้ไขความเชี่ยวชาญ',
 
+// ส่วนของ Manage Expertise (edit.blade.php)
+'Expertise_name_en' => 'ชื่อความเชี่ยวชาญ (อังกฤษ)',
+'Expertise_name_th' => 'ชื่อความเชี่ยวชาญ (ไทย)',
+'Expertise_name_cn' => 'ชื่อความเชี่ยวชาญ (จีน)',
 ];
