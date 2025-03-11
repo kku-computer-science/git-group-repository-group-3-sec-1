@@ -8,11 +8,28 @@
                 <p class="card-description">{{ trans('message.Published_research_description') }}</p>
                 <div class="row mt-3">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Published_research_title') }}</b></p>
-                    <p class="card-text col-sm-9">{{ $paper->paper_name }}</p>
+                    <p class="card-text col-sm-9">
+                    @php
+                                            $locale = app()->getLocale();
+                                            $papername = $locale == 'en' ? ($paper->paper_name ?? $paper->paper_name_th ?? $paper->paper_name_cn)
+                                                    : ($locale == 'th' ? ($paper->paper_name_th ?? $paper->paper_name ?? $paper->paper_name_cn)
+                                                    : ($paper->paper_name_cn ?? $paper->paper_name ?? $paper->paper_name_th));
+                                        @endphp
+                                        {{ $papername }}
+                    </p>
                 </div>
                 <div class="row mt-2">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Published_research_abstract') }}</b></p>
-                    <p class="card-text col-sm-9">{{ $paper->abstract }}</p>
+                    <p class="card-text col-sm-9">
+                    @php
+                                            $locale = app()->getLocale();
+                                            $abstract = $locale == 'en' ? ($paper->abstract ?? $paper->abstract_th ?? $paper->abstract_cn)
+                                                    : ($locale == 'th' ? ($paper->abstract_th ?? $paper->abstract ?? $paper->abstract_cn)
+                                                    : ($paper->abstract_cn ?? $paper->abstract ?? $paper->abstract_th));
+                                        @endphp
+                                        {{ $abstract }}
+
+                    </p>
                 </div>
                 <div class="row mt-2">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Published_research_keyword') }}</b></p>
@@ -176,39 +193,97 @@
                         @foreach ($paper->author as $teacher)
                             @if ($teacher->pivot->author_type == 1)
                                 <b>{{ trans('message.Published_research_first_author') }}:</b>
-                                {{ $teacher->author_fname }} {{ $teacher->author_lname }} <br>
+                                @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($teacher->author_fname ?? $teacher->author_fname_th ?? $teacher->author_fname_cn)
+                                                    : ($locale == 'th' ? ($teacher->author_fname_th ?? $teacher->author_fname ?? $teacher->author_fname_cn)
+                                                    : ($teacher->author_fname_cn ?? $teacher->author_fname ?? $teacher->author_fname_th));
+
+                                            $lname = $locale == 'en' ? ($teacher->author_lname ?? $teacher->author_lname_th ?? $teacher->author_lname_cn)
+                                                    : ($locale == 'th' ? ($teacher->author_lname_th ?? $teacher->author_lname ?? $teacher->author_lname_cn)
+                                                    : ($teacher->author_lname_cn ?? $teacher->author_lname ?? $teacher->author_lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }} <br>
                             @endif
                         @endforeach
                         @foreach ($paper->teacher as $teacher)
                             @if ($teacher->pivot->author_type == 1)
-                                <b>{{ trans('message.Published_research_first_author') }}:</b> {{ $teacher->fname_en }}
-                                {{ $teacher->lname_en }} <br>
+                                <b>{{ trans('message.Published_research_first_author') }}:</b> 
+                                            @php
+                                                $fname = $locale == 'en' ? ($teacher->fname_en ?? $teacher->fname_th ?? $teacher->fname_cn)
+                                                        : ($locale == 'th' ? ($teacher->fname_th ?? $teacher->fname_en ?? $teacher->fname_cn)
+                                                        : ($teacher->fname_cn ?? $teacher->fname_en ?? $teacher->fname_th));
+
+                                                $lname = $locale == 'en' ? ($teacher->lname_en ?? $teacher->lname_th ?? $teacher->lname_cn)
+                                                        : ($locale == 'th' ? ($teacher->lname_th ?? $teacher->lname_en ?? $teacher->lname_cn)
+                                                        : ($teacher->lname_cn ?? $teacher->lname_en ?? $teacher->lname_th));
+                                            @endphp
+                                            {{ $fname }} {{ $lname }}
+                                <br>
                             @endif
                         @endforeach
 
                         @foreach ($paper->author as $teacher)
                             @if ($teacher->pivot->author_type == 2)
-                                <b>{{ trans('message.Published_research_co_author') }}:</b> {{ $teacher->author_fname }}
-                                {{ $teacher->author_lname }} <br>
+                                <b>{{ trans('message.Published_research_co_author') }}:</b> @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($teacher->author_fname ?? $teacher->author_fname_th ?? $teacher->author_fname_cn)
+                                                    : ($locale == 'th' ? ($teacher->author_fname_th ?? $teacher->author_fname ?? $teacher->author_fname_cn)
+                                                    : ($teacher->author_fname_cn ?? $teacher->author_fname ?? $teacher->author_fname_th));
+
+                                            $lname = $locale == 'en' ? ($teacher->author_lname ?? $teacher->author_lname_th ?? $teacher->author_lname_cn)
+                                                    : ($locale == 'th' ? ($teacher->author_lname_th ?? $teacher->author_lname ?? $teacher->author_lname_cn)
+                                                    : ($teacher->author_lname_cn ?? $teacher->author_lname ?? $teacher->author_lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}  <br>
                             @endif
                         @endforeach
                         @foreach ($paper->teacher as $teacher)
                             @if ($teacher->pivot->author_type == 2)
-                                <b>{{ trans('message.Published_research_co_author') }}:</b> {{ $teacher->fname_en }}
-                                {{ $teacher->lname_en }} <br>
+                                <b>{{ trans('message.Published_research_co_author') }}:</b> {{ trans('message.Published_research_first_author') }}:</b> 
+                                            @php
+                                                $locale = app()->getLocale();
+                                                $fname = $locale == 'en' ? ($teacher->fname_en ?? $teacher->fname_th ?? $teacher->fname_cn)
+                                                        : ($locale == 'th' ? ($teacher->fname_th ?? $teacher->fname_en ?? $teacher->fname_cn)
+                                                        : ($teacher->fname_cn ?? $teacher->fname_en ?? $teacher->fname_th));
+
+                                                $lname = $locale == 'en' ? ($teacher->lname_en ?? $teacher->lname_th ?? $teacher->lname_cn)
+                                                        : ($locale == 'th' ? ($teacher->lname_th ?? $teacher->lname_en ?? $teacher->lname_cn)
+                                                        : ($teacher->lname_cn ?? $teacher->lname_en ?? $teacher->lname_th));
+                                            @endphp
+                                            {{ $fname }} {{ $lname }} <br>
                             @endif
                         @endforeach
 
                         @foreach ($paper->author as $teacher)
                             @if ($teacher->pivot->author_type == 3)
                                 <b>{{ trans('message.Published_research_corresponding_author') }}:</b>
-                                {{ $teacher->author_fname }} {{ $teacher->author_lname }} <br>
+                                @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($teacher->author_fname ?? $teacher->author_fname_th ?? $teacher->author_fname_cn)
+                                                    : ($locale == 'th' ? ($teacher->author_fname_th ?? $teacher->author_fname ?? $teacher->author_fname_cn)
+                                                    : ($teacher->author_fname_cn ?? $teacher->author_fname ?? $teacher->author_fname_th));
+
+                                            $lname = $locale == 'en' ? ($teacher->author_lname ?? $teacher->author_lname_th ?? $teacher->author_lname_cn)
+                                                    : ($locale == 'th' ? ($teacher->author_lname_th ?? $teacher->author_lname ?? $teacher->author_lname_cn)
+                                                    : ($teacher->author_lname_cn ?? $teacher->author_lname ?? $teacher->author_lname_th));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}  <br>
                             @endif
                         @endforeach
                         @foreach ($paper->teacher as $teacher)
                             @if ($teacher->pivot->author_type == 3)
                                 <b>{{ trans('message.Published_research_corresponding_author') }}:</b>
-                                {{ $teacher->fname_en }} {{ $teacher->lname_en }} <br>
+                                @php
+                                                $fname = $locale == 'en' ? ($teacher->fname_en ?? $teacher->fname_th ?? $teacher->fname_cn)
+                                                        : ($locale == 'th' ? ($teacher->fname_th ?? $teacher->fname_en ?? $teacher->fname_cn)
+                                                        : ($teacher->fname_cn ?? $teacher->fname_en ?? $teacher->fname_th));
+
+                                                $lname = $locale == 'en' ? ($teacher->lname_en ?? $teacher->lname_th ?? $teacher->lname_cn)
+                                                        : ($locale == 'th' ? ($teacher->lname_th ?? $teacher->lname_en ?? $teacher->lname_cn)
+                                                        : ($teacher->lname_cn ?? $teacher->lname_en ?? $teacher->lname_th));
+                                            @endphp
+                                            {{ $fname }} {{ $lname }} <br>
                             @endif
                         @endforeach
 
@@ -220,11 +295,28 @@
 
                 <div class="row mt-2">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Published_research_journalName') }}</b></p>
-                    <p class="card-text col-sm-9">{{ $paper->paper_sourcetitle }}</p>
+                    <p class="card-text col-sm-9">
+                        @php
+                                                $sourcetitle = $locale == 'en' ? ($paper->paper_sourcetitle ?? $paper->paper_sourcetitle_th ?? $paper->paper_sourcetitle_cn)
+                                                        : ($locale == 'th' ? ($paper->paper_sourcetitle_th ?? $paper->paper_sourcetitle ?? $paper->paper_sourcetitle_cn)
+                                                        : ($paper->paper_sourcetitle_cn ?? $paper->paper_sourcetitle ?? $paper->paper_sourcetitle_th));
+                                            @endphp
+                                            {{ $sourcetitle }}
+                    </p>
                 </div>
                 <div class="row mt-2">
+                    @if (App::getLocale() == 'th')
+                    <p class="card-text col-sm-3"><b>ปีที่ตีพิมพ์ (พ.ศ.)</b></p>
+                    @else
                     <p class="card-text col-sm-3"><b>{{ trans('message.Published_research_year') }}</b></p>
+                    @endif
+
+                    @if (App::getLocale() == 'th')
+                    <p class="card-text col-sm-9">{{ $paper->paper_yearpub +543 ?? $paper->paper_yearpub }}</p>
+                    @else
                     <p class="card-text col-sm-9">{{ $paper->paper_yearpub }}</p>
+                    @endif
+                    
                 </div>
                 <div class="row mt-2">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Published_research_volume') }}</b></p>

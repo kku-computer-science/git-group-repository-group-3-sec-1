@@ -34,7 +34,14 @@
                             @foreach ($patents as $i => $paper)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
-                                    <td>{{ Str::limit($paper->ac_name, 50) }}</td>
+                                    <td>
+                                        @php
+                                                $locale = app()->getLocale();
+                                                $acname = $locale == 'en' ? ($paper->ac_name_en ?? $paper->ac_name ?? $paper->ac_name_cn)
+                                                        : ($locale == 'th' ? ($paper->ac_name ?? $paper->ac_name_en ?? $paper->ac_name_cn)
+                                                        : ($paper->ac_name_cn ?? $paper->ac_name_en ?? $paper->ac_name));
+                                            @endphp
+                                    {{ Str::limit($acname, 50) }}</td>
                                     <td>
                                         @if (App::getLocale() == 'th')
                                             @if ($paper->ac_type == 'สิทธิบัตร')
@@ -134,7 +141,12 @@
                                             @endif
                                         @endif
                                     </td>
-                                    <td>{{ $paper->ac_year }}</td>
+                                    @if (App::getLocale() == 'th')
+                                        <td>{{ $paper->ac_year }}</td>
+                                    @else
+                                        <td>{{ \Carbon\Carbon::parse($paper->ac_year)->subYears(543)->format('Y-m-d') }}</td>
+                                    @endif
+
                                     <td>{{ $paper->ac_refnumber, 50 }}</td>
                                     <td>
                                         @foreach ($paper->user as $a)

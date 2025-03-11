@@ -48,7 +48,11 @@
                             <th>{{ trans('message.Published_research_no') }}</th>
                             <th>{{ trans('message.Published_research_title') }}</th>
                             <th>{{ trans('message.Published_research_type') }}</th>
+                            @if (App::getLocale() == 'th')
+                            <th>ปีที่ตีพิมพ์ (พ.ศ.)</th>
+                            @else
                             <th>{{ trans('message.Published_research_year') }}</th>
+                            @endif
                             <!-- <th>ผู้เขียน</th>   -->
                             <!-- <th>Source Title</th> -->
                             <th>{{ trans('message.Published_research_API_fetch_date') }}</th>
@@ -59,7 +63,15 @@
                             @foreach ($papers->sortByDesc('paper_yearpub') as $i => $paper)
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
-                                    <td>{{ Str::limit($paper->paper_name, 50) }}</td>
+                                    <td>@php
+                                            $locale = app()->getLocale();
+                                            $papername = $locale == 'en' ? ($paper->paper_name ?? $paper->paper_name_th ?? $paper->paper_name_cn)
+                                                    : ($locale == 'th' ? ($paper->paper_name_th ?? $paper->paper_name ?? $paper->paper_name_cn)
+                                                    : ($paper->paper_name_cn ?? $paper->paper_name ?? $paper->paper_name_th));
+                                        @endphp
+                                        
+                                    
+                                    {{ Str::limit($papername, 50) }}</td>
                                     <td>
                                         @if (App::getLocale() == 'th')
                                             @if ($paper->paper_type == 'Journal')
@@ -94,7 +106,11 @@
                                         @endif
 
                                     </td>
+                                    @if (App::getLocale() == 'th')
+                                    <td>{{ $paper->paper_yearpub +543 }}</td>
+                                    @else
                                     <td>{{ $paper->paper_yearpub }}</td>
+                                    @endif
                                     <!-- <td>
     @foreach ($paper->teacher->take(1) as $teacher)
     {{ $teacher->fname_en }} {{ $teacher->lname_en }},
@@ -108,7 +124,11 @@
     </td> -->
                                     <!-- <td>{{ Str::limit($paper->paper_sourcetitle, 50) }}</td> -->
 
-                                    <td>{{ $paper->created_at }}</td>
+                                    @if (App::getLocale() == 'th')
+                                        <td>{{ \Carbon\Carbon::parse($paper->created_at)->addYears(543)->format('Y-m-d H:i:s') }}</td>
+                                    @else
+                                        <td>{{ $paper->created_at }}</td>
+                                    @endif
 
                                     <td>
                                         <form action="{{ route('papers.destroy', $paper->id) }}" method="POST">

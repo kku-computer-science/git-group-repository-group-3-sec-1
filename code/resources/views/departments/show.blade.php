@@ -26,11 +26,15 @@
             <div class="card-body">
                 <div class="lead">
                     <strong>{{ trans('message.Deapartment_Name_TH') }}:</strong>
-                    {{ $department->department_name_th }}
+                    {{ $department->department_name_th ?? trans('message.Null')  }}
                 </div>
                 <div class="lead">
                     <strong>{{ trans('message.Deapartment_Name_EN') }}:</strong>
-                    {{ $department->department_name_en }}
+                    {{ $department->department_name_en ?? trans('message.Null')  }}
+                </div>
+                <div class="lead">
+                    <strong>{{ trans('message.Deapartment_Name_CN') }}:</strong>
+                    {{ $department->department_name_cn ?? trans('message.Null') }}
                 </div>
             </div>
         </div>

@@ -51,7 +51,19 @@
                     <tr id="expert_id_{{ $expert->id }}">
                         <td>{{ $i+1 }}</td>
                         @if(Auth::user()->hasRole('admin'))
-                        <td>{{ $expert->user->fname_en }} {{ $expert->user->lname_en }}</td>
+                        <td>
+                                        @php
+                                            $locale = app()->getLocale();
+                                            $fname = $locale == 'en' ? ($expert->user->fname_en ?? $expert->user->fname_th ?? $expert->user->fname_cn)
+                                                    : ($locale == 'th' ? ($expert->user->fname_th ?? $expert->user->fname_en ?? $expert->user->fname_cn)
+                                                    : ($expert->user->fname_cn ?? $expert->user->fname_en ?? $expert->user->fname_th));
+
+                                            $lname = $locale == 'en' ? ($expert->user->lname_en ?? $expert->user->lname_th ?? $expert->user->lname_cn)
+                                                    : ($locale == 'th' ? ($expert->user->lname_th ?? $expert->user->lname_en ?? $expert->user->lname_cn)
+                                                    : ($expert->user->lname_cn ?? $expert->user->lname_en ?? $expert->user->lname_th ));
+                                        @endphp
+                                        {{ $fname }} {{ $lname }}
+                        </td>
                         @endif
                         <td><p>{{ $expert->expert_name }}</p>
                         <p>{{ $expert->expert_name_th}}</p>

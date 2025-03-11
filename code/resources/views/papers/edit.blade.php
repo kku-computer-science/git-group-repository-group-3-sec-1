@@ -54,15 +54,39 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_name" class="col-sm-3 col-form-label">{{ trans('message.Published_research_title') }}</label>
+                        <label for="exampleInputpaper_name" class="col-sm-3 col-form-label">{{ trans('message.Published_research_title') }} (EN)</label>
                         <div class="col-sm-9">
                             <input type="text" name="paper_name" value="{{ $paper->paper_name }}" class="form-control" placeholder="{{ trans('message.Published_research_title') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputabstract" class="col-sm-3 col-form-label">{{ trans('message.Published_research_abstract') }}</label>
+                        <label for="exampleInputpaper_name" class="col-sm-3 col-form-label">{{ trans('message.Published_research_title') }} (TH)</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="paper_name_th" value="{{ $paper->paper_name_th }}" class="form-control" placeholder="{{ trans('message.Published_research_title') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputpaper_name" class="col-sm-3 col-form-label">{{ trans('message.Published_research_title') }} (CN)</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="paper_name_cn" value="{{ $paper->paper_name_cn }}" class="form-control" placeholder="{{ trans('message.Published_research_title') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputabstract" class="col-sm-3 col-form-label">{{ trans('message.Published_research_abstract') }} (EN)</label>
                         <div class="col-sm-9">
                             <textarea type="text" name="abstract" placeholder="abstract" class="form-control form-control-lg" style="height:150px" >{{ $paper->abstract }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputabstract" class="col-sm-3 col-form-label">{{ trans('message.Published_research_abstract') }} (TH)</label>
+                        <div class="col-sm-9">
+                            <textarea type="text" name="abstract_th" placeholder="abstract" class="form-control form-control-lg" style="height:150px" >{{ $paper->abstract_th }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputabstract" class="col-sm-3 col-form-label">{{ trans('message.Published_research_abstract') }} (CN)</label>
+                        <div class="col-sm-9">
+                            <textarea type="text" name="abstract_cn" placeholder="abstract" class="form-control form-control-lg" style="height:150px" >{{ $paper->abstract_cn }}</textarea>
                         </div>
                     </div>
                     
@@ -74,9 +98,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Published_research_journalName') }}</label>
+                        <label for="exampleInputpaper_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Published_research_journalName') }} (EN)</label>
                         <div class="col-sm-9">
                             <input type="text" name="paper_sourcetitle" value="{{ $paper->paper_sourcetitle }}" class="form-control" placeholder="{{ trans('message.Published_research_journalName') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputpaper_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Published_research_journalName') }} (TH)</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="paper_sourcetitle_th" value="{{ $paper->paper_sourcetitle_th }}" class="form-control" placeholder="{{ trans('message.Published_research_journalName') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputpaper_sourcetitle" class="col-sm-3 col-form-label">{{ trans('message.Published_research_journalName') }} (CN)</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="paper_sourcetitle_cn" value="{{ $paper->paper_sourcetitle_cn }}" class="form-control" placeholder="{{ trans('message.Published_research_journalName') }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -161,9 +197,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputpaper_funder" class="col-sm-3 col-form-label">{{ trans('message.Published_research_funder') }}</label>
+                        <label for="exampleInputpaper_funder" class="col-sm-3 col-form-label">{{ trans('message.Published_research_funder') }} (EN)</label>
                         <div class="col-sm-9">
                             <input type="text" name="paper_funder" value="{{ $paper->paper_funder }}" class="form-control" placeholder="{{ trans('message.Published_research_funder') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputpaper_funder" class="col-sm-3 col-form-label">{{ trans('message.Published_research_funder') }} (TH)</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="paper_funder_th" value="{{ $paper->paper_funder_th }}" class="form-control" placeholder="{{ trans('message.Published_research_funder') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputpaper_funder" class="col-sm-3 col-form-label">{{ trans('message.Published_research_funder') }} (CN)</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="paper_funder_cn" value="{{ $paper->paper_funder_cn }}" class="form-control" placeholder="{{ trans('message.Published_research_funder') }}">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -223,8 +271,9 @@
 //console.log(obj.pivot.author_type)
 
             $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;">@foreach($users as $user)<option value="{{ $user->id }}" >{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><select id="pos' + i + '" class="custom-select my-select" style="width: 200px;" name="pos[]"><option value="1">First Author</option><option value="2" >Co-Author</option><option value="3" >Corresponding Author</option></select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
+                '][userid]" style="width: 200px;"><option value="">{{ trans("message.Select_user_option") }}</option>@foreach($users as $user)@php $locale = app()->getLocale(); $fname = $locale == "en" ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn) : ($locale == "th" ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn) : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th)); $lname = $locale == "en" ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn) : ($locale == "th" ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn) : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th)); @endphp<option value="{{ $user->id }}">{{ $fname }} {{ $lname }}</option>@endforeach</select></td><td><select id="pos' + i + '" class="custom-select my-select" style="width: 200px;" name="pos[]"><option value="1">{{ trans('message.First_Author') }}</option><option value="2">{{ trans('message.Co-Author') }}</option><option value="3">{{ trans('message.Corresponding_Author') }}</option></select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
             );
+
             document.getElementById("selUser" + i).value = obj.id;
             document.getElementById("pos" + i).value = obj.pivot.author_type;
             $("#selUser" + i).select2()
@@ -238,7 +287,7 @@
 
             ++i;
             $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><select id="pos" class="custom-select my-select" style="width: 200px;" name="pos[]"><option value="1">First Author</option><option value="2">Co-Author</option><option value="3">Corresponding Author</option></select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
+                '][userid]" style="width: 200px;"><option value="">{{ trans("message.Select_user_option") }}</option>@foreach($users as $user)@php $locale = app()->getLocale(); $fname = $locale == "en" ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn) : ($locale == "th" ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn) : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th)); $lname = $locale == "en" ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn) : ($locale == "th" ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn) : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th)); @endphp<option value="{{ $user->id }}">{{ $fname }} {{ $lname }}</option>@endforeach</select></td><td><select id="pos' + i + '" class="custom-select my-select" style="width: 200px;" name="pos[]"><option value="1">{{ trans('message.First_Author') }}</option><option value="2">{{ trans('message.Co-Author') }}</option><option value="3">{{ trans('message.Corresponding_Author') }}</option></select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr"><i class="mdi mdi-minus"></i></button></td></tr>'
             );
             $("#selUser" + i).select2()
         });
@@ -263,8 +312,8 @@
             var obj2 = patent[i];
             console.log(obj2.pivot.author_type)
             $("#dynamic_field").append('<tr id="row' + i +
-                '" class="dynamic-added"><td><input type="text" name="fname[]" value="' + obj2.author_fname + '" placeholder="{{ trans('message.Enter_your_name') }}" class="form-control name_list" /></td><td><input type="text" name="lname[]" value="' + obj2.author_lname + '" placeholder="{{ trans('message.Enter_your_name') }}" class="form-control name_list" /></td><td><select id="poss' + i + '" class="custom-select my-select" style="width: 200px;" name="pos2[]"><option value="1">First Author</option><option value="2">Co-Author</option><option value="3">Corresponding Author</option></select></td><td><button type="button" name="remove" id="' +
-                i + '" class="btn btn-danger btn-sm btn_remove">X</button></td></tr>');
+    '" class="dynamic-added"><td><input type="text" name="fname[]" value="' + obj2.author_fname + '" placeholder="{{ trans("message.your_name") }} (EN)" class="form-control name_list" /><input type="text" name="fname_th[]" value="' + obj2.author_fname_th + '" placeholder="{{ trans("message.your_name") }} (TH)" class="form-control name_list" /><input type="text" name="fname_cn[]" value="' + obj2.author_fname_cn + '" placeholder="{{ trans("message.your_name") }} (CN)" class="form-control name_list" /></td><td><input type="text" name="lname[]" value="' + obj2.author_lname + '" placeholder="{{ trans("message.your_surname") }} (EN)" class="form-control name_list" /><input type="text" name="lname_th[]" value="' + obj2.author_lname_th + '" placeholder="{{ trans("message.your_surname") }} (TH)" class="form-control name_list" /><input type="text" name="lname_cn[]" value="' + obj2.author_lname_cn + '" placeholder="{{ trans("message.your_surname") }} (CN)" class="form-control name_list" /></td><td><select id="poss' + i + '" class="custom-select my-select" style="width: 200px;" name="pos2[]"><option value="1">{{ trans("message.First_Author") }}</option><option value="2">{{ trans("message.Co-Author") }}</option><option value="3">{{ trans("message.Corresponding_Author") }}</option></select></td><td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn-sm btn_remove"><i class="mdi mdi-minus"></i></button></td></tr>');
+
             //document.getElementById("selUser" + i).value = obj.id;
             //console.log(obj.author_fname)
             // let doc=document.getElementById("row" + i)
@@ -281,7 +330,7 @@
         $('#add').click(function() {
             i++;
             $('#dynamic_field').append('<tr id="row' + i +
-                '" class="dynamic-added"><td><input type="text" name="fname[]" placeholder="{{ trans('message.Enter_your_name') }}" class="form-control name_list" /></td><td><input type="text" name="lname[]" placeholder="{{ trans('message.Enter_your_name') }}" class="form-control name_list" /></td><td><select id="poss' + i + '"class="custom-select my-select" style="width: 200px;" name="pos2[]"><option value="1">First Author</option><option value="2">Co-Author</option><option value="3">Corresponding Author</option></select></td><td><button type="button" name="remove" id="' +
+                '" class="dynamic-added"><td><input type="text" name="fname[]" placeholder="{{ trans('message.your_name') }} (EN)" class="form-control name_list" /><input type="text" name="fname[]_th" placeholder="{{ trans('message.your_surname') }} (TH)" class="form-control name_list" /><input type="text" name="fname[]" placeholder="{{ trans('message.your_name') }} (CN)" class="form-control name_list" /></td><td><input type="text" name="lname[]" placeholder="{{ trans('message.your_surname') }} (EN)" class="form-control name_list" /><input type="text" name="lname[]_th" placeholder="{{ trans('message.your_name') }} (TH)" class="form-control name_list" /><input type="text" name="lname[]_cn" placeholder="{{ trans('message.your_surname') }} (CN)" class="form-control name_list" /></td><td><select id="pos2" class="custom-select my-select" style="width: 200px;" name="pos2[]"><option value="1">{{ trans('message.First_Author') }}</option><option value="2">{{ trans('message.Co-Author') }}</option><option value="3">{{ trans('message.Corresponding_Author') }}</option></select></td><td><button type="button" name="remove" id="' +
                 i + '" class="btn btn-danger btn-sm btn_remove">X</button></td></tr>');
         });
 

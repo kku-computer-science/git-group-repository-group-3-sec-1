@@ -48,17 +48,23 @@
                         @foreach ($programs as $i => $program)
                             <tr id="program_id_{{ $program->id }}">
                                 <td>{{ $i + 1 }}</td>
-                                <td>
-                                    @if (App::getLocale() == 'th')
-                                        {{ $program->program_name_th }}
-                                    @elseif(App::getLocale() == 'en')
-                                        {{ $program->program_name_en }}
-                                    @elseif(App::getLocale() == 'cn')
-                                        {{ $program->program_name_cn }}
-                                    @endif
-                                </td>
+                                @php
+                                    $locale = app()->getLocale();
+                                    $programname = $locale == 'th' ? ($program->program_name_th ?? $program->program_name_en ?? $program->program_name_cn ?? null)
+                                                : ($locale == 'en' ? ($program->program_name_en ?? $program->program_name_th ?? $program->program_name_cn ?? null)
+                                                : ($locale == 'cn' ? ($program->program_name_cn ?? $program->program_name_en ?? $program->program_name_th ?? null)
+                                                : ($program->program_name_en ?? $program->program_name_th ?? $program->program_name_cn ?? null)));
+                                @endphp
+                                <td>{{ $programname }}</td>
                                 <!-- <td>{{ $program->program_name_en }}</td> -->
-                                <td>{{ $program->degree->degree_name_en }}</td>
+                                @php
+                                    $locale = app()->getLocale();
+                                    $degreename = $locale == 'th' ? ($program->degree->degree_name_th ?? $program->degree->degree_name_en ?? $program->degree->degree_name_cn ?? null)
+                                                : ($locale == 'en' ? ($program->degree->degree_name_en ?? $program->degree->degree_name_th ?? $program->degree->degree_name_cn ?? null)
+                                                : ($locale == 'cn' ? ($program->degree->degree_name_cn ?? $program->degree->degree_name_en ?? $program->degree->degree_name_th ?? null)
+                                                : ($program->degree->degree_name_en ?? $program->degree->degree_name_th ?? $program->degree->degree_name_cn ?? null)));
+                                @endphp
+                                <td>{{ $degreename }}</td>
                                 <td>
                                     <form action="{{ route('programs.destroy', $program->id) }}" method="POST">
                                         <!-- <a class="btn btn-info" id="show-program" data-toggle="modal" data-id="{{ $program->id }}">Show</a> -->
@@ -108,7 +114,13 @@
                                     <div class="col-sm-8">
                                         <select id="degree" class="custom-select my-select" name="degree">
                                             @foreach ($degree as $d)
-                                                <option value="{{ $d->id }}">{{ $d->degree_name_th }}</option>
+                                            <option value="{{ $d->id }}">
+                                                {{ $d->{'degree_name_' . app()->getLocale()} 
+                                                    ?? $d->degree_name_en 
+                                                    ?? $d->degree_name_th 
+                                                    ?? $d->degree_name_cn 
+                                                    ?? '' }}
+                                            </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -118,7 +130,13 @@
                                     <div class="col-sm-8">
                                         <select id="department" class="custom-select my-select" name="department">
                                             @foreach ($department as $d)
-                                                <option value="{{ $d->id }}">{{ $d->department_name_th }}</option>
+                                            <option value="{{ $d->id }}">
+                                                {{ $d->{'department_name_' . app()->getLocale()} 
+                                                    ?? $d->department_name_en 
+                                                    ?? $d->department_name_th 
+                                                    ?? $d->department_name_cn 
+                                                    ?? '' }}
+                                            </option>
                                             @endforeach
                                         </select>
                                     </div>

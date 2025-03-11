@@ -1,5 +1,12 @@
 <?php
 return [
+'expertiseTH' => 'Expertise in Thai',
+'expertiseEN' => 'Expertise in English',
+'expertiseCN' => 'Expertise in Chinese',
+'noexpertise' => 'This researcher has not defined their expertise yet.',
+',Ph.d' => ', Ph.d',
+'nostudentwithinRG' => 'There are no students within this research group.',
+'null' => 'No information for this section.',
 'Home' => 'Home',
 'Researchers' => 'Researchers',
 'ResearchProj' => 'Research Project',
@@ -13,9 +20,10 @@ return [
 'Number' => 'Number',
 'Project name' => 'Project name',
 'Year' => 'Year',
+'Status' => 'Status',
 'Details' => 'Details',
 'Academic service projects/research projects' => 'Academic service projects/research projects',
-'Project responsible person' => 'Project responsible person',
+'Project responsible person' => 'Person(s) responsible for the project',
 'Project Duration' => 'Project Duration',
 'Type of Research Funding' => 'Type of Research Funding',
 'Funding Agency' => 'Funding Agency',
@@ -75,6 +83,7 @@ return [
 'copyrightsoundrecording' => 'Copyright (Sound Recording)',
 'tradesecret' => 'Trade Secret',
 'trademark' => 'Trademark',
+
 
 
 
@@ -182,6 +191,9 @@ return [
 'Add_research_grant' => 'Add',
 'Fund_no' => 'No.',
 'Fund_name' => 'Fund Name',
+'Fund_name_th' => 'Fund Name(Thai)',
+'Fund_name_en' => 'Fund Name(English)',
+'Fund_name_cn' => 'Fund Name(Chinese)',
 'Fund_type' => 'Fund Type',
 'Fund_level' => 'Fund Level',
 'Fund_action' => 'Action',
@@ -278,9 +290,9 @@ return [
 
 // ส่วนของ Research Group
 'Research_Group_navbar_title' => 'Research Group',
-'Research_group_name_cn' => 'Research Group Name (CN)',
-'Research_group_description_cn' => 'Research Group Descriptions (CN)',
-'Research_group_detail_cn' => 'Research Group Detail (CN)',
+'Research_group_name_cn' => 'Group Name (CN)',
+'Research_group_description_cn' => 'Descriptions (CN)',
+'Research_group_detail_cn' => 'Detail (CN)',
 
 // ส่วนของ Research Group (index.blade.php)
 'Add_research_group' => 'Add',
@@ -317,12 +329,16 @@ return [
 
 // ส่วนของ Published research
 'Published_research_navbar_title' => 'Published research',
+'First_Author' => 'First Author',
+'Co-Author' => 'Co-Author',
+'Corresponding_Author' => 'Corresponding_Author',
 
 // ส่วนของ Book
 'Book_navbar_title' => 'Book',
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
 'Other_academic_works_navbar_title' => 'Other academic works',
+'Please_choose_type' => 'Please Select Type',
 
 'No_data_avalible' => 'No data available in table',
 'info' => '',
@@ -344,7 +360,7 @@ return [
 'Published_research_no' => 'No.',
 'Published_research_title' => 'Title',
 'Published_research_type' => 'Type',
-'Published_research_year' => 'Year',
+'Published_research_year' => 'Year (In A.D.)',
 'Published_research_API_fetch_date' => 'API Fetch Date',
 'Published_research_action' => 'Action',
 'Published_research_journal' => 'Journal',
@@ -384,6 +400,8 @@ return [
 'Published_research_internal_author' => 'Author Name (Internal Author)',
 'Published_research_external_author' => 'Author Name (External Author)',
 'Enter_your_name' => 'Enter your name',
+'your_name' => 'Name',
+'your_surname' => 'Surname',
 
 'Published_research_document_type_article' => 'Article',
 'Published_research_document_type_conference' => 'Conference Paper',
@@ -412,8 +430,12 @@ return [
 'Add_book' => 'Add',
 'Book_no' => 'No.',
 'Book_title' => 'Title',
-'Book_year' => 'Year (B.E.)',
-'Book_source' => 'Source(Thai)',
+'Book_title_th' => 'Title(Thai)',
+'Book_title_en' => 'Title(English)',
+'Book_title_cn' => 'Title(Chinese)',
+'Book_year' => 'Year (A.D.)',
+'Book_source' => 'Source',
+'Book_source_th' => 'Source(Thai)',
 'Book_source_en' => 'Source(English)',
 'Book_source_cn' => 'Source(Chinese)',
 'Book_page' => 'Page',

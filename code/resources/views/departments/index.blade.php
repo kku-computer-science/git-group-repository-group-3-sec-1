@@ -36,7 +36,15 @@
                         @foreach ($data as $key => $department)
                         <tr>
                             <td>{{ $department->id }}</td>
-                            <td>{{ $department->department_name_th }}</td>
+                            <td>
+                            @php
+                                        $locale = app()->getLocale();
+                                        $departmentname = $locale == 'en' ? ($department->department_name_en ?? $department->department_name_th  ?? $department->department_name_cn )
+                                                : ($locale == 'th' ? ($department->department_name_th  ?? $department->department_name_en ?? $department->department_name_cn )
+                                                : ($department->department_name_cn  ?? $department->department_name_en ?? $department->department_name_th ));
+                                    @endphp
+                                    {{ $departmentname }}
+                            </td>
                             <td>
                                 <form action="{{ route('departments.destroy',$department->id) }}" method="POST">
                                     

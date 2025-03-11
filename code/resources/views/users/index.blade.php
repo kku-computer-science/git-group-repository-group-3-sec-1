@@ -126,14 +126,67 @@
                         @foreach ($data as $key => $user)
                         <tr>
                             <td>{{ $key++ }}</td>
-                            <td>{{ $user->fname_en }} {{ $user->lname_en }} </td>
-                            <td>{{ Str::limit($user->program->program_name_en,20) }}</td>
+                            <td>
+                                @php
+                                    $locale = app()->getLocale();
+                                    $fname = $locale == 'th' ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn ?? null)
+                                            : ($locale == 'en' ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn ?? null)
+                                            : ($locale == 'cn' ? ($user->fname_cn ?? $user->fname_en ?? $user->fname_th ?? null)
+                                            : ($user->fname_en ?? $user->fname_th ?? $user->fname_cn ?? null)));
+
+                                    $lname = $locale == 'th' ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn ?? null)
+                                            : ($locale == 'en' ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn ?? null)
+                                            : ($locale == 'cn' ? ($user->lname_cn ?? $user->lname_en ?? $user->lname_th ?? null)
+                                            : ($user->lname_en ?? $user->lname_th ?? $user->lname_cn ?? null)));
+                                @endphp
+                                {{ $fname }} {{ $lname }}
+                            </td>
+                            <td>
+                                @php
+                                    $locale = app()->getLocale();
+                                    $department = $locale == 'th' ? ($user->program->program_name_th ?? $user->program->program_name_en ?? $user->program->program_name_cn ?? null)
+                                            : ($locale == 'en' ? ($user->program->program_name_en ?? $user->program->program_name_th ?? $user->program->program_name_cn ?? null)
+                                            : ($locale == 'cn' ? ($user->program->program_name_cn ?? $user->program->program_name_en ?? $user->program->program_name_th ?? null)
+                                            : ($user->program->program_name_en ?? $user->program->program_name_th ?? $user->program->program_name_cn ?? null)));
+                                @endphp
+                                {{ Str::limit($department, 20) }}
+                            </td>
                             <td>{{ $user->email }}</td>
                             <td>
                                 @if(!empty($user->getRoleNames()))
-                                @foreach($user->getRoleNames() as $val)
-                                <label class="badge badge-dark">{{ $val }}</label>
-                                @endforeach
+                                    @foreach($user->getRoleNames() as $val)
+                                        @php
+                                            $locale = app()->getLocale();
+                                            $role = match ($locale) {
+                                                'th' => match ($val) {
+                                                    'admin' => 'ผู้ดูแลระบบ',
+                                                    'teacher' => 'อาจารย์',
+                                                    'student' => 'นักเรียน',
+                                                    'headproject' => 'หัวหน้าโครงการ',
+                                                    'staff' => 'เจ้าหน้าที่',
+                                                    default => $val,
+                                                },
+                                                'en' => match ($val) {
+                                                    'admin' => 'Admin',
+                                                    'teacher' => 'Teacher',
+                                                    'student' => 'Student',
+                                                    'headproject' => 'Head Project',
+                                                    'staff' => 'Staff',
+                                                    default => $val,
+                                                },
+                                                'cn' => match ($val) {
+                                                    'admin' => '管理员',
+                                                    'teacher' => '老师',
+                                                    'student' => '学生',
+                                                    'headproject' => '项目负责人',
+                                                    'staff'=> '职员',
+                                                    default => $val,
+                                                },
+                                                default => $val,
+                                            };
+                                        @endphp
+                                        <label class="badge badge-dark">{{ $role }}</label>
+                                    @endforeach
                                 @endif
                             </td>
                             <td>

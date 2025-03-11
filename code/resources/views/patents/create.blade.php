@@ -42,9 +42,21 @@
                 <form class="forms-sample" action="{{ route('patents.store') }}" method="POST">
                     @csrf
                     <div class="form-group row">
-                        <label for="exampleInputac_name" class="col-sm-3">{{ trans('message.Other_academic_works_create_title') }}</label>
+                        <label for="exampleInputac_name" class="col-sm-3">{{ trans('message.Other_academic_works_create_title') }} (TH)</label>
                         <div class="col-sm-9">
-                            <input type="text" name="ac_name" class="form-control" placeholder="{{ trans('message.Other_academic_works_create_title') }}">
+                            <input type="text" name="ac_name" class="form-control" placeholder="{{ trans('message.Other_academic_works_create_title') }} (TH)">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputac_name" class="col-sm-3">{{ trans('message.Other_academic_works_create_title') }} (EN)</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="ac_name_en" class="form-control" placeholder="{{ trans('message.Other_academic_works_create_title') }} (EN)">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputac_name" class="col-sm-3">{{ trans('message.Other_academic_works_create_title') }} (CN)</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="ac_name_cn" class="form-control" placeholder="{{ trans('message.Other_academic_works_create_title') }} (CN)">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -99,16 +111,22 @@
                                 <table class="table table-hover small-text" id="dynamicAddRemove">
                                     <tr>
                                         <td><select id='selUser0' style='width: 200px;' name="moreFields[0][userid]">
-                                        @if (App::getLocale() == 'th')
-                                                <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}
-                                                </option>@endforeach
-                                                @elseif(App::getLocale() == 'en')
-                                                <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}
-                                                </option>@endforeach
-                                                @elseif(App::getLocale() == 'cn')
-                                                <option value=''>{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}
-                                                </option>@endforeach
-                                                @endif
+                                                <option value=''>{{ trans('message.Select_user_option') }}</option>
+                                                @foreach($users as $user)
+                                                <option value="{{ $user->id }}">
+                                                     @php
+                                                        $locale = app()->getLocale();
+                                                        $fname = $locale == 'en' ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn)
+                                                                : ($locale == 'th' ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn)
+                                                                : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th));
+
+                                                        $lname = $locale == 'en' ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn)
+                                                                : ($locale == 'th' ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn)
+                                                                : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th));
+                                                    @endphp
+                                                    {{ $fname }} {{ $lname }}
+                                            </option>
+                                            @endforeach
                                             </select>
                                         </td>
                                         <td><button type="button" name="add" id="add-btn2" class="btn btn-success btn-sm"><i class="fas fa-plus"></i></button>
@@ -149,8 +167,12 @@
                                         <th><a href="javascript:void(0);" style="font-size:18px;" id="addMore2" title="{{ trans('message.Add_more_person') }}"><i class="mdi mdi-plus"></i></span></a></th>
                                     <tr>
                                         <!--  -->
-                                        <td><input type="text" name="fname[]" class="form-control" placeholder="{{ trans('message.First_name') }}" ></td>
-                                        <td><input type="text" name="lname[]" class="form-control" placeholder="{{ trans('message.Last_name') }}" ></td>
+                                        <td><input type="text" name="fname[]" class="form-control" placeholder="{{ trans('message.First_name') }} (EN)" >
+                                            <input type="text" name="fname_th[]" class="form-control" placeholder="{{ trans('message.First_name') }} (TH)" >
+                                            <input type="text" name="fname_cn[]" class="form-control" placeholder="{{ trans('message.First_name') }} (CN)" ></td>
+                                        <td><input type="text" name="lname[]" class="form-control" placeholder="{{ trans('message.Last_name') }} (EN)" >
+                                            <input type="text" name="lname_th[]" class="form-control" placeholder="{{ trans('message.Last_name') }} (TH)" >
+                                            <input type="text" name="lname_cn[]" class="form-control" placeholder="{{ trans('message.Last_name') }} (CN)" ></td>
                                         <!-- <td><input type="text" name="emailid[]" class="form-control"></td> -->
                                         <td><a href='javascript:void(0);' class='remove'><span><i class="mdi mdi-minus"></span></a></td>
                                     </tr>
@@ -167,7 +189,6 @@
     </div>
 </div>
 
-@if (App::getLocale() == 'th')
 <script>
     $(document).ready(function() {
         $("#selUser0").select2()
@@ -178,9 +199,33 @@
         $("#add-btn2").click(function() {
 
             ++i;
-            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_th }} {{ $user->lname_th }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr">X</i></button></td></tr>'
-            );
+            $("#dynamicAddRemove").append(`
+    <tr>
+        <td>
+            <select id="selUser${i}" name="moreFields[${i}][userid]" style="width: 200px;">
+                <option value="">{{ trans('message.Select_user_option') }}</option>
+                @foreach($users as $user)
+                    <option value="{{ $user->id }}">
+                        @php
+                            $locale = app()->getLocale();
+                            $fname = $locale == 'en' ? ($user->fname_en ?? $user->fname_th ?? $user->fname_cn)
+                                    : ($locale == 'th' ? ($user->fname_th ?? $user->fname_en ?? $user->fname_cn)
+                                    : ($user->fname_cn ?? $user->fname_en ?? $user->fname_th));
+
+                            $lname = $locale == 'en' ? ($user->lname_en ?? $user->lname_th ?? $user->lname_cn)
+                                    : ($locale == 'th' ? ($user->lname_th ?? $user->lname_en ?? $user->lname_cn)
+                                    : ($user->lname_cn ?? $user->lname_en ?? $user->lname_th));
+                        @endphp
+                        {{ $fname }} {{ $lname }}
+                    </option>
+                @endforeach
+            </select>
+        </td>
+        <td>
+            <button type="button" class="btn btn-danger btn-sm remove-tr">X</button>
+        </td>
+    </tr>
+`);
             $("#selUser" + i).select2()
         });
         $(document).on('click', '.remove-tr', function() {
@@ -189,51 +234,6 @@
 
     });
 </script>
-@elseif(App::getLocale() == 'en')
-<script>
-    $(document).ready(function() {
-        $("#selUser0").select2()
-        $("#head0").select2()
-
-        var i = 0;
-
-        $("#add-btn2").click(function() {
-
-            ++i;
-            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_en }} {{ $user->lname_en }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr">X</i></button></td></tr>'
-            );
-            $("#selUser" + i).select2()
-        });
-        $(document).on('click', '.remove-tr', function() {
-            $(this).parents('tr').remove();
-        });
-
-    });
-</script>
-@elseif(App::getLocale() == 'cn')
-<script>
-    $(document).ready(function() {
-        $("#selUser0").select2()
-        $("#head0").select2()
-
-        var i = 0;
-
-        $("#add-btn2").click(function() {
-
-            ++i;
-            $("#dynamicAddRemove").append('<tr><td><select id="selUser' + i + '" name="moreFields[' + i +
-                '][userid]"  style="width: 200px;"><option value="">{{ trans('message.Select_user_option') }}</option>@foreach($users as $user)<option value="{{ $user->id }}">{{ $user->fname_cn }} {{ $user->lname_cn }}</option>@endforeach</select></td><td><button type="button" class="btn btn-danger btn-sm remove-tr">X</i></button></td></tr>'
-            );
-            $("#selUser" + i).select2()
-        });
-        $(document).on('click', '.remove-tr', function() {
-            $(this).parents('tr').remove();
-        });
-
-    });
-</script>
-@endif
 <script>
         $(document).ready(function() {
             $('#addMore2').on('click', function() {

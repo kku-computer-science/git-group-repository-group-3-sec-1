@@ -1,5 +1,12 @@
 <?php
 return [
+'expertiseTH' => '泰语专长',
+'expertiseEN' => '英语专长',
+'expertiseCN' => '中文专长',
+'noexpertise' => '这位研究员尚未定义他们的专业领域。',
+',Ph.d' => ', 博士',
+'nostudentwithinRG' => '该研究小组内没有学生。',
+'null' => '此部分无信息。',
 'Home' => '主页',
 'Researchers' => '研究人员',
 'ResearchProj' => '研究项目',
@@ -27,7 +34,7 @@ return [
 'Project Closed' => '项目结项',
 'Search' => '搜索',
 'Laboratory Supervisor' => '实验室主管',
-'Student' => 'S学生',
+'Student' => '学生',
 'Reference' => '参考',
 
 'ResearchGroup' => '研究小组',
@@ -191,6 +198,9 @@ return [
 'Add_research_grant' => '添加',
 'Fund_no' => '编号',
 'Fund_name' => '基金名称',
+'Fund_name_th' => '基金名称（泰文）',
+'Fund_name_en' => '基金名称（英文）',
+'Fund_name_cn' => '基金名称（中国人）',
 'Fund_type' => '基金类型',
 'Fund_level' => '基金级别',
 'Fund_action' => '操作',
@@ -327,12 +337,16 @@ return [
 
 // ส่วนของ Published research
 'Published_research_navbar_title' => '已发表的研究',
+'First_Author' => '第一作者',
+'Co-Author' => '合著者',
+'Corresponding_Author' => '通讯作者',
 
 // ส่วนของ Book
 'Book_navbar_title' => '书籍',
 
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
+'Please_choose_type' => '请选择类型',
 'Other_academic_works_navbar_title' => '其他学术作品',
 
 'No_data_avalible' => '表格中没有可用的数据',  // (Biao ge zhong mei you ke yong de shu ju)
@@ -352,7 +366,7 @@ return [
 'Published_research_no' => '编号',
 'Published_research_title' => '标题',
 'Published_research_type' => '类型',
-'Published_research_year' => '发表年份',
+'Published_research_year' => '发表年份 (广告)',
 'Published_research_API_fetch_date' => 'API提取日期',
 'Published_research_action' => '操作',
 'Published_research_journal' => '期刊',
@@ -392,6 +406,8 @@ return [
 'Published_research_internal_author' => '作者（内部）',
 'Published_research_external_author' => '作者（外部）',
 'Enter_your_name' => '输入您的名字',
+'your_name' => '名字',
+'your_surname' => '姓氏',
 
 'Published_research_document_type_article' => '文章',
 'Published_research_document_type_conference' => '会议论文',
@@ -420,8 +436,12 @@ return [
 'Add_book' => '添加',
 'Book_no' => '编号',
 'Book_title' => '标题',
-'Book_year' => '出版年份',
-'Book_source' => '来源(泰国)',
+'Book_title_th' => 'Title(泰国)',
+'Book_title_en' => 'Title(中国人)',
+'Book_title_cn' => 'Title(英语)',
+'Book_year' => '出版年份(的缩写)',
+'Book_source' => '来源',
+'Book_source_th' => '来源(泰国)',
 'Book_source_en' => '来源(中国人)',
 'Book_source_cn' => '来源(英语)',
 'Book_page' => '页数',

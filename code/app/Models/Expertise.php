@@ -9,7 +9,7 @@ class Expertise extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'expert_name',
+        'expert_name','expert_name_th','expert_name_cn',
     ];
     public function user()
     {

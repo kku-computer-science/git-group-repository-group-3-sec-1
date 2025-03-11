@@ -66,55 +66,34 @@ class ResearcherController extends Controller
         //return $request;
         return view('researchers', compact('request','users'));
     }
-    public function searchs($id,$text){
-        //return $text;
-        $user1 = User::role('teacher')->where('position_th', 'ศ.ดร.')->with(['program','expertise'])->whereHas('program', function($q) use($id){
-            $q->where('id', '=', $id);
-        })->whereHas('expertise', function($q) use($text){
-            $q->where('expert_name', 'LIKE', "%{$text}%");
-        })->orderBy('fname_en')->get();
-        $user2 = User::role('teacher')->where('position_th', 'รศ.ดร.')->with('program')->whereHas('program', function($q) use($id){
-            $q->where('id', '=', $id);
-        })->whereHas('expertise', function($q) use($text){
-            $q->where('expert_name', 'LIKE', "%{$text}%");
-        })->orderBy('fname_en')->get();
-        $user3 = User::role('teacher')->where('position_th', 'ผศ.ดร.')->with('program')->whereHas('program', function($q) use($id){
-            $q->where('id', '=', $id);
-        })->whereHas('expertise', function($q) use($text){
-            $q->where('expert_name', 'LIKE', "%{$text}%");
-        })->orderBy('fname_en')->get();
-        $user4 = User::role('teacher')->where('position_th', 'ศ.')->with('program')->whereHas('program', function($q) use($id){
-            $q->where('id', '=', $id);
-        })->whereHas('expertise', function($q) use($text){
-            $q->where('expert_name', 'LIKE', "%{$text}%");
-        })->orderBy('fname_en')->get();
-        $user5 = User::role('teacher')->where('position_th', 'รศ.')->with('program')->whereHas('program', function($q) use($id){
-            $q->where('id', '=', $id);
-        })->whereHas('expertise', function($q) use($text){
-            $q->where('expert_name', 'LIKE', "%{$text}%");
-        })->orderBy('fname_en')->get();
-        $user6 = User::role('teacher')->where('position_th', 'ผศ.')->with('program')->whereHas('program', function($q) use($id){
-            $q->where('id', '=', $id);
-        })->whereHas('expertise', function($q) use($text){
-            $q->where('expert_name', 'LIKE', "%{$text}%");
-        })->orderBy('fname_en')->get();
-        $user7 = User::role('teacher')->where('position_th', 'อ.ดร.')->with('program')->whereHas('program', function($q) use($id){
-            $q->where('id', '=', $id);
-        })->whereHas('expertise', function($q) use($text){
-            $q->where('expert_name', 'LIKE', "%{$text}%");
-        })->orderBy('fname_en')->get();
-        $user8 = User::role('teacher')->where('position_th', 'อ.')->with('program')->whereHas('program', function($q) use($id){
-            $q->where('id', '=', $id);
-        })->whereHas('expertise', function($q) use($text){
-            $q->where('expert_name', 'LIKE', "%{$text}%");
-        })->orderBy('fname_en')->get();
+    public function searchs($id, $text)
+        {
+            $positions = ['ศ.ดร.', 'รศ.ดร.', 'ผศ.ดร.', 'ศ.', 'รศ.', 'ผศ.', 'อ.ดร.', 'อ.'];
 
-        $users = collect([...$user1, ...$user2, ...$user3, ...$user4, ...$user5, ...$user6, ...$user7, ...$user8]);
+            $users = collect();
 
-        $request = Program::where('id','=',$id)->get();
+            foreach ($positions as $position) {
+                $users = $users->merge(
+                    User::role('teacher')
+                        ->where('position_th', $position)
+                        ->with(['program', 'expertise'])
+                        ->whereHas('program', fn($q) => $q->where('id', '=', $id))
+                        ->whereHas('expertise', fn($q) => 
+                            $q->where('expert_name', 'LIKE', "%{$text}%")
+                            ->orWhere('expert_name_th', 'LIKE', "%{$text}%")
+                            ->orWhere('expert_name_cn', 'LIKE', "%{$text}%")
+                        )
+                        ->orderBy('fname_en')
+                        ->get()
+                );
+            }
 
-        return view('researchers', compact('request','users'));
-    }
+            $request = Program::where('id', '=', $id)->get();
+
+            return view('researchers', compact('request', 'users'));
+        }
+
+
     public function search($id,Request $request){
         $request = $request->textsearch;
         $a = $this->searchs($id,$request);

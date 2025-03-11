@@ -34,7 +34,15 @@
                                 <tr>
                                     <td>{{ $i + 1 }}</td>
                                     <td>{{ Str::limit($paper->ac_name, 50) }}</td>
-                                    <td>{{ date('Y', strtotime($paper->ac_year)) + 543 }}</td>
+                                    <td>
+                                        @if (App::getLocale() == 'th')
+                                            {{ date('Y', strtotime($paper->ac_year)) + 543 }}
+                                        @elseif(App::getLocale() == 'en')
+                                            {{ date('Y', strtotime($paper->ac_year))}}
+                                        @elseif(App::getLocale() == 'cn')
+                                            {{ date('Y', strtotime($paper->ac_year))}}
+                                        @endif
+                                    </td>
                                     <td>
                                         @if (App::getLocale() == 'th')
                                             {{ Str::limit($paper->ac_sourcetitle, 50) }}

@@ -1,5 +1,11 @@
 <?php
 return [
+'expertiseTH' => 'ความเชี่ยวชาญในภาษาไทย',
+'expertiseEN' => 'ความเชี่ยวชาญในภาษาอังกฤษ',
+'expertiseCN' => 'ความเชี่ยวชาญในภาษาจีน',
+'noexpertise' => 'ไม่มีการระบุความเชี่ยวชาญของผู้วิจัยท่านนี้ไว้',
+'nostudentwithinRG' => 'ไม่มีนักศึกษาภายในกลุ่มวิจัยกลุ่มนี้',
+'null' => 'ไม่มีข้อมูล',
 'Home' => 'หน้าแรก',
 'Researchers' => 'ผู้วิจัย',
 'ResearchProj' => 'โครงการวิจัย',
@@ -182,6 +188,9 @@ return [
 'Add_research_grant' => 'เพิ่ม',
 'Fund_no' => 'ลำดับที่',
 'Fund_name' => 'ชื่อทุน',
+'Fund_name_th' => 'ชื่อทุน(ภาษาไทย)',
+'Fund_name_en' => 'ชื่อทุน(ภาษาอังกฤษ)',
+'Fund_name_cn' => 'ชื่อทุน(ภาษาจีน)',
 'Fund_type' => 'ประเภททุน',
 'Fund_level' => 'ระดับทุน',
 'Fund_action' => 'ดำเนินการ',
@@ -318,11 +327,15 @@ return [
 
 // ส่วนของ Published research
 'Published_research_navbar_title' => 'ผลงานวิจัยที่ตีพิมพ์',
+'First_Author' => 'ผู้เขียนหลัก',
+'Co-Author' => 'ผู้เขียนร่วม',
+'Corresponding_Author' => 'ผู้เขียนที่ติดต่อได้',
 
 // ส่วนของ Book
 'Book_navbar_title' => 'หนังสือ',
 
 // ส่วนของ ผลงานวิชาการอื่นๆ
+'Please_choose_type' => 'โปรดเลือกประเภท',
 'Other_academic_works_navbar_title' => 'ผลงานวิชาการอื่นๆ',
 
 'No_data_avalible' => 'ไม่มีข้อมูลในตารางนี้',
@@ -343,7 +356,7 @@ return [
 'Published_research_no' => 'ลำดับที่',
 'Published_research_title' => 'ชื่อผลงาน',
 'Published_research_type' => 'ประเภท',
-'Published_research_year' => 'ปีที่ตีพิมพ์',
+'Published_research_year' => 'ปีที่ตีพิมพ์ (ค.ศ.)',
 'Published_research_API_fetch_date' => 'วันที่ดึงข้อมูลจาก API',
 'Published_research_action' => 'ดำเนินการ',
 'Published_research_journal' => 'วารสาร',
@@ -383,6 +396,8 @@ return [
 'Published_research_internal_author' => 'ชื่อผู้แต่ง (ในสาขา)',
 'Published_research_external_author' => 'ชื่อผู้แต่ง (นอกสาขา)',
 'Enter_your_name' => 'กรอกชื่อของคุณ',
+'your_name' => 'ชื่อ',
+'your_surname' => 'นามสกุล',
 
 'Published_research_document_type_article' => 'บทความ',
 'Published_research_document_type_conference' => 'การประชุมวิชาการ',
@@ -411,8 +426,12 @@ return [
 'Add_book' => 'เพิ่ม',
 'Book_no' => 'ลำดับที่',
 'Book_title' => 'ชื่อหนังสือ',
+'Book_title_th' => 'ชื่อหนังสือ(ภาษาไทย)',
+'Book_title_en' => 'ชื่อหนังสือ(อังกฤษ)',
+'Book_title_cn' => 'ชื่อหนังสือ(จีน)',
 'Book_year' => 'ปีที่ตีพิมพ์ (พ.ศ.)',
-'Book_source' => 'แหล่งเผยแพร่หนังสือ(ภาษาไทย)',
+'Book_source' => 'แหล่งเผยแพร่หนังสือ',
+'Book_source_th' => 'แหล่งเผยแพร่หนังสือ(ภาษาไทย)',
 'Book_source_en' => 'แหล่งเผยแพร่หนังสือ(อังกฤษ)',
 'Book_source_cn' => 'แหล่งเผยแพร่หนังสือ(จีน)',
 'Book_page' => 'หน้า',
