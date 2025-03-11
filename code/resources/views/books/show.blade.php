@@ -17,7 +17,7 @@
                         @else
                             {{ Str::limit($paper->ac_name, 50) }}
                             <br>
-                            <span class="text-danger">*This Book Doesn't Has an English Title</span><br>
+                            <span class="text-danger">*This book doesn't have an english title.</span><br>
                         @endif
                     @elseif(App::getLocale() == 'cn')
                         @if ($paper->ac_name_cn)
