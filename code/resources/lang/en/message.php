@@ -218,6 +218,11 @@ return [
 'error_input' => [
     'Whoops' => 'Whoops!',
     'Error_problem' => 'There were some problems with your input.',
+    'project_name' => 'Project Name',
+    'budget' => 'Budget',
+    'project_year' => 'Project Year',
+    'fund' => 'Research Fund',
+    'head' => 'Project Head',
 ],
 'Add_research_fund' => 'Add Research Fund',
 'Input_research_fund_detail' => 'Input Research Fund Detail',
@@ -246,13 +251,17 @@ return [
 'Research_project_no' => 'No.',
 'Research_project_year' => 'Year',
 'Research_project_name' => 'Project Name',
+'Research_project_name_cn' => 'Project Name (CN)',
+'Research_project_name_en' => 'Project Name (EN)',
 'Research_project_head' => 'Head',
 'Research_project_member' => 'Member',
 'Research_project_action' => 'Action',
 
 // ส่วนของ Research Projects (show.blade.php)
 'Research_project_detail' => 'Research Projects Detail',
-'Research_project_description' => 'Description of the project',
+'Research_project_description' => 'Description of the project (TH)',
+'Research_project_description_en' => 'Description of the project (EN)',
+'Research_project_description_cn' => 'Description of the project (CN)',
 'Research_project_start' => 'Start Date',
 'Research_project_end' => 'End Date',
 'Research_project_budget' => 'Budget',
@@ -547,6 +556,10 @@ return [
 'User_program' => 'Program',
 'User_select_category' => 'Select Category',
 'User_select_sub_category' => 'Select Sub-Category',
+'User_title_name' => 'Title Name',
+'User_title_name_MR' => 'Mister',
+'User_title_name_Miss' => 'Miss',
+'User_title_name_Missis' => 'Missis',
 
 // ส่วนของ User (show.blade.php)
 'User_detail' => 'User Detail',

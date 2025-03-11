@@ -225,6 +225,11 @@ return [
 'error_input' => [
     'Whoops' => '哎呀！',
     'Error_problem' => '您输入的数据存在问题',
+    'project_name' => '项目名称',
+    'budget' => '预算',
+    'project_year' => '申请年份',
+    'fund' => '研究资金',
+    'head' => '项目负责人',
 ],
 'Add_research_fund' => '添加研究基金',
 'Input_research_fund_detail' => '输入研究基金详情',
@@ -253,13 +258,17 @@ return [
 'Research_project_no' => '编号',
 'Research_project_year' => '年份',
 'Research_project_name' => '项目名称',
+'Research_project_name_cn' => '项目名称 (中国人)',
+'Research_project_name_en' => '项目名称 (英语)',
 'Research_project_head' => '负责人',
 'Research_project_member' => '成员',
 'Research_project_action' => '操作',
 
 // ส่วนของ Research Projects (show.blade.php)
 'Research_project_detail' => '项目详情',
-'Research_project_description' => '项目描述',
+'Research_project_description' => '项目描述 (泰语)',
+'Research_project_description_en' => '项目描述 (英语)',
+'Research_project_description_cn' => '项目描述 (中国人)',
 'Research_project_start' => '开始日期',
 'Research_project_end' => '结束日期',
 'Research_project_budget' => '预算',
@@ -550,6 +559,10 @@ return [
 'User_program' => '项目',
 'User_select_category' => '选择类别',
 'User_select_sub_category' => '选择子类别',
+'User_title_name' => '前缀 ',
+'User_title_name_MR' => '先生',
+'User_title_name_Miss' => '小姐',
+'User_title_name_Missis' => '夫人',
 
 // ส่วนของ User (show.blade.php)
 'User_detail' => '用户详情',

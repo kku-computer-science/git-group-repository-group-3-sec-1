@@ -12,11 +12,11 @@
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_project_start') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchProject->project_start }}</p>
+                <p class="card-text col-sm-9">{{ $researchProject->project_start ??  trans ('message.null') }}</p>
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_project_end') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchProject->project_end }}</p>
+                <p class="card-text col-sm-9">{{ $researchProject->project_end ??  trans ('message.null')}}</p>
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Fund_name') }}</b></p>
@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_project_note') }}</b></p>
-                <p class="card-text col-sm-9">{{ $researchProject->note }}</p>
+                <p class="card-text col-sm-9">{{ $researchProject->note  ??  trans ('message.null')}}</p>
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_project_status.Title') }}</b></p>
@@ -43,19 +43,26 @@
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_project_responsible') }}</b></p>
                 @foreach($researchProject->user as $user)
-                @if ( $user->pivot->role == 1)
-                <p class="card-text col-sm-9">{{$user->position_th}}{{ $user->fname_th}} {{ $user->fname_th}}</p>
-                @endif
+                    @if ($user->pivot->role == 1)
+                        <p class="card-text col-sm-9">
+                            {{ $user['position_'.app()->getLocale()] }} 
+                            {{ $user['fname_'.app()->getLocale()] }} 
+                            {{ $user['lname_'.app()->getLocale()] }}
+                        </p>
+                    @endif
                 @endforeach
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Research_project_member') }}</b></p>
                 @foreach($researchProject->user as $user)
-                @if ( $user->pivot->role == 2)
-                <p class="card-text col-sm-9">{{$user->position_th}}{{ $user->fname_th}} {{ $user->fname_th}}
-				@if (!$loop->last),@endif
-                @endif
-                
+                    @if ($user->pivot->role == 2)
+                        <p class="card-text col-sm-9">
+                            {{ $user['position_'.app()->getLocale()] }} 
+                            {{ $user['fname_'.app()->getLocale()] }} 
+                            {{ $user['lname_'.app()->getLocale()] }} 
+                            @if (!$loop->last), @endif
+                        </p>
+                    @endif
                 @endforeach
 
                 @foreach($researchProject->outsider as $user)

@@ -53,7 +53,7 @@
             <td>
                 @foreach($researchProject->user as $user)
                 @if ( $user->pivot->role == 2)
-                    {{ $user->name}}
+                    {{ $user->name }}
                 @endif
 
                 @endforeach
