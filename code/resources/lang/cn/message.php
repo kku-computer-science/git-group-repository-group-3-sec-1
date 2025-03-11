@@ -624,4 +624,9 @@ return [
 'Expertise_action' => '操作',
 'Add_new_expertise' => '添加新专长',
 'Edit_expertise' => '编辑专长',
+
+// ส่วนของ Manage Expertise (edit.blade.php)
+'Expertise_name_en' => '专长名称 (英文)',
+'Expertise_name_th' => '专长名称 (泰文)',
+'Expertise_name_cn' => '专长名称 (中文)',
 ];

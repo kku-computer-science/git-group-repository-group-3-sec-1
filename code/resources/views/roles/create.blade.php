@@ -15,7 +15,7 @@
         <div class="card">
             <div class="card-header">{{ trans('message.Create_role') }}
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('roles.index') }}">{{ trans('message.Role_navbar_title') }}</a>
+                    <a class="btn btn-primary" href="{{ route('roles.index') }}">{{ trans('message.Cancle_button') }}</a>
                 </span>
             </div>
             <div class="card-body">

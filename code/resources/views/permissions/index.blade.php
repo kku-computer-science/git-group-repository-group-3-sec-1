@@ -103,7 +103,22 @@
                 title: `{{ trans('message.Fund_warning_delete.warning_title') }}`,
                 text: "{{ trans('message.Fund_warning_delete.warning_text') }}",
                 icon: "warning",
-                buttons: true,
+                buttons: {
+                    cancel: {
+                        text: "{{ trans('message.Cancle_button') }}",
+                        value: null,
+                        visible: true,
+                        className: "swal-button swal-button--cancel",
+                        closeModal: true
+                    },
+                    confirm: {
+                        text: "{{ trans('message.Submit_button') }}",
+                        value: true,
+                        visible: true,
+                        className: "swal-button swal-button--confirm swal-button--danger",
+                        closeModal: true
+                    }
+                },
                 dangerMode: true,
             })
             .then((willDelete) => {

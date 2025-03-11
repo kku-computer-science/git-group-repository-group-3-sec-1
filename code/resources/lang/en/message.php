@@ -160,7 +160,7 @@ return [
 'Expertise_title_form' => 'Expertise',
 'Expertise_placeholder_form' => 'Enter Expertise',
 'Submit_button' => 'Submit',
-'Cancle_button' => 'Cancle',
+'Cancle_button' => 'Cancel',
 'Education_title' => 'Education',
 'Bachelor_degree_title' => 'Bachelor\'s degree',
 'Master_degree_title' => 'Master\'s degree',
@@ -619,6 +619,11 @@ return [
 'Expertise_action' => 'Action',
 'Add_new_expertise' => 'Add New Expertise',
 'Edit_expertise' => 'Edit Expertise',
+
+// ส่วนของ Manage Expertise (edit.blade.php)
+'Expertise_name_en' => 'Expertise Name (EN)',
+'Expertise_name_th' => 'Expertise Name (TH)',
+'Expertise_name_cn' => 'Expertise Name (CN)',
 ];
 
 

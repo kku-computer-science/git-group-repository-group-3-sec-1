@@ -116,8 +116,8 @@
                         </table>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary upload mt-5">{{ trans('message.Submit_button') }}</button>
-                <a class="btn btn-light mt-5" href="{{ route('researchGroups.index')}}"> {{ trans('message.Back_button') }}</a>
+                <button type="submit" class="btn btn-primary upload">{{ trans('message.Submit_button') }}</button>
+                <a class="btn btn-light" href="{{ route('researchGroups.index')}}"> {{ trans('message.Back_button') }}</a>
                 </form>
         </div>
     </div>

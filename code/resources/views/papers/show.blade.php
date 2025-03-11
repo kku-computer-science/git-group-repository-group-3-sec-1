@@ -248,7 +248,7 @@
                         class="card-text col-sm-9">{{ $paper->paper_url }}</a>
                 </div>
 
-                <a class="btn btn-primary mt-5" href="{{ route('papers.index') }}">
+                <a class="btn btn-primary" href="{{ route('papers.index') }}">
                     {{ trans('message.Back_button') }}</a>
             </div>
         </div>

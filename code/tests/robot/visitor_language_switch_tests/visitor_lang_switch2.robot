@@ -1,11 +1,15 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
-Test Setup    Setup Test Environment
+# Test Setup    Setup Test Environment
+Suite Setup     Open Browser To Home Page
+Suite Teardown  Close Browser
 
 *** Variables ***
 ${BROWSER}    chrome
 ${URL}    http://127.0.0.1:8000/
+${HOME_URL}    xpath=//a[contains(@href, '/')]  
+${DELAY}        0.5                            # Delay ระหว่างขั้นตอน
 ${LANG_DROPDOWN}    id=navbarDropdownMenuLink
 ${LANG_MENU}    css=#navbarDropdownMenuLink + .dropdown-menu
 ${THAI_LANG}    xpath=//a[contains(@href, '/lang/th')]
@@ -25,142 +29,143 @@ ${REPORT_URL}    xpath=//a[contains(@href, '/reports')]
 *** Test Cases ***
 # =================== Language Switcher Tests ===================
 Verify Language Switcher Presence
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    # Open Browser    ${URL}    ${BROWSER}
+    # Maximize Browser Window
     Wait Until Element Is Visible    ${LANG_DROPDOWN}
     Element Should Be Visible    ${LANG_DROPDOWN}
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Language Options Display
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    # Open Browser    ${URL}    ${BROWSER}
+    # Maximize Browser Window
     Wait Until Element Is Visible    ${LANG_DROPDOWN}
     Click Element    ${LANG_DROPDOWN}
     Wait Until Element Is Visible    ${LANG_MENU}
     Element Should Be Visible    ${THAI_LANG}    
     Element Should Be Visible    ${CN_LANG}   
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 # =================== English Language Tests ===================
 Verify English Home Page
-    Open Browser To Default Language
+    # Open Browser To Default Language
     Verify Home Page English
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify English Researchers Navigation
-    Open Browser To Default Language
+    # Open Browser To Default Language
     Navigate To Researchers And Verify English
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify English Researcher Profile
-    Open Browser To Default Language
+    # Open Browser To Default Language
     Navigate To Specific Researcher And Verify English
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify English Publication Tabs
-    Open Browser To Default Language
+    # Open Browser To Default Language
     Navigate To Specific Researcher And Verify English
     Verify Publication Tabs English
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify English Research Project Page
-    Open Browser To Default Language
+    # Open Browser To Default Language
     Navigate To Research Project And Verify English
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify English Research Group Page
-    Open Browser To Default Language
+    # Open Browser To Default Language
     Navigate To Research Group And Verify English
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify English Reports Page
-    Open Browser To Default Language
+    # Open Browser To Default Language
     Navigate To Reports And Verify English
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 # =================== Thai Language Tests ===================
 Verify Thai Home Page
-    Open Browser And Switch To Thai
+    # Open Browser And Switch To Thai
     Verify Home Page Thai
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Thai Researchers Navigation
-    Open Browser And Switch To Thai
+    # Open Browser And Switch To Thai
     Navigate To Researchers And Verify Thai
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Thai Researcher Profile
-    Open Browser And Switch To Thai
+    # Open Browser And Switch To Thai
     Navigate To Specific Researcher And Verify Thai
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Thai Publication Tabs
-    Open Browser And Switch To Thai
+    # Open Browser And Switch To Thai
     Navigate To Specific Researcher And Verify Thai
     Verify Publication Tabs Thai
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Thai Research Project Page
-    Open Browser And Switch To Thai
+    # Open Browser And Switch To Thai
     Navigate To Research Project And Verify Thai
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Thai Research Group Page
-    Open Browser And Switch To Thai
+    # Open Browser And Switch To Thai
     Navigate To Research Group And Verify Thai
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Thai Reports Page
-    Open Browser And Switch To Thai
+    # Open Browser And Switch To Thai
     Navigate To Reports And Verify Thai
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 # =================== Chinese Language Tests ===================
 Verify Chinese Home Page
-    Open Browser And Switch To Chinese
+    # Open Browser And Switch To Chinese
     Verify Home Page Chinese
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Chinese Researchers Navigation
-    Open Browser And Switch To Chinese
+    # Open Browser And Switch To Chinese
     Navigate To Researchers And Verify Chinese
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Chinese Researcher Profile
-    Open Browser And Switch To Chinese
+    # Open Browser And Switch To Chinese
     Navigate To Specific Researcher And Verify Chinese
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Chinese Publication Tabs
-    Open Browser And Switch To Chinese
+    # Open Browser And Switch To Chinese
     Navigate To Specific Researcher And Verify Chinese
     Verify Publication Tabs Chinese
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Chinese Research Project Page
-    Open Browser And Switch To Chinese
+    # Open Browser And Switch To Chinese
     Navigate To Research Project And Verify Chinese
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Chinese Research Group Page
-    Open Browser And Switch To Chinese
+    # Open Browser And Switch To Chinese
     Navigate To Research Group And Verify Chinese
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 Verify Chinese Reports Page
-    Open Browser And Switch To Chinese
+    # Open Browser And Switch To Chinese
     Navigate To Reports And Verify Chinese
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser
 
 *** Keywords ***
 # =================== Setup and General Keywords ===================
-Setup Test Environment
-    Set Selenium Speed    0.5s
-    Set Selenium Timeout    10s
-
-Open Browser To Default Language
+Open Browser To Home Page
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
+    Set Selenium Speed    ${DELAY}    
+
+#Open Browser To Default Language
+#    Open Browser    ${URL}    ${BROWSER}
+#    Maximize Browser Window
 
 Open Browser And Switch To Thai
     Open Browser To Default Language
@@ -201,6 +206,8 @@ Verify Home Page English
     Wait Until Page Contains    Publications (In the Last 5 Years)
 
 Verify Home Page Thai
+    Click Element    ${HOME_URL}
+    Switch Language    th
     Wait Until Page Contains    หน้าแรก
     Wait Until Element Is Visible    css=#all .count-text
     ${text}=    Get Text    css=#all .count-text
@@ -208,6 +215,8 @@ Verify Home Page Thai
     Wait Until Page Contains    ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)
 
 Verify Home Page Chinese
+    Click Element    ${HOME_URL}
+    Switch Language    cn
     Wait Until Page Contains    主页
     Wait Until Element Is Visible    css=#all .count-text
     ${text}=    Get Text    css=#all .count-text
