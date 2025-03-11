@@ -482,7 +482,17 @@
             $('#dynamic_field').append(`
                 <tr id="row${i}" class="dynamic-added">
                     <td>
+                    <div class="col-md-6 mb-2">
+                            <label>{{ trans('message.User_title_name') }}</label>
+                            <select name="title_name[]" class="form-control">
+                                <option value="">----</option>
+                                <option value="MR">{{ trans('message.User_title_name_MR') }}</option>
+                                <option value="Miss">{{ trans('message.User_title_name_Miss') }}</option>
+                                <option value="Missis">{{ trans('message.User_title_name_Missis') }}</option>
+                            </select>
+                        </div>
                     <div class="row">
+                        </select>
                         <div class="col-md-6 mb-2">
                         <input type="text" name="fname[]" placeholder="{{ trans('message.your_name') }} (TH)" class="form-control name_list" />
                         </div>

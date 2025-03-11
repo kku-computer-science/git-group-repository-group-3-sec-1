@@ -540,6 +540,10 @@ return [
 'User_program' => 'หลักสูตร',
 'User_select_category' => 'เลือกสาขาวิชา',
 'User_select_sub_category' => 'เลือกหลักสูตร',
+'User_title_name' => 'คำนำหน้า',
+'User_title_name_MR' => 'นาย',
+'User_title_name_Miss' => 'นางสาว',
+'User_title_name_Missis' => 'นาง',
 
 // ส่วนของ User (show.blade.php)
 'User_detail' => 'รายละเอียดผู้ใช้',

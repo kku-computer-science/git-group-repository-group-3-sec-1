@@ -549,6 +549,10 @@ return [
 'User_program' => '项目',
 'User_select_category' => '选择类别',
 'User_select_sub_category' => '选择子类别',
+'User_title_name' => '前缀 ',
+'User_title_name_MR' => '先生',
+'User_title_name_Miss' => '小姐',
+'User_title_name_Missis' => '夫人',
 
 // ส่วนของ User (show.blade.php)
 'User_detail' => '用户详情',

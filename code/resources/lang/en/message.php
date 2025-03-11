@@ -546,6 +546,10 @@ return [
 'User_program' => 'Program',
 'User_select_category' => 'Select Category',
 'User_select_sub_category' => 'Select Sub-Category',
+'User_title_name' => 'Title Name',
+'User_title_name_MR' => 'Mister',
+'User_title_name_Miss' => 'Miss',
+'User_title_name_Missis' => 'Missis',
 
 // ส่วนของ User (show.blade.php)
 'User_detail' => 'User Detail',
