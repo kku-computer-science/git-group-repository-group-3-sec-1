@@ -33,7 +33,17 @@
                                 <tr>
 
                                     <td>{{ $i + 1 }}</td>
-                                    <td>{{ Str::limit($fund->fund_name, 80) }}</td>
+                                    <td>
+                                        @if (App::getLocale() == 'th')
+                                            {{ $fund->fund_name_th }}
+                                        @elseif (App::getLocale() == 'en')
+                                            {{ $fund->fund_name_en }}
+                                        @elseif (App::getLocale() == 'cn')
+                                            {{ $fund->fund_name_cn }}
+                                        @else
+                                            {{ $fund->fund_name }} {{-- Default --}}
+                                        @endif
+                                    </td>
                                     <td>
                                         @if (App::getLocale() == 'th')
                                             @if ($fund->fund_type == 'ทุนภายใน')

@@ -8,7 +8,18 @@
                 <p class="card-description">{{ trans('message.Fund_detail_description') }}</p>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Fund_name') }}</b></p>
-                    <p class="card-text col-sm-9">{{ $fund->fund_name }}</p>
+                    <p class="card-text col-sm-9">
+                        @if (App::getLocale() == 'th')
+                            {{ $fund->fund_name_th }}
+                        @elseif (App::getLocale() == 'en')
+                            {{ $fund->fund_name_en }}
+                        @elseif (App::getLocale() == 'cn')
+                            {{ $fund->fund_name_cn }}
+                        @else
+                            {{ $fund->fund_name }} {{-- ค่าเริ่มต้น --}}
+                        @endif
+                    </p>
+
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Fund_year') }}</b></p>
@@ -48,7 +59,18 @@
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Fund_organization') }}</b></p>
-                    <p class="card-text col-sm-9">{{ $fund->fund_name }}</p>
+                    <p class="card-text col-sm-9">
+                        @if (App::getLocale() == 'th')
+                            {{ $fund->fund_name_th }}
+                        @elseif (App::getLocale() == 'en')
+                            {{ $fund->fund_name_en }}
+                        @elseif (App::getLocale() == 'cn')
+                            {{ $fund->fund_name_cn }}
+                        @else
+                            {{ $fund->fund_name }} {{-- ค่าเริ่มต้น --}}
+                        @endif
+                    </p>
+
                 </div>
                 <div class="row">
                     <p class="card-text col-sm-3"><b>{{ trans('message.Add_detail_fund_by') }}</b></p>

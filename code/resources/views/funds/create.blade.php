@@ -56,9 +56,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputfund_name" class="col-sm-2 ">{{ trans('message.Fund_name') }}</label>
+                        <label for="exampleInputfund_name" class="col-sm-2 ">{{ trans('message.Fund_name_th') }}</label>
                         <div class="col-sm-8">
-                            <input type="text" name="fund_name" class="form-control" placeholder="{{ trans('message.Fund_name') }}">
+                            <input type="text" name="fund_name" class="form-control" placeholder="{{ trans('message.Fund_name_th') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputfund_name" class="col-sm-2 ">{{ trans('message.Fund_name_en') }}</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="fund_name2" class="form-control" placeholder="{{ trans('message.Fund_name_en') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputfund_name" class="col-sm-2 ">{{ trans('message.Fund_name_cn') }}</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="fund_name2" class="form-control" placeholder="{{ trans('message.Fund_name_cn') }}">
                         </div>
                     </div>
                     
