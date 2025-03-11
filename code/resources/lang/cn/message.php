@@ -1,5 +1,6 @@
 <?php
 return [
+'noexpertise' => '这位研究员尚未定义他们的专业领域。',
 ',Ph.d' => ', 博士',
 'nostudentwithinRG' => '该研究小组内没有学生。',
 'null' => '此部分无信息。',

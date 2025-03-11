@@ -1,5 +1,6 @@
 <?php
 return [
+'noexpertise' => 'This researcher has not defined their expertise yet.',
 ',Ph.d' => ', Ph.d',
 'nostudentwithinRG' => 'There are no students within this research group.',
 'null' => 'No information for this section.',

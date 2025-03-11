@@ -89,43 +89,30 @@
                     <h6 class="card-text1">Khon Kaen University</h6> -->
                         <h6 class="card-text1">{{ trans('message.Profile_Account_email') }}: {{$res->email}}</h6>
                         <h6 class="card-title">{{ trans('message.education') }}</h6>
-                        @foreach( $res->education as $edu)
-                        <!-- @if(app()->getLocale() == 'th')
-                        <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->qua_name}} {{$edu->uname}}</h6>
+                        @if($res->education->isEmpty())
+                            <h6 class="card-text2 col-sm-10"> {{ trans('message.null') }}</h6>
                         @else
-                            @if($edu->year == '-')
-                                @if(app()->getLocale() == 'en')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
-                                    @endif
-                                @else
-                                    @if(app()->getLocale() == 'en')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
-                                    @elseif(app()->getLocale() == 'cn')
-                                    <h6 class="card-text2 col-sm-10"> {{$edu->year-543}} {{$edu->quaname_en}} {{$edu->uname_en}}</h6>
-                                    @endif
-                                @endif
-                        @endif -->
-                        <h6 class="card-text2 col-sm-10">
-                        @php
-                                            $locale = app()->getLocale();
-                                            $year = ($edu->year == '-') ? $edu->year
-                                                    : (($edu->year == '') ? $edu->year
-                                                    : (($locale == 'en') ? ($edu->year - 543 ?? "Year's unknown.")
-                                                    : (($locale == 'th') ? ($edu->year ?? "ไม่มีข้อมูลปีการศึกษา")
-                                                    : ($edu->year - 543 ?? "没有学年信息"))));
+                            @foreach($res->education as $edu)
+                                <h6 class="card-text2 col-sm-10">
+                                    @php
+                                        $locale = app()->getLocale();
+                                        $year = ($edu->year == '-') ? $edu->year
+                                                : (($edu->year == '') ? $edu->year
+                                                : (($locale == 'en') ? ($edu->year - 543 ?? "Year's unknown.")
+                                                : (($locale == 'th') ? ($edu->year ?? "ไม่มีข้อมูลปีการศึกษา")
+                                                : ($edu->year - 543 ?? "没有学年信息"))));
 
-                                            $quaname = $locale == 'en' ? ($edu->quaname_en ?? $edu->qua_name ?? $edu->quaname_cn)
-                                                    : ($locale == 'th' ? ($edu->qua_name ?? $edu->quaname_en ?? $edu->quaname_cn)
-                                                    : ($edu->quaname_cn ?? $edu->quaname_en ?? $edu->qua_name));
-                                            $uname = $locale == 'en' ? ($edu->uname_en ?? $edu->uname ?? $edu->uname_cn)
-                                                    : ($locale == 'th' ? ($edu->uname ?? $edu->uname_en ?? $edu->uname_cn)
-                                                    : ($edu->uname_cn ?? $edu->uname_en ?? $edu->uname));
-                                        @endphp
-                                        {{ $year }} {{ $quaname }} {{ $uname }}
-                        </h6>
-                        @endforeach
+                                        $quaname = $locale == 'en' ? ($edu->quaname_en ?? $edu->qua_name ?? $edu->quaname_cn)
+                                                : ($locale == 'th' ? ($edu->qua_name ?? $edu->quaname_en ?? $edu->quaname_cn)
+                                                : ($edu->quaname_cn ?? $edu->quaname_en ?? $edu->qua_name));
+                                        $uname = $locale == 'en' ? ($edu->uname_en ?? $edu->uname ?? $edu->uname_cn)
+                                                : ($locale == 'th' ? ($edu->uname ?? $edu->uname_en ?? $edu->uname_cn)
+                                                : ($edu->uname_cn ?? $edu->uname_en ?? $edu->uname));
+                                    @endphp
+                                    {{ $year }} {{ $quaname }} {{ $uname }}
+                                </h6>
+                            @endforeach
+                        @endif
                         <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
                             {{ trans('message.expertise') }}

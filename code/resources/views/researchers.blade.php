@@ -4,13 +4,14 @@
     <p class="title"> {{ trans('message.Researchers') }} </p>
     @foreach($request as $res)
     <span>
-        @if(app()->getLocale() == 'th')
-        <ion-icon name="caret-forward-outline" size="small"></ion-icon> {{$res->program_name_th}}
-        @elseif(app()->getLocale() == 'en')
-        <ion-icon name="caret-forward-outline" size="small"></ion-icon> {{$res->program_name_en}}
-        @elseif(app()->getLocale() == 'cn')
-        <ion-icon name="caret-forward-outline" size="small"></ion-icon> {{$res->program_name_cn}}
-        @endif
+        @php
+            $locale = app()->getLocale();
+            $programName = $locale == 'en' ? $res->program_name_en 
+                        : ($locale == 'th' ? $res->program_name_th 
+                        : $res->program_name_cn);
+        @endphp
+
+        <ion-icon name="caret-forward-outline" size="small"></ion-icon> {{ $programName }}
     </span>
     <div class="d-flex">
         <div class="ml-auto">
@@ -47,44 +48,48 @@
                     </div>
                     <div class="col-sm-8 overflow-hidden" style="text-overflow: clip; @if(app()->getLocale() == 'en') max-height: 220px; @else max-height: 210px;@endif">
                         <div class="card-body">
-                            @if(app()->getLocale() == 'en')
+                            @php
+                                $locale = app()->getLocale();
+                                $firstName = $r->{'fname_'.$locale} ?? $r->fname_en ?? $r->fname_th ?? $r->fname_cn;
+                                $lastName = $r->{'lname_'.$locale} ?? $r->lname_en ?? $r->lname_th ?? $r->lname_cn;
+                                $position = $r->{'position_'.$locale} ?? $r->position_en ?? $r->position_th ?? $r->position_cn;
+                                $academicRank = $r->{'academic_ranks_'.$locale} ?? $r->academic_ranks_en ?? $r->academic_ranks_th ?? $r->academic_ranks_cn;
+                                $doctoralDegree = $r->doctoral_degree == 'Ph.D.' ? ', ' . $r->doctoral_degree : '';
+                                $expertiseField = 'expert_name' . ($locale == 'th' ? '_th' : ($locale == 'cn' ? '_cn' : '') );
+                            @endphp
 
-                                @if($r->doctoral_degree == 'Ph.D.')
-                                <h5 class="card-title">{{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, {{$r->doctoral_degree}}
+                            @if($locale == 'en')
+                                <h5 class="card-title">{{ $firstName }} {{ $lastName }}{{ $doctoralDegree }}</h5>
+                                <h5 class="card-title-2">{{ $academicRank }}</h5>
+                            @else
+                                <h5 class="card-title">{{ $position }} {{ $firstName }} {{ $lastName }}</h5>
+                            @endif
+
+                            <p class="card-text-1">{{ trans('message.expertise') }}</p>
+                            <div class="card-expertise">
+                                @php
+                                    $expertiseCount = $r->expertise->count();
+                                @endphp
+
+                                @if($expertiseCount > 0)
+                                    @foreach($r->expertise->sortBy('expert_name') as $exper)
+                                        @php
+                                            // Define the language field names based on the locale
+                                            $localeField = 'expert_name_' . $locale;
+                                            $expertise = $exper->$localeField 
+                                                ?? $exper->expert_name 
+                                                ?? $exper->expert_name_th 
+                                                ?? $exper->expert_name_cn;
+                                        @endphp
+
+                                        @if($expertise)
+                                            <p class="card-text"> {{ $expertise }}</p>
+                                        @endif
+                                    @endforeach
                                 @else
-                                <h5 class="card-title">{{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}</h5>
+                                    <p class="card-text">{{ trans('message.noexpertise') }}</p>
                                 @endif
-
-
-                                <!-- <h5 class="card-title">{{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}</h5> -->
-                                <h5 class="card-title-2">{{ $r->{'academic_ranks_'.app()->getLocale()} }}</h5>
-                                @else
-                                <h5 class="card-title">{{ $r->{'position_'.app()->getLocale()} }}
-                                    {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
-                                </h5>
-                                @endif
-                                @if(app()->getLocale() == 'en')
-                                <p class="card-text-1">{{ trans('message.expertise') }}</p>
-                                <div class="card-expertise">
-                                    @foreach($r->expertise->sortBy('expert_name') as $exper)
-                                    <p class="card-text"> {{$exper->expert_name}}</p>
-                                    @endforeach
-                                </div>
-                                @elseif(app()->getLocale() == 'th')
-                                <p class="card-text-1">{{ trans('message.expertise') }}</p>
-                                <div class="card-expertise">
-                                    @foreach($r->expertise->sortBy('expert_name') as $exper)
-                                    <p class="card-text"> {{$exper->expert_name_th}}</p>
-                                    @endforeach
-                                </div>
-                                @elseif(app()->getLocale() == 'cn')
-                                <p class="card-text-1">{{ trans('message.expertise') }}</p>
-                                <div class="card-expertise">
-                                    @foreach($r->expertise->sortBy('expert_name') as $exper)
-                                    <p class="card-text"> {{$exper->expert_name_cn}}</p>
-                                    @endforeach
-                                </div>
-                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
