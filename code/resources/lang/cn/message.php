@@ -426,7 +426,7 @@ return [
 'Book_title_th' => 'Title(泰国)',
 'Book_title_en' => 'Title(中国人)',
 'Book_title_cn' => 'Title(英语)',
-'Book_year' => '出版年份',
+'Book_year' => '出版年份(的缩写)',
 'Book_source' => '来源',
 'Book_source_th' => '来源(泰国)',
 'Book_source_en' => '来源(中国人)',

@@ -418,7 +418,7 @@ return [
 'Book_title_th' => 'Title(Thai)',
 'Book_title_en' => 'Title(English)',
 'Book_title_cn' => 'Title(Chinese)',
-'Book_year' => 'Year (B.E.)',
+'Book_year' => 'Year (A.D.)',
 'Book_source' => 'Source',
 'Book_source_th' => 'Source(Thai)',
 'Book_source_en' => 'Source(English)',

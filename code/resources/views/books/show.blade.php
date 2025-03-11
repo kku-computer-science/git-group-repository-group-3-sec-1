@@ -8,7 +8,6 @@
             <p class="card-description">{{ trans('message.Book_description') }}</p>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Book_title') }}</b></p>
-                <p class="card-text col-sm-9">{{ $paper->ac_name }}</p>
                 <p class="card-text col-sm-9">
                     @if (App::getLocale() == 'th')
                         {{ Str::limit($paper->ac_name, 50) }}
