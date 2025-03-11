@@ -9,6 +9,27 @@
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Book_title') }}</b></p>
                 <p class="card-text col-sm-9">{{ $paper->ac_name }}</p>
+                <p class="card-text col-sm-9">
+                    @if (App::getLocale() == 'th')
+                        {{ Str::limit($paper->ac_name, 50) }}
+                    @elseif(App::getLocale() == 'en')
+                        @if ($paper->ac_name_en)
+                            {{ Str::limit($paper->ac_name_en, 50) }}
+                        @else
+                            {{ Str::limit($paper->ac_name, 50) }}
+                            <br>
+                            <span class="text-danger">*This Book Doesn't Has an English Title</span><br>
+                        @endif
+                    @elseif(App::getLocale() == 'cn')
+                        @if ($paper->ac_name_cn)
+                            {{ Str::limit($paper->ac_name_cn, 50) }}
+                        @else
+                            {{ Str::limit($paper->ac_name, 50) }}
+                            <br>
+                            <span class="text-danger">*这本书没有英文标题</span><br>
+                        @endif
+                    @endif
+                </p>
             </div>
             <div class="row">
                 <p class="card-text col-sm-3"><b>{{ trans('message.Book_year') }}</b></p>
