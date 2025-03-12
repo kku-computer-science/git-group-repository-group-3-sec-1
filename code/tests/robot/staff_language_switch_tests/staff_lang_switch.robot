@@ -385,13 +385,13 @@ Verify Research Group Page English
     Wait Until Page Contains    Input Research Group Detail
     Wait Until Page Contains    Group Name (TH)
     Wait Until Page Contains    Group Name (EN)
-    Wait Until Page Contains    Research Group Name (CN)
+    Wait Until Page Contains    Group Name (CN)
     Wait Until Page Contains    Description (TH)
     Wait Until Page Contains    Description (EN)
-    Wait Until Page Contains    Research Group Descriptions (CN)
+    Wait Until Page Contains    Description (CN)
     Wait Until Page Contains    Detail (TH)
     Wait Until Page Contains    Detail (EN)
-    Wait Until Page Contains    Research Group Detail (CN)
+    Wait Until Page Contains    Detail (CN)
     Wait Until Page Contains    Research Group Image
     Wait Until Page Contains    Head
     Wait Until Page Contains    Member
@@ -405,13 +405,13 @@ Verify Research Group Page English
     Wait Until Page Contains    Description of the group    
     Wait Until Page Contains    Group Name (TH)
     Wait Until Page Contains    Group Name (EN)
-    Wait Until Page Contains    Research Group Name (CN)
+    Wait Until Page Contains    Group Name (CN)
     Wait Until Page Contains    Description (TH)
     Wait Until Page Contains    Description (EN)
-    Wait Until Page Contains    Research Group Descriptions (CN)
+    Wait Until Page Contains    Description (CN)
     Wait Until Page Contains    Detail (TH)
     Wait Until Page Contains    Detail (EN)
-    Wait Until Page Contains    Research Group Detail (CN)    
+    Wait Until Page Contains    Detail (CN)    
     Wait Until Page Contains    Head
     Wait Until Page Contains    Member    
     Wait Until Page Contains    Back
@@ -423,13 +423,13 @@ Verify Research Group Page English
     Wait Until Page Contains    Edit Research Group Detail
     Wait Until Page Contains    Group Name (TH)
     Wait Until Page Contains    Group Name (EN)
-    Wait Until Page Contains    Research Group Name (CN)
+    Wait Until Page Contains    Group Name (CN)
     Wait Until Page Contains    Description (TH)
     Wait Until Page Contains    Description (EN)
-    Wait Until Page Contains    Research Group Descriptions (CN)
+    Wait Until Page Contains    Description (CN)
     Wait Until Page Contains    Detail (TH)
     Wait Until Page Contains    Detail (EN)
-    Wait Until Page Contains    Research Group Detail (CN)
+    Wait Until Page Contains    Detail (CN)
     Wait Until Page Contains    Research Group Image
     Wait Until Page Contains    Head
     Wait Until Page Contains    Member
@@ -513,8 +513,8 @@ Verify Book Page English
     Wait Until Page Contains    Add
     Wait Until Page Contains    No.
     Wait Until Page Contains    Title
-    Wait Until Page Contains    Year (B.E.)
-    Wait Until Page Contains    Source(Thai)
+    Wait Until Page Contains    Year (A.D.)
+    Wait Until Page Contains    Source
     Wait Until Page Contains    Page
     Wait Until Page Contains    Action
     Wait Until Page Contains    Search:
@@ -525,7 +525,7 @@ Verify Book Page English
     Wait Until Page Contains    Create Book
     Wait Until Page Contains    Input Book Detail
     Wait Until Page Contains    Title
-    Wait Until Page Contains    Source(Thai)
+    Wait Until Page Contains    Source
     Wait Until Page Contains    Source(English)
     Wait Until Page Contains    Source(Chinese)
     Wait Until Page Contains    Year (B.E.)
@@ -540,8 +540,8 @@ Verify Book Page English
     Wait Until Page Contains    Book Detail
     Wait Until Page Contains    Description of the book
     Wait Until Page Contains    Title
-    Wait Until Page Contains    Year (B.E.)
-    Wait Until Page Contains    Source(Thai)
+    Wait Until Page Contains    Year (A.D.)
+    Wait Until Page Contains    Source
     Wait Until Page Contains    Page
     Wait Until Page Contains    Back
     # Back to index.blade.php
@@ -902,15 +902,8 @@ Verify Research Group Page Thai
     Click Element    ${SHOW_RESEARCH_GROUP_DEMO_URL}
     Wait Until Page Contains    รายละเอียดกลุ่มวิจัย
     Wait Until Page Contains    รายละเอียดของกลุ่มวิจัย  
-    Wait Until Page Contains    ชื่อกลุ่มวิจัย (ไทย)
-    Wait Until Page Contains    ชื่อกลุ่มวิจัย (อังกฤษ)
-    Wait Until Page Contains    ชื่อกลุ่มวิจัย (ภาษาจีน)
-    Wait Until Page Contains    คำอธิบายกลุ่มวิจัย (ไทย)
-    Wait Until Page Contains    คำอธิบายกลุ่มวิจัย (อังกฤษ)
-    Wait Until Page Contains    คำอธิบายกลุ่มวิจัย (ภาษาจีน)
-    Wait Until Page Contains    รายละเอียดกลุ่มวิจัย (ไทย)
-    Wait Until Page Contains    รายละเอียดกลุ่มวิจัย (อังกฤษ)
-    Wait Until Page Contains    รายละเอียดกลุ่มวิจัย (ภาษาจีน)  
+    Wait Until Page Contains    ชื่อกลุ่มวิจัย    
+    Wait Until Page Contains    รายละเอียดของกลุ่มวิจัย
     Wait Until Page Contains    หัวหน้ากลุ่มวิจัย
     Wait Until Page Contains    สมาชิกกลุ่มวิจัย   
     Wait Until Page Contains    กลับ
@@ -1015,7 +1008,7 @@ Verify Book Page Thai
     Wait Until Page Contains    ลำดับที่
     Wait Until Page Contains    ชื่อหนังสือ
     Wait Until Page Contains    ปีที่ตีพิมพ์ (พ.ศ.)
-    Wait Until Page Contains    แหล่งเผยแพร่หนังสือ(ภาษาไทย)
+    Wait Until Page Contains    แหล่งเผยแพร่หนังสือ
     Wait Until Page Contains    หน้า
     Wait Until Page Contains    ดำเนินการ
     Wait Until Page Contains    ค้นหา:
@@ -1026,7 +1019,7 @@ Verify Book Page Thai
     Wait Until Page Contains    สร้างหนังสือ
     Wait Until Page Contains    กรอกรายละเอียดหนังสือ
     Wait Until Page Contains    ชื่อหนังสือ
-    Wait Until Page Contains    แหล่งเผยแพร่หนังสือ(ภาษาไทย)
+    Wait Until Page Contains    แหล่งเผยแพร่หนังสือ
     Wait Until Page Contains    แหล่งเผยแพร่หนังสือ(อังกฤษ)
     Wait Until Page Contains    แหล่งเผยแพร่หนังสือ(จีน)
     Wait Until Page Contains    ปีที่ตีพิมพ์ (พ.ศ.)
@@ -1042,7 +1035,7 @@ Verify Book Page Thai
     Wait Until Page Contains    รายละเอียดของหนังสือ
     Wait Until Page Contains    ชื่อหนังสือ
     Wait Until Page Contains    ปีที่ตีพิมพ์ (พ.ศ.)
-    Wait Until Page Contains    แหล่งเผยแพร่หนังสือ(ภาษาไทย)
+    Wait Until Page Contains    แหล่งเผยแพร่หนังสือ
     Wait Until Page Contains    หน้า
     Wait Until Page Contains    กลับ
     # Back to index.blade.php
@@ -1407,17 +1400,11 @@ Verify Research Group Page Chinese
     Click Element    ${SHOW_RESEARCH_GROUP_DEMO_URL}
     Wait Until Page Contains    小组详情
     Wait Until Page Contains    小组描述
-    Wait Until Page Contains    小组名称（泰文）
-    Wait Until Page Contains    小组名称（英文）
-    Wait Until Page Contains    小组名称（中国人）
-    Wait Until Page Contains    小组描述（泰文）
-    Wait Until Page Contains    小组描述（英文）
-    Wait Until Page Contains    研究小组简介
-    Wait Until Page Contains    小组详情（泰文）
-    Wait Until Page Contains    小组详情（英文）
-    Wait Until Page Contains    研究小组详情
+    Wait Until Page Contains    小组名称
+    Wait Until Page Contains    小组描述
+    Wait Until Page Contains    小组详情
     Wait Until Page Contains    负责人
-    Wait Until Page Contains    成员   
+    Wait Until Page Contains    成员
     Wait Until Page Contains    返回
     # Back to index.blade.php
     Click Element    ${RESEARCH_GROUP_URL}
@@ -1530,8 +1517,8 @@ Verify Book Page Chinese
     Click Element    ${CREATE_BOOK_URL}
     Wait Until Page Contains    创建书籍
     Wait Until Page Contains    输入书籍详情
-    Wait Until Page Contains    标题
-    Wait Until Page Contains    来源(泰国)
+    Wait Until Page Contains    Title(泰国)
+    Wait Until Page Contains    来源
     Wait Until Page Contains    来源(中国人)
     Wait Until Page Contains    来源(英语)
     Wait Until Page Contains    出版年份
@@ -1547,7 +1534,7 @@ Verify Book Page Chinese
     Wait Until Page Contains    书籍描述
     Wait Until Page Contains    标题
     Wait Until Page Contains    出版年份
-    Wait Until Page Contains    来源(泰国)
+    Wait Until Page Contains    来源
     Wait Until Page Contains    页数
     Wait Until Page Contains    返回
     # Back to index.blade.php

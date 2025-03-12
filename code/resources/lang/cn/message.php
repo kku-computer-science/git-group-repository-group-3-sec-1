@@ -543,7 +543,7 @@ return [
 'User_fname_cn' => '名字 (中文)',
 'User_lname_cn' => '姓氏 (中文)',
 'User_email' => '电子邮件',
-'User_passwrord' => '密码',
+'User_password' => '密码',
 'User_confirm_password' => '确认密码',
 'User_role' => '角色',
 'User_department' => '部门',

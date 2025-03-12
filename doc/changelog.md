@@ -36,7 +36,10 @@
 - Various language options for multiple data has been implemented.
 - If data has language options then it will display accordingly to the language setting and will substitute to other language if the selected one is null.
 
-
+### UAT for Language Switch (Thai, English, Chinese)  
+- Conducted UAT testing using Robot Framework to verify the language switching functionality.
+- The tests included language switches between English, Thai, and Chinese across different user roles such as Visitor, Login, Researcher, System Administrator and Administrative Staff
+-The tests ensured that the language switch functionality worked correctly for all specified roles and languages.
 
 ## [Released] - 2025-02-12
 

@@ -106,7 +106,7 @@
             </div>
             @endif
             <div class="row mt-2">
-                <h6 class="col-md-3"><b>{{ trans('message.User_passwrord') }}:</b></h6>
+                <h6 class="col-md-3"><b>{{ trans('message.User_password') }}:</b></h6>
                 <h6 class="col-md-9"></h6>
             </div>
 

@@ -534,7 +534,7 @@ return [
 'User_fname_cn' => 'ชื่อ (จีน)',
 'User_lname_cn' => 'นามสกุล (จีน)',
 'User_email' => 'อีเมล',
-'User_passwrord' => 'รหัสผ่าน',
+'User_password' => 'รหัสผ่าน',
 'User_confirm_password' => 'ยืนยันรหัสผ่าน',
 'User_role' => 'บทบาท',
 'User_department' => 'สาขาวิชา',

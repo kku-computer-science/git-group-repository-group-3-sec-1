@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <p class="col-sm-3"><b>{{ trans('message.User_passwrord') }}</b></p>
+                    <p class="col-sm-3"><b>{{ trans('message.User_password') }}</b></p>
                     <div class="col-sm-8">
                         <input type="password" name="password" class="form-control">
                     </div>

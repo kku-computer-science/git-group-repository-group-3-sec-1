@@ -540,7 +540,7 @@ return [
 'User_fname_cn' => 'First Name (CN)',
 'User_lname_cn' => 'Last Name (CN)',
 'User_email' => 'Email',
-'User_passwrord' => 'Password',
+'User_password' => 'Password',
 'User_confirm_password' => 'Confirm Password',
 'User_role' => 'Role',
 'User_department' => 'Department',

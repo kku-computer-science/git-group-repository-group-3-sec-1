@@ -263,17 +263,17 @@ Navigate To Researchers And Verify Chinese
     Verify Major Options Display
     Click Element    ${CS_MAJOR}
     Wait Until Page Contains    研究人员
-    Wait Until Page Contains     计算机科学与技术
+    Wait Until Page Contains     计算机科学
     Verify Major Options Display
 
     Click Element    ${IT_MAJOR}
     Wait Until Page Contains    研究人员
-    Wait Until Page Contains    信息科学与技术
+    Wait Until Page Contains    信息技术
     Verify Major Options Display
 
     Click Element    ${GIS_MAJOR} 
     Wait Until Page Contains    研究人员
-    Wait Until Page Contains    地理信息系统    
+    Wait Until Page Contains    地理信息学   
 
 # =================== Researcher Profile Keywords ===================
 Navigate To Specific Researcher And Verify English
@@ -522,18 +522,18 @@ Verify Patent Table Headers Chinese
 Navigate To Research Project And Verify English
     Click Element    ${RESEARCH_PROJECT_URL}
     Wait Until Page Contains    Research Project
-    Wait Until Page Contains    Academic service projects/ research projects
-    Wait Until Page Contains    No.
-    Wait Until Page Contains    year
+    Wait Until Page Contains    Academic service projects/research projects
+    Wait Until Page Contains    Number
+    Wait Until Page Contains    Year
     Wait Until Page Contains    Project Name
     Wait Until Page Contains    Details
-    Wait Until Page Contains    Project Manager
+    Wait Until Page Contains    Person(s) responsible for the project
     Wait Until Page Contains    Status
     Wait Until Page Contains    Project Duration
-    Wait Until Page Contains    Research Fund Type
+    Wait Until Page Contains    Type of Research Funding
     Wait Until Page Contains    Funding Agency
-    Wait Until Page Contains    Responsible Department
-    Wait Until Page Contains    Budget Allocated 
+    Wait Until Page Contains    Responsible Agency
+    Wait Until Page Contains    Allocated Budget 
 
 Navigate To Research Project And Verify Thai
     Click Element    ${RESEARCH_PROJECT_URL}
@@ -547,7 +547,7 @@ Navigate To Research Project And Verify Thai
     Wait Until Page Contains    สถานะ
     Wait Until Page Contains    ระยะเวลาโครงการ
     Wait Until Page Contains    ประเภททุนวิจัย
-    Wait Until Page Contains    หน่วยงานที่สนันสนุนทุน
+    Wait Until Page Contains    หน่วยงานที่สนับสนุนทุน
     Wait Until Page Contains    หน่วยงานที่รับผิดชอบ
     Wait Until Page Contains    งบประมาณที่ได้รับจัดสรร
 
@@ -555,17 +555,17 @@ Navigate To Research Project And Verify Chinese
     Click Element    ${RESEARCH_PROJECT_URL}
     Wait Until Page Contains    研究项目
     Wait Until Page Contains    学术服务项目/研究项目
-    Wait Until Page Contains    序号
-    Wait Until Page Contains    年份
+    Wait Until Page Contains    数字
+    Wait Until Page Contains    年
     Wait Until Page Contains    项目名称
-    Wait Until Page Contains    详细信息
+    Wait Until Page Contains    细节
     Wait Until Page Contains    项目负责人
     Wait Until Page Contains    状态
     Wait Until Page Contains    项目期限
-    Wait Until Page Contains    研究基金类型
+    Wait Until Page Contains    研究资助类型 
     Wait Until Page Contains    资助机构
-    Wait Until Page Contains    负责部门
-    Wait Until Page Contains    已分配预算
+    Wait Until Page Contains    负责机构 
+    Wait Until Page Contains    分配预算
 
 # =================== Research Group Keywords ===================
 Navigate To Research Group And Verify English
@@ -593,7 +593,7 @@ Navigate To Research Group And Verify Chinese
     Wait Until Page Contains    实验室主管
     Click Element    ${RESEARCH_GROUP_DEMO}
     Wait Until Page Contains    实验室主管
-    Wait Until Page Contains    S学生
+    Wait Until Page Contains    学生
 
 # =================== Reports Keywords ===================
 Navigate To Reports And Verify English
