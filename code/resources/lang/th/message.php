@@ -215,6 +215,11 @@ return [
 'error_input' => [
     'Whoops' => 'อุปส์!',
     'Error_problem' => 'มีปัญหาเกิดขึ้นเกี่ยวกับข้อมูลที่คุณป้อน',
+    'project_name' => 'ชื่อโครงการวิจัย',
+    'budget' => 'งบประมาณ',
+    'project_year' => 'ปีที่ยื่นขอ',
+    'fund' => 'ทุนวิจัย',
+    'head' => 'ผู้รับผิดชอบโครงการ',
 ],
 'Add_research_fund' => 'เพิ่มทุนวิจัย',
 'Input_research_fund_detail' => 'กรอกรายละเอียดทุนวิจัย',
@@ -245,13 +250,17 @@ return [
 'Research_project_no' => 'ลำดับที่',
 'Research_project_year' => 'ปี',
 'Research_project_name' => 'ชื่อโครงการ',
+'Research_project_name_cn' => 'ชื่อโครงการ (ภาษาจีน)',
+'Research_project_name_en' => 'ชื่อโครงการ (ภาษาอังกฤษ)',
 'Research_project_head' => 'หัวหน้าโครงการ',
 'Research_project_member' => 'สมาชิก',
 'Research_project_action' => 'ดำเนินการ',
 
 // ส่วนของ Research Projects (show.blade.php)
 'Research_project_detail' => 'รายละเอียดโครงการ',
-'Research_project_description' => 'รายละเอียดของโครงการ',
+'Research_project_description' => 'รายละเอียดของโครงการ (ภาษาไทย)',
+'Research_project_description_en' => 'รายละเอียดของโครงการ (ภาษาอังกฤษ)',
+'Research_project_description_cn' => 'รายละเอียดของโครงการ (ภาษาจีน)',
 'Research_project_start' => 'วันที่เริ่ม',
 'Research_project_end' => 'วันที่สิ้นสุด',
 'Research_project_budget' => 'งบประมาณ',
@@ -541,6 +550,10 @@ return [
 'User_program' => 'หลักสูตร',
 'User_select_category' => 'เลือกสาขาวิชา',
 'User_select_sub_category' => 'เลือกหลักสูตร',
+'User_title_name' => 'คำนำหน้า',
+'User_title_name_MR' => 'นาย',
+'User_title_name_Miss' => 'นางสาว',
+'User_title_name_Missis' => 'นาง',
 
 // ส่วนของ User (show.blade.php)
 'User_detail' => 'รายละเอียดผู้ใช้',
